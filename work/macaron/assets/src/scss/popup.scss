@@ -1,0 +1,251 @@
+.collection-modal {
+    .modal-dialog {
+        /* border-radius: 8px; */
+        max-width: 338px;
+        margin: auto;
+    }
+
+    .modal-content {
+        border-radius: 8px;
+    }
+
+    .modal-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #222224;
+        letter-spacing: -0.28px;
+        line-height: normal;
+    }
+
+    .modal-header {
+        border-bottom: 0;
+        padding: 13px 10px;
+        align-items: center;
+        position: relative;
+    }
+
+    .close {
+        opacity: 1;
+        /* padding: 0; */
+        position: absolute;
+        right: 10px;
+        top: 10px;
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .modal-body {
+        padding: 0;
+    }
+
+    .modal-content-custom {
+        background-color: #f6f7f8;
+
+        /* &.cancel-body {
+            background-color: #fff;
+        } */
+    }
+
+    .modal-footer {
+        border-top: 0;
+        justify-content: center;
+        padding: 20px 29px;
+
+        .btn {
+            flex: 1;
+            margin: 0 5px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: -0.4px;
+            line-height: normal;
+            padding: 11px;
+            border-radius: 4px;
+            border: 0;
+
+            &.popup-cancel {
+                background-color: #a5aab5;
+            }
+
+            &.popup-save {
+                background-color: #5843be;
+            }
+        }
+    }
+
+
+    .modal-content-custom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 38px 15px;
+    }
+    .name-input-box { 
+        width: 100%;
+        max-width: 224px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #787c84;
+    }
+
+    .name-input {
+        width: 100%;
+        border: 0;
+        background-color: transparent;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 300;
+        letter-spacing: -0.24px;
+        line-height: normal;
+        color: #787c84;
+    }
+
+    .rename-label {
+        font-size: 12px;
+        font-weight: 300;
+        color: #a5aab5;
+        letter-spacing: -0.24px;
+        line-height: normal;
+        display: block;
+        margin-top: 8px;
+    }
+
+    .cancel-popup-content-custom {
+        font-size: 12px;
+        font-weight: 300;
+        color: #222224;
+        letter-spacing: -0.24px;
+        line-height: 1.5;
+        text-align: center;
+    }
+    
+}
+
+.detail-modal {
+    .modal-header {
+        border-bottom: 0;
+        display: block;
+        text-align: center;
+        padding: 16px;
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            opacity: 1;
+        }
+
+        .detail-category-text {
+            font-size: 14px;
+            color: #787c84;
+            letter-spacing: -0.28px;
+        }
+
+        .detail-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 2px;
+            display: block;
+            color: #222224;
+        }
+
+        .detail-date {
+            font-size: 12px;
+            font-weight: 300;
+            color: #a5aab5;
+            display: block;
+        }
+    }
+
+    .modal-body {
+        padding: 0;
+    }
+}
+
+
+@media screen and (min-width:992px) {
+    .collection-modal {
+        .modal-dialog {
+            max-width: 640px;
+            border-radius: 12px;
+        }
+
+        .modal-header {
+            padding: 28px 40px;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            letter-spacing: -0.48px;
+
+        }
+
+        .modal-content-custom {
+            padding: 75px 15px;
+        }
+
+        .name-input {
+            font-size: 20px;
+        }
+
+        .name-input-box {
+            max-width: 374px;
+            padding-bottom: 15px;
+        }
+
+        .rename-label {
+            font-size: 20px;
+            margin-top: 16px;
+        }
+
+        .modal-footer {
+            padding: 39px 48px;
+
+            .btn {
+                padding: 22px;
+                font-size: 20px;
+                border-radius: 12px;
+                margin: 0 12px;
+            }
+        }
+
+        .close {
+            top: 20px;
+            right: 20px;
+
+            img {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        .cancel-popup-content-custom  {
+            font-size: 24px;
+        }
+    }
+
+    .detail-modal {
+        .modal-header {
+            padding: 37px 15px;
+
+            .detail-category-text {
+                font-size: 20px;
+                margin: 0 0 10px;
+            }
+
+            .detail-title {
+                font-size: 24px;
+            }
+
+            .detail-date {
+                font-size: 16px;
+            }
+        }
+
+        .modal-dialog {
+            max-width: 1320px;
+        }
+    }
+}

@@ -1,0 +1,153 @@
+.theme-main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &.index {
+    overflow: hidden;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  video,
+  img.thumbnail {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .text_box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    > img {
+      width: 100%;
+      max-width: 180px;
+      margin: 0 auto 17px;
+    }
+
+    &.skip_box {
+      top: auto;
+      bottom: 70px;
+    }
+  }
+
+  .description {
+    font-size: 11px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 19px;
+  }
+
+  .enter_btn {
+    display: block;
+    padding: 10px 24px;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 auto;
+    border-radius: 100px;
+    cursor: pointer;
+    width: fit-content;
+    text-decoration: none;
+  }
+
+  .sound {
+    position: fixed;
+    top: 24px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 11;
+
+    > img {
+      width: 40px;
+      height: 40px;
+      border-radius: 100px;
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  .drag_img {
+    width: 80%;
+    max-width: 375px;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px 30px;
+    border-radius: 20px;
+
+    img {
+      width: 100%;
+    }
+
+    &.none {
+      display: none;
+    }
+  }
+
+  audio {
+    display: none;
+  }
+
+  .logo {
+    position: absolute;
+    width: 140px;
+    top: 15px;
+    left: 15px;
+  }
+
+  @media screen and (min-width: 768px) {
+    overflow: initial;
+
+    .drag_img {
+      display: none;
+    }
+
+    video,
+    img.thumbnail {
+      width: 100%;
+      object-position: center;
+    }
+
+    .text_box {
+      > img {
+        max-width: 480px;
+        margin-bottom: 28px;
+      }
+    }
+
+    .description {
+      font-size: 22px;
+    }
+
+    .enter_btn {
+      margin-top: 77px;
+      padding: 17px 47px;
+      font-size: 18px;
+    }
+
+    .logo {
+      width: 180px;
+      top: 20px;
+      left: 20px;
+    }
+  }
+}

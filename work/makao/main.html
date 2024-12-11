@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+    <meta name="mobile-web-app-capable" content="yes">  
+    <title>사이트</title>
+
+    <script src="../assets/js/jquery.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!-- <script src="../assets/js/includeHTML.js"></script> --> <!-- html include script -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> <!-- swiper script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!-- parallax script --> 
+<!--     <script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script> -->
+<!--     <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script> -->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" integrity="sha384-OX60W5no62t3a7IWb/778scS02RmUVFiMWgxiaEMwIlqYjLONUVz9xqTGVWlyiFH" crossorigin="anonymous"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./assets/css/theme.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/> 
+   
+
+</head>
+<body> 
+    <div id="wrap" class="makao-wrap">
+        <header class="theme-header makao-header">
+            <div class="container">
+                <div class="header-menu-wrap pc-header">
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="" class="menu-link" data-toggle="modal" data-target="#liveModal">
+                                <span class="sub-title">EVOLUTION</span>
+                                <h3 class="menu-title">라이브카지노</h3>
+                            </a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="" class="menu-link" data-toggle="modal" >
+                                <span class="sub-title">HOTEL CASINO</span>
+                                <h3 class="menu-title">호텔 카지노</h3>
+                            </a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="" class="menu-link" data-toggle="modal" data-target="#game">
+                                <span class="sub-title">SLOT GAME</span>
+                                <h3 class="menu-title">슬롯게임</h3>
+                            </a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="#" class="menu-link" data-toggle="modal" >
+                                <img src="./assets/img/logo.png" alt="마카오 로고">
+                            </a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="" class="menu-link" data-toggle="modal" data-target="#import">
+                                <span class="sub-title">DEPOSIT</span>
+                                <h3 class="menu-title">입금신청</h3>
+                            </a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="" class="menu-link" data-toggle="modal" data-target="#export">
+                                <span class="sub-title">WITDRAWAL</span>
+                                <h3 class="menu-title">출금신청</h3>
+                            </a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="" class="menu-link" data-toggle="modal" data-target="#notice">
+                                <span class="sub-title">NOTICE</span>
+                                <h3 class="menu-title">공지사항</h3>
+                            </a>
+                        </li>
+
+                        <!-- todo : 로그인 안한 경우 -->
+                        <li class="menu-item" style="flex:inherit; ">
+                            <div class="user-btn-box">
+                                <a href="#" class="user-login" data-toggle="modal"  data-target="#loginModal">
+                                    로그인
+                                </a>
+                                <a href="#" class="user-registe" data-toggle="modal"  data-target="#registeModal">
+                                    회원가입
+                                </a>
+                            </div>
+                        </li>
+
+                        <!-- todo : 로그인 한 경우 -->
+                        <li class="menu-item" style="flex:inherit; display:block;" >
+                            
+                                <span class="user-name">
+                                    <span class="user-name-text"> MAKAO</span>
+                                    <span style="font-size: 12px; color: #aeaeae;">님</span>
+                                </span>
+                                
+                                <a href="#" class="user-mypage-mobile" style="margin-left: 10px;" data-toggle="modal"  data-target="#mypageModal">
+                                    마이페이지
+                                </a>
+
+                                <a href="#" class="user-logout" style=" display: inline-block;" data-toggle="modal"  data-target="#mypageModal">
+                                    로그아웃
+                                </a>
+                            
+                        </li>
+
+                        
+                    </ul>
+                </div>
+
+                <div class="header-menu-wrap mobile-header" >
+                    <div class="" style="display: flex; align-items: center;">
+                        <i class="xi-bars"></i>
+                        <div class="mobile-logo-box">
+                            <img src="./assets/img/logo.png" alt="마카오 로고" >
+                        </div>
+
+                       
+                        
+                    </div>
+
+                    <div class="mobile-user-box">
+                        <a href="#" class="user-login-mobile" data-toggle="modal"  data-target="#loginModal">로그인</a>
+
+                        <!-- <a href="#" class="user-mypage-mobile" data-toggle="modal"  data-target="#mypageModal">마이페이지</a>
+
+                        <a href="#" class="user-logout">로그아웃</a> -->
+
+                        <a href="#" class="user-registe-mobile" data-toggle="modal"  data-target="#registeModal">회원가입</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <nav class="theme-nav makao-nav">
+                <i class="xi-close"></i>
+                <div class="nav-inner-wrap">
+                   
+
+                    <ul class="nav-menu-list">
+                        <li class="nav-menu-item"> 
+                            <a href="#" class="nav-menu-link" data-toggle="modal"  data-target="#loginModal" data-dismiss="modal">
+                                입금신청
+                            </a>
+                        </li>
+
+                        <li class="nav-menu-item">
+                            <a href="#" class="nav-menu-link" data-toggle="modal"  data-target="#loginModal" data-dismiss="modal">
+                               출금신청
+                            </a>
+                        </li>
+
+                        <li class="nav-menu-item">
+                            <a href="#" class="nav-menu-link" data-toggle="modal"  data-target="#loginModal">
+                                카지노
+                            </a>
+                        </li>
+
+                        <li class="nav-menu-item">
+                            <a href="#" class="nav-menu-link">
+                                호텔카지노
+                            </a>
+                        </li>
+
+                        <li class="nav-menu-item">
+                            <a href="#" class="nav-menu-link" data-toggle="modal"  data-target="#game">
+                                슬롯게임
+                            </a>
+                        </li>
+
+                        <li class="nav-menu-item">
+                            <a href="#" class="nav-menu-link" data-toggle="modal"  data-target="#coupon_modal">
+                                쿠폰
+                            </a>
+                        </li>
+
+                        <li class="nav-menu-item">
+                            <a href="#" class="nav-menu-link" data-toggle="modal"  data-target="#mypageModal">
+                                마이페이지
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- todo  : 메인 -->
+        <main id="container" class="theme-main makao-main">
+            <div class="container">
+                <div class="main-visual-banner-wrap">
+                    <div class="swiper visual-banner-slide">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="slide-banner-img-box">
+                                    <!-- <img src="./assets/img/main-banner.png" style="height: 300px; object-fit: cover; object-position: center;" alt="메인 배너 이미지"> -->
+                                    <div style="background-image:url(./assets/img/main-no-title-1.png)" class="slide-banner-img"></div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="slide-banner-img-box">
+                                    <!-- <img src="./assets/img/main-banner.png" style="height: 300px; object-fit: cover; object-position: center;" alt="메인 배너 이미지"> -->
+                                    <div style="background-image:url(./assets/img/main-no-title-2.png)" class="slide-banner-img"></div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="slide-banner-img-box">
+                                    <!-- <img src="./assets/img/main-banner.png" style="height: 300px; object-fit: cover; object-position: center;" alt="메인 배너 이미지"> -->
+                                    <div style="background-image:url(./assets/img/main-no-title-3.png)" class="slide-banner-img"></div>
+                                </div>
+                            </div>
+
+                             
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination main-visual-paging"></div>
+                </div>
+
+
+                <div class="content-grid-wrap">
+                    <div class="grid-inner-content">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div  class="middle-content-modal-btn">
+                                    <div class="middle-content-box">
+                                        <div class="middle-content-img" style="background-image: url(./assets/img/middle01.png);"></div>
+                                    </div>
+
+                                    <div class="middle-content-hover-box">
+                                        <div class="hover-content-inner">
+                                            <h3 class="hover-content-title">라이브카지노</h3>
+                                            <span class="hover-content-child-title">에볼루션, 아시안게이밍, 빅게이밍, 드림게이밍, 섹시게이밍, 마이크로게이밍 온라인카지노</span>
+
+                                            <a href="#" class="hover-popup-btn"  data-toggle="modal"  data-target="#start_live">시작하기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="middle-content-modal-btn">
+                                    <div class="middle-content-box">
+                                        <div class="middle-content-img" style="background-image: url(./assets/img/middle02.png);"></div>
+                                    </div>
+
+                                    <div class="middle-content-hover-box">
+                                        <div class="hover-content-inner">
+                                            <h3 class="hover-content-title">호텔카지노</h3>
+                                            <span class="hover-content-child-title">워터프론트, 제이파크, 힐튼, 솔레어, 오카다 생생한 라이브를 즐기세요!</span>
+
+                                            <a href="#" class="hover-popup-btn" data-toggle="modal"  data-target="#start_hotel">시작하기</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="middle-content-modal-btn">
+                                    <div class="middle-content-box">
+                                        <div class="middle-content-img" style="background-image: url(./assets/img/middle03.png);"></div>
+                                    </div>
+
+                                    <div class="middle-content-hover-box">
+                                        <div class="hover-content-inner">
+                                            <h3 class="hover-content-title">슬롯게임</h3>
+                                            <span class="hover-content-child-title">다양한 슬롯 게임을 즐기세요!</span>
+
+                                            <a href="#" class="hover-popup-btn" data-toggle="modal"  data-target="#start_game">시작하기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                        <div class="security-img-box">
+                            <a href="#"  data-toggle="modal"  data-target="#middle_modal">
+                                <img src="./assets/img/middle04.png" alt="카지노 먹튀검증 커뮤니티에 보증 인증 완료!">
+                            </a>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="guide-img-bg guide-bg">
+                                    <a href="#" class="user-consulting-link">
+                                        <div class="guide-inner">
+                                            <span class="guide-text">
+                                                <h3 class="guide-title">가상화폐 입금 가이드</h3>
+                                                <p class="guide-child-title">회원님들의 안전과 보안을 위해 가상화폐 입금 방식으로 진행됩니다.</p>
+                                            </span>
+
+                                            <span class="inner-right-icon guide"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="guide-img-bg kakao-bg ">
+                                    <a href="#" class="user-consulting-link">
+                                        <div class="guide-inner">
+                                            <span class="guide-text">
+                                                <h3 class="guide-title">고객센터</h3>
+                                                <p class="guide-child-title">24시간 언제든지 문의해주세요</p>
+                                            </span>
+
+                                            <span class="inner-right-icon kakao"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- todo : 게시판 갯수는 모두 최대 5개 고정 -->
+                        <div class="row" style="align-items: stretch;">
+                            <div class="col-md-4">
+                                <div class="board-list-wrap">
+                                    <div class="board-list-category">
+                                        <h3 class="board-list-title">공지사항</h3>
+                                        <a href="#" class="board-more-link">전체보기 +</a>
+                                    </div>
+
+                                    <ul class="board-content-list">
+                                        <li class="board-content-item">
+                                            <a href="#" class="board-content-link">
+                                                <span class="notice-title">쿠키/캐시 삭제 방법 안내</span>
+                                                <span class="notice-write-date">22-01-26</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="board-content-item">
+                                            <a href="#" class="board-content-link">
+                                                <span class="notice-title">쿠키/캐시 삭제 방법 안내</span>
+                                                <span class="notice-write-date">22-01-26</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="board-list-wrap">
+                                    <div class="board-list-category">
+                                        <h3 class="board-list-title">실시간 입금 현황</h3>
+                                        
+                                    </div>
+
+                                    <ul class="board-content-list">
+                                        <li class="board-content-item">
+                                            <a href="#" class="account-info">
+                                                <span class="deel-date">15:00:00</span>
+                                                <span class="deel-pay">500,000</span>
+                                                <!-- todo : 유저 아이디 3자 이상 *로 표기 -->
+                                                <span class="deel-user-name">gl***</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="board-content-item">
+                                            <a href="#" class="account-info">
+                                                <span class="deel-date">15:00:00</span>
+                                                <span class="deel-pay">500,000</span>
+                                                <!-- todo : 유저 아이디 3자 이상 *로 표기 -->
+                                                <span class="deel-user-name">gl***</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="board-content-item">
+                                            <a href="#" class="account-info">
+                                                <span class="deel-date">15:00:00</span>
+                                                <span class="deel-pay">500,000</span>
+                                                <!-- todo : 유저 아이디 3자 이상 *로 표기 -->
+                                                <span class="deel-user-name">gl***</span>
+                                            </a>
+                                        </li>
+
+                                     
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="board-list-wrap">
+                                    <div class="board-list-category">
+                                        <h3 class="board-list-title">실시간 출금 현황</h3>
+                                        
+                                    </div>
+
+                                    <ul class="board-content-list">
+                                        <li class="board-content-item">
+                                            <a href="#" class="account-info">
+                                                <span class="deel-date">15:00:00</span>
+                                                <span class="deel-pay">500,000</span>
+                                                <!-- todo : 유저 아이디 3자 이상 *로 표기 -->
+                                                <span class="deel-user-name">gl***</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="board-content-item">
+                                            <a href="#" class="account-info">
+                                                <span class="deel-date">15:00:00</span>
+                                                <span class="deel-pay">500,000</span>
+                                                <!-- todo : 유저 아이디 3자 이상 *로 표기 -->
+                                                <span class="deel-user-name">gl***</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="board-content-item">
+                                            <a href="#" class="account-info">
+                                                <span class="deel-date">15:00:00</span>
+                                                <span class="deel-pay">500,000</span>
+                                                <!-- todo : 유저 아이디 3자 이상 *로 표기 -->
+                                                <span class="deel-user-name">gl***</span>
+                                            </a>
+                                        </li>
+
+                                     
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- todo : 푸터 -->
+        <footer class="theme-footer makao-footer">
+            <div class="container">
+                <div class="footer-content-wrap">
+                    <div class="footer-content-innter">
+                        <div class="footer-content-logo">
+                            <img src="./assets/img/logo.png" alt="마카오 로고">
+                        </div>
+    
+                        <div class="family-logo-list-wrap">
+                            <ul class="family-logo-list">
+                                <li class="family-logo-item">
+                                    <img src="./assets/img/family-logo-list.png"  alt="패밀리 사이트 로고">
+                                </li>
+                            </ul>
+    
+    
+                            
+                        </div>
+                    </div>
+                    
+
+                    <span class="copyright">
+                        마카오카지노 ⓒ Copyrights. 2022 All rights
+                    </span>
+                </div>
+            
+            </div>
+        </footer>
+    </div>
+
+    <!-- todo :  메인 팝업 -->
+    <div class="modal fade   main-popup" tabindex="-1" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog main-popup-dialog">
+          <div class="modal-content">
+              <form action="">
+                    <div class="modal-header">
+                        <i class="xi-close" data-dismiss="modal"></i>
+                        <div class="modal-logo">
+                            <img src="./assets/img/logo.png" alt="마카오 로고">
+                        </div>
+                    </div>
+
+                    <div class="modal-body">
+                      
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="submit-btn modal-bottom-btn">확인</button>
+                        <button type="button" class="cancel-btn modal-bottom-btn" data-dismiss="modal">취소</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- todo : 로그인 모달 -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form action="">
+                    <div class="modal-header">
+                        <i class="xi-close" data-dismiss="modal"></i>
+                        <div class="modal-logo">
+                            <img src="./assets/img/logo.png" alt="마카오 로고">
+                        </div>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="user-input-form">
+                            <div class="group-box">
+                                <input type="text" class="dark-input" placeholder="아이디">
+                            </div>
+
+                            <div class="group-box">
+                                <input type="text" class="dark-input" placeholder="패스워드">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="submit-btn modal-bottom-btn">확인</button>
+                        <button type="button" class="cancel-btn modal-bottom-btn" data-dismiss="modal">취소</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- todo : 회원가입 모달 -->
+    <div class="modal fade" id="registeModal" tabindex="-1" aria-labelledby="registeModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form action="">
+                    <div class="modal-header">
+                        <i class="xi-close" data-dismiss="modal"></i>
+                        <div class="modal-logo">
+                            <img src="./assets/img/logo.png" alt="마카오 로고">
+                        </div>
+                    </div>
+
+                    <div class="modal-body ">
+                        <div class="inner-body">
+                            <div class="user-input-form">
+                                <div class="group-box flex-group-box">
+                                    <!-- todo : 중요항목일 경우 클래스 required 추가 -->
+                                    <div class="registe-left">
+                                        <span class="registe-category required">아이디</span>
+                                    </div>
+                                    
+                                    <input type="text" class="dark-input registe-input" placeholder="아이디는 4~16자리입니다">
+                                </div>
+
+                                <div class="group-box flex-group-box">
+                                    <!-- todo : 중요항목일 경우 클래스 required 추가 -->
+                                    <div class="registe-left">
+                                        <span class="registe-category required">패스워드</span>
+                                    </div>
+                                    
+                                    <input type="text" class="dark-input registe-input" placeholder="패스워드는 6~16자리입니다">
+                                </div>
+
+                                <div class="group-box flex-group-box">
+                                    <!-- todo : 중요항목일 경우 클래스 required 추가 -->
+                                    <div class="registe-left">
+                                        <span class="registe-category required">비밀번호 재입력</span>
+                                    </div>
+                                    
+                                    <input type="text" class="dark-input registe-input" placeholder="비밀번호 재입력">
+                                </div>
+
+                                <div class="group-box flex-group-box">
+                                    <!-- todo : 중요항목일 경우 클래스 required 추가 -->
+                                    <div class="registe-left">
+                                        <span class="registe-category required">출금비밀번호</span>
+                                    </div>
+                                    
+                                    <input type="text" class="dark-input registe-input" placeholder="출금비밀번호">
+                                </div>
+
+                                <div class="group-box flex-group-box" style="align-items: flex-start;">
+                                    <!-- todo : 중요항목일 경우 클래스 required 추가 -->
+                                    <div class="registe-left">
+                                        <span class="registe-category required">전화번호</span>
+                                    </div>
+                                    
+                                    <div class="number-input-box" style="width: 100%;">
+                                        <form action="">
+                                            <div class="" style="display: flex; align-items: center; margin-bottom: 10px;">
+                                                <input type="text" class="dark-input registe-input" placeholder="'-'없이 숫자만 입력">
+                                                <button type="submit" class="number-btn">핸드폰 인증</button>
+                                            </div>
+                                        </form>
+
+                                        <input type="text" class="dark-input registe-input" placeholder="인증번호를 입력해주세요">
+
+
+                                    </div>
+                                </div>
+
+                                <div class="group-box flex-group-box">
+                                    <!-- todo : 중요항목일 경우 클래스 required 추가 -->
+                                    <div class="registe-left">
+                                        <span class="registe-category required">예금주</span>
+                                    </div>
+                                    
+                                    <input type="text" class="dark-input registe-input" placeholder="성함을 입력해주세요 | 이름은 한글 2 ~ 5자리입니다">
+                                </div>
+
+                                <div class="group-box flex-group-box">
+                                    <!-- todo : 중요항목일 경우 클래스 required 추가 -->
+                                    <div class="registe-left">
+                                        <span class="registe-category required">은행명</span>
+                                    </div>
+                                    
+                                    <input type="text" class="dark-input registe-input" placeholder="은행명을 입력해주세요">
+                                </div>
+
+                                <div class="group-box flex-group-box">
+                                    <!-- todo : 중요항목일 경우 클래스 required 추가 -->
+                                    <div class="registe-left">
+                                        <span class="registe-category required">계좌번호</span>
+                                    </div>
+                                    
+                                    <input type="text" class="dark-input registe-input" placeholder="계좌번호를 입력해주세요">
+                                </div>
+
+                                <div class="group-box flex-group-box">
+                                    <!-- todo : 중요항목일 경우 클래스 required 추가 -->
+                                    <div class="registe-left">
+                                        <span class="registe-category">추천인</span>
+                                    </div>
+                                    
+                                    <input type="text" class="dark-input registe-input" placeholder="추천인을 입력해주세요 | 없으면 비워두세요">
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="submit-btn modal-bottom-btn">회원가입</button>
+                        <button type="button" class="cancel-btn modal-bottom-btn" data-dismiss="modal">취소</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- todo : 마이페이지 모달 -->
+    <div class="modal fade" id="mypageModal" tabindex="-1" aria-labelledby="mypageModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form action="">
+                    <div class="modal-header">
+                        <i class="xi-close" data-dismiss="modal"></i>
+                        <div class="modal-logo">
+                            <img src="./assets/img/logo.png" alt="마카오 로고">
+                        </div>
+                    </div>
+
+                    <div class="modal-body ">
+                        <div class="inner-body">
+                            <div class="user-input-form">
+                                <div class="group-box flex-group-box">
+                                    <!-- todo : 중요항목일 경우 클래스 required 추가 -->
+                                    <div class="registe-left">
+                                        <span class="registe-category ">아이디</span>
+                                    </div>
+                                    
+                                    <input type="text" class="dark-input registe-input" disabled placeholder="아이디">
+                                </div>
+
+                                <div class="group-box flex-group-box">
+                                    <!-- todo : 중요항목일 경우 클래스 required 추가 -->
+                                    <div class="registe-left">
+                                        <span class="registe-category ">비빌번호 변경</span>
+                                    </div>
+                                    
+                                    <input type="text" class="dark-input registe-input" placeholder="변경하실 비밀번호를 입력해주세요">
+                                </div>
+
+                                <div class="group-box flex-group-box">
+                                    <!-- todo : 중요항목일 경우 클래스 required 추가 -->
+                                    <div class="registe-left">
+                                        <span class="registe-category">연락처</span>
+                                    </div>
+                                    
+                                    <input type="text" class="dark-input registe-input" placeholder="0100000****">
+                                </div>
+
+                                <div class="group-box flex-group-box">
+                                    <!-- todo : 중요항목일 경우 클래스 required 추가 -->
+                                    <div class="registe-left">
+                                        <span class="registe-category">예금주</span>
+                                    </div>
+                                    
+                                    <input type="text" class="dark-input registe-input" placeholder="마카오">
+                                </div>
+
+                              
+
+                                <div class="group-box flex-group-box">
+                                    <!-- todo : 중요항목일 경우 클래스 required 추가 -->
+                                    <div class="registe-left">
+                                        <span class="registe-category">출금계좌</span>
+                                    </div>
+                                    
+                                    <input type="text" class="dark-input registe-input" placeholder="은행명 03800****">
+                                </div>
+
+                               
+                            
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="submit-btn modal-bottom-btn">정보수정</button>
+                        <button type="button" class="cancel-btn modal-bottom-btn" data-dismiss="modal">취소</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- todo : 라이브 카지노 -->
+    <div class="modal fade" id="liveModal" tabindex="-1" aria-labelledby="liveModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form action="">
+                    <div class="modal-header">
+                        <i class="xi-close" data-dismiss="modal"></i>
+                        <div class="modal-logo">
+                            <img src="./assets/img/logo.png" alt="마카오 로고">
+                        </div>
+                    </div>
+
+                    <div class="modal-body">
+                       
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="submit-btn modal-bottom-btn">확인</button>
+                        <button type="button" class="cancel-btn modal-bottom-btn" data-dismiss="modal">취소</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+    </div>
+
+    <!-- todo : 슬롯게임 -->
+    <div class="modal fade" id="game" tabindex="-1" aria-labelledby="game" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form action="">
+                    <div class="modal-header">
+                        <i class="xi-close" data-dismiss="modal"></i>
+                        <div class="modal-logo">
+                            <img src="./assets/img/logo.png" alt="마카오 로고">
+                        </div>
+                    </div>
+
+                    <div class="modal-body">
+                       
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="submit-btn modal-bottom-btn">확인</button>
+                        <button type="button" class="cancel-btn modal-bottom-btn" data-dismiss="modal">취소</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+    </div>
+
+    <!-- todo : 입금신청 -->
+    <div class="modal fade" id="import" tabindex="-1" aria-labelledby="import" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form action="">
+                    <div class="modal-header">
+                        <i class="xi-close" data-dismiss="modal"></i>
+                        <div class="modal-logo">
+                            <img src="./assets/img/logo.png" alt="마카오 로고">
+                        </div>
+                    </div>
+
+                    <div class="modal-body">
+                       
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="submit-btn modal-bottom-btn">확인</button>
+                        <button type="button" class="cancel-btn modal-bottom-btn" data-dismiss="modal">취소</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- todo : 출금 신청 -->
+    <div class="modal fade" id="export" tabindex="-1" aria-labelledby="export" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form action="">
+                    <div class="modal-header">
+                        <i class="xi-close" data-dismiss="modal"></i>
+                        <div class="modal-logo">
+                            <img src="./assets/img/logo.png" alt="마카오 로고">
+                        </div>
+                    </div>
+
+                    <div class="modal-body">
+                       
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="submit-btn modal-bottom-btn">확인</button>
+                        <button type="button" class="cancel-btn modal-bottom-btn" data-dismiss="modal">취소</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+    </div>
+
+    <!-- todo : 공지사항 -->
+    <div class="modal fade" id="notice" tabindex="-1" aria-labelledby="notice" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form action="">
+                    <div class="modal-header">
+                        <i class="xi-close" data-dismiss="modal"></i>
+                        <div class="modal-logo">
+                            <img src="./assets/img/logo.png" alt="마카오 로고">
+                        </div>
+                    </div>
+
+                    <div class="modal-body">
+                       
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="submit-btn modal-bottom-btn">확인</button>
+                        <button type="button" class="cancel-btn modal-bottom-btn" data-dismiss="modal">취소</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+    </div>
+
+
+    <!-- todo : 라이브 카지노 시작하기 -->
+    <div class="modal fade" id="start_live" tabindex="-1" aria-labelledby="start_live" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form action="">
+                    <div class="modal-header">
+                        <i class="xi-close" data-dismiss="modal"></i>
+                        <div class="modal-logo">
+                            <img src="./assets/img/logo.png" alt="마카오 로고">
+                        </div>
+                    </div>
+
+                    <div class="modal-body">
+                       
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="submit-btn modal-bottom-btn">확인</button>
+                        <button type="button" class="cancel-btn modal-bottom-btn" data-dismiss="modal">취소</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+    </div>
+
+    <!-- todo : 호텔 카지노 시작하기 -->
+    <div class="modal fade" id="start_hotel" tabindex="-1" aria-labelledby="start_hotel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form action="">
+                    <div class="modal-header">
+                        <i class="xi-close" data-dismiss="modal"></i>
+                        <div class="modal-logo">
+                            <img src="./assets/img/logo.png" alt="마카오 로고">
+                        </div>
+                    </div>
+
+                    <div class="modal-body">
+                       
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="submit-btn modal-bottom-btn">확인</button>
+                        <button type="button" class="cancel-btn modal-bottom-btn" data-dismiss="modal">취소</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+    </div>
+
+    <!-- todo :게임  시작하기 -->
+    <div class="modal fade" id="start_game" tabindex="-1" aria-labelledby="start_game" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form action="">
+                    <div class="modal-header">
+                        <i class="xi-close" data-dismiss="modal"></i>
+                        <div class="modal-logo">
+                            <img src="./assets/img/logo.png" alt="마카오 로고">
+                        </div>
+                    </div>
+
+                    <div class="modal-body">
+                       
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="submit-btn modal-bottom-btn">확인</button>
+                        <button type="button" class="cancel-btn modal-bottom-btn" data-dismiss="modal">취소</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+    </div>
+
+    <!-- todo : 중간 배너 모달 -->
+    <div class="modal fade" id="middle_modal" tabindex="-1" aria-labelledby="middle_modal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form action="">
+                    <div class="modal-header">
+                        <i class="xi-close" data-dismiss="modal"></i>
+                        <div class="modal-logo">
+                            <img src="./assets/img/logo.png" alt="마카오 로고">
+                        </div>
+                    </div>
+
+                    <div class="modal-body">
+                       
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="submit-btn modal-bottom-btn">확인</button>
+                        <button type="button" class="cancel-btn modal-bottom-btn" data-dismiss="modal">취소</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+    </div>
+
+    <!-- todo : 쿠폰 모달 -->
+    <div class="modal fade" id="coupon_modal" tabindex="-1" aria-labelledby="coupon_modal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form action="">
+                    <div class="modal-header">
+                        <i class="xi-close" data-dismiss="modal"></i>
+                        <div class="modal-logo">
+                            <img src="./assets/img/logo.png" alt="마카오 로고">
+                        </div>
+                    </div>
+
+                    <div class="modal-body">
+                       
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="submit-btn modal-bottom-btn">확인</button>
+                        <button type="button" class="cancel-btn modal-bottom-btn" data-dismiss="modal">취소</button>
+                    </div>
+                </form>
+          </div>
+        </div>
+    </div>
+
+    <script>
+        var swiper = new Swiper(".visual-banner-slide", {
+            slidesPerView: 1,
+            /* autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            }, */
+            loop : true,
+            autoHeight: true,
+            pagination: {
+                el: ".swiper-pagination.main-visual-paging",
+                clickable: true,
+            },
+        });
+
+
+        $(function(){
+            $('.mobile-header .xi-bars').click(function(){
+                $('.makao-nav').addClass('open');
+                $('.nav-inner-wrap').animate({
+                    'left': '0' 
+                },200);
+            });
+ 
+            $('.makao-nav').click(function(){
+                $('.makao-nav').removeClass('open');
+                $('.nav-inner-wrap').animate({
+                    'left': '-100%' 
+                },200);
+
+                
+                
+            });
+
+            $('.nav-menu-list').click(function(e){
+                /* e.stopPropagation(); */
+            });
+
+            $('.nav-menu-link').click(function(e){
+                e.preventDefault();
+                console.log('test');
+            });
+        });
+      </script>
+</body>
+</html>
