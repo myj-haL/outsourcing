@@ -1,0 +1,32 @@
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Sass/SCSS cache
+.sass-cache/
+
+# Dependency directories (in case of build tools like npm or yarn)
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.cache
+*.bak
+*.orig
+
+# Generated files
+*.min.css
+*.min.js
