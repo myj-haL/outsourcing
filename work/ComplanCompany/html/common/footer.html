@@ -44,3 +44,24 @@
     <a class="policy" href="#" target="_self">개인정보처리방침</a>
   </div>
 </div>
+
+<script>
+  var currentPath = window.location.pathname.split('/').filter(Boolean).pop();
+  const editUrl = (currentPath === 'contact' || currentPath === 'recruit' || currentPath === 'about' || currentPath === 'serviceIntroduce')  ? "../../../" : "../../"; // 마지막 값 추출
+
+  $(".footer-container img").each(function() {
+    var imgSrc = $(this).attr("src"); // img 태그의 src 경로
+    if (imgSrc && imgSrc.indexOf('../../') === 0) {
+      var newSrc = imgSrc.replace(/^(\.\.\/)+/, editUrl);
+      $(this).attr("src", newSrc);
+    }
+  });
+
+  $(".footer-container a").each(function() {
+    var hrefSrc = $(this).attr("href"); // img 태그의 src 경로
+    if (hrefSrc && hrefSrc.indexOf('../../') === 0) {
+      var newSrc = hrefSrc.replace(/^(\.\.\/)+/, editUrl);
+      $(this).attr("href", newSrc);
+    }
+  });
+</script>
