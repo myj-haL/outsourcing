@@ -1,0 +1,133 @@
+<div class="benefits-container">
+  <ul class="benefits-list">
+    <li data-tab="bTab1" class="active">업무</li>
+    <li data-tab="bTab2">생활</li>
+    <li data-tab="bTab3">여가</li>
+    <li data-tab="bTab4">기타</li>
+  </ul>
+
+  <div class="benefits-contents" data-aos="fade-up" data-aos-duration="1500">
+    <div id="bTab1" class="bene-tab-box work active">
+      <h3 class="category">업무</h3>
+      <div class="items">
+        <div class="item">
+          <p class="icon">🏢</p>
+          <span>근무 환경</span>
+          <p class="explain">쾌적하고 효율적인 업무가 가능하도록 최적의 근무 환경을 제공합니다.</p>
+        </div>
+        <div class="item">
+          <p class="icon">🍽️</p>
+          <span>점심 식대</span>
+          <p class="explain">1인 12,000원 지원합니다.</p>
+        </div>
+        <div class="item">
+          <p class="icon">🚃</p>
+          <span>편리한 교통</span>
+          <p class="explain">뚝섬역 2호선 1분거리에 위치하여 출퇴근이 편리합니다.</p>
+        </div>
+        <div class="item">
+          <p class="icon">🍪</p>
+          <span>간식 제공</span>
+          <p class="explain">다양한 간식을 제공합니다.</p>
+        </div>
+        <div class="item">
+          <p class="icon">👕</p>
+          <span>자율 복장</span>
+          <p class="explain">업무에 적합한 편안한 복장을 자유롭게 선택할 수 있습니다.</p>
+        </div>
+        <div class="item">
+          <p class="icon">🌕</p>
+          <span>야근 식대</span>
+          <p class="explain">야근식 여유로운 야근식대 지원하여 직원들의 피로를 덜어드립니다.</p>
+        </div>
+        <div class="item">
+          <p class="icon">🚕</p>
+          <span>택시비 지원</span>
+          <p class="explain">10시이후 퇴근시 택시비를 지원합니다.</p>
+        </div>
+        <div class="item">
+          <p class="icon">🖥️🖥️</p>
+          <span>듀얼모니터 제공</span>
+          <p class="explain">업무 효율을 높일 수 있도록 듀얼 모니터를 제공합니다.</p>
+        </div>
+      </div>
+    </div>
+    <div id="bTab2" class="bene-tab-box life">
+      <h3 class="category">생활</h3>
+      <div class="items">
+        <div class="item">
+          <p class="icon">🔋</p>
+          <span>연차/휴가제도 운영</span>
+          <p class="explain">자유로운 연차/반차/반반차 사용가능합니다.</p>
+        </div>
+        <div class="item">
+          <p class="icon">🎂</p>
+          <span>생일 조기 퇴근</span>
+          <p class="explain">본인, 배우자, 자녀, 양가부모님 생일자 2시간 조기퇴근 합니다.</p>
+        </div>
+        <div class="item">
+          <p class="icon">🛋️</p>
+          <span>다양한 휴가 제공</span>
+          <p class="explain">보건 휴가, 출산전후휴가, 육아휴직, 배우자출산휴가, 가족돌봄휴직, 난임휴가, 육아기단축근무.</p>
+        </div>
+      </div>
+    </div>
+    <div id="bTab3" class="bene-tab-box refresh">
+      <h3 class="category">여가</h3>
+      <div class="items">
+        <div class="item">
+          <p class="icon">⛱️</p>
+          <span>휴가 제공</span>
+          <p class="explain">하계 휴가 유급 3일 제공하여 충분한 휴식을 보장합니다.</p>
+        </div>
+      </div>
+    </div>
+    <div id="bTab4" class="bene-tab-box etc">
+      <h3 class="category">기타</h3>
+      <div class="items">
+        <div class="item">
+          <p class="icon">🏅</p>
+          <span>우수사원 선정</span>
+          <p class="explain">뛰어난 성과를 낸 직원에게 우수사원 포상을 제공합니다.</p>
+        </div>
+        <div class="item">
+          <p class="icon">💰</p>
+          <span>보너스 제공</span>
+          <p class="explain">성과에 따른 성과급/ 인센티브를 지급합니다.</p>
+        </div>
+        <div class="item">
+          <p class="icon">❤️</p>
+          <span>보험/퇴직금</span>
+          <p class="explain">4대보험과 퇴직금을 제공합니다.</p>
+        </div>
+        <div class="item">
+          <p class="icon">🎉</p>
+          <span>경조사 지원</span>
+          <p class="explain">직원들의 기쁨과 슬픔을 함께하며 경조사비, 경조휴가를 지원합니다.</p>
+        </div>
+        <div class="item">
+          <p class="icon">🎁</p>
+          <span>선물 증정</span>
+          <p class="explain">생일, 명절에 선물을 증정합니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  AOS.init({
+    once: true
+  });
+  
+  $(function(){
+    $('.benefits-list li').click(function(){
+      $('.benefits-list li').removeClass('active');
+      $(this).addClass('active');
+
+      var idx = $(this).attr('data-tab');
+      $(".bene-tab-box").removeClass('active');
+      $('#' + idx).addClass("active");
+    });
+  })
+</script>
