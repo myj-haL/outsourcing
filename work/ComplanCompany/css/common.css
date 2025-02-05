@@ -765,7 +765,7 @@ button {
   .lg-next,
   .lg-prev {
     padding: 0;
-    background-image: url(/assets/images/icons/icon-modal-img-arrow.svg);
+    background-image: url(../assets/images/icons/icon-modal-img-arrow.svg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

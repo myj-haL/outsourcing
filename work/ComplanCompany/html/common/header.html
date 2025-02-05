@@ -1,32 +1,32 @@
 <div class="header-container">
   <div class="logo">
-    <a href="/html/pages" target="_self">
-      <img src="/assets/images/logo.png" alt="Complan logo">
+    <a href="../../html/pages" target="_self">
+      <img src="../../assets/images/logo.png" alt="Complan logo">
     </a>
   </div>
   <nav class="menu">
     <ul class="pages">
-      <li><a href="/html/pages/serviceIntroduce">서비스소개</a></li>
+      <li><a href="../../html/pages/serviceIntroduce">서비스소개</a></li>
       <li><a href="#services" id="openModal">포트폴리오</a></li>
-      <li><a href="/html/pages/about">컴플랜이야기</a></li>
-      <li><a href="/html/pages/recruit">인재채용</a></li>
-      <li><a href="/html/pages/contact">고객문의</a></li>
+      <li><a href="../../html/pages/about">컴플랜이야기</a></li>
+      <li><a href="../../html/pages/recruit">인재채용</a></li>
+      <li><a href="../../html/pages/contact">고객문의</a></li>
     </ul>
     <ul class="special-menu">
       <li class="dropdown">
         <button class="btn-dropdown">
           <span>패밀리사이트</span>
-          <img src="/assets/images/icons/dropdown.png" alt="">
+          <img src="../../assets/images/icons/dropdown.png" alt="">
         </button>
         <div class="dropdown-content">
           <div class="dropdown-content-wrapper">
             <a href="#">
               <span>플랜뷰</span>
-              <img src="/assets/images/icons/link.png" alt="">
+              <img src="../../assets/images/icons/link.png" alt="">
             </a>
             <a href="#">
               <span>케이업스튜디오</span>
-              <img src="/assets/images/icons/link.png" alt="">
+              <img src="../../assets/images/icons/link.png" alt="">
             </a>
           </div>
         </div>
@@ -34,11 +34,11 @@
       <li class="introduce"><a href="#contact">회사소개서</a></li>
     </ul>
     <button type="button" class="btn-close-mobile-menu">
-      <img src="/assets/images/icons/close.png" alt="메뉴 닫기" />
+      <img src="../../assets/images/icons/close.png" alt="메뉴 닫기" />
     </button>
   </nav>
   <button type="button" class="btn-mobile-menu">
-    <img src="/assets/images/icons/hamburger.png" alt="메뉴 열기" class="mobile-menu" />
+    <img src="../../assets/images/icons/hamburger.png" alt="메뉴 열기" class="mobile-menu" />
   </button>
 </div>
 
@@ -57,7 +57,7 @@
 
     $("#openModal").click(function(){
       event.preventDefault();
-      $("#modalContainer").load('/html/common/holdModal.html', function() {
+      $("#modalContainer").load('../../html/common/holdModal.html', function() {
         $("#closeBtn").click(function(){
           $("#modalContainer").empty();
         });

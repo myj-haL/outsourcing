@@ -39,13 +39,13 @@ function initMobileMenuButton() {
 }
 
 function loadLayoutComponents() {
-  $('#header').load('/html/common/header.html', function() {
+  $('#header').load('../../html/common/header.html', function() {
     activateMenu();
 
     initMobileMenuButton();
   });
 
-  $('#footer').load('/html/common/footer.html');
+  $('#footer').load('../../html/common/footer.html');
 }
 
 $(document).ready(function () {

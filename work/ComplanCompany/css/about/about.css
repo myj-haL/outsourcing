@@ -114,7 +114,7 @@
 
   .swiper-button-next,
   .swiper-button-prev {
-    background-image: url(/assets/images/icons/icon-swiper-arrow.svg);
+    background-image: url(../../assets/images/icons/icon-swiper-arrow.svg);
     width: 35px;
     height: 35px;
     background-repeat: no-repeat;
