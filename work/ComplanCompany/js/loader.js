@@ -39,13 +39,16 @@ function initMobileMenuButton() {
 }
 
 function loadLayoutComponents() {
-  $('#header').load('../../html/common/header.html', function() {
+  const currentPath = window.location.pathname.split('/').filter(Boolean).pop();
+  const editUrl = (currentPath === 'contact' || currentPath === 'recruit' || currentPath === 'about' || currentPath === 'serviceIntroduce')  ? "../../../" : "../../";
+
+  $('#header').load(editUrl + 'html/common/header.html', function() {
     activateMenu();
 
     initMobileMenuButton();
   });
 
-  $('#footer').load('../../html/common/footer.html');
+  $('#footer').load(editUrl + 'html/common/footer.html');
 }
 
 $(document).ready(function () {

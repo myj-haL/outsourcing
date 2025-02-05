@@ -46,7 +46,25 @@
 
 <script>
   $(function(){
-    var currentPath = window.location.pathname.split('/').filter(Boolean).pop(); // 마지막 값 추출
+    var currentPath = window.location.pathname.split('/').filter(Boolean).pop();
+    const editUrl = (currentPath === 'contact' || currentPath === 'recruit' || currentPath === 'about' || currentPath === 'serviceIntroduce')  ? "../../../" : "../../"; // 마지막 값 추출
+
+    $(".header-container img").each(function() {
+      var imgSrc = $(this).attr("src"); // img 태그의 src 경로
+      if (imgSrc && imgSrc.indexOf('../../') === 0) {
+        var newSrc = imgSrc.replace(/^(\.\.\/)+/, editUrl);
+        $(this).attr("src", newSrc);
+      }
+    });
+
+    $(".header-container a").each(function() {
+      var hrefSrc = $(this).attr("href"); // img 태그의 src 경로
+      if (hrefSrc && hrefSrc.indexOf('../../') === 0) {
+        var newSrc = hrefSrc.replace(/^(\.\.\/)+/, editUrl);
+        $(this).attr("href", newSrc);
+      }
+    });
+
     $(".pages li a").each(function() {
         var hrefPath = $(this).attr("href").split('/').filter(Boolean).pop(); // a 태그의 href 마지막 경로
 
@@ -57,7 +75,7 @@
 
     $("#openModal").click(function(){
       event.preventDefault();
-      $("#modalContainer").load('../../html/common/holdModal.html', function() {
+      $("#modalContainer").load(editUrl + 'html/common/holdModal.html', function() {
         $("#closeBtn").click(function(){
           $("#modalContainer").empty();
         });
