@@ -46,12 +46,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/moonyujenong/outsourcing.git"
+    "url": "git+https://github.com/myj-hal/outsourcing.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/moonyujenong/outsourcing/issues"
+    "url": "https://github.com/myj-hal/outsourcing/issues"
   },
-  "homepage": "https://github.com/moonyujenong/outsourcing#readme"
+  "homepage": "https://github.com/myj-hal/outsourcing#readme"
 }
