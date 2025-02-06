@@ -33,14 +33,14 @@
         </h3>
 
         <div class="bottom-text">
-          <div class="rolling-box swiper">
-            <div class="rolling swiper-wrapper">
-              <p class="swiper-slide">브랜드마케터</p>
-              <p class="swiper-slide">상품기획자</p>
-              <p class="swiper-slide">웹디자이너</p>
-              <p class="swiper-slide">영업관리자</p>
-              <p class="swiper-slide">웹개발자</p>
-            </div>
+          <div class="rolling-box">
+            <ul class="rolling">
+              <li class="">브랜드마케터</li>
+              <li class="">상품기획자</li>
+              <li class="">웹디자이너</li>
+              <li class="">영업관리자</li>
+              <li class="">웹개발자</li>
+            </ul>
           </div>
           <b>지금 바로 지원하세요.</b>
         </div>
@@ -114,23 +114,38 @@
     once: true
   });
 
-  var swiper = new Swiper(".rolling-box", {
-    slidesPerView: "auto",
-    // loopedSlides: 5,
-    spaceBetween : 20,
-    centerSlides :true,
-    loop : true,
-    freeMode : true,
-    observe : true,
-    observeParent : true,
-    speed :7000,
-    allowTouchMove : false,
-    autoplay : {
-      delay: 0,
-      stopOnLastSlide: false,
-      disableOnInteraction: true,
-    }
-  });
+  // var swiper = new Swiper(".rolling-box", {
+  //   slidesPerView: "auto",
+  //   // loopedSlides: 5,
+  //   spaceBetween : 20,
+  //   centerSlides :true,
+  //   loop : true,
+  //   freeMode : true,
+  //   observe : true,
+  //   observeParent : true,
+  //   speed :7000,
+  //   allowTouchMove : false,
+  //   autoplay : {
+  //     delay: 0,
+  //     stopOnLastSlide: false,
+  //     disableOnInteraction: true,
+  //   }
+  // });
+
+  function RollingList(listName,listIndex) {
+    let listHeight = 0;
+    setInterval(function(){
+        listHeight = $(listName).find("li").outerHeight();
+        console.log(1111, listHeight)
+        $(listName).css("height", listHeight*listIndex);
+        $(listName).find("ul").delay(500).animate({"top":-listHeight},1000,function(){
+            $(listName).find("ul").append($(listName).find("li").first().clone());
+            $(listName).find("ul").css("top","0px");
+            $(listName).find("li").first().remove();
+        });
+    },1500);
+  }
+  RollingList($(".rolling-box"),5);
 
   $(function(){
     $('.menu-list li').click(function(){

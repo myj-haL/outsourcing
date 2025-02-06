@@ -316,7 +316,7 @@
       font-weight: 700;
       line-height: 24px;
       color: #fff;
-      border-radius: 20px;
+      border-radius: 8px;
     }
   }
 
@@ -472,6 +472,7 @@
         font-size: 32px;
         line-height: 48px;
         display: none;
+        border-radius: 20px;
       }
     }
   }

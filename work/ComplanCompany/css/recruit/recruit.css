@@ -28,25 +28,30 @@
     border: 2px solid  #206CFF;
     box-sizing: border-box;
     width: 160px;
-    height: 49px;
+    height: 49px !important;
     background-color: #fff;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
+    overflow: hidden;
 
-    .swiper-wrapper{
-        transition-timing-function: linear !important;  /* 추가하기 */
-    }
+    /* .swiper-wrapper{
+        transition-timing-function: linear !important;  
+    } */
     
     .rolling {
       position: relative;
       
-      p {
+      li {
+        width: 100%;
         margin: 0;
-        width: fit-content !important;
+        padding: 10px 20px;
+        /* width: fit-content !important; */
         white-space: nowrap;
         font-size: 24px;
         font-weight: 700;
         line-height: normal;
         color: #206CFF;
+        box-sizing: border-box;
+        text-align: center;
       }
     }
   }
@@ -387,11 +392,11 @@
       border-radius: 10px;
       border-width: 3px;
       width: 257px;
-      height: 75px;
-      padding: 10px 20px;
+      height: 75px !important;
+      /* padding: 10px 20px; */
 
       .rolling {
-        p {
+        li {
           font-size: 40px;
           line-height: 53px;
         }

@@ -1,4 +1,5 @@
 .solution-container {
+  overflow: hidden;
   .inner {
     padding: 50px 20px 0;
     box-sizing: border-box;

@@ -288,7 +288,7 @@ $(document).ready(function () {
     scrollTrigger: {
       trigger: '#cultures',
       start: 'top top',
-      end: '+=600%',
+      end: '+=200%',
       scrub: true,
       pin: true,
     },
