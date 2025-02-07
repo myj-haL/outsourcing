@@ -29,4 +29,4 @@ build/
 
 # Generated files
 *.min.css
-*.min.js
+# *.min.js
