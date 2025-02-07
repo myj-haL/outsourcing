@@ -75,7 +75,7 @@ $(document).ready(function () {
       inquiry: $('#message').val(),
     };
 
-    emailjs.send('service_eeht314', 'template_gy6qhb8', emailTemplate)
+    emailjs.send('service_9g6wt4d', 'template_gy6qhb8', emailTemplate)
       .then(function() {
         contactForm.trigger('reset');
         alert('문의 내용이 성공적으로 전송되었습니다.');
