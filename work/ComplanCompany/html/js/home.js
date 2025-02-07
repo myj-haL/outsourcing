@@ -377,9 +377,9 @@ $(document).ready(function () {
   });
 
   $('#stories .more').hover(function () {
-    $('#stories .more img').attr('src', '../../assets/images/icons/arrow-upward-active.png');
+    $('#stories .more img').attr('src', './assets/images/icons/arrow-upward-active.png');
   }, function () {
-    $('#stories .more img').attr('src', '../../assets/images/icons/arrow-upward-grey.png');
+    $('#stories .more img').attr('src', './assets/images/icons/arrow-upward-grey.png');
   });
 
   gsap.from('#contact .contact-form', {
@@ -399,9 +399,9 @@ $(document).ready(function () {
     const isChecked = $(this).is(':checked');
 
     if (isChecked) {
-      $('.checker').attr('src', '../../assets/images/icons/checked.png');
+      $('.checker').attr('src', './assets/images/icons/checked.png');
     } else {
-      $('.checker').attr('src', '../../assets/images/icons/unchecked.png');
+      $('.checker').attr('src', './assets/images/icons/unchecked.png');
     }
   });
 });

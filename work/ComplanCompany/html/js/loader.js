@@ -40,15 +40,15 @@ function initMobileMenuButton() {
 
 function loadLayoutComponents() {
   const currentPath = window.location.pathname.split('/').filter(Boolean).pop();
-  const editUrl = (currentPath === 'contact' || currentPath === 'recruit' || currentPath === 'about' || currentPath === 'serviceIntroduce')  ? "../../../" : "../../";
+  const editUrl = (currentPath === 'contact' || currentPath === 'recruit' || currentPath === 'about' || currentPath === 'serviceIntroduce')  ? "../" : "./";
 
-  $('#header').load(editUrl + 'html/common/header.html', function() {
+  $('#header').load(editUrl + 'common/header.html', function() {
     activateMenu();
 
     initMobileMenuButton();
   });
 
-  $('#footer').load(editUrl + 'html/common/footer.html');
+  $('#footer').load(editUrl + 'common/footer.html');
 }
 
 $(document).ready(function () {
