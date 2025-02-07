@@ -55,6 +55,13 @@ $(document).ready(function () {
 
     const keywordCheck = $('input[name="keyword"]:checked').val();
     const agreeCheck = $('#agree').is(':checked');
+    const phoneNumberCheck = $('#phone').val().trim(); // 입력값 가져오기
+    const phoneRegex = /^01[016789][0-9]{8}$/;
+
+    if (!phoneRegex.test(phoneNumberCheck)) {
+      alert('올바른 전화번호를 입력하세요.');
+      return false; // 유효성 검사 실패 시 폼 제출 중지
+  }
 
     if (!keywordCheck) {
         alert('문의 내용과 관련된 키워드를 선택해 주세요.');

@@ -40,12 +40,12 @@
           <div class="field-group">
             <div class="field">
               <label for="writer">작성자</label>
-              <input type="text" id="writer" name="writer" placeholder="이름">
+              <input type="text" id="writer" name="writer" placeholder="이름" required>
             </div>
             <div class="field">
               <label for="organization">소속</label>
               <input type="text" id="organization" name="organization"
-                     placeholder="회사명 및 소속명">
+                     placeholder="회사명 및 소속명" required>
             </div>
           </div>
           <div class="field-group">
@@ -56,14 +56,14 @@
             <div class="field">
               <label for="email">이메일</label>
               <input type="email" id="email" name="email" placeholder="example@complan.co.kr"
-                    >
+              required>
             </div>
           </div>
           <div class="inquiry-field-group">
             <label for="">문의내용과 관련된 키워드를 선택해 주세요.</label>
             <div class="keyword">
               <div class="radio-wrapper">
-                <input type="radio" id="keyword-it" name="keyword" value="IT 솔루션">
+                <input type="radio" id="keyword-it" name="keyword" value="IT 솔루션" checked>
                 <label for="keyword-it">IT 솔루션</label>
               </div>
               <div class="radio-wrapper">
@@ -86,7 +86,7 @@
             </div>
             <div class="field">
               <label for="message" style="display: none">문의 내용</label>
-              <textarea id="message" name="message" placeholder="문의 내용을 입력하세요"></textarea>
+              <textarea id="message" name="message" placeholder="문의 내용을 입력하세요" required></textarea>
             </div>
             <div class="check-field">
               <input type="checkbox" id="agree" name="agree">
@@ -173,6 +173,13 @@
 
     const keywordCheck = $('input[name="keyword"]:checked').val();
     const agreeCheck = $('#agree').is(':checked');
+    const phoneNumberCheck = $('#phone').val().trim(); // 입력값 가져오기
+    const phoneRegex = /^01[016789][0-9]{8}$/;
+
+    if (!phoneRegex.test(phoneNumberCheck)) {
+      alert('올바른 전화번호를 입력하세요.');
+      return false; // 유효성 검사 실패 시 폼 제출 중지
+    }
 
     if (!keywordCheck) {
         alert('문의 내용과 관련된 키워드를 선택해 주세요.');
