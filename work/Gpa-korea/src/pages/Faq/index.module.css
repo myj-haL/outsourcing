@@ -1,0 +1,158 @@
+.container {
+  background-color: #F9F9F9;
+  height: 100%;
+  padding: 50px 16px 70px;
+
+  .inner {
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: normal;
+    color: #000;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .faq_wrap {
+    display: grid;
+    gap: 25px;
+  }
+
+  .faq_box {
+    border-radius: 10px;
+    background-color: #fff;
+    overflow: hidden;
+    height: fit-content;
+  }
+
+  .faq_title {
+    background-color: #D8F2F1;
+    color: #000;
+    text-align: center;
+    padding: 13px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .accordion_list {
+    li {
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #eee;
+      }
+      button {
+        width: 100%;
+        position: relative;
+        padding: 20px 40px 20px 15px;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: normal;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        > img {
+          width: 24px;
+        }
+
+
+        p img {
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: all .2s ease-in-out;
+
+          &.active {
+            transform: translateY(-50%) rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+
+  .open {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+  }
+  
+  .open_inner {
+    border-top: 1px solid #eee;
+    padding: 20px 15px;
+    gap: 15px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    align-items: flex-start;
+    white-space: pre-wrap;
+    display: flex;
+  }
+
+  .paging_box {
+    border-top: 1px solid #eee;
+    padding: 30px 0;
+  }
+
+  @media screen and (min-width:1024px) {
+    padding: 60px 16px 120px;
+
+    .title {
+      margin-bottom: 60px;
+      font-size: 32px;
+    }
+
+    .faq_wrap {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .faq_box {
+      border-radius: 20px;
+    }
+
+    .faq_title {
+      padding: 26px;
+      font-size: 24px;
+    }
+
+    .accordion_list {
+      li {
+        button {
+          padding: 26px 55px 26px 30px;
+          font-size: 18px;
+          gap: 20px;
+
+          > img {
+            width: 28px;
+          }
+
+          p img {
+            right: 30px;
+          }
+        }
+      }
+    }
+
+    .open {
+      font-size: 15px;
+      gap: 21px;
+    }
+    
+    .open_inner {
+      padding: 27px 30px 30px;
+    }
+
+    .paging_box {
+      padding: 50px 0;
+    }
+  }
+}

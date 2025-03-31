@@ -1,0 +1,69 @@
+.mobile_h {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 50;
+  padding: 15px 30px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    display: block;
+    height: 25px;
+  }
+
+  .lnb_btn {
+    img {
+      width: 26px;
+    }
+  }
+
+  .lnb {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    right: -100%;
+    z-index: 51;
+    background-color: #fff;
+    padding: 16px;
+    box-sizing: border-box;
+    transition: all .4s cubic-bezier(0.57, 0.01, 0.1, 0.99);
+
+    &.open {
+      right: 0;
+      transition: all .4s cubic-bezier(0.57, 0.01, 0.1, 0.99);
+    }
+
+    > img {
+      height: 25px;
+    }
+  }
+
+  .close_btn {
+    position: absolute;
+    top: 15px;
+    right: 16px;
+
+    img {
+      width: 25px;
+    }
+  }
+
+  .menu {
+    margin-top: 45px;
+    display: grid;
+    gap: 20px;
+  }
+
+  .links {
+    font-size: 23px;
+    font-weight: 500;
+    line-height: normal;
+    color: #000;
+  }
+}

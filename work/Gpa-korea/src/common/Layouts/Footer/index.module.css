@@ -1,0 +1,86 @@
+.footer {
+  padding: 50px 16px 40px;
+  background-color: #fff;
+  z-index: 10;
+  box-sizing: border-box;
+  position: relative;
+
+  > img {
+    height: 30px;
+  }
+
+  .registe_btn {
+    border-radius: 100px;
+    margin-top: 20px;
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 28px; 
+    border: 1px solid #1D1B20;
+    gap: 20px;
+
+    img {
+      width: 16px;
+    }
+  }
+
+  .company_info {
+    margin-top: 60px;
+    display: grid;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  .category,
+  .context {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 41px; 
+    color: #000;
+  }
+
+  .category {
+    color: #AAAAAA;
+  }
+
+  @media screen and (min-width:1024px) {
+    padding: 65px 60px;
+
+    > img {
+      height: 60px;
+    }
+
+    .registe_btn {
+      position: absolute;
+      right: 60px;
+      top: 65px;
+      margin: 0;
+      padding: 8px 30px;
+      font-size: 16px;
+      line-height: 41px;
+      gap: 30px;
+
+      img {
+        width: 24px;
+      }
+    }
+
+    .company_info {
+      margin-top: 67px;
+      display: flex;
+      gap: 0 100px;
+      flex-wrap: wrap;
+
+      li:first-child {
+        flex-basis: 100%;
+      }
+    }
+  }
+}

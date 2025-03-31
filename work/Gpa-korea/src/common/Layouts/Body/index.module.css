@@ -1,0 +1,9 @@
+.body {
+  flex: 1;
+  padding-top: 55px;
+  background-color: #fff;
+
+  @media screen and (min-width:1024px) {
+    padding-top: 104px;
+  }
+}
