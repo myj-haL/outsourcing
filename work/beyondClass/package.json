@@ -1,0 +1,14 @@
+{
+  "name": "beyondclass",
+  "version": "1.0.0",
+  "description": "비욘드 클래스 (Beyond Class)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "node-sass": "node-sass",
+    "sass": "node-sass -w assets/src/scss -o assets/css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -2,9 +2,9 @@
   .mobile_head {
     position: relative;
     width: 100%;
-    border-bottom: 1px solid #262626;
-    background-color: #101010;
-    padding: 14px 10px;
+    background-color: #fff;
+    padding: 14px 16px ; 
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
   }
 
   .logo {
@@ -15,8 +15,8 @@
     margin: 0;
 
     a > img {
-      width: 73px;
-      height: 22px;
+      width: auto;
+      height: 28px;
       object-fit: cover;
       display: block;
     }
@@ -24,8 +24,8 @@
 
   .menu_btn {
     display: block;
-    width: 20px;
-    height: 12px;
+    width: 25px;
+    height: 24px;
 
     > img {
       object-fit: cover;
@@ -36,31 +36,63 @@
 
   .menu {
     position: absolute;
-    top: 50px;
+    top: 0px;
     width: 100vw;
     left: 50%;
     transform: translateX(-50vw);
-    background-color: #262626;
-    padding: 15px 0 17px;
+    background-color: #fff;
+    padding:14px 16px;
     display: none;
     z-index: 10;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
 
     &.on {
       display: block;
     }
+
+    .close_btn {
+      position: absolute;
+      top: 9px;
+      right: 12px;
+      img {
+        width: 30px;
+        aspect-ratio: 1/1;
+        opacity: 0.8;
+      }
+      
+    }
+
   }
+
+.apply-btn {
+  width: 100%;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  background-color: #2463EB;
+  height: 44px;
+  text-align: center;
+  line-height: 44px;
+  margin-top: 15px;
+  img {
+    width: 20px;
+    margin-right: 5px;
+  }
+}
 
   .menu_list {
     width: 100%;
-    text-align: center;
     display: grid;
-    gap: 10px;
+    gap: 15px;
+    margin-top: 20px;
   }
 
   .link {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
-    color: #f5f5f7;
+    color: #374151;
     letter-spacing: -0.2px;
     display: block;
   }
@@ -77,15 +109,15 @@
     .pc_head {
       display: block;
       width: 100%;
-      border-bottom: 1px solid #262626;
-      background-color: #000;
+      background: #FFF;
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     }
 
     .inner {
       width: 100%;
-      max-width: 1024px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 15px 22px 13px;
+      padding: 10px 16px;
       display: flex;
       align-items: center;
       gap: 130px;
@@ -98,8 +130,25 @@
     .pc_menu {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 32px;
       flex: 1;
+    }
+  }
+
+  .link {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .apply-btn {
+    max-width: 165px;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    img {
+      width: 16px;
+      margin-right: 8px;
     }
   }
 }
