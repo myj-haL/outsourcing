@@ -98,6 +98,8 @@
     gap: 130px; }
   .theme-header .logo {
     width: fit-content; }
+    .theme-header .logo a > img {
+      height: 32px; }
   .theme-header .pc_menu {
     display: flex;
     align-items: center;
