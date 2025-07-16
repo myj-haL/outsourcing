@@ -63,7 +63,8 @@
   margin-top: 15px; }
   .theme-header .apply-btn img {
     width: 20px;
-    margin-right: 5px; }
+    margin-right: 5px;
+    vertical-align: middle; }
 
 .theme-header .menu_list {
   width: 100%;
@@ -81,7 +82,7 @@
 .theme-header .pc_head {
   display: none; }
 
-@media screen and (min-width: 830px) {
+@media screen and (min-width: 992px) {
   .theme-header .mobile_head {
     display: none; }
   .theme-header .pc_head {
@@ -106,20 +107,18 @@
     align-items: center;
     justify-content: center;
     gap: 32px;
-    flex: 1; } }
-
-.theme-header .link {
-  font-size: 16px;
-  font-weight: 400; }
-
-.theme-header .apply-btn {
-  max-width: 165px;
-  font-size: 16px;
-  font-weight: 400;
-  margin: 0; }
-  .theme-header .apply-btn img {
-    width: 16px;
-    margin-right: 8px; }
+    flex: 1; }
+  .theme-header .link {
+    font-size: 16px;
+    font-weight: 400; }
+  .theme-header .apply-btn {
+    max-width: 165px;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0; }
+    .theme-header .apply-btn img {
+      width: 16px;
+      margin-right: 8px; } }
 
 .theme-footer {
   width: 100%;
@@ -165,7 +164,7 @@
     color: #9CA3AF;
     border-top: 1px solid #1F2937;
     margin: 0; }
-  @media screen and (min-width: 830px) {
+  @media screen and (min-width: 992px) {
     .theme-footer .inner {
       padding: 64px 16px; }
     .theme-footer .top {

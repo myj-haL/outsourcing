@@ -27,3 +27,28 @@
     </p>
   </div>
 </footer>
+
+<script>
+  const pathSegments = window.location.pathname.split('/').filter(Boolean);
+  const currentPath = pathSegments.pop() || '';
+  const editUrl = (currentPath === 'about' || currentPath === 'apply') ? "../" : "./";
+
+  console.log('editUrl:', editUrl);
+
+  // 공통 함수로 경로 처리
+  function fixPaths(selector, attrName) {
+    $(selector).each(function () {
+      const original = $(this).attr(attrName);
+      if (original && (original.startsWith('./') || original.startsWith('../'))) {
+        // './' 또는 '../'를 제거하고 editUrl 붙이기
+        const cleanedPath = original.replace(/^(\.\/|(\.\.\/)+)/, '');
+        const newPath = editUrl + cleanedPath;
+        $(this).attr(attrName, newPath);
+      }
+    });
+  }
+
+  // 푸터 내부 img, a 처리
+  fixPaths(".theme-footer img", "src");
+  fixPaths(".theme-footer a", "href");
+</script>

@@ -79,6 +79,7 @@
   img {
     width: 20px;
     margin-right: 5px;
+    vertical-align: middle;
   }
 }
 
@@ -101,7 +102,7 @@
     display: none;
   }
 
-  @media screen and (min-width: 830px) {
+  @media screen and (min-width: 992px) {
     .mobile_head {
       display: none;
     }
@@ -140,21 +141,22 @@
       gap: 32px;
       flex: 1;
     }
-  }
-
-  .link {
-    font-size: 16px;
-    font-weight: 400;
-  }
-
-  .apply-btn {
-    max-width: 165px;
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0;
-    img {
-      width: 16px;
-      margin-right: 8px;
+    
+    .link {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  
+    .apply-btn {
+      max-width: 165px;
+      font-size: 16px;
+      font-weight: 400;
+      margin: 0;
+      img {
+        width: 16px;
+        margin-right: 8px;
+      }
     }
   }
+
 }
