@@ -1,7 +1,10 @@
 <header class="theme-header" id="ui_header">
+  <!-- mobile -->
   <div class="mobile_head">
     <h3 class="logo">
-      <a href="../" target="_self"><img alt="로고" src="./assets/img/sample-logo.svg" /></a>
+      <a href="../" target="_self"
+        ><img alt="로고" src="./assets/img/sample-logo.svg"
+      /></a>
 
       <button class="menu_btn" type="button">
         <img alt="햄버거 아이콘" src="./assets/img/icon-hamburger.svg" />
@@ -10,8 +13,10 @@
 
     <div class="menu">
       <h3 class="logo">
-        <a href="../" target="_self"><img alt="로고" src="./assets/img/sample-logo.svg" /></a>
-  
+        <a href="../" target="_self"
+          ><img alt="로고" class="logo_img" src="./assets/img/sample-logo.svg"
+        /></a>
+
         <button class="close_btn" type="button">
           <img alt="닫기 아이콘" src="./assets/img/icon-close.png" />
         </button>
@@ -25,18 +30,16 @@
           <a href="./apply/" class="link">강사 지원</a>
         </li>
       </ul>
-      <a href="#!" class="apply-btn">
-        <img src="./assets/img/icon-user-add.svg" alt="강사 지원 아이콘">
-        강사 지원하기
-      </a>
+      <a href="#!" class="apply-btn"> 강사 지원하기 </a>
     </div>
   </div>
 
+  <!-- pc -->
   <div class="pc_head">
     <div class="inner">
       <div class="logo">
         <a href="../" target="_self">
-          <img alt="로고" src="./assets/img/sample-logo.svg" />
+          <img alt="로고" class="logo_img" src="./assets/img/sample-logo.svg" />
         </a>
       </div>
 
@@ -47,31 +50,33 @@
         <li>
           <a href="./apply/" class="link">강사 지원</a>
         </li>
+        <li>
+          <a href="#!" class="apply-btn"> 강사 지원하기 </a>
+        </li>
       </ul>
-
-      <a href="#!" class="apply-btn">
-        <img src="./assets/img/icon-user-add.svg" alt="강사 지원 아이콘">
-        강사 지원하기
-      </a>
     </div>
   </div>
 </header>
 
 <script type="text/javascript">
   $(function () {
-    const pathSegments = window.location.pathname.split('/').filter(Boolean);
-    const currentPath = pathSegments.pop() || '';
-    const editUrl = (currentPath === 'about' || currentPath === 'apply') ? "../" : "./";
+    const pathSegments = window.location.pathname.split("/").filter(Boolean);
+    const currentPath = pathSegments.pop() || "";
+    const editUrl =
+      currentPath === "about" || currentPath === "apply" ? "../" : "./";
 
-    console.log('editUrl:', editUrl);
+    console.log("editUrl:", editUrl);
 
     // 공통 함수로 경로 처리
     function fixPaths(selector, attrName) {
       $(selector).each(function () {
         const original = $(this).attr(attrName);
-        if (original && (original.startsWith('./') || original.startsWith('../'))) {
+        if (
+          original &&
+          (original.startsWith("./") || original.startsWith("../"))
+        ) {
           // './' 또는 '../'를 제거하고 editUrl 붙이기
-          const cleanedPath = original.replace(/^(\.\/|(\.\.\/)+)/, '');
+          const cleanedPath = original.replace(/^(\.\/|(\.\.\/)+)/, "");
           const newPath = editUrl + cleanedPath;
           $(this).attr(attrName, newPath);
         }
@@ -86,7 +91,7 @@
       $(".menu").toggleClass("on");
     });
 
-    $('.close_btn').click(function() {
+    $(".close_btn").click(function () {
       $(".menu").removeClass("on");
     });
   });
