@@ -113,6 +113,7 @@
       margin-top: 32px;
       display: flex;
       align-items: stretch;
+      padding-right: 16px;
 
       .swiper-wrapper {
         align-items: stretch;
@@ -273,18 +274,17 @@
 
     .differ-list {
       margin-top: 32px;
-      overflow-x: auto;
       display: flex;
       align-items: stretch;
       gap: 16px;
       padding: 0 16px;
 
-      li {
+      .differ-item {
         border-radius: 16px;
         background-color: #fff;
         padding: 32px;
         border: 1px solid #e3e3e3;
-        flex: 0 0 300px;
+        height: auto;
 
         .number {
           font-size: 32px;
@@ -424,9 +424,15 @@
 
       .values-list {
         margin-top: 82px;
-        padding-left: 320px;
+        padding-left: 20%;
+        padding-right: 24px;
+
+        .swiper-wrapper {
+          width: fit-content;
+        }
 
         .value-item {
+          width: 460px;
           border-radius: 24px;
           padding: 56px 56px 60px;
 
@@ -528,10 +534,9 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
 
-        li {
+        .differ-item {
           border-radius: 24px;
           padding: 40px;
-          flex: 0 0 410px;
 
           .number {
             margin-bottom: 8px;
