@@ -113,12 +113,13 @@
       margin-top: 32px;
       display: flex;
       align-items: stretch;
-      gap: 16px;
-      overflow-x: auto;
-      padding: 0 16px;
 
-      li {
-        flex: 0 0 300px;
+      .swiper-wrapper {
+        align-items: stretch;
+        padding: 0 16px;
+      }
+
+      .value-item {
         border-radius: 16px;
         background: #fff;
         border: 1px solid #e3e3e3;
@@ -126,6 +127,7 @@
         background-color: #fff;
         position: relative;
         padding: 32px;
+        height: auto;
 
         > img {
           width: 40px;
@@ -422,11 +424,9 @@
 
       .values-list {
         margin-top: 82px;
-        gap: 24px;
         padding-left: 320px;
 
-        li {
-          flex: 0 0 460px;
+        .value-item {
           border-radius: 24px;
           padding: 56px 56px 60px;
 
