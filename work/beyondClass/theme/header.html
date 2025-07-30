@@ -1,26 +1,21 @@
-<header class="theme-header" id="ui_header">
+<div class="theme-header" id="ui_header">
   <!-- mobile -->
   <div class="mobile_head">
     <h3 class="logo">
-      <a href="../" target="_self"
-        ><img alt="로고" src="./assets/img/sample-logo.svg"
-      /></a>
+      <a href="../" target="_self">
+        <img alt="로고" class="logo_img" src="./assets/img/logo-header.svg" />
+      </a>
 
       <button class="menu_btn" type="button">
         <img alt="햄버거 아이콘" src="./assets/img/icon-hamburger.svg" />
       </button>
     </h3>
 
+    <!-- lnb -->
     <div class="menu">
-      <h3 class="logo">
-        <a href="../" target="_self"
-          ><img alt="로고" class="logo_img" src="./assets/img/sample-logo.svg"
-        /></a>
-
-        <button class="close_btn" type="button">
-          <img alt="닫기 아이콘" src="./assets/img/icon-close.png" />
-        </button>
-      </h3>
+      <button class="close_btn" type="button">
+        <img alt="닫기 아이콘" src="../assets/img/icon-close.svg" />
+      </button>
 
       <ul class="menu_list">
         <li>
@@ -38,8 +33,12 @@
   <div class="pc_head">
     <div class="inner">
       <div class="logo">
-        <a href="../" target="_self">
-          <img alt="로고" class="logo_img" src="./assets/img/sample-logo.svg" />
+        <a href="./" target="_self">
+          <img
+            alt="로고"
+            class="logo_img"
+            src="./assets/img/logo-header.svg"
+          />
         </a>
       </div>
 
@@ -56,17 +55,14 @@
       </ul>
     </div>
   </div>
-</header>
+</div>
 
-<script type="text/javascript">
+<script>
   $(function () {
     const pathSegments = window.location.pathname.split("/").filter(Boolean);
     const currentPath = pathSegments.pop() || "";
-    const editUrl =
-      currentPath === "about" || currentPath === "apply" ? "../" : "./";
-
-    console.log("editUrl:", editUrl);
-
+    const editUrl = currentPath === "about" || currentPath === "apply" ? "../" : "./";
+  
     // 공통 함수로 경로 처리
     function fixPaths(selector, attrName) {
       $(selector).each(function () {
@@ -83,7 +79,18 @@
       });
     }
 
-    // 헤더 내부 img, a 처리
+    $(".theme-header a.link").each(function () {
+      const href = $(this).attr("href");
+      if (!href) return;
+
+      const hrefSegments = href.split("/").filter(Boolean);
+      const hrefLast = hrefSegments.pop() || "";
+
+      if (hrefLast === currentPath) {
+        $(this).addClass("active");
+      }
+    });
+  
     fixPaths(".theme-header img", "src");
     fixPaths(".theme-header a", "href");
 

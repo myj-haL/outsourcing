@@ -1,54 +1,53 @@
-<footer class="theme-footer">
+<div class="theme-footer">
   <div class="inner">
-    <img src="./assets/img/sample-logo-white.svg" alt="로고" class="logo">
-    <p class="txt">온라인 교육의 새로운 패러다임을 제시하는 비욘드 클래스와 함께 성장하세요.</p>
-    <div class="top">
-      <ul class="menu">
-        <li>
-          <a href="#!" class="link">
-            <img src="./assets/img/icon-facebook.svg" alt="페이스북">
-          </a>
-        </li>
-        <li>
-          <a href="#!" class="link">
-            <img src="./assets/img/icon-insta.svg" alt="인스타그램">
-          </a>
-        </li>
-        <li>
-          <a href="#!" class="link">
-            <img src="./assets/img/icon-youtube.svg" alt="유튜브">
-          </a>
-        </li>
-      </ul>
-    </div>
+    <img src="./assets/img/logo-footer.svg" alt="로고" class="logo" />
+    <p class="txt">결과로 증명하는 비욘드클래스의 교육과 함께 성장하세요</p>
+    <ul class="menu">
+      <li>
+        <a href="#!" class="link">
+          <img src="./assets/img/icon-facebook.svg" alt="페이스북" />
+        </a>
+      </li>
+      <li>
+        <a href="#!" class="link">
+          <img src="./assets/img/icon-insta.svg" alt="인스타그램" />
+        </a>
+      </li>
+      <li>
+        <a href="#!" class="link">
+          <img src="./assets/img/icon-youtube.svg" alt="유튜브" />
+        </a>
+      </li>
+    </ul>
 
-    <p class="copyright">
-      © 2025 BeyondClass. All rights reserved.
-    </p>
+    <p class="copyright">© 2025 BeyondClass. All rights reserved.</p>
   </div>
-</footer>
+</div>
 
 <script>
-  const pathSegments = window.location.pathname.split('/').filter(Boolean);
-  const currentPath = pathSegments.pop() || '';
-  const editUrl = (currentPath === 'about' || currentPath === 'apply') ? "../" : "./";
-
-  console.log('editUrl:', editUrl);
-
-  // 공통 함수로 경로 처리
-  function fixPaths(selector, attrName) {
-    $(selector).each(function () {
-      const original = $(this).attr(attrName);
-      if (original && (original.startsWith('./') || original.startsWith('../'))) {
-        // './' 또는 '../'를 제거하고 editUrl 붙이기
-        const cleanedPath = original.replace(/^(\.\/|(\.\.\/)+)/, '');
-        const newPath = editUrl + cleanedPath;
-        $(this).attr(attrName, newPath);
-      }
-    });
-  }
-
-  // 푸터 내부 img, a 처리
-  fixPaths(".theme-footer img", "src");
-  fixPaths(".theme-footer a", "href");
+  $(function(){
+    const pathSegments = window.location.pathname.split("/").filter(Boolean);
+    const currentPath = pathSegments.pop() || "";
+    const editUrl = currentPath === "about" || currentPath === "apply" ? "../" : "./";
+  
+    // 공통 함수로 경로 처리
+    function fixPaths(selector, attrName) {
+      $(selector).each(function () {
+        const original = $(this).attr(attrName);
+        if (
+          original &&
+          (original.startsWith("./") || original.startsWith("../"))
+        ) {
+          // './' 또는 '../'를 제거하고 editUrl 붙이기
+          const cleanedPath = original.replace(/^(\.\/|(\.\.\/)+)/, "");
+          const newPath = editUrl + cleanedPath;
+          $(this).attr(attrName, newPath);
+        }
+      });
+    }
+  
+    // 푸터 내부 img, a 처리
+    fixPaths(".theme-footer img", "src");
+    fixPaths(".theme-footer a", "href");
+  })
 </script>

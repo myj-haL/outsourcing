@@ -4,38 +4,34 @@
 
   .inner {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 20px 16px 33px;
+    padding: 32px 16px;
+    text-align: center;
   }
 
   .logo {
-    height: 32px;
+    height: 40px;
     width: auto;
     display: block;
-    margin-bottom: 16px;
+    margin: 0 auto 14px;
   }
 
   .txt {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 24px;
-    color: #9ca3af;
+    line-height: 19px;
+    color: rgba(255, 255, 255, 0.7);
     word-break: keep-all;
-    margin-bottom: 30px;
-  }
-
-  .top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 175px;
+    margin-bottom: 24px;
   }
 
   .menu {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
 
     li {
       position: relative;
@@ -43,31 +39,50 @@
   }
 
   .link {
-    font-size: 12px;
-    font-weight: normal;
-    color: #3d3d3d;
-    display: block;
+    border-radius: 100px;
+    width: 48px;
+    aspect-ratio: 1/1;
+    background-color: #2c3444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .copyright {
-    padding-top: 33px;
+    padding-top: 20px;
     font-size: 14px;
     font-weight: normal;
-    line-height: 20px;
-    color: #9ca3af;
-    border-top: 1px solid #1f2937;
+    font-weight: 400;
+    line-height: 19px;
+    color: rgba(255, 255, 255, 0.7);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     margin: 0;
   }
-}
 
-@media screen and (min-width: 992px) {
-  .theme-footer {
+  @media screen and (min-width: 992px) {
     .inner {
-      padding: 64px 16px;
+      padding: 48px 16px;
+      text-align: left;
     }
 
-    .top {
-      margin-bottom: 90px;
+    .logo {
+      height: 46px;
+      margin: 0 0 24px;
+    }
+
+    .txt {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    .menu {
+      margin-bottom: 32px;
+      justify-content: flex-start;
+    }
+
+    .copyright {
+      padding-top: 32px;
+      font-size: 16px;
     }
   }
 }

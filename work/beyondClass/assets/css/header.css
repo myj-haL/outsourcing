@@ -1,15 +1,13 @@
 .theme-header {
   .mobile_head {
-    position: relative;
     width: 100%;
     background-color: #fff;
-    padding: 14px 16px;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    padding: 10px 16px;
 
     .menu_btn {
       display: block;
-      width: 25px;
-      height: 24px;
+      width: 24px;
+      aspect-ratio: 1/1;
 
       > img {
         object-fit: cover;
@@ -19,38 +17,41 @@
     }
 
     .menu {
-      position: absolute;
+      position: fixed;
       top: 0px;
       width: 100vw;
+      height: 100%;
+      flex-direction: column;
       left: 50%;
       transform: translateX(-50vw);
       background-color: #fff;
-      padding: 14px 16px;
+      padding: 16px 16px 24px;
       display: none;
       z-index: 10;
-      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
       &.on {
-        display: block;
+        display: flex;
       }
     }
 
     .close_btn {
       position: absolute;
-      top: 9px;
-      right: 12px;
+      top: 16px;
+      right: 16px;
 
       img {
-        width: 30px;
+        width: 24px;
         aspect-ratio: 1/1;
-        opacity: 0.8;
       }
     }
 
     .menu_list {
       width: 100%;
-      display: grid;
-      gap: 15px;
+      flex: 1;
       margin-top: 20px;
+
+      li {
+        border-bottom: 1px solid #e3e3e3;
+      }
     }
   }
 
@@ -64,17 +65,23 @@
 
   .logo_img {
     width: auto;
-    height: 28px;
+    height: 40px;
     object-fit: cover;
     display: block;
   }
 
   .link {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 600;
     color: #374151;
     letter-spacing: -0.2px;
     display: block;
+    padding: 24px 0;
+    line-height: 28px;
+
+    &.active {
+      color: #097bf8;
+    }
   }
 
   .pc_head {
@@ -83,16 +90,16 @@
 
   .apply-btn {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 100px;
     color: #fff;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 600;
     display: block;
-    background-color: #2463eb;
-    height: 44px;
+    background-color: #097bf8;
+    height: 60px;
     text-align: center;
-    line-height: 44px;
-    margin-top: 15px;
+    line-height: 60px;
+    margin-top: auto;
   }
 }
 
@@ -106,17 +113,17 @@
       display: block;
       width: 100%;
       background: #fff;
-      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     }
 
     .inner {
       width: 100%;
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 10px 16px;
+      padding: 23px 16px;
+      box-sizing: border-box;
       display: flex;
       align-items: center;
-      gap: 130px;
+      justify-content: space-between;
     }
 
     .logo {
@@ -124,7 +131,7 @@
     }
 
     .logo_img {
-      height: 32px;
+      height: 56px;
     }
 
     .pc_menu {
@@ -132,20 +139,22 @@
       align-items: center;
       justify-content: flex-end;
       gap: 32px;
-      flex: 1;
+
+      li:last-child {
+        margin-left: 16px;
+      }
     }
 
     .link {
-      font-size: 20px;
-      font-weight: 600;
+      padding: 0;
     }
 
     .apply-btn {
       font-size: 16px;
       font-weight: 600;
-      margin: 0;
-      color: #fff;
-      border-radius: 100px;
+      height: 48px;
+      padding: 0 24px;
+      line-height: 49px;
     }
   }
 }
