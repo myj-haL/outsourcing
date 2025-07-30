@@ -34,7 +34,11 @@
     <div class="inner">
       <div class="logo">
         <a href="../" target="_self">
-          <img alt="로고" class="logo_img" src="./assets/img/logo-header.svg" />
+          <img
+            alt="로고"
+            class="logo_img"
+            src="../assets/img/logo-header.svg"
+          />
         </a>
       </div>
 
@@ -60,12 +64,20 @@
     const editUrl =
       currentPath === "about" || currentPath === "apply" ? "../" : "./";
 
-    console.log("editUrl:", editUrl);
-
     // 공통 함수로 경로 처리
     function fixPaths(selector, attrName) {
       $(selector).each(function () {
         const original = $(this).attr(attrName);
+        const href = $(this).attr("href");
+        if (!href) return;
+
+        const hrefSegments = href.split("/").filter(Boolean);
+        const hrefLast = hrefSegments.pop() || "";
+
+        if (hrefLast === currentPath) {
+          $(this).addClass("active");
+        }
+
         if (
           original &&
           (original.startsWith("./") || original.startsWith("../"))
@@ -89,5 +101,8 @@
     $(".close_btn").click(function () {
       $(".menu").removeClass("on");
     });
+
+    const linkUrl = document.getElementsByClassName("link").attr("href");
+    console.log(1111, linkUrl);
   });
 </script>
