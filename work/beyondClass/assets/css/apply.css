@@ -45,7 +45,9 @@
   }
 
   .business-cards {
-    margin-top: 12px;
+    width: 100%;
+    max-width: 1280px;
+    margin: 12px auto 0;
 
     .card {
       border-radius: 16px;
@@ -236,6 +238,7 @@
         border: 1px solid #e3e3e3;
         box-sizing: border-box;
         height: auto !important;
+        cursor: pointer;
       }
     }
 
@@ -330,6 +333,7 @@
     }
 
     .txt {
+      text-align: center;
       > p {
         font-size: 16px;
         font-weight: 400;
@@ -348,6 +352,7 @@
       font-weight: 400;
       line-height: 25px;
       color: #2a2a2a;
+      justify-content: center;
 
       img {
         width: 44px;
@@ -370,15 +375,23 @@
       font-weight: 700;
       line-height: 67px;
       margin-bottom: 12px;
+
+      br {
+        display: none;
+      }
     }
 
     .section-sub-title {
       font-size: 24px;
       line-height: 33px;
+
+      br {
+        display: none;
+      }
     }
 
     .banner {
-      background-image: url(../../assets/img/apply/img-about-banner-pc.png);
+      background-image: url(../../assets/img/apply/img-apply-banner-pc.png);
       background-size: cover;
       background-position: center;
       border-radius: 40px;
@@ -440,11 +453,12 @@
     .process {
       .process-list {
         margin-top: 72px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        display: flex;
         gap: 40px;
+        flex-wrap: wrap;
 
         li {
+          flex: 1 1 290px;
           position: relative;
           + li {
             margin: 0;
@@ -472,6 +486,10 @@
         font-size: 24px;
         line-height: 33px;
       }
+
+      .content {
+        padding: 32px;
+      }
     }
 
     .support {
@@ -479,6 +497,7 @@
         margin-top: 72px;
         flex-direction: row;
         align-items: center;
+        justify-content: space-between;
         gap: 60px;
 
         .right {
@@ -574,7 +593,8 @@
     .recruit {
       width: 100%;
       max-width: 1800px;
-      margin: 0 auto;
+      margin: 0 auto 120px;
+      border-radius: 40px;
 
       .form-link {
         margin: 40px auto 72px;
@@ -582,46 +602,42 @@
       }
 
       .apply-form-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 32px;
         border-radius: 24px;
         border: 0;
+        gap: 40px;
 
         > img {
           width: 284px;
+          order: 2;
           min-width: 284px;
           margin: 0;
         }
       }
 
-      .form-title {
-        font-size: 32px;
-        line-height: 42px;
-        margin-bottom: 21px;
-      }
-      .form-sub-title {
-        font-size: 21px;
-        line-height: 32px;
-      }
-
-      .form-link {
-        margin: 42px auto;
-        border-radius: 10px;
-        padding: 21px 42px;
-        font-size: 24px;
-        line-height: 37px;
-        font-weight: 600;
-        img {
-          margin-left: 10px;
-          width: 25px;
-          vertical-align: middle;
-          position: relative;
-          top: -2px;
+      .txt {
+        text-align: left;
+        > p {
+          font-size: 24px;
+          line-height: 33px;
+          margin-bottom: 32px;
         }
       }
 
-      .contact {
-        font-size: 18px;
-        line-height: 26px;
+      .email-info {
+        gap: 24px;
+        justify-content: flex-start;
+        img {
+          width: 64px;
+        }
+
+        p {
+          font-size: 24px;
+          line-height: 33px;
+        }
       }
     }
   }
