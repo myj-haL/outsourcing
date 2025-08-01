@@ -93,23 +93,6 @@
     }
   }
 
-  .section-title {
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 33px;
-    color: #2a2a2a;
-    margin-bottom: 4px;
-    text-align: center;
-  }
-
-  .section-sub-title {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19px;
-    color: #646464;
-    text-align: center;
-  }
-
   .process {
     padding: 56px 16px;
     box-sizing: border-box;
@@ -368,26 +351,6 @@
     .full-package,
     .recruit {
       padding: 120px 16px;
-    }
-
-    .section-title {
-      font-size: 48px;
-      font-weight: 700;
-      line-height: 67px;
-      margin-bottom: 12px;
-
-      br {
-        display: none;
-      }
-    }
-
-    .section-sub-title {
-      font-size: 24px;
-      line-height: 33px;
-
-      br {
-        display: none;
-      }
     }
 
     .banner {
