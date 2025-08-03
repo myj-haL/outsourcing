@@ -3,9 +3,15 @@
   padding: 0 16px;
   box-sizing: border-box;
 
+  .inner-width {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
   .hero {
     width: 100%;
-    max-width: 1800px;
+    max-width: 1280px;
     margin: 0 auto;
     border-radius: 24px;
     min-height: 600px;
@@ -189,17 +195,18 @@
     display: none;
     position: absolute;
     right: 0;
-    top: 0;
+    top: -115px;
   }
 
   .specialists {
     padding: 56px 0;
     margin: 0 -16px;
+    max-width: 1800px;
     background-color: #eff6ff;
 
     .swp-expert {
-      margin-top: 32px;
-      padding: 0px 16px;
+      margin-top: 12px;
+      padding: 20px 16px 0;
 
       .swiper-wrapper {
         align-items: flex-end;
@@ -215,6 +222,7 @@
 
         img {
           width: 100%;
+          height: 100%;
           aspect-ratio: 1/1.2;
           object-fit: cover;
         }
@@ -272,6 +280,7 @@
         background-color: #fff;
         padding: 32px;
         width: 100%;
+        min-width: 343px;
         max-width: 343px;
 
         .user {
@@ -370,6 +379,306 @@
     }
   }
 
+  .move-link {
+    display: block;
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+    border-radius: 100px;
+    background-color: #fff;
+    width: 48px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
   @media screen and (min-width: 992px) {
+    .hero {
+      border-radius: 36px;
+    }
+
+    .swp-hero {
+      .swiper-slide {
+        img {
+          height: 100%;
+          &.pc {
+            display: block;
+          }
+          &.mo {
+            display: none;
+          }
+        }
+      }
+
+      .txt-box {
+        left: 100px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0;
+        text-align: left;
+        width: fit-content;
+        bottom: initial;
+      }
+
+      .title {
+        font-size: 60px;
+        line-height: 84px;
+        margin-bottom: 16px;
+      }
+
+      .sub-title {
+        font-size: 24px;
+        line-height: 33px;
+      }
+
+      .btns {
+        margin-top: 60px;
+        gap: 12px;
+        flex-direction: row;
+
+        a {
+          font-size: 20px;
+          height: 60px;
+          line-height: 60px;
+          width: fit-content;
+          flex: 1;
+        }
+      }
+    }
+
+    .swiper-pagination-container {
+      position: absolute;
+      right: 48px;
+      bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      z-index: 5;
+    }
+
+    .swiper-pagination {
+      bottom: 0;
+      position: relative;
+    }
+
+    .swiper-pagination2 {
+      display: block;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      bottom: initial;
+    }
+
+    .swiper-pagination-bullet {
+      background-color: #fff;
+      opacity: 0.5;
+      border-radius: 100px;
+      width: 32px;
+      height: 6px;
+      margin: 0 !important;
+
+      &.swiper-pagination-bullet-active {
+        opacity: 1;
+      }
+    }
+
+    .lecture {
+      padding: 120px 0;
+
+      .category {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 67px;
+        margin-bottom: 48px;
+      }
+    }
+
+    .lecture-list {
+      overflow: hidden;
+      + .lecture-list {
+        margin-top: 120px;
+      }
+
+    }
+
+    .swp-lecture {
+      overflow: initial;
+      .swiper-slide {
+        img {
+          height: 170px;
+          margin-bottom: 24px;
+        }
+
+        .title {
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 33px;
+        }
+
+        .explain {
+          font-size: 16px;
+          line-height: 22px;
+        }
+
+        .btm {
+          margin-top: 16px;
+          p {
+            font-size: 16px;
+            line-height: 22px;
+
+            &.label {
+              font-size: 16px;
+              padding: 5px 12px;
+              height: 32px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
+
+    .navigation-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .swiper-button-next {
+        right: 0;
+        left: auto;
+        order: 2;
+      }
+
+      .swiper-button-prev {
+        left: 0;
+        right: inherit;
+      }
+
+      .swiper-button-next, 
+      .swiper-button-prev {
+        width: 68px;
+        height: 68px;
+        border-radius: 100px;
+        position: relative;
+        border: 1px solid #E3E3E3;
+        background-color: #fff;
+        margin: 0;
+        top: initial;
+
+        &::after {
+          color: #2A2A2A;
+          font-size: 23px;
+        }
+      }
+    }
+
+    .specialists,
+    .reviews {
+      padding: 120px 0;
+
+      .section-title,
+      .section-sub-title {
+        text-align: left;
+        padding: 0 16px;
+      }
+    }
+
+    .specialists {
+      margin: 0 auto;
+      border-radius: 40px;
+
+      .swp-expert {
+        margin-top:0;
+        padding-left: 15%;
+        padding: 72px 16px 0;
+
+        .swiper-wrapper {
+          min-height: 512px;
+        }
+  
+        .swiper-slide {
+          min-width: 400px;
+          width: 400px;
+        }
+      }
+    }
+
+    .reviews {
+      overflow: hidden;
+      margin: 0 -16px;
+      .swp-review {
+        overflow: initial;
+        margin: 72px 0 0;
+
+        .swiper-slide {
+          padding: 40px;
+          width: 100%;
+          min-width: 410px;
+          max-width: 410px;
+          flex-shrink: 0;
+
+          .user {
+            margin-bottom: 24px;
+          }
+        }
+      }
+    }
+
+    .direct-banner {
+      margin-bottom: 120px;
+
+      img {
+        max-height: 300px;
+
+        &.pc {
+          display: block;
+        }
+        &.mo {
+          display: none;
+        }
+      }
+
+      .txt-box {
+        left: 100px;
+        bottom: initial;
+        top: 50%;
+        transform: translateY(-50%);
+
+        b {
+          font-size: 48px;
+          font-weight: 700;
+          line-height: 67px;
+        }
+
+        p {
+          font-size: 24px;
+          line-height: 33px;
+          opacity: 0.7;
+        }
+      }
+    }
+
+    .move-link {
+      display: block;
+      position: absolute;
+      right: 46px;
+      bottom: 46px;
+      border-radius: 100px;
+      background-color: #fff;
+      width: 76px;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 }
