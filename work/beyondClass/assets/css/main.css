@@ -594,8 +594,7 @@
 
       .swp-expert {
         margin-top:0;
-        padding-left: 15%;
-        padding: 72px 16px 0;
+        padding: 72px 16px 0 15%;
 
         .swiper-wrapper {
           min-height: 512px;
