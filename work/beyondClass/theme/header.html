@@ -25,7 +25,12 @@
           <a href="./apply/" class="link">강사 지원</a>
         </li>
       </ul>
-      <a href="#!" class="apply-btn"> 강사 지원하기 </a>
+      <a
+        href="https://docs.google.com/forms/d/16KDlYSyjWI0fSkAx8CDQ5LrYlgps1UEIlL6AY5XqI9k/edit"
+        class="apply-btn"
+      >
+        강사 지원하기
+      </a>
     </div>
   </div>
 
@@ -34,11 +39,7 @@
     <div class="inner">
       <div class="logo">
         <a href="./" target="_self">
-          <img
-            alt="로고"
-            class="logo_img"
-            src="./assets/img/logo-header.svg"
-          />
+          <img alt="로고" class="logo_img" src="./assets/img/logo-header.svg" />
         </a>
       </div>
 
@@ -50,7 +51,12 @@
           <a href="./apply/" class="link">강사 지원</a>
         </li>
         <li>
-          <a href="#!" class="apply-btn"> 강사 지원하기 </a>
+          <a
+            href="https://docs.google.com/forms/d/16KDlYSyjWI0fSkAx8CDQ5LrYlgps1UEIlL6AY5XqI9k/edit"
+            class="apply-btn"
+          >
+            강사 지원하기
+          </a>
         </li>
       </ul>
     </div>
@@ -61,8 +67,9 @@
   $(function () {
     const pathSegments = window.location.pathname.split("/").filter(Boolean);
     const currentPath = pathSegments.pop() || "";
-    const editUrl = currentPath === "about" || currentPath === "apply" ? "../" : "./";
-  
+    const editUrl =
+      currentPath === "about" || currentPath === "apply" ? "../" : "./";
+
     // 공통 함수로 경로 처리
     function fixPaths(selector, attrName) {
       $(selector).each(function () {
@@ -90,7 +97,7 @@
         $(this).addClass("active");
       }
     });
-  
+
     fixPaths(".theme-header img", "src");
     fixPaths(".theme-header a", "href");
 
