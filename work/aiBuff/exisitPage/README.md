@@ -7,4 +7,4 @@
 - url : https://myj-hal.github.io/outsourcing/work/aiBuff/exisitPage/master2/index.html
 
 ### AI 면접
-- url : https://myj-hal.github.io/outsourcing/work/aiBuff/exisitPage/master2/index.html
+- url : https://myj-hal.github.io/outsourcing/work/aiBuff/exisitPage/master3/index.html
