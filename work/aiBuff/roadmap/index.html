@@ -59,36 +59,37 @@
   </div>
   <script>
   /* 박스별 라벨 순차 활성화 */
-   const lists = [
-      {
-        items: document.querySelectorAll('.btns.one > li'),
-        current: 0,
-      },
-      {
-        items: document.querySelectorAll('.btns.two > li'),
-        current: 0,
-      }
-    ];
+  const lists = [
+    {
+      items: document.querySelectorAll('.btns.one > li'),
+      current: 0,
+    },
+    {
+      items: document.querySelectorAll('.btns.two > li'),
+      current: 0,
+    }
+  ];
 
-    const interval = 4000; // 4초
+  const interval = 4000; // 4초
 
-    lists.forEach(list => {
-      const total = list.items.length;
+  lists.forEach(list => {
+    const total = list.items.length;
 
-      function activateNext() {
-        const prev = list.current;
-        list.current = (list.current + 1) % total;
-        
-        // requestAnimationFrame으로 브라우저 렌더링 사이클에 맞춤
-        requestAnimationFrame(() => {
-          list.items[prev].classList.remove('active');
-          list.items[list.current].classList.add('active');
-        });
-      }
+    // 초기 상태: 첫 번째 항목 활성화
+    list.items[list.current].classList.add('active');
 
-      activateNext();
-      setInterval(activateNext, interval);
-    });
+    function activateNext() {
+      const prev = list.current;
+      list.current = (list.current + 1) % total;
+
+      // 애니메이션 프레임 중복 방지
+      list.items[prev].classList.remove('active');
+      list.items[list.current].classList.add('active');
+    }
+
+    // setInterval만 사용 (초기 호출 제거)
+    setInterval(activateNext, interval);
+  });
 
     /* 3초 간격 확대 축소 */
     const roadBoxes = document.querySelectorAll('.road-box');
@@ -103,7 +104,7 @@
 
     if (window.innerWidth >= 1024 && roadBoxes.length) {
       activateRoadBox();
-      intervalId = setInterval(activateRoadBox, 3000);
+      intervalId = setInterval(activateRoadBox, 4000);
       
       document.addEventListener('visibilitychange', () => {
         if (document.hidden) {

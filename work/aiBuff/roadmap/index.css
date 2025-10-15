@@ -156,7 +156,7 @@
       }
 
       img {
-        animation: slideUpPc 6s cubic-bezier(0.57, 0, 0.51, 1) infinite alternate;
+        animation: slideUpPc 10s cubic-bezier(0.57, 0, 0.51, 1) infinite alternate;
       }
     }
 
