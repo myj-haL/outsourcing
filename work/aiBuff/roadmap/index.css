@@ -1,0 +1,274 @@
+.roadmap-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  color: #1D1A22;
+  padding: 26px 16px 66px;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
+  box-sizing: border-box;
+
+  img {
+    width: 100%;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 26px;
+  }
+
+  .roadmap {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    position: relative;
+
+    .road-box {
+      border-radius: 20px;
+      background-color: #f6efff;
+      overflow: hidden;
+      padding: 24px 16px;
+      box-sizing: border-box;
+      width: 100%;
+      word-break: keep-all;
+
+      &:last-child {
+        background-color: #E4EEFF;
+
+        .img-box {
+          img {
+            animation-duration: 4s;
+          }
+        }
+      }
+
+      .box-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      .box-small-title {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px; 
+        color: #565656;
+        margin-bottom: 16px;
+      }
+
+      .contents {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 28px; 
+        color: #646262;
+        word-break: keep-all;
+
+        br {
+        display: none;
+        }
+      }
+
+      .btns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        align-items: stretch;
+
+        li {
+          border-radius: 12px;
+          border: 1px solid #8A34EF;
+          background: #FFF;
+          padding: 16px 10px;
+          text-align: center;
+          color: #8A34EF;
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 22px;
+          transition: all .2s ease-in-out;
+          display: grid;
+          align-content: center;
+          
+          &.active {
+            background-color: #8A34EF;
+            color: #fff;
+          }
+        }
+
+        &.two {
+          li {
+            border-color: #3D43FF;
+            color: #3D43FF;
+            &.active {
+              background-color: #3D43FF;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .img-box {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 0.45px solid #EDF;
+    margin: 24px 0;
+    height: calc(100vw * 255 / 375);
+    position: relative;
+    width: 100%;
+
+    &.pc {
+      display: none;
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: auto;
+      animation: slideUpMobile 6s cubic-bezier(0.57, 0, 0.51, 1) infinite alternate;
+      will-change: transform;
+    }
+  }
+
+  @media screen and (min-width:1024px) {
+    padding-top: 70px;
+    padding-bottom:124px;
+
+    .img-box {
+      margin: 0;
+      border-radius: 24px;
+      border-width: 1px;
+      height: 100%;
+      max-width: 480px;
+      max-height: 580px;
+      --container-height: min(100vh, 580px);
+
+      &.mobile {
+        display: none;
+      }
+      &.pc {
+        display: block;
+      }
+
+      img {
+        animation: slideUpPc 6s cubic-bezier(0.57, 0, 0.51, 1) infinite alternate;
+      }
+    }
+
+    .title {
+      font-size: 50px;
+      margin-bottom: 48px;
+    }
+
+    .roadmap  {
+      gap: 0;
+
+      .road-box {
+        border-radius: 40px;
+        box-shadow: 10px 24px 55px 0 rgba(83, 81, 98, 0.22);
+        padding: 54px 52px;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 50px;
+        /* max-width: 1062px;
+        height: 550px; */
+        /* transition: all .7s ease-out; */
+        max-width: 1330px;
+        height: 690px;
+        transition: transform .7s ease-in-out;
+        transform-origin: left top;
+        transform: scale(0.8);
+        opacity: 0.75;
+        
+        &:last-child {
+          margin-left: auto;
+          margin-top: -260px;
+          z-index: -1;
+          transform-origin: right bottom;
+        }
+
+        .explain {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .box-title {
+          font-size: 36px;
+          margin-bottom: 16px;
+        }
+
+        .box-small-title {
+          font-size: 24px;
+          line-height: 34px;
+          margin-bottom: 32px;
+        }
+
+        .contents {
+          font-size: 20px;
+          line-height: 32px;
+          margin-bottom: 15px;
+
+          br {
+            display: block;
+          }
+        }
+
+        .btns {
+          margin-top: auto;
+
+          li {
+            border-radius: 16px;
+            border-width: 2px;
+            padding: 20px;
+            font-size: 18px;
+            line-height: 24px;
+          }
+        }
+
+        &.active {
+          z-index: 2;
+          transform: scale(1);
+          opacity: 1;
+        }
+
+      }
+    }
+  }
+}
+
+@keyframes slideUpMobile{
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(0);
+  }
+  75% {
+      transform: translateY(calc(100vw * 255 / 375 - 100%));
+  }
+  100% {
+      transform: translateY(calc(100vw * 255 / 375 - 100%));
+  }
+}
+
+@keyframes slideUpPc{
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(calc(var(--container-height) - 100%));
+  }
+  100% {
+    transform: translateY(calc(var(--container-height) - 100%));
+  }
+}

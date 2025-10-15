@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="./index.css">
+  <title>AI 학생부</title>
+</head>
+<body>
+  <div class="student-container">
+    <h3 class="title">
+      <p class="top-small">AI 학생부</p>
+      나에게 딱 맞는 <br>학생부 관리 분석 서비스 BUFF
+      <p class="bottom-small">학생부 경쟁력 BUFF! 학종으로 대학가자!</p>
+    </h3>
+    <div class="slides">
+      <div class="swiper student-record-swp">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <span class="slide-title">탐구 보고서</span>
+            <p class="slide-explain">AI가 추천하는 가장 빠른 탐구 주제<br>추천부터 탐구보고서 작성 꿀팁까지 완벽 설계!</p>
+            <div class="img-area">
+              <img src="./images/img-record1.png" alt="탐구 보고서 이미지">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <span class="slide-title">AI 탐구 주제 추천</span>
+            <p class="slide-explain">혼자서는 어렵기만 한 주제탐구<br>AI로 관심분야와 과목을 연결해 탐구주제 추천!!</p>
+            <div class="img-area">
+              <img src="./images/img-record2.png" alt="AI 탐구 주제 추천 이미지">
+            </div>
+            <ul class="hashtag">
+              <li>#관심과목</li>
+              <li>#확률과통계</li>
+              <li>#기하</li>
+              <li>#관심분야</li>
+              <li>#인문학</li>
+              <li>#컴퓨터공학</li>
+            </ul>
+          </div>
+          <div class="swiper-slide">
+            <span class="slide-title">활동 기록 도우미</span>
+            <p class="slide-explain">AI 분석으로 교과세특 및 비교과 활동 내역을 <br>항목별로 정밀 평가하여, 활동 기록을 지원</p>
+            <div class="img-area">
+              <img src="./images/img-record3.png" alt="활동 기록 도우미 이미지">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <span class="slide-title">학생부 평가</span>
+            <p class="slide-explain">AI 기반 학생부 평가로 서울 주요 대학 평가 기준에 따른 <br>분석 리포트를 제공</p>
+            <div class="img-area">
+              <img src="./images/img-record4.png" alt="학생부 평가 이미지">
+            </div>
+            <ul class="hashtag">
+              <li>#학업역량</li>
+              <li>#전공적합성</li>
+              <li>#발전가능성</li>
+              <li>#공동체역량</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".student-record-swp", {
+      slidesPerView: 1.25,
+      // spaceBetween:16,
+      speed:1000,
+      centeredSlides: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 'auto',
+          // spaceBetween:40,
+          centeredSlides: true,
+        }
+      },
+      on: {
+        slideChange: function() {
+          this.slides.forEach((slide, i) => {
+            slide.querySelectorAll('.hashtag li').forEach((li, j) => {
+              li.style.animation = i === this.activeIndex ? `fadeInUp 0.4s ease ${0.5 + j * 0.1}s forwards` : 'none';
+            });
+          });
+        }
+      }
+    });
+
+    document.querySelectorAll('.hashtag li').forEach((li, index) => {
+      li.style.setProperty('--i', index + 1);
+    });
+  </script>
+</body>
+</html>

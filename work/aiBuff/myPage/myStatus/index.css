@@ -1,0 +1,22 @@
+.text-bubble {
+  &::after {
+    content: "";
+    display: block;
+    background: url(./images/text-bubble-tail.svg) no-repeat center;
+    width: 47px;
+    height: 42px;
+    position: absolute;
+    bottom: -35px;
+    left: 10%;
+    transform: scaleX(-1);
+  }
+
+  @media screen and (min-width:1024px) {
+    &.last {
+      &::after {
+        left: initial;
+        right: 20%;
+      }
+    }
+  }
+}

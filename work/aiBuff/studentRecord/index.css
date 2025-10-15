@@ -1,0 +1,208 @@
+.student-container {
+  width: 100%;
+  margin: 0 auto;
+  color: #1D1A22;
+  padding: 26px 16px 66px;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
+  box-sizing: border-box;
+  text-align: center;
+
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+
+    p.top-small {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: 10px;
+      display: block;
+      color: #8A34EF;
+    }
+
+    p.bottom-small {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px; 
+      color: #565656;
+      margin-top: 10px;
+      display: block;
+    }
+  }
+
+  .slides {
+    position: relative;
+    margin: 32px -16px 0;
+  }
+
+  .student-record-swp {
+    .swiper-wrapper {
+      align-items: center;
+    }
+
+    .swiper-slide {
+      border-radius: 20px;
+      background-color: #F4EAFF;
+      padding: 24px 16px;
+      box-sizing: border-box;
+      text-align: center;
+      transform: scale(0.9);
+      transition: all .4s ease-in-out;
+      word-break: keep-all;
+
+      br {
+        display: none;
+      }
+
+      .slide-title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: normal;
+        color: #565656;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      .slide-explain {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        color: #646262;
+      }
+
+      .img-area {
+        margin-top: 24px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 0.438px solid #EDF;
+        box-sizing: border-box;
+        background-color: #fff;
+        height: calc(100vw * 250 / 375);
+        img {
+          width: 100%;
+          display: block;
+          object-fit: cover;
+        }
+      }
+
+      &.swiper-slide-active {
+        background: linear-gradient(139deg, #8A34EF 6.67%, #8080FF 110.98%);
+        transform: scale(1);
+        transition: all .4s ease-in-out;
+        
+        .slide-explain,
+        .slide-title {
+          color: #fff;
+        }
+
+        .hashtag {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .hashtag {
+    margin-top: 24px;
+    display: none;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    li {
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.20);
+      padding: 8px 10px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: normal;
+      color: #fff;
+      opacity: 0;
+      animation: fadeInUp 0.4s ease forwards;
+      animation-delay: calc(var(--i) * 0.1s);
+    }
+  }
+
+  @media screen and (min-width:1024px) {
+    padding: 70px 0 124px;
+
+    .title {
+      font-size: 50px;
+      br {
+        display: none;
+      }
+
+      p.top-small {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      p.bottom-small {
+        font-size: 26px;
+        margin-top: 20px;
+      }
+    }
+
+    .slides {
+      margin: 78px 0 0;
+    }
+
+    .student-record-swp {
+      .swiper-slide {
+        border-radius: 36px;
+        padding: 56px 54px;
+        max-width: 540px;
+        margin: 0 10px;
+
+        br {
+          display: block;
+        } 
+
+        &.swiper-slide-active {
+          .slide-title {
+            font-size: 36px;
+          }
+        }
+
+        .slide-title {
+          font-size: 30px;
+          margin-bottom: 16px;
+        }
+  
+        .slide-explain {
+          font-size: 20px;
+          line-height: 30px;
+        }
+
+        .img-area {
+          margin-top: 38px;
+          border-radius: 18px;
+          border: 0.768px solid #CEA5FF;
+          height: calc(100vw * 422 / 1920);
+          max-height: 422px;
+        }
+      }
+    }
+
+    .hashtag {
+      margin-top: 38px;
+      gap: 16px;
+
+      li {
+        font-size: 20px;
+        padding: 8px 16px;
+      }
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

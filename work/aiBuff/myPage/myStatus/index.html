@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="./index.css">
+  <title>마이 페이지 - 나의 현황</title>
+</head>
+<body class="bg-[#F0EEEB] font-[Pretendard]">
+  <div class="container px-[16px] pt-[30px] lg:pt-[62px] mx-auto print:h-0">
+    <!-- 모바일 플로팅 메뉴 노출 버튼 -->
+    <div class="relative lg:hidden">
+      <button type="button" class="w-[36px] aspect-square block ml-auto cursor-pointer activity-btn">
+        <img src="./images/icon-notice.svg" alt="알림 이미지">
+      </button>
+      <div class="lg:flex-none lg:w-[342px] h-fit w-full bg-white rounded-[10px] shadow-lg p-[24px] hidden gap-[24px] xl:hidden absolute z-1 top-[40px] activity-list">
+        <div>
+          <span class="text-xl font-[600] text-[#200E32] block mb-[24px]">최근 활동</span>
+          <div class="rounded-[9px] bg-[#F4F4F4] p-[16px] mb-[12px]">
+            <div class="flex items-center justify-between mb-[12px]">
+              <span class="font-[600] text-base text-[#200E32]">탐구 보고서 완료</span>
+              <p class="text-xs text-[#4B5563]">2시간 전</p>
+            </div>
+            <p class="text-[#200E32] text-sm">환경과학 주제 탐구 보고서 완성</p>
+          </div>
+          <div class="rounded-[9px] bg-[#F4F4F4] p-[16px] mb-[12px]">
+            <div class="flex items-center justify-between mb-[12px]">
+              <span class="font-[600] text-base text-[#200E32]">AI 면접 연습</span>
+              <p class="text-xs text-[#4B5563]">2시간 전</p>
+            </div>
+            <p class="text-[#200E32] text-sm">서울대 경영학과 모의면접 (점수 88점)</p>
+          </div>
+          <div class="rounded-[9px] bg-[#F4F4F4] p-[16px]">
+            <div class="flex items-center justify-between mb-[12px]">
+              <span class="font-[600] text-base text-[#200E32]">심리 검사 완료</span>
+              <p class="text-xs text-[#4B5563]">2시간 전</p>
+            </div>
+            <p class="text-[#200E32] text-sm">성격 유형 검사 및 진로 적성 분석</p>
+          </div>
+        </div>
+        <div>
+          <span class="text-xl font-[600] text-[#200E32] block my-[24px]">알림 및 할 일</span>
+          <div class="rounded-[9px] bg-[#FFE3E3] p-[16px] mb-[12px]">
+            <div class="mb-[12px]">
+              <span class="font-[600] text-base text-[#200E32]">마감 임박</span>
+            </div>
+            <p class="text-[#200E32] text-sm">수학 탐구 보고서 제출 마감 (2일 남음)</p>
+          </div>
+          <div class="rounded-[9px] bg-[#FFF8DA] p-[16px] mb-[12px]">
+            <div class="mb-[12px]">
+              <span class="font-[600] text-base text-[#200E32]">추천 활동</span>
+            </div>
+            <p class="text-[#200E32] text-sm">경영학과 관련 독서 활동을 시작해 보세요</p>
+          </div>
+          <div class="rounded-[9px] bg-[#EAF3FF] p-[16px]">
+            <div class="mb-[12px]">
+              <span class="font-[600] text-base text-[#200E32]">새로운 기능</span>
+            </div>
+            <p class="text-[#200E32] text-sm">AI 로드맵 설계 기능이 업데이트 되었습니다</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //모바일 플로팅 메뉴 노출 버튼 -->
+  </div>
+  <div class="min-h-screen px-[16px] pb-[90px] pt-[30px] lg:pt-[62px] lg:pb-[115px] container mx-auto print:h-0 flex my-status lg:gap-[32px]">
+    <div>
+      <!-- 나의 현황 -->
+      <div class="bg-white rounded-[10px] shadow-lg px-[16px] py-[24px] lg:py-[42px] lg:px-[32px] flex flex-col gap-[16px] lg:flex-row lg:justify-between break-keep mb-[16px] lg:mb-[36px] lg:items-center">
+        <div class="left flex items-center gap-[16px]">
+          <img src="./images/status-icon-1.svg" alt="나의 현황 아이콘">
+          <div>
+            <h3 class="font-[700] text-xl lg:text-3xl text-[#200E32] mb-[8px]">나의 현황</h3>
+            <p class="font-[500] text-base lg:text-lg text-[#4B5563]">나의 학습 성과와 진행 상황을 한눈에 확인하세요</p>
+          </div>
+        </div>
+        <div class="right text-right">
+          <p class="mr-[10px] lg:mr-[0] text-base text-[#6B7280] inline-block lg:block">마지막 업데이트</p>
+          <p class="inline-block text-base text-[#200E32] font-[600] lg:text-lg">2025.10.08</p>
+        </div>
+      </div>
+      <!-- //나의 현황 -->
+      <div class="grid gap-[16px] lg:gap-[32px] grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <div class="bg-white shadow-lg rounded-[10px] p-[16px] lg:p-[24px] relative">
+          <p class="text-base mb-[8px] font-[500] text-[#4B5563] lg:text-lg">전체 진행률</p>
+          <span class="font-[700] text-[#2463EB] text-2xl mb-[16px] lg:text-3xl lg:mb-[24px] block">78%</span>
+          <span class="progress rounded-full w-full h-[6px] bg-[#DAE0E8] block">
+            <p class="rounded-full bg-[#2463EB] h-full" style="width: 50%;"></p>
+          </span>
+          <img src="./images/status-icon-2.svg" alt="전체 진행률 아이콘" class="absolute w-[48px] aspect-square top-[19px] right-[16px] lg:top-[33px] lg:right-[24px]">
+        </div>
+        <div class="bg-white shadow-lg rounded-[10px] p-[16px] lg:p-[24px] relative">
+          <p class="text-base mb-[8px] font-[500] text-[#4B5563] lg:text-lg">완료한 탐구</p>
+          <span class="font-[700] text-[#079669] text-2xl mb-[14px] lg:text-3xl block">78%</span>
+          <p class="text-base text-[#4B5563]">목표: 15개</p>
+          <img src="./images/status-icon-3.svg" alt="완료한 탐구 아이콘" class="absolute w-[48px] aspect-square top-[19px] right-[16px] lg:top-[33px] lg:right-[24px]">
+        </div>
+        <div class="bg-white shadow-lg rounded-[10px] p-[16px] lg:p-[24px] relative">
+          <p class="text-base mb-[8px] font-[500] text-[#4B5563] lg:text-lg">면접 연습</p>
+          <span class="font-[700] text-[#7C3AED] text-2xl mb-[14px] lg:text-3xl block">28</span>
+          <p class="text-base text-[#4B5563]">평균 점수: 85점</p>
+          <img src="./images/status-icon-4.svg" alt="면접 연습 아이콘" class="absolute w-[48px] aspect-square top-[19px] right-[16px] lg:top-[33px] lg:right-[24px]">
+        </div>
+        <div class="bg-white shadow-lg rounded-[10px] p-[16px] lg:p-[24px] relative">
+          <p class="text-base mb-[8px] font-[500] text-[#4B5563] lg:text-lg">목표 달성률</p>
+          <span class="font-[700] text-[#200E32] text-2xl mb-[14px] lg:text-3xl block">92%</span>
+          <p class="text-base text-[#4B5563]">이번 달 목표</p>
+          <img src="./images/status-icon-5.svg" alt="면접 연습 아이콘" class="absolute w-[48px] aspect-square top-[19px] right-[16px] lg:top-[33px] lg:right-[24px]">
+        </div>
+      </div>
+  
+      <!-- 나의 성적 현황 -->
+      <div class="my-[40px] lg:my-[56px]">
+        <h3 class="text-[#200E32] font-[700] text-xl lg:text-2xl">나의 성적 현황</h3>
+        <div class="grid gap-[20px] lg:gap-[32px] grid-cols-1 lg:grid-cols-3 mt-[16px] lg:mt-[27px] items-center lg:items-stretch">
+          <div class="bg-white shadow-lg rounded-[10px] p-[24px]">
+            <span class="text-xl font-[700] text-[#200E32] mb-[16px] block lg:font-[600]">성적</span>
+            <div class="flex items-end justify-between">
+              <span>
+                <p class="text-base text-[#200E32] font-[600] block mb-[4px] block">국영수사과</p>
+                <p class="text-base text-[#4B5563] font-[500]">교과별 성적을 확인해보세요.</p>
+              </span>
+              <p class="text-base font-[600] text-[#200E32] lg:text-lg">
+                <b class="text-2xl text-[#8A34EF] mr-[4px] font-[700] lg:text-3xl">4.6</b>등급
+              </p>
+            </div>
+            <ul class="border-t-2 border-[#DAE0E8] mt-[24px] pt-[24px] grid gap-[12px]">
+              <li class="flex items-center justify-between">
+                <p class="text-base text-[#200E32]">전교과</p>
+                <p class="text-base text-[#4B5563]">
+                  <b class="text-base text-[#8A34EF] mr-[4px] font-[700]">4.6</b>등급
+                </p>
+              </li>
+              <li class="flex items-center justify-between">
+                <p class="text-base text-[#200E32]">국영수사과</p>
+                <p class="text-base text-[#4B5563]">
+                  <b class="text-base text-[#8A34EF] mr-[4px] font-[700]">4.6</b>등급
+                </p>
+              </li>
+              <li class="flex items-center justify-between">
+                <p class="text-base text-[#200E32]">국영수사</p>
+                <p class="text-base text-[#4B5563]">
+                  <b class="text-base text-[#8A34EF] mr-[4px] font-[700]">4.6</b>등급
+                </p>
+              </li>
+              <li class="flex items-center justify-between">
+                <p class="text-base text-[#200E32]">국영수과</p>
+                <p class="text-base text-[#4B5563]">
+                  <b class="text-base text-[#8A34EF] mr-[4px] font-[700]">4.6</b>등급
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white shadow-lg rounded-[10px] p-[24px]">
+            <span class="text-xl font-[600] text-[#200E32] mb-[24px] block lg:font-[600]">학업 성취도 분석</span>
+            <ul class="grid gap-[16px]">
+              <li>
+                <span class="flex items-center justify-between mb-[8px]">
+                  <p class="text-base text-[#200E32]">국어</p>
+                  <p class="text-base text-[#2463EB] font-[700]">85%</p>
+                </span>
+                <span class="progress rounded-full w-full h-[6px] bg-[#DAE0E8] block">
+                  <p class="rounded-full bg-[#2463EB] h-full" style="width: 70%;"></p>
+                </span>
+              </li>
+              <li>
+                <span class="flex items-center justify-between mb-[8px]">
+                  <p class="text-base text-[#200E32]">수학</p>
+                  <p class="text-base text-[#2463EB] font-[700]">92%</p>
+                </span>
+                <span class="progress rounded-full w-full h-[6px] bg-[#DAE0E8] block">
+                  <p class="rounded-full bg-[#2463EB] h-full" style="width: 92%;"></p>
+                </span>
+              </li>
+              <li>
+                <span class="flex items-center justify-between mb-[8px]">
+                  <p class="text-base text-[#200E32]">영어</p>
+                  <p class="text-base text-[#2463EB] font-[700]">85%</p>
+                </span>
+                <span class="progress rounded-full w-full h-[6px] bg-[#DAE0E8] block">
+                  <p class="rounded-full bg-[#2463EB] h-full" style="width: 85%;"></p>
+                </span>
+              </li>
+              <li class="mb-[16px]">
+                <span class="flex items-center justify-between mb-[8px]">
+                  <p class="text-base text-[#200E32]">과학</p>
+                  <p class="text-base text-[#2463EB] font-[700]">90%</p>
+                </span>
+                <span class="progress rounded-full w-full h-[6px] bg-[#DAE0E8] block">
+                  <p class="rounded-full bg-[#2463EB] h-full" style="width: 90%;"></p>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="relative mt-[16px] lg:mt-0 lg:flex">
+            <span class="p-[24px] block bg-white relative rounded-[24px] shadow-lg max-w-[90%] m-auto text-bubble break-keep lg:max-w-[360px] lg:m-0 lg:ml-auto lg:absolute lg:top-0 lg:right-0 lg:top-[-40px]">
+              <p class="font-[600] text-base text-[#200E32] mb-[8px] lg:text-lg">종합 평가</p>
+              <p class="text-sm text-[#4B5563] lg:text-lg">전 과목에서 우수한 성취도를 보이고 있으며, 특히 수학과 과학 분야에서 뛰어난 역량을 보입니다.</p>
+            </span>
+            <img src="./images/robot-1.png" alt="로봇1" class="w-full lg:max-w-[277px] lg:mt-auto">
+          </div>
+        </div>
+      </div>
+      <!-- //나의 성적 현황 -->
+  
+      <!-- 나의 학생부 현황 -->
+      <div class="mb-[40px] lg:mt-0 lg:mb-[56px]">
+        <h3 class="text-[#200E32] font-[700] text-xl lg:text-2xl">나의 학생부 현황</h3>
+        <div class="grid gap-[20px] lg:gap-[32px] grid-cols-1 lg:grid-cols-3 mt-[16px] lg:mt-[27px] items-center lg:items-stretch">
+          <div class="bg-white shadow-lg rounded-[10px] p-[24px] col-span-2">
+            <span class="text-xl font-[600] text-[#200E32] mb-[16px] lg:mb-[24px] block lg:font-[600]">비교과 활동</span>
+            <div class="grid gap-y-[16px] lg:gap-[16px] lg:grid-cols-2 grid-cols-1">
+              <div class="bg-[#F5F5F5] rounded-[9px] p-[16px]">
+                <span class="text-sm text-[#200E32] font-[600] mb-[16px] lg:text-base block">동아리 활동</span>
+                <ul class="grid gap-[12px]">
+                  <li class="flex items-center justify-between">
+                    <p class="text-sm lg:text-base text-[#200E32]">과학실험동아리</p>
+                    <p class="text-sm lg:text-base text-[#4B5563]">2년</p>
+                  </li>
+                  <li class="flex items-center justify-between">
+                    <p class="text-sm lg:text-base text-[#200E32]">수학연구회</p>
+                    <p class="text-sm lg:text-base text-[#4B5563]">2년</p>
+                  </li>
+                  <li class="flex items-center justify-between">
+                    <p class="text-sm lg:text-base text-[#200E32]">봉사 동아리</p>
+                    <p class="text-sm lg:text-base text-[#4B5563]">2년</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-[#F5F5F5] rounded-[9px] p-[16px]">
+                <span class="text-sm text-[#200E32] font-[600] mb-[16px] lg:text-base block">대회 참가</span>
+                <ul class="grid gap-[12px]">
+                  <li class="flex items-center justify-between">
+                    <p class="text-sm lg:text-base text-[#200E32]">과학올림피아트</p>
+                    <p class="text-sm lg:text-base text-[#D97B00]">동상</p>
+                  </li>
+                  <li class="flex items-center justify-between">
+                    <p class="text-sm lg:text-base text-[#200E32]">수학경시대회</p>
+                    <p class="text-sm lg:text-base text-[#59606A]">은상</p>
+                  </li>
+                  <li class="flex items-center justify-between">
+                    <p class="text-sm lg:text-base text-[#200E32]">영어말하기 대회</p>
+                    <p class="text-sm lg:text-base text-[#FFAE0D]">금상</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-[16px] lg:mt-[24px]">
+              <p class="block mb-[16px] text-[#200E32] font-[600] text-sm lg:text-base">핵심 역량</p>
+              <span class="flex flex-wrap gap-[8px]">
+                <p class="rounded-full bg-[#F5F5F5] py-[5px] px-[14px] text-base text-[#200E32]">리더십</p>
+                <p class="rounded-full bg-[#F5F5F5] py-[5px] px-[14px] text-base text-[#200E32]">문제해결능력</p>
+                <p class="rounded-full bg-[#F5F5F5] py-[5px] px-[14px] text-base text-[#200E32]">협업능력</p>
+                <p class="rounded-full bg-[#F5F5F5] py-[5px] px-[14px] text-base text-[#200E32]">창의성</p>
+                <p class="rounded-full bg-[#F5F5F5] py-[5px] px-[14px] text-base text-[#200E32]">의사소통</p>
+                <p class="rounded-full bg-[#F5F5F5] py-[5px] px-[14px] text-base text-[#200E32]">분석적 사고</p>
+              </span>
+            </div>
+          </div>
+          <div class="relative mt-[16px] lg:mt-0 lg:flex lg:block hidden">
+            <span class="p-[24px] block bg-white relative rounded-[24px] shadow-lg max-w-[90%] m-auto text-bubble break-keep lg:max-w-[360px] lg:m-0 lg:ml-auto lg:absolute lg:top-0 lg:right-0 lg:top-[-10px]">
+              <p class="font-[600] text-base text-[#200E32] mb-[8px] lg:text-lg">비교과 영역 개선 사항을 추천해드려요.</p>
+              <p class="text-sm text-[#4B5563] lg:text-lg">학습역량, 국어 영역 심화 학습 필요
+                전공 탐색, 관심 전공 관련 심화 활동 확대
+                리더쉽, 학급 임원 또는 동아리 회장 경험의
+                개선이 필요합니다.</p>
+            </span>
+            <img src="./images/robot-2.png" alt="로봇2" class="w-full lg:max-w-[277px] lg:mt-auto">
+          </div>
+        </div>
+  
+        <!-- 진로 탐색 활동 -->
+        <div class="grid gap-y-[20px] lg:gap-[32px] grid-cols-1 lg:grid-cols-3 mt-[20px] lg:mt-[32px] items-center lg:items-stretch">
+          <div class="bg-white shadow-lg rounded-[10px] p-[24px]">
+            <span class="text-xl font-[600] text-[#200E32] mb-[24px] block lg:font-[600]">진로 탐색 활동</span>
+            <ul class="grid gap-[24px]">
+              <li class="border-l-3 border-[#8A34EF] pl-[16px]">
+                <p class="text-base font-[600] text-[#200E32] block mb-[8px]">관심 분야</p>
+                <p class="text-base text-[#200E32]">공학, 자연과학, 의료보건</p>
+              </li>
+              <li class="border-l-3 border-[#8A34EF] pl-[16px]">
+                <p class="text-base font-[600] text-[#200E32] block mb-[8px]">진로 체험 활동</p>
+                <p class="text-base text-[#200E32]">• 대학 연구실 견학 (3회)</p>
+                <p class="text-base text-[#200E32]">• 과학기술원 캠프 참가</p>
+                <p class="text-base text-[#200E32]">• 의료진 직업체험</p>
+              </li>
+              <li class="border-l-3 border-[#8A34EF] pl-[16px]">
+                <p class="text-base font-[600] text-[#200E32] block mb-[8px]">독서 활동</p>
+                <p class="text-base text-[#200E32]">• 과학 관련 도서 15권</p>
+                <p class="text-base text-[#200E32]">• 진로 관련 도서 8권 독서 완료</p>
+              </li>
+            </ul>
+          </div>
+          <!-- //진로 탐색 활동 -->
+          <div class="bg-white shadow-lg rounded-[10px] p-[24px]">
+            <span class="text-xl font-[600] text-[#200E32] mb-[16px] lg:mb-[24px] block lg:font-[600]">영역별 성과 분석</span>
+            <!-- 그래프 기능 작업 필요. -->
+            <img src="./images/sample-graphic.png" alt="샘플 그래프" class="w-full">
+          </div>
+          <div class="bg-white shadow-lg rounded-[10px] p-[24px] lg:h-fit lg:min-h-[320px]">
+            <span class="text-xl font-[600] text-[#200E32] mb-[24px] block lg:font-[600]">성취 배지</span>
+            <ul class="flex flex-wrap gap-[8px]">
+              <li class="rounded-full px-[14px] py-[7px] text-[#fff] text-sm font-[500]" style="background: linear-gradient(139deg, #8A34EF 6.67%, #8080FF 110.98%);">📖 우수 학업성취</li>
+              <li class="rounded-full px-[14px] py-[7px] text-[#fff] text-sm font-[500]" style="background: linear-gradient(139deg, #8A34EF 6.67%, #8080FF 110.98%);">🔭 과학 탐구자</li>
+              <li class="rounded-full px-[14px] py-[7px] text-[#fff] text-sm font-[500]" style="background: linear-gradient(139deg, #8A34EF 6.67%, #8080FF 110.98%);">📚 독서 마니아</li>
+              <li class="rounded-full px-[14px] py-[7px] text-[#fff] text-sm font-[500]" style="background: linear-gradient(139deg, #8A34EF 6.67%, #8080FF 110.98%);">😎 봉사 리더</li>
+              <li class="rounded-full px-[14px] py-[7px] text-[#fff] text-sm font-[500]" style="background: linear-gradient(139deg, #8A34EF 6.67%, #8080FF 110.98%);">💡 창의적 사고</li>
+            </ul>
+          </div>
+        </div>
+        <div class="relative mt-[40px] lg:hidden block">
+          <span class="p-[24px] block bg-white relative rounded-[24px] shadow-lg max-w-[90%] m-auto text-bubble break-keep lg:max-w-[360px] lg:m-0 lg:ml-auto lg:absolute lg:top-0 lg:right-0 lg:top-[-40px]">
+            <p class="font-[600] text-base text-[#200E32] mb-[8px] lg:text-lg">비교과 영역 개선 사항을 추천해드려요.</p>
+            <p class="text-sm text-[#4B5563] lg:text-lg">학습역량, 국어 영역 심화 학습 필요
+              전공 탐색, 관심 전공 관련 심화 활동 확대
+              리더쉽, 학급 임원 또는 동아리 회장 경험의
+              개선이 필요합니다.</p>
+          </span>
+          <img src="./images/robot-2.png" alt="로봇2" class="w-full lg:max-w-[277px] lg:mt-auto">
+        </div>
+      </div>
+      <!-- //나의 학생부 현황 -->
+  
+      <!-- 추천 대학 분석 -->
+      <div class="mt-[40px] lg:mt-0">
+        <h3 class="text-[#200E32] font-[700] text-xl lg:text-2xl">추천 대학 분석</h3>
+        <div class="grid gap-y-[20px] lg:gap-[32px] grid-cols-1 lg:grid-cols-3 mt-[16px] lg:mt-[27px]">
+          <div class="grid gap-[20px] lg:gap-[32px] grid-cols-1 lg:grid-cols-3 col-span-2">
+            <div class="rounded-[10px] bg-white shadow-lg p-[24px]">
+              <span class="text-xl font-[600] text-#200E32 mb-[24px] block">
+                <p class="w-[15px] aspect-square bg-[#63CC65] mr-[6px] rounded-full inline-block"></p>
+                안정권
+              </span>
+              <p class="font-[500] text-[#4B5563] text-base">• 한국과학기술대학교</p>
+              <p class="font-[500] text-[#4B5563] text-base">• 국민대학교</p>
+              <p class="font-[500] text-[#4B5563] text-base">• 숭실대학교</p>
+            </div>
+            <div class="rounded-[10px] bg-white shadow-lg p-[24px]">
+              <span class="text-xl font-[600] text-#200E32 mb-[24px] block">
+                <p class="w-[15px] aspect-square bg-[#F9DB47] mr-[6px] rounded-full inline-block"></p>
+                적정권
+              </span>
+              <p class="font-[500] text-[#4B5563] text-base">• 한양대학교</p>
+              <p class="font-[500] text-[#4B5563] text-base">• 중앙대학교</p>
+              <p class="font-[500] text-[#4B5563] text-base">• 경희대학교</p>
+            </div>
+            <div class="rounded-[10px] bg-white shadow-lg p-[24px]">
+              <span class="text-xl font-[600] text-#200E32 mb-[24px] block">
+                <p class="w-[15px] aspect-square bg-[#F94747] mr-[6px] rounded-full inline-block"></p>
+                도전권
+              </span>
+              <p class="font-[500] text-[#4B5563] text-base">• 서울대학교</p>
+              <p class="font-[500] text-[#4B5563] text-base">• 연세대학교</p>
+              <p class="font-[500] text-[#4B5563] text-base">• 고려대학교</p>
+            </div>
+          </div>
+          <div class="relative mt-[16px] lg:mt-0 lg:flex block">
+            <span class="p-[24px] block bg-white relative rounded-[24px] shadow-lg max-w-[90%] m-auto text-bubble break-keep lg:max-w-[360px] lg:m-0 lg:ml-auto lg:absolute lg:top-0 lg:right-0 lg:top-[-60px] lg:after:scale-x-[-1] last">
+              <p class="text-base text-[#4B5563] lg:text-lg">도전권을 향하여 한걸음 더 BUFF~ <br class="hidden lg:block">버피가 응원합니다!</p>
+            </span>
+            <img src="./images/robot-2.png" alt="로봇2" class="w-full lg:max-w-[277px] lg:mt-auto">
+          </div>
+        </div>
+      </div>
+      <!-- //추천 대학 분석 -->
+    </div>
+
+    <!-- 플로팅 메뉴 -->
+    <div class="lg:flex-none lg:w-[342px] h-fit w-full bg-white rounded-[10px] shadow-lg p-[24px] grid gap-[24px] sticky top-[60px] hidden xl:grid">
+      <div>
+        <span class="text-xl font-[600] text-[#200E32] block mb-[24px]">최근 활동</span>
+        <div class="rounded-[9px] bg-[#F4F4F4] p-[16px] mb-[12px]">
+          <div class="flex items-center justify-between mb-[12px]">
+            <span class="font-[600] text-base text-[#200E32]">탐구 보고서 완료</span>
+            <p class="text-xs text-[#4B5563]">2시간 전</p>
+          </div>
+          <p class="text-[#200E32] text-sm">환경과학 주제 탐구 보고서 완성</p>
+        </div>
+        <div class="rounded-[9px] bg-[#F4F4F4] p-[16px] mb-[12px]">
+          <div class="flex items-center justify-between mb-[12px]">
+            <span class="font-[600] text-base text-[#200E32]">AI 면접 연습</span>
+            <p class="text-xs text-[#4B5563]">2시간 전</p>
+          </div>
+          <p class="text-[#200E32] text-sm">서울대 경영학과 모의면접 (점수 88점)</p>
+        </div>
+        <div class="rounded-[9px] bg-[#F4F4F4] p-[16px]">
+          <div class="flex items-center justify-between mb-[12px]">
+            <span class="font-[600] text-base text-[#200E32]">심리 검사 완료</span>
+            <p class="text-xs text-[#4B5563]">2시간 전</p>
+          </div>
+          <p class="text-[#200E32] text-sm">성격 유형 검사 및 진로 적성 분석</p>
+        </div>
+      </div>
+      <div>
+        <span class="text-xl font-[600] text-[#200E32] block mb-[24px]">알림 및 할 일</span>
+        <div class="rounded-[9px] bg-[#FFE3E3] p-[16px] mb-[12px]">
+          <div class="mb-[12px]">
+            <span class="font-[600] text-base text-[#200E32]">마감 임박</span>
+          </div>
+          <p class="text-[#200E32] text-sm">수학 탐구 보고서 제출 마감 (2일 남음)</p>
+        </div>
+        <div class="rounded-[9px] bg-[#FFF8DA] p-[16px] mb-[12px]">
+          <div class="mb-[12px]">
+            <span class="font-[600] text-base text-[#200E32]">추천 활동</span>
+          </div>
+          <p class="text-[#200E32] text-sm">경영학과 관련 독서 활동을 시작해 보세요</p>
+        </div>
+        <div class="rounded-[9px] bg-[#EAF3FF] p-[16px]">
+          <div class="mb-[12px]">
+            <span class="font-[600] text-base text-[#200E32]">새로운 기능</span>
+          </div>
+          <p class="text-[#200E32] text-sm">AI 로드맵 설계 기능이 업데이트 되었습니다</p>
+        </div>
+      </div>
+    </div>
+    <!-- //플로팅 메뉴 -->
+  </div>
+
+  <script>
+    $('.activity-btn').click(function(){
+      $('.activity-list').toggle();
+    });
+  </script>
+</body>
+</html>

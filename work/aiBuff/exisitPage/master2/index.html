@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="./index.css">
+  <title>AI 학생부 종합 마스터 - 학생부 작성</title>
+</head>
+<body style="background-color: #F0EEEB;">
+  <div class="container mx-auto px-4 py-4 print:h-0"> <!-- 해당 태그는 전체 레이아웃 width 를 잡기 위한 용도로, 사용하실때는 없애도 무방합니다. (기존 페이지 스타일에 이미 있음) -->
+    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8 print:h-0 student-record-list">
+      <li class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+        <div class="inner">
+          <div class="flex justify-between items-center">
+            <p class="text-[#4B5563] font-[500] text-lg">연도</p>
+            <p class="text-[#8A34EF] rounded-[100px] bg-purple-100 text-base py-[1px] px-[10px]">연도</p>
+          </div>
+          <span class="text-3xl font-[700] text-[#8A34EF] mt-[8px] block">2025</span>
+        </div>
+      </li>
+      <li class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+        <div class="inner">
+          <p class="text-[#4B5563] text-lg font-[500]">담당 학생수</p>
+          <span class="text-3xl font-[700] text-[#8A34EF] mt-[8px] block">21</span>
+          <p class="text-[#4B5563] text-base font-[500] mt-[14px]">전체 학생 중 1.91%</p>
+          <span class="progress rounded-[100px] w-full mt-[6px] h-[6px] bg-[#DAE0E8] block">
+            <p class="rounded-[100px]" style="width: 1.91%;"></p>
+          </span>
+        </div>
+      </li>
+      <li class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+        <div class="inner">
+          <p class="text-[#4B5563] text-lg font-[500]">미평가건수</p>
+          <span class="text-3xl font-[700] text-[#8A34EF] mt-[8px] block">20</span>
+          <p class="text-[#4B5563] text-base font-[500] mt-[14px]">담당 학생 중 95.24%</p>
+          <span class="progress rounded-[100px] w-full mt-[6px] h-[6px] bg-[#DAE0E8] block">
+            <p class="rounded-[100px]" style="width: 95.24%;"></p>
+          </span>
+        </div>
+      </li>
+      <li class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+        <div class="inner">
+          <p class="text-[#4B5563] text-lg font-[500]">평가건수</p>
+          <span class="text-3xl font-[700] text-[#8A34EF] mt-[8px] block">1</span>
+          <p class="text-[#4B5563] text-base font-[500] mt-[14px]">담당학생 중 4.76%</p>
+          <span class="progress rounded-[100px] w-full mt-[6px] h-[6px] bg-[#DAE0E8] block">
+            <p class="rounded-[100px]" style="width: 4.76%;"></p>
+          </span>
+        </div>
+      </li>
+      <li class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+        <div class="inner">
+          <p class="text-[#4B5563] text-lg font-[500]">면접연결건수</p>
+          <span class="text-3xl font-[700] text-[#8A34EF] mt-[8px] block">1</span>
+          <p class="text-[#4B5563] text-base font-[500] mt-[14px]">담당학생 중 4.76%</p>
+          <span class="progress rounded-[100px] w-full mt-[6px] h-[6px] bg-[#DAE0E8] block">
+            <p class="rounded-[100px]" style="width: 4.76%;"></p>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

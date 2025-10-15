@@ -1,0 +1,25 @@
+.student-record-list {
+  li {
+    position: relative;
+    border-radius: 12px;
+    background: white;
+    padding: 0;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#fff, #fff), 
+    linear-gradient(135deg, #8A34EF, #8080FF);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  .inner {
+    padding: 24px;
+  }
+
+  .progress {
+    p {
+      height: 100%;
+      background: linear-gradient(139deg, #8A34EF 6.67%, #8080FF 110.98%);
+      transition: all .2s ease-in-out;
+    }
+  }
+}

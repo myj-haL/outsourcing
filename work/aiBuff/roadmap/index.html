@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="./index.css">
+  <title>검사 로드맵</title>
+</head>
+<body>
+  <div class="roadmap-container">
+    <h3 class="title">검사 로드맵</h3>
+    <div class="roadmap">
+      <div class="road-box course">
+        <div class="explain">
+          <span class="box-title">진로진학 로드맵</span>
+          <p class="box-small-title">AI가 비교·분석해주는 내 성적으로<br>지원 가능 대학 즉시 확인</p>
+          <p class="contents">
+            학년별, 교과별 성적 변화 추이부터 강·약점 과목을 찾고, <br>
+            나의 강점 과목 조합까지 완벽 진단! <br>
+            성적향상도와 교과간 편차를 반영한 지원 가능권(도전·가능·안정권) 예측으로 <br>
+            대학 및 전공 선택과 학습전략에 활용
+          </p>
+          <div class="img-box mobile">
+            <img src="./images/road1-img.png" alt="진로진학 이미지">
+          </div>
+          <ul class="btns one">
+            <li class="active">희망 전공·직업<br>로드맵 리포트</li>
+            <li>희망 전공 핵심 키워드 분석<br>우리학교 추천활동까지</li>
+            <li>매년 150만건 이상의<br>합불 데이터 비교</li>
+            <li>연속 3년 동일 전형 비교<br>입결 데이터 관리</li>
+          </ul>
+        </div>
+        <div class="img-box pc">
+          <img src="./images/road1-img.png" alt="진로진학 이미지">
+        </div>
+      </div>
+      <div class="road-box study">
+        <div class="explain">
+          <span class="box-title">학습 로드맵</span>
+          <p class="box-small-title">학습심리검사를 통한 나만의 맞춤형 학습 전략 플랜!<br>AI가 추천하는 나만의 맞춤형 학습 전략</p>
+          <p class="contents">과목별, 단계별 학습법 추천으로<br>학습 전략 한 발 더 BUFF!</p>
+          <div class="img-box mobile">
+            <img src="./images/road2-img.png" alt="학습 이미지">
+          </div>
+          <ul class="btns two">
+            <li>학습성격, 학습동기,<br>학습전략 파악</li>
+            <li>단계별 학습 로드맵 제시<br>개인 맞춤형 전략</li>
+            <li>교과별 성취도 및 세부 평가<br>학습태도 및 강약점 확인</li>
+            <li>부족한 학습 습관, 동기 개선<br>과목별 보안 전략, 실천 계획</li>
+          </ul>
+        </div>
+        <div class="img-box pc">
+          <img src="./images/road2-img.png" alt="학습 이미지">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  /* 박스별 라벨 순차 활성화 */
+   const lists = [
+      {
+        items: document.querySelectorAll('.btns.one > li'),
+        current: 0,
+      },
+      {
+        items: document.querySelectorAll('.btns.two > li'),
+        current: 0,
+      }
+    ];
+
+    const interval = 4000; // 4초
+
+    lists.forEach(list => {
+      const total = list.items.length;
+
+      function activateNext() {
+        const prev = list.current;
+        list.current = (list.current + 1) % total;
+        
+        // requestAnimationFrame으로 브라우저 렌더링 사이클에 맞춤
+        requestAnimationFrame(() => {
+          list.items[prev].classList.remove('active');
+          list.items[list.current].classList.add('active');
+        });
+      }
+
+      activateNext();
+      setInterval(activateNext, interval);
+    });
+
+    /* 3초 간격 확대 축소 */
+    const roadBoxes = document.querySelectorAll('.road-box');
+    let roadCurrent = 0;
+    let intervalId;
+
+    const activateRoadBox = () => {
+      roadBoxes.forEach(box => box.classList.remove('active'));
+      roadBoxes[roadCurrent].classList.add('active');
+      roadCurrent = (roadCurrent + 1) % roadBoxes.length;
+    };
+
+    if (window.innerWidth >= 1024 && roadBoxes.length) {
+      activateRoadBox();
+      intervalId = setInterval(activateRoadBox, 3000);
+      
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          clearInterval(intervalId);
+        } else {
+          activateRoadBox();
+          intervalId = setInterval(activateRoadBox, 3000);
+        }
+      });
+    }
+
+  </script>
+</body>
+</html>
