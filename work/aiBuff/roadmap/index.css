@@ -87,6 +87,7 @@
           font-weight: 700;
           line-height: 22px;
           transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+          will-change: background-color, color;
           display: grid;
           align-content: center;
           
