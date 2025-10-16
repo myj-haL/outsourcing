@@ -92,29 +92,29 @@
   });
 
     /* 3초 간격 확대 축소 */
-    const roadBoxes = document.querySelectorAll('.road-box');
-    let roadCurrent = 0;
-    let intervalId;
+    // const roadBoxes = document.querySelectorAll('.road-box');
+    // let roadCurrent = 0;
+    // let intervalId;
 
-    const activateRoadBox = () => {
-      roadBoxes.forEach(box => box.classList.remove('active'));
-      roadBoxes[roadCurrent].classList.add('active');
-      roadCurrent = (roadCurrent + 1) % roadBoxes.length;
-    };
+    // const activateRoadBox = () => {
+    //   roadBoxes.forEach(box => box.classList.remove('active'));
+    //   roadBoxes[roadCurrent].classList.add('active');
+    //   roadCurrent = (roadCurrent + 1) % roadBoxes.length;
+    // };
 
-    if (window.innerWidth >= 1024 && roadBoxes.length) {
-      activateRoadBox();
-      intervalId = setInterval(activateRoadBox, 4000);
+    // if (window.innerWidth >= 1024 && roadBoxes.length) {
+    //   activateRoadBox();
+    //   intervalId = setInterval(activateRoadBox, 4000);
       
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          clearInterval(intervalId);
-        } else {
-          activateRoadBox();
-          intervalId = setInterval(activateRoadBox, 3000);
-        }
-      });
-    }
+    //   document.addEventListener('visibilitychange', () => {
+    //     if (document.hidden) {
+    //       clearInterval(intervalId);
+    //     } else {
+    //       activateRoadBox();
+    //       intervalId = setInterval(activateRoadBox, 3000);
+    //     }
+    //   });
+    // }
 
   </script>
 </body>
