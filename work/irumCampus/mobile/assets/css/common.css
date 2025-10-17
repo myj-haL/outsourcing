@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'noto-sans-kr';
+  src: url("../fonts/noto-sans-kr-v25-latin_korean-900.woff") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'noto-sans-kr';
+  src: url("../fonts/noto-sans-kr-v25-latin_korean-700.woff") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'noto-sans-kr';
+  src: url("../fonts/noto-sans-kr-v25-latin_korean-500.woff") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'noto-sans-kr';
+  src: url("../fonts/noto-sans-kr-v25-latin_korean-regular.woff") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'noto-sans-kr';
+  src: url("../fonts/noto-sans-kr-v25-latin_korean-300.woff") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  background-color: #1b1b1b;
+  font-size: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+  
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+header .header-inner, footer .footer-inner {
+  max-width: 1016px;
+  margin: auto;
+}

@@ -1,0 +1,484 @@
+@keyframes rotate_image {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.app-intro {
+  position:relative;
+  width:1920px;
+  margin: auto;
+}
+
+.app-intro footer .footer {
+  padding-top: 10.9375%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-image: url("assets/images/9.png");
+}
+
+.app-intro .floating-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  background-color: #2a4564;
+}
+
+.app-intro .floating-menu .floating-menu-inner {
+  padding: 20px;
+}
+
+.app-intro .floating-menu .tit-1 {
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.app-intro .floating-menu .tit-2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.app-intro .floating-menu .tit-3 {
+  color: #f5dd05;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.app-intro .floating-menu .input-wrap {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.app-intro .floating-menu .input-wrap label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+}
+
+.app-intro .floating-menu .input-wrap input {
+  display: inline-block;
+  width: 100%;
+  padding: 5px;
+  border: none;
+  outline: none;
+  vertical-align: top;
+}
+
+.app-intro .floating-menu .input-wrap .input-group {
+  white-space: nowrap;
+  font-size: 0;
+}
+
+.app-intro .floating-menu .input-wrap .input-group input {
+  width: 32.3%;
+  margin-right: 3px;
+}
+
+.app-intro .floating-menu .input-wrap .input-group select {
+  padding: 4px 5px;
+  width: 32.3%;
+  margin-right: 3px;
+  border: none;
+  outline: none;
+}
+
+.app-intro .floating-menu .input-wrap textarea {
+  display: inline-block;
+  width: 100%;
+  padding: 5px;
+  border: none;
+  outline: none;
+  resize: none;
+  vertical-align: top;
+}
+
+.app-intro .floating-menu .input-wrap.btn {
+  margin: 15px -20px;
+  padding: 10px 0 15px;
+  text-align: center;
+  background-color: #2895d2;
+}
+
+.app-intro .floating-menu .input-wrap.btn .check-agree > * {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: top;
+}
+
+.app-intro .floating-menu .input-wrap.btn .check-agree input {
+  width: inherit;
+}
+
+.app-intro .floating-menu .input-wrap.btn .check-agree label {
+  position: inherit;
+  font-size: 12px;
+}
+
+.app-intro .floating-menu .input-wrap.btn .check-agree .detail {
+  position: relative;
+  top: -2px;
+  padding: 2px 4px;
+  margin-left: 10px;
+  font-size: 10px;
+  background-color: #fff;
+}
+
+.app-intro .floating-menu .input-wrap.btn button {
+  position: relative;
+  width: 80%;
+  background-color: #434142;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px 0;
+  border-radius: 7px;
+  margin-top: 10px;
+}
+
+.app-intro .floating-menu .input-wrap.btn button img.loading {
+  display: none;
+  position: absolute;
+  left: 105px;
+  top: 12px;
+  width: 23px;
+  transform-origin: 50% 50%;
+  animation: rotate_image .5s linear infinite;
+}
+
+.app-intro .floating-menu .input-wrap.btn button.loading {
+  pointer-events: none;
+  background-color: gray;
+}
+
+.app-intro .floating-menu .input-wrap.btn button.loading img.loading {
+  display: block;
+}
+
+.app-intro .floating-menu .info {
+  margin-bottom: 10px;
+  font-size: 11px;
+  color: #fff;
+}
+
+.app-intro .floating-menu .btn-group {
+  margin: 25px 0 10px;
+}
+
+.app-intro .floating-menu .btn-group .btn {
+  width: 80%;
+  margin: 5px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.app-intro .floating-menu .btn-group .btn.call {
+  padding-top: 20.4026%;
+  background-image: url("assets/images/btn-call.png");
+}
+
+.app-intro .floating-menu .btn-group .btn.kakao {
+  padding-top: 18.953%;
+  background-image: url("assets/images/btn-kakao.png");
+}
+
+.app-dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.app-dialog.show {
+  display: block;
+}
+
+.app-dialog-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.app-dialog .app-dialog-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  max-width: 800px;
+  min-width: 300px;
+  height: 80%;
+  max-height: 1000px;
+  min-height: 800px;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+
+.app-dialog .app-dialog-container .header {
+  background-color: white;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  font-size: 16px;
+}
+
+.app-dialog .app-dialog-container .header .btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.app-dialog .app-dialog-container .content {
+  padding: 70px 20px 20px;
+  height: 100%;
+  font-size: 13px;
+  overflow-y: auto;
+}
+
+.app-dialog .app-dialog-container .content h1 {
+  font-size: 16px;
+  margin: 15px 0;
+}
+
+.app-dialog .app-dialog-container .content h2 {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.app-dialog .app-dialog-container .content h3 {
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.app-intro section {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.app-intro .section-1 {
+  padding-top: 47.291%;
+  background-image: url("assets/images/pc-1.png");
+}
+
+.app-intro .section-2 {
+  padding-top: 107%;
+  background-image: url("assets/images/pc-2.png");
+}
+
+.app-intro .section-3 {
+  padding-top: 38%;
+  background-image: url("assets/images/pc-3.png");
+}
+
+.app-intro .section-4 {
+  padding-top: 50%;
+  background-image: url("assets/images/pc-4.png");
+}
+
+.app-intro .section-5 {
+  padding-top: 203%;
+  background-image: url("assets/images/pc-5.png");
+}
+
+.app-intro .section-5-1 {
+  padding-top: 122%;
+  background-image: url("assets/images/pc-6.png");
+}
+
+.app-intro .section-5-2 {
+  padding-top: 219%;
+  background-image: url("assets/images/pc-7.png");
+}
+
+.app-intro .section-6 {
+  padding-top: 30.9895%;
+  background-image: url("assets/images/6.png");
+}
+
+.app-intro .section-7 {
+  padding-top: 10.625%;
+  background-image: url("assets/images/7.png");
+}
+
+.app-intro .section-7 .estimate-inquiry {
+  position: absolute;
+  top: 27px;
+  left: 743px;
+  width: 450px;
+  height: 64px;
+}
+
+.app-intro .section-8 {
+  background-color: #2c8dc4;
+}
+
+.app-intro .section-8 .section-inner {
+  text-align: center;
+  padding: 25px 0 50px;
+  font-family: 'noto-sans-kr';
+}
+
+.app-intro .section-8 .sub-tit {
+  color: #fff;
+  font-size: 20px;
+}
+
+.app-intro .section-8 .tit {
+  color: #020709;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.app-intro .section-8 .inquiry {
+  margin-top: 27px;
+}
+
+.app-intro .section-8 .inquiry-inner {
+  max-width: 895px;
+  margin: auto;
+  font-size: 0;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap {
+  display: inline-block;
+  width: 25%;
+  font-size: 13px;
+  vertical-align: top;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input-inner {
+  padding: 0 15px
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input .input-group {
+  white-space: nowrap;
+  font-size: 0;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input .input-group input {
+  width: 32%;
+  margin-right: 3px;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input .input-group select {
+  width: 32%;
+  margin-right: 3px;
+  border: none;
+  outline: none;
+  padding: 6px 0;
+  background: #fff;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input {
+  position: relative;
+  padding-left: 53px;
+  margin-bottom: 5px;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input.btn-inquiry {
+  padding-left: 30px;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input.btn-inquiry button {
+  position: relative;
+  width: 100%;
+  padding: 7px 0;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #211f20;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input.btn-inquiry button img.loading {
+  display: none;
+  position: absolute;
+  left: 70px;
+  top: 9px;
+  width: 23px;
+  transform-origin: 50% 50%;
+  animation: rotate_image .5s linear infinite;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input.btn-inquiry button.loading {
+  pointer-events: none;
+  background-color: gray;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input.btn-inquiry button.loading img.loading {
+  display: block;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input input {
+  width: 100%;
+  padding: 7px 5px;
+  border: none;
+  outline: none;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input textarea {
+  width: 100%;
+  padding: 7px 5px;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .check-agree {
+  font-size: 11px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .check-agree > * {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: top;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .check-agree label {
+  color: #fff;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .check-agree .detail {
+  padding: 2px 4px;
+  margin-left: 10px;
+  font-size: 10px;
+  color: #fff;
+  background-color: #31302e;
+}
