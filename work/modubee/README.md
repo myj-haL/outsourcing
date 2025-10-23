@@ -13,4 +13,4 @@
 - url : https://myj-hal.github.io/outsourcing/work/modubee/jobIntroduce/index.html
 
 ### 5. 파트너 모집
-- url : https://myj-hal.github.io/outsourcing/work/modubee/partnerCollet/index.html
+- url : https://myj-hal.github.io/outsourcing/work/modubee/partnerCollect/index.html
