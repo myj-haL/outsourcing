@@ -1,0 +1,176 @@
+.footer {
+  width: 100%;
+  background: rgba(4, 9, 56, 0.94);
+}
+
+.footer .wrapper {
+  margin: 0 auto;
+  padding: 40px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 100%;
+  max-width: 1440px;
+}
+
+.footer .wrapper .content {
+  display: flex;
+  gap: 65px;
+}
+
+.footer .wrapper .content .logo img {
+  display: block;
+  height: 32px;
+}
+
+.footer .wrapper .content .information {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 47px;
+}
+
+.footer .wrapper .content .information .terms {
+  display: flex;
+  gap: 60px;
+}
+
+.footer .wrapper .content .information .terms li a {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #FFFFFF;
+}
+
+.footer .wrapper .content .information .company {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer .wrapper .content .information .company li {
+  display: flex;
+  gap: 55px;
+}
+
+.footer .wrapper .content .information .company li p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #FFFFFF;
+  word-break: keep-all;
+}
+
+.footer .wrapper .content .information .company li p:first-of-type {
+  width: 20%;
+}
+
+.footer .wrapper .content .information .company li:first-of-type p:last-of-type {
+  flex: 1;
+  text-align: end;
+}
+
+.footer .wrapper .copyright {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #FFFFFF;
+}
+
+@media only screen and (max-width: 1400px) {
+  .footer .wrapper .content .information .company li p {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .footer .wrapper .content .information .company li p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .footer {
+    width: 100%;
+    padding: 10.7vw 3.2vw;
+    background: rgba(4, 9, 56, 0.94);
+  }
+
+  .footer .wrapper {
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9.6vw;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .footer .wrapper .content {
+    display: flex;
+    flex-direction: column;
+    gap: 5.3vw;
+  }
+
+  .footer .wrapper .content .logo img {
+    display: block;
+    height: 3.2vw;
+  }
+
+  .footer .wrapper .content .information {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5.3vw;
+  }
+
+  .footer .wrapper .content .information .terms {
+    display: flex;
+    gap: 3.2vw;
+  }
+
+  .footer .wrapper .content .information .terms li a {
+    font-size: 4.3vw;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #FFFFFF;
+  }
+
+  .footer .wrapper .content .information .company {
+    display: flex;
+    flex-direction: column;
+    gap: 2.7vw;
+  }
+
+  .footer .wrapper .content .information .company li {
+    display: flex;
+    flex-direction: column;
+    gap: 2.7vw;
+    width: 100%;
+  }
+
+  .footer .wrapper .content .information .company li p {
+    font-size: 3.2vw;
+    font-weight: 400;
+    line-height: 1.25;
+    display: block;
+    width: 100%;
+    color: #FFFFFF;
+  }
+
+  .footer .wrapper .content .information .company li p:first-of-type {
+    width: 100%;
+  }
+
+  .footer .wrapper .content .information .company li:first-of-type p:last-of-type {
+    flex: 1;
+    text-align: start;
+  }
+
+  .footer .wrapper .copyright {
+    font-size: 3.2vw;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #FFFFFF;
+  }
+}

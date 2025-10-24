@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>AI·BUFF</title>
+    <link href="../css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="../css/header.css" rel="stylesheet" type="text/css" />
+    <link href="../css/footer.css" rel="stylesheet" type="text/css" />
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <link as="style" crossorigin
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/main.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script defer
+            src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script>
+  </head>
+  <body id="body">
+    <header id="header-container">
+      <div class="header-menu">
+        <div class="header-menu-wrapper">
+          <img class="logo" src="../assets/images/logo.png" alt="AI_BUFF" />
+          <div class="auth">
+            <button type="button" class="sign-in-button">로그인</button>
+            <button type="button" class="sign-up-button">회원가입</button>
+            <div class="hamburger-wrapper">
+              <img src="../assets/images/hamburger.png" alt="navigation">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-overlay"></div>
+      <nav class="mobile-navigation">
+        <div class="title">전체 메뉴</div>
+        <div class="category">
+          <p>검사·로드맵</p>
+          <ul>
+            <li><a href="#">진로·학습 검사</a></li>
+            <li><a href="#">진로·진학 로드맵</a></li>
+            <li><a href="#">학습 로드맵</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <p>합격 예측</p>
+          <ul>
+            <li><a href="#">성적 분석</a></li>
+            <li><a href="#">수시 예측</a></li>
+            <li><a href="#">정시 예측</a></li>
+          </ul>
+        </div>
+        <div class="category">
+          <p>학생부</p>
+          <ul>
+            <li>
+              <p>‣탐구 주제</p>
+              <ul>
+                <li><a href="#">탐구 주제 추천</a></li>
+                <li><a href="#">탐구보고서 작성</a></li>
+              </ul>
+            </li>
+            <li>
+              <p>‣학생부</p>
+              <ul>
+                <li><a href="#">학생부 평가</a></li>
+                <li><a href="#">활동보고서 도우미</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="category">
+          <a href="#">모의면접</a>
+        </div>
+        <div class="category">
+          <a href="#">MY 리포트</a>
+        </div>
+      </nav>
+      <nav class="navigation">
+        <div class="category-01">
+          <p>검사·로드맵</p>
+          <img src="../assets/images/icon-R.svg" alt="">
+        </div>
+        <div class="category-01">
+          <p>합격 예측</p>
+          <img src="../assets/images/icon-R.svg" alt="">
+        </div>
+        <div class="category-01">
+          <p>학생부</p>
+          <img src="../assets/images/icon-R.svg" alt="">
+        </div>
+        <div class="category-01">
+          <p>모의 면접</p>
+          <img src="../assets/images/icon-R.svg" alt="">
+        </div>
+        <div class="category-01">
+          <p>마이페이지</p>
+          <img src="../assets/images/icon-R.svg" alt="">
+        </div>
+        <div class="sub-navigation">
+          <div class="sub-navigation-wrapper">
+            <ul class="nav-02">
+              <li><a href="#">진로·학습 검사
+                <div class="align"></div>
+              </a></li>
+              <li><a href="#">진로·진학 로드맵
+                <div class="align"></div>
+              </a></li>
+              <li><a href="#">학습 로드맵
+                <div class="align"></div>
+              </a></li>
+            </ul>
+            <ul class="nav-02">
+              <li><a href="#">성적 분석
+                <div class="align"></div>
+              </a></li>
+              <li><a href="#">수시 예측
+                <div class="align"></div>
+              </a></li>
+              <li><a href="#">정시 예측
+                <div class="align"></div>
+              </a></li>
+            </ul>
+            <ul class="nav-02">
+              <li>
+                <p>탐구 주제<strong class="align"></strong></p>
+                <ul>
+                  <li><a href="#">탐구 주제 추천
+                    <div class="align"></div>
+                  </a></li>
+                  <li><a href="#">탐구보고서 작성
+                    <div class="align"></div>
+                  </a></li>
+                </ul>
+              </li>
+              <li>
+                <p>학생부<strong class="align"></strong></p>
+                <ul>
+                  <li><a href="#">학생부 평가
+                    <div class="align"></div>
+                  </a></li>
+                  <li><a href="#">활동보고서 도우미
+                    <div class="align"></div>
+                  </a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav-02">
+              <li><a href="#">모의면접
+                <div class="align"></div>
+              </a></li>
+            </ul>
+            <ul class="nav-02">
+              <li><a href="#">MY 리포트
+                <div class="align"></div>
+              </a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div id="floating">
+      <button class="btn-start">
+        지금 시작하기
+      </button>
+    </div>
+    <button class="btn-inquiry">
+      <img src="../assets/images/floating-icon.png" alt="" />
+      <p>문의하기</p>
+    </button>
+    <section class="section section-01">
+      <div class="section-container">
+        <div class="hero-hook">
+          <div class="sub-text">Personal AI Assistant</div>
+          <div class="main-text">
+            <div>합격,</div>
+            <img src="../assets/images/brand-name.png" alt="AI·BUFF">
+            <div>로 끝내기</div>
+          </div>
+          <div class="description">
+            <p>누적 <strong>7,500만 합불 데이터</strong>로 검증된 <strong>AI 입시 마스터</strong></p>
+            <p>심리검사부터 합격 예측, 면접까지</p>
+            <p><strong>One-Stop 입시 종합 서비스</strong></p>
+          </div>
+        </div>
+        <div class="hero-decoration">
+          <img class="hero-image-01" src="../assets/images/hero-background.png" alt="" />
+          <img id="pass-image" class="hero-image-02" src="../assets/images/hero-deco.png" alt="" />
+          <img class="mobile-hero-image-02" src="../assets/images/hero-deco.png" alt="" />
+          <img id="hero-ani-02" class="hero-image-03" src="../assets/images/hero-text-01.png"
+               alt="" />
+          <img id="hero-ani-04" class="hero-image-04" src="../assets/images/hero-text-02.png"
+               alt="" />
+          <img id="hero-ani-01" class="hero-image-05" src="../assets/images/hero-text-03.png"
+               alt="" />
+          <img id="hero-ani-03" class="hero-image-06" src="../assets/images/hero-text-04.png"
+               alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="section section-02">
+      <div class="section-container">
+        <ul class="quick-menu">
+          <li>
+            <a href="#" class="quick-menu-item">
+              <div class="title">
+                진로학습
+              </div>
+              <img class="icon" src="../assets/images/hero-menu-01.png" alt="" />
+              <p class="description">
+                AI가 분석한 <strong>나의 진로, 직업, 전공탐색!</strong>
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="quick-menu-item">
+              <div class="title">
+                합격 예측
+              </div>
+              <img class="icon" src="../assets/images/hero-menu-02.png" alt="" />
+              <p class="description">
+                빅데이터 분석을 통한 <strong>수시 정시 합격예측!</strong>
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="quick-menu-item">
+              <div class="title">
+                탐구 주제
+              </div>
+              <img class="icon" src="../assets/images/hero-menu-03.png" alt="" />
+              <p class="description">
+                AI 탐구주제 추천 <strong>탐구보고서 완성!</strong>
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="quick-menu-item">
+              <div class="title">
+                학생부
+              </div>
+              <img class="icon" src="../assets/images/hero-menu-04.png" alt="" />
+              <p class="description">
+                AI 사정관 평가로 <strong>학생부 경쟁력</strong><strong>& 학종 합격 플랜</strong>
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="quick-menu-item">
+              <div class="title">
+                모의면접
+              </div>
+              <img class="icon" src="../assets/images/hero-menu-05.png" alt="" />
+              <p class="description">
+                AI 면접관과 면접시연으로 <strong>자신감 UP</strong>
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="quick-menu-item">
+              <div class="title">
+                My 리포트
+              </div>
+              <img class="icon" src="../assets/images/hero-menu-06.png" alt="" />
+              <p class="description">
+                한눈에 파악하는 <strong>심층 리포트</strong>
+              </p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="section section-03">
+      <div class="section-container">
+        <div class="mobile-description">
+          <p class="description">
+            계속 바뀌는 입시 정책,
+            <strong>빅데이터, AI가 오직 "나"만을 위한 분석으로</strong>
+            학생부, 면접, 정시까지
+          </p>
+          <div class="deco-01">
+            <img src="../assets/images/brand-name.png" alt="AI·BUFF" />
+            <p>하나로 끝!</p>
+          </div>
+        </div>
+        <div class="result-card">
+          <img class="background" src="../assets/images/section-03-background.png" alt="" />
+          <p class="description">
+            계속 바뀌는 입시 정책,
+            <strong>빅데이터, AI가 오직 "나"만을 위한 분석으로</strong>
+            학생부, 면접, 정시까지
+          </p>
+          <div class="deco-01 section-03-ani-06">
+            <img src="../assets/images/brand-name.png" alt="AI·BUFF" />
+            <p>하나로 끝!</p>
+          </div>
+          <div class="deco-02 section-03-ani-06">
+            <div class="deco-02-text">
+              <img src="../assets/images/brand-name.png" alt="AI·BUFF" />
+              <p>의</p>
+            </div>
+            <p>놀라운 효과</p>
+          </div>
+          <div class="data-text data-01">
+            <div class="title section-03-ani-01">사용자 만족도</div>
+            <div id="section-03-count-01" class="number section-03-ani-02">0%</div>
+          </div>
+          <div class="data-text data-02">
+            <div class="title section-03-ani-01">누적 이용자 수</div>
+            <div id="section-03-count-02" class="number section-03-ani-02">150,000명</div>
+          </div>
+          <div class="data-text data-03">
+            <div class="title section-03-ani-01">합불 데이터</div>
+            <div id="section-03-count-03" class="number section-03-ani-02">75,000,000건</div>
+          </div>
+          <img id="section-03-ani-03" class="arrow" src="../assets/images/section-03-arrow-01.png"
+               alt="" />
+          <img id="section-03-ani-04" class="arrow" src="../assets/images/section-03-arrow-02.png"
+               alt="" />
+          <img id="section-03-ani-05" class="arrow" src="../assets/images/section-03-arrow-03.png"
+               alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="section section-04">
+      <div class="section-container">
+        <div class="image-wrapper">
+          <img class="architecture" src="../assets/images/section-04-architecture.png" alt="" />
+          <div class="architecture-text">
+            <p>BAG Retrieval Augmented Generation</p>
+          </div>
+          <div class="architecture-text">
+            <p>Generative Artificial <strong>Intelligence</strong></p>
+          </div>
+        </div>
+        <div class="label">
+          <p>
+            자체 데이터 기반 + 생성형 AI 하이브리드 아키텍처 방식으로 구현
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section section-05-mobile">
+      <div class="mobile-special-content">
+        <div class="content-title">
+          <img src="../assets/images/brand-name.png" alt="AI·BUFF">
+          <p>왜 특별한가?</p>
+        </div>
+        <div class="table">
+          <div class="table-header">
+            <div></div>
+            <div>
+              A사
+            </div>
+            <div>
+              B사
+            </div>
+          </div>
+          <div class="row">
+            <div class="header">수시, 정시 예측</div>
+            <p>합불 데이터 <strong>X</strong></p>
+            <p>단순 요강, <strong>산출정보</strong></p>
+          </div>
+          <div class="row">
+            <div class="header">학생부 평가</div>
+            <div>X</div>
+            <div>
+              <p>우리학교 내 <strong>위치만 확인</strong></p>
+              <p>전체 학교 대상 <strong>비교 불가</strong></p>
+            </div>
+          </div>
+          <div class="row last">
+            <div class="header">면접</div>
+            <div>공통 면접 질문</div>
+            <div>
+              <p>공통 면접 질문</p>
+              <p>단순 면접 질문 <strong>제공</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="special-row">
+          <div class="content">
+            <img src="../assets/images/brand-name.png" alt="AI·BUFF" />
+            <p class="only-mobile">매년 150만 건의 합불 데이터<strong>대학별 산출 3개년</strong>합격자 분석</p>
+            <p class="only-pc">매년 150만 건의 합불 데이터<strong>대학별 산출 3개년합격자 분석</strong></p>
+            <p class="adjust">1553개 고등학교의 <strong>교과, 입시, 비교과 정보 분석</strong></p>
+            <p>학생부X제시문 기반 <strong>면접 제공</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section-05">
+      <div class="section-container">
+        <div id="section-05-ani-05" class="title">
+          <p>누적 <strong>7,500만</strong> 합불 입시 데이터와</p>
+          <p><strong>AI 분석</strong>으로</p>
+          <p>진로 · 진학 · 학습 로드맵 완성!</p>
+        </div>
+        <div class="section-05-swiper">
+          <div class="carousel-wrapper swiper-wrapper">
+            <div class="carousel-item item-01 swiper-slide">
+              <div class="mobile-left-content">
+                <div class="content-wrapper">
+                  <img src="../assets/images/section-05-table.png" alt="" />
+                </div>
+              </div>
+              <div class="right-content">
+                <div class="content-wrapper">
+                  <p class="content-title">타사 대비 높은 <strong>합격 예측</strong></p>
+                  <ul>
+                    <li>
+                      매년 150만 건 이상의 수시, 정시, 합불 데이터 누적
+                    </li>
+                    <li>
+                      매 연속 3년 동일전형 합격자 대비 전국 내 위치 비교
+                    </li>
+                    <li>
+                      기회균형, 검정고시 전형 지원까지!
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item item-02 swiper-slide">
+              <div class="left-content">
+                <div class="content-wrapper">
+                  <img class="graph" src="../assets/images/section-05-graph.png" alt="" />
+                </div>
+              </div>
+              <div class="right-content">
+                <div class="content-wrapper">
+                  <div class="content-title-group">
+                    <p class="content-title">나만의</p>
+                    <p class="content-title"><strong>AI 입학사정관</strong>으로</p>
+                    <p class="content-title">완벽한 학생부 평가</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <p>
+                        우리 학교의 입시 데이터와 학업 역량을 고려한 <strong>학생부 종합전형 예측 UP!</strong>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        1,553개교 데이터로 전공적합을 높이는 <strong>선택과목, 비교과 맞춤 추천</strong>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        32만여개의 면접 데이터를 분석한 제시문, 서류기반<strong>모의 면접(17개 교육청 면 데이터 완벽 반영)</strong>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item item-03 swiper-slide">
+              <div class="left-content">
+                <div class="content-wrapper">
+                  <img class="report" src="../assets/images/section-05-report.png" alt="" />
+                </div>
+              </div>
+              <div class="right-content">
+                <div class="content-wrapper">
+                  <div class="content-title-group">
+                    <p class="content-title">AI가 진단하는</p>
+                    <p class="content-title">내 입시의 모든것</p>
+                    <p class="content-title"><strong>9종 My리포트</strong>로 확인!</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <p>
+                        표준화 진로 학습 검사(7종), 성적, 학생부를<strong>AI가 분석한 완벽 심층 분석 리포트!</strong>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        9종 My 리포트 하나로 끝!
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        우리학교 맞춤 선택과목, 동아리 활동, 진로 활동추천<strong>나만의 맞춤 리포트!</strong>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section-06">
+      <div class="section-container">
+        <div class="title">
+          <img src="../assets/images/brand-name.png" alt="AI·BUFF">
+          <p>하나면...</p>
+        </div>
+        <div class="content">
+          <div class="papers">
+            <div class="paper-swiper">
+              <ul class="stack-container">
+                <li class="card active">
+                  <img src="../assets/images/section-06-paper-01.png" alt="" />
+                </li>
+                <li class="card next">
+                  <img src="../assets/images/section-06-paper-02.png" alt="" />
+                </li>
+                <li class="card next-next">
+                  <img src="../assets/images/section-06-paper-03.png" alt="" />
+                </li>
+                <li class="card hidden">
+                  <img src="../assets/images/section-06-paper-04.png" alt="" />
+                </li>
+                <li class="card hidden">
+                  <img src="../assets/images/section-06-paper-05.png" alt="" />
+                </li>
+                <li class="card hidden">
+                  <img src="../assets/images/section-06-paper-06.png" alt="" />
+                </li>
+                <li class="card hidden">
+                  <img src="../assets/images/section-06-paper-07.png" alt="" />
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="vertical-carousel-container">
+            <div class="carousel-wrapper">
+              <ul id="vertical-carousel" class="carousel">
+                <li class="carousel-item">
+                  <p>
+                    동아리나 비교과 활동이 부족한데 괜찮을까?
+                  </p>
+                </li>
+                <li class="carousel-item">
+                  <p>
+                    희망 학과에 맞는 세특 주제를 어떻게 정해야 할까?
+                  </p>
+                </li>
+                <li class="carousel-item">
+                  <p>
+                    내 적성을 찾고 싶은데 어떻게 하지?
+                  </p>
+                </li>
+                <li class="carousel-item">
+                  <p>
+                    면접에서 어떤 질문이 나올지, 어떻게 대비해야할까?
+                  </p>
+                </li>
+                <li class="carousel-item">
+                  <p>
+                    수시랑 정시 중 나한테 더 유리한 전형은 뭘까?
+                  </p>
+                </li>
+                <li class="carousel-item">
+                  <p>
+                    내 성적에 맞는 대학과 학과를 어떻게 찾아야 할까?
+                  </p>
+                </li>
+                <li class="carousel-item">
+                  <p>
+                    내 진로 직업에 필요한 역량은 어떤 것이 있을까?
+                  </p>
+                </li>
+              </ul>
+              <div class="selected-box"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="canvas-container"></div>
+    </section>
+    <section class="wide-section section-06-sub">
+      <div class="banner-line-carousel">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide">
+            <img src="../assets/images/banners/banner-01.png" alt="" />
+          </li>
+          <li class="swiper-slide">
+            <img src="../assets/images/banners/banner-02.png" alt="" />
+          </li>
+          <li class="swiper-slide">
+            <img src="../assets/images/banners/banner-03.png" alt="" />
+          </li>
+          <li class="swiper-slide">
+            <img src="../assets/images/banners/banner-04.png" alt="" />
+          </li>
+          <li class="swiper-slide">
+            <img src="../assets/images/banners/banner-05.png" alt="" />
+          </li>
+          <li class="swiper-slide">
+            <img src="../assets/images/banners/banner-06.png" alt="" />
+          </li>
+          <li class="swiper-slide">
+            <img src="../assets/images/banners/banner-07.png" alt="" />
+          </li>
+          <li class="swiper-slide">
+            <img src="../assets/images/banners/banner-08.png" alt="" />
+          </li>
+          <li class="swiper-slide">
+            <img src="../assets/images/banners/banner-09.png" alt="" />
+          </li>
+          <li class="swiper-slide">
+            <img src="../assets/images/banners/banner-10.png" alt="" />
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="section section-07">
+      <div class="section-container">
+        <ul class="navigations">
+          <li class="nav-item">
+            <div class="dot"></div>
+            <p class="title">진로학습검사</p>
+          </li>
+          <li class="nav-item">
+            <div class="dot"></div>
+            <p class="title">수시 정시 <strong>합격 예측</strong></p>
+          </li>
+          <li class="nav-item">
+            <div class="dot"></div>
+            <p class="title">마이 리포트</p>
+          </li>
+          <li class="nav-item">
+            <div class="dot"></div>
+            <p class="title">모의 면접</p>
+          </li>
+        </ul>
+        <div class="left-navigator">
+          <img src="../assets/images/arrow-left.png" alt="left">
+        </div>
+        <div class="right-navigator">
+          <img src="../assets/images/arrow-right.png" alt="right">
+        </div>
+        <div class="carousel section-07-swiper">
+          <ul class="carousel-wrapper swiper-wrapper">
+            <li class="card card-01 section-07-ani-01 swiper-slide">
+              <div class="card-background">
+                <div class="mobile-swiper">
+                  <ul class="swiper-wrapper">
+                    <li class="question-01 swiper-slide">
+                      <img class="face" src="../assets/images/faces/face-04.png" alt="" />
+                      <img class="text" src="../assets/images/section-07-mobile-text-01.png"
+                           alt="" />
+                    </li>
+                    <li class="question-02 swiper-slide">
+                      <img class="face" src="../assets/images/faces/face-06.png" alt="" />
+                      <img class="text" src="../assets/images/section-07-text-02.png" alt="" />
+                    </li>
+                    <li class="question-04 swiper-slide">
+                      <img class="face" src="../assets/images/faces/face-05.png" alt="" />
+                      <img class="text" src="../assets/images/section-07-mobile-text-03.png"
+                           alt="" />
+                    </li>
+                    <li class="question-03 swiper-slide">
+                      <img class="face" src="../assets/images/faces/face-03.png" alt="" />
+                      <img class="text" src="../assets/images/section-07-mobile-text-04.png"
+                           alt="" />
+                    </li>
+                  </ul>
+                </div>
+                <div class="questions">
+                  <div class="question-01">
+                    <img class="face" src="../assets/images/faces/face-04.png" alt="" />
+                    <img class="text" src="../assets/images/section-07-text-01.png" alt="" />
+                  </div>
+                  <div class="question-02">
+                    <img class="face" src="../assets/images/faces/face-06.png" alt="" />
+                    <img class="text" src="../assets/images/section-07-text-02.png" alt="" />
+                  </div>
+                  <div class="question-03">
+                    <img class="text" src="../assets/images/section-07-text-03.png" alt="" />
+                    <img class="face" src="../assets/images/faces/face-03.png" alt="" />
+                  </div>
+                  <div class="question-04">
+                    <img class="text" src="../assets/images/section-07-text-04.png" alt="" />
+                    <img class="face" src="../assets/images/faces/face-05.png" alt="" />
+                  </div>
+                </div>
+                <div class="title">
+                  <p>진로, 학습 종합 네비게이션 <strong>진로 학습 검사</strong></p>
+                </div>
+                <ul class="introduction">
+                  <li>
+                    <img src="../assets/images/section-07-01-icon-01.png" alt="" />
+                    <p>국내 최초, 최고 규모<strong>학업-성정 상관도 분석</strong></p>
+                  </li>
+                  <li>
+                    <img src="../assets/images/section-07-01-icon-02.png" alt="" />
+                    <p>국내 유일<strong>진로-진학-학습</strong>종합 유형 분석</p>
+                  </li>
+                  <li>
+                    <img src="../assets/images/section-07-01-icon-03.png" alt="" />
+                    <p>연 131만 (수시+정시)<strong>합불 데이터</strong><strong>목표 대학 성공 예측</strong></p>
+                  </li>
+                  <li>
+                    <img src="../assets/images/section-07-01-icon-04.png" alt="" />
+                    <p>약점 보완을 위한<strong>실전 로드맵 제시</strong><strong></strong></p>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="card card-02 section-07-ani-02 swiper-slide">
+              <div class="card-background">
+                <p class="title">
+                  수시, 정시 합격 전략은?
+                </p>
+                <img class="pc" src="../assets/images/section-07-02-01.png" alt="" />
+                <img class="mobile" src="../assets/images/section-07-02-mobile.png" alt="" />
+                <p class="answer">누구나 쉽게! AI로 바로 합격 예측!</p>
+              </div>
+            </li>
+            <li class="card card-03 section-07-ani-03 swiper-slide">
+              <div class="card-background">
+                <p class="title">
+                  탐구 주제에서 합격 리포트까지 <strong>어디서나 쉽고 빠르게!</strong>
+                </p>
+                <p class="description">나의 생기부 장단점, 제대로 파악해 보세요.</p>
+                <img src="../assets/images/section-07-03-01.png" alt="" />
+                <img class="mobile" src="../assets/images/section-07-03-mobile.png" alt="" />
+              </div>
+            </li>
+            <li class="card card-04 section-07-ani-04 swiper-slide">
+              <div class="card-background">
+                <p class="title">
+                  학생부 서류, 제시문 기반 <strong>학생 맞춤 면접 질문에 대비합니다.</strong>
+                </p>
+                <img src="../assets/images/section-07-04-01.png" alt="" />
+                <div class="process">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="2" height="430" viewBox="0 0 2 430"
+                       fill="none">
+                    <path d="M1 0V430" stroke="#8A34EF" stroke-width="2" stroke-dasharray="2 2" />
+                  </svg>
+                  <div class="dot-line"></div>
+                  <div class="step">
+                    <p>예상 질문 분석</p>
+                    <p>전국 대학별, 학과별 예상 질문 데이터베이스를 기반으로<strong>맞춤형 질문세트를 제공합니다.</strong></p>
+                  </div>
+                  <div class="step">
+                    <p>AI 모의 면접</p>
+                    <p>실제 면접과 유사한 환경에서 AI 면접관과의 모의 면접을 통해<strong>실전 감각을 기를 수 있습니다.</strong></p>
+                  </div>
+                  <div class="step">
+                    <p>빅 데이터를 통한 면접</p>
+                    <p>32만여개의 자체 데이터 및 17개 교육청<strong>면접 데이터를 반영한 모의 면접을 제공합니다.</strong></p>
+                  </div>
+                  <div class="step">
+                    <p>예상 질문</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="wide-section section-08">
+      <div class="section-container">
+        <div class="review-swiper">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+              <div class="slide-box">
+                <img src="../assets/images/faces/face-01.png" alt="" />
+                <p>K 고딩이라면 <strong>꼭 써보시길</strong></p>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="slide-box">
+                <img src="../assets/images/faces/face-02.png" alt="" />
+                <p>AI·BUFF 덕분에 <strong>5학종 5합격 했습니다.</strong></p>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="slide-box">
+                <img src="../assets/images/faces/face-03.png" alt="" />
+                <p>K 고딩이라면 <strong>꼭 써보시길</strong></p>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="slide-box">
+                <img src="../assets/images/faces/face-04.png" alt="" />
+                <p>AI·BUFF 덕분에 <strong>5학종 5합격 했습니다.</strong></p>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="slide-box">
+                <img src="../assets/images/faces/face-05.png" alt="" />
+                <p>K 고딩이라면 <strong>꼭 써보시길</strong></p>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="slide-box">
+                <img src="../assets/images/faces/face-06.png" alt="" />
+                <p>AI·BUFF 덕분에 <strong>5학종 5합격 했습니다.</strong></p>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="slide-box">
+                <img src="../assets/images/faces/face-06.png" alt="" />
+                <p>AI·BUFF 덕분에 <strong>5학종 5합격 했습니다.</strong></p>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="slide-box">
+                <img src="../assets/images/faces/face-06.png" alt="" />
+                <p>AI·BUFF 덕분에 <strong>5학종 5합격 했습니다.</strong></p>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="slide-box">
+                <img src="../assets/images/faces/face-06.png" alt="" />
+                <p>AI·BUFF 덕분에 <strong>5학종 5합격 했습니다.</strong></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="wide-section section-09">
+      <div class="section-container">
+        <div class="result-swiper">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+              <div class="slide-box">
+                <img src="../assets/images/section-09-sample-01.png" alt="" />
+                <div class="post">
+                  <div class="title">서울대 경영학과 합격</div>
+                  <div class="name">김땡땡 학생</div>
+                  <div class="content">
+                    AI 학생부 분석을 통해 제 강점을 파악하고 부족한 부분을 효과적으로 보완할 수 있었습니다.
+                    면접 준비 서비스는 실제 면접과 매우 유사하여 큰 도움이 되었습니다.
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="slide-box">
+                <img src="../assets/images/section-09-sample-02.png" alt="" />
+                <div class="post">
+                  <div class="title">서울대 경영학과 합격</div>
+                  <div class="name">김땡땡 학생</div>
+                  <div class="content">
+                    AI 학생부 분석을 통해 제 강점을 파악하고 부족한 부분을 효과적으로 보완할 수 있었습니다.
+                    면접 준비 서비스는 실제 면접과 매우 유사하여 큰 도움이 되었습니다.
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="slide-box">
+                <img src="../assets/images/section-09-sample-01.png" alt="" />
+                <div class="post">
+                  <div class="title">서울대 경영학과 합격</div>
+                  <div class="name">김땡땡 학생</div>
+                  <div class="content">
+                    AI 학생부 분석을 통해 제 강점을 파악하고 부족한 부분을 효과적으로 보완할 수 있었습니다.
+                    면접 준비 서비스는 실제 면접과 매우 유사하여 큰 도움이 되었습니다.
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="slide-box">
+                <img src="../assets/images/section-09-sample-02.png" alt="" />
+                <div class="post">
+                  <div class="title">서울대 경영학과 합격</div>
+                  <div class="name">김땡땡 학생</div>
+                  <div class="content">
+                    AI 학생부 분석을 통해 제 강점을 파악하고 부족한 부분을 효과적으로 보완할 수 있었습니다.
+                    면접 준비 서비스는 실제 면접과 매우 유사하여 큰 도움이 되었습니다.
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="slide-box">
+                <img src="../assets/images/section-09-sample-01.png" alt="" />
+                <div class="post">
+                  <div class="title">서울대 경영학과 합격</div>
+                  <div class="name">김땡땡 학생</div>
+                  <div class="content">
+                    AI 학생부 분석을 통해 제 강점을 파악하고 부족한 부분을 효과적으로 보완할 수 있었습니다.
+                    면접 준비 서비스는 실제 면접과 매우 유사하여 큰 도움이 되었습니다.
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="total-review">
+          <a href="#">전체 후기 보기</a>
+        </div>
+      </div>
+    </section>
+    <section class="section section-10">
+      <div class="section-container">
+        <div class="board board-01">
+          <div class="title">
+            <div>공지사항</div>
+            <a href="#" class="more-button">더보기</a>
+          </div>
+          <ul class="posts">
+            <li class="post">
+              <a href="#">
+                <div class="post-title">[공지사항] BUFF 신규 학생부 종합전형 관련 안내사항 공지</div>
+                <div class="post-date">25.09.11</div>
+              </a>
+            </li>
+            <li class="post">
+              <a href="#">
+                <div class="post-title">[공지사항] BUFF 신규 학생부 종합전형 관련 안내사항 공지</div>
+                <div class="post-date">25.09.11</div>
+              </a>
+            </li>
+            <li class="post">
+              <a href="#">
+                <div class="post-title">[공지사항] BUFF 신규 학생부 종합전형 관련 안내사항 공지</div>
+                <div class="post-date">25.09.11</div>
+              </a>
+            </li>
+            <li class="post">
+              <a href="#">
+                <div class="post-title">[공지사항] BUFF 신규 학생부 종합전형 관련 안내사항 공지</div>
+                <div class="post-date">25.09.11</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="board board-02">
+          <div class="title">
+            공지사항
+            <a href="#" class="more-button">더보기</a>
+          </div>
+          <ul class="posts">
+            <li class="post">
+              <a href="#">
+                <div class="post-title">[공지사항] BUFF 신규 학생부 종합전형 관련 안내사항 공지</div>
+                <div class="post-date">25.09.11</div>
+              </a>
+            </li>
+            <li class="post">
+              <a href="#">
+                <div class="post-title">[공지사항] BUFF 신규 학생부 종합전형 관련 안내사항 공지</div>
+                <div class="post-date">25.09.11</div>
+              </a>
+            </li>
+            <li class="post">
+              <a href="#">
+                <div class="post-title">[공지사항] BUFF 신규 학생부 종합전형 관련 안내사항 공지</div>
+                <div class="post-date">25.09.11</div>
+              </a>
+            </li>
+            <li class="post">
+              <a href="#">
+                <div class="post-title">[공지사항] BUFF 신규 학생부 종합전형 관련 안내사항 공지</div>
+                <div class="post-date">25.09.11</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="content">
+          <div class="logo">
+            <img src="../assets/images/logo-white.png" alt="AI·BUFF" />
+          </div>
+          <div class="information">
+            <ul class="terms">
+              <li><a href="#">AI BUFF</a></li>
+              <li><a href="#">이용약관</a></li>
+              <li><a href="#">개인정보처리방침</a></li>
+            </ul>
+            <ul class="company">
+              <li>
+                <p>(주)퓨처플랜 대표이사 박하랑</p>
+                <p>사업자등록번호 105-87-41608</p>
+                <p>통신판매업 신고번호 제 2016-서울강남-00340호</p>
+              </li>
+              <li>
+                <p>future7925@hanmai.com</p>
+                <p>서울 강남구 대치동 920-21번지 드림빌딩 2층 퓨쳐플랜</p>
+              </li>
+              <li>
+                <p>대표전화 070-5125-8607</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          ©2025 B.U.F.F. All rights reserved
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
