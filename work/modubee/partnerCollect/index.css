@@ -130,7 +130,7 @@
         .flex-box {
           display: flex;
           flex-wrap: wrap;
-          gap: 30px 74px;
+          gap: 40px;
           margin-top: 32px;
         }
   
