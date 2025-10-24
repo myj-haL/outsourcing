@@ -278,6 +278,10 @@
   transition: transform 0.3s ease;
 }
 
+.section-02 .section-container .quick-menu .title.mo {
+  display: none; 
+}
+
 .section-02 .section-container .quick-menu .quick-menu-item:hover .title {
   transform: translateY(-20px);
 }
@@ -3769,15 +3773,17 @@
   .section-02 .section-container .quick-menu {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3.2vw;
+    gap: 6vw 3.2vw;
     padding-inline: 3.2vw;
   }
 
   .section-02 .section-container .quick-menu .quick-menu-item {
     justify-content: space-between;
     align-items: flex-start;
-    padding: 2.1vw;
-    height: 23vw;
+    padding:2.1vw 4.1vw 4.1vw;
+    /* height: 23vw; */
+    height: auto;
+    border-radius: 40px;
   }
 
   .section-02 .section-container .quick-menu .quick-menu-item::before {
@@ -3815,10 +3821,11 @@
 
   .section-02 .section-container .quick-menu .quick-menu-item .icon {
     position: absolute;
-    top: 2.1vw;
-    right: 2.1vw;
-    width: 8vw;
+    /* top: 2.1vw;
+    right: 2.1vw; */
+    width: 17vw;
     transition: none;
+    margin: 0 auto 1.5vw;
   }
 
   .section-02 .section-container .quick-menu .quick-menu-item:hover .icon {
@@ -3832,6 +3839,16 @@
     color: #0F172B;
     transition: none;
     text-align: start;
+    display: none;
+  }
+
+  .section-02 .section-container .quick-menu .title.mo {
+    display: block;
+    font-size: 3.7vw;
+    font-weight: 600;
+    color: #0F172B;
+    text-align: center;
+    margin-top: 2.5vw;
   }
 
   .section-02 .section-container .quick-menu .quick-menu-item:hover .title {
@@ -3839,15 +3856,16 @@
   }
 
   .section-02 .section-container .quick-menu .quick-menu-item .description {
-    font-size: 3.5vw;
+    font-size: 3vw;
     font-weight: 400;
     line-height: 1.25;
     color: #314158;
-    text-align: start;
+    text-align: center;
+    width: 100%;
   }
 
   .section-02 .section-container .quick-menu .quick-menu-item .description strong {
-    font-size: 3.5vw;
+    font-size: 3vw;
     display: block;
   }
 
@@ -4408,8 +4426,9 @@
 
   .section-05-mobile .mobile-special-content .special-row p strong {
     display: block;
-    width: 80%;
+    width: 100%;
     text-align: center;
+    white-space: pre-wrap;
   }
 
   .section-05 .section-container .carousel-wrapper .item-01 .mobile-left-content {
