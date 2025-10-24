@@ -18,6 +18,34 @@
     display: none;
   }
 
+  .link {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+
+    a {
+      flex: 0 0 30%;
+      position: absolute;
+      width: 30%;
+      height: 40%;
+      p {
+        display: none;
+      }
+
+      &.second,
+      &.four {
+        right: 0;
+      }
+
+      &.third,
+      &.four {
+        bottom: 0;
+      }
+    }
+  }
+
   .inner-section {
     margin-top: 80px;
     

@@ -70,7 +70,7 @@
         }
 
         .mail {
-          font-size: 16px;
+          font-size: 20px;
           font-weight: 700;
         }
 
@@ -80,6 +80,10 @@
         &.partner-mail {
           margin-top: 30px;
         }
+      }
+
+      .flex-box {
+        align-items: flex-end;
       }
     }
   }
@@ -134,6 +138,11 @@
           &.inquire,
           &.partner-mail {
             margin: 0;
+          }
+
+          .mail {
+            position: relative;
+            top: -2px;
           }
         }
       }

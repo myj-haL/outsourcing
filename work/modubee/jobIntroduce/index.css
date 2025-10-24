@@ -94,10 +94,20 @@
           }
 
           .desc {
-            margin-top: 15px;
-            font-size: 16px;
+            margin-top: 28px;
+            font-size: 14px;
             line-height: 24px;
             color: #333;
+            position: relative;
+            padding-left: 16px;
+            display: block;
+            &::before {
+              content: "・";
+              display: block;
+              font-size: 14px;
+              position: absolute;
+              left: 0;
+            }
           }
         }
       }
