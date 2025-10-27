@@ -6,6 +6,7 @@ $(document).ready(function () {
     loop: true,
     autoplay: {
       delay: 0,
+      disableOnInteraction: false,
     },
     speed: 5000,
     slidesPerView: 'auto',
@@ -114,7 +115,7 @@ $(document).ready(function () {
   });
 
   // section-05
-  const section05Swiper = new Swiper('.section-05-swiper', {
+  new Swiper('.section-05-swiper', {
     loop: true,
     autoplay: {
       delay: 2000,
@@ -123,7 +124,30 @@ $(document).ready(function () {
     speed: 1500,
     slidesPerView: 1,
     spaceBetween: 20,
+    allowTouchMove: false,
   });
+
+  const section05Animation = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.section-05-mobile',
+      pin: false,
+      start: 'top top+=250',
+      end: 'bottom bottom',
+    },
+  });
+
+  section05Animation
+    .to('.section-05-animation', {
+    opacity: 1,
+    ease: 'power2.inOut',
+    duration: 0.5,
+  }).to('.section-05-animation', {
+    scale: 1.1,
+    duration: 0.7,
+    repeat: 3,
+    yoyo: true,
+    ease: 'power2.inOut',
+  }, 0.3);
 
   // section-06
 
@@ -506,10 +530,10 @@ $(document).ready(function () {
 
   const heroSwiper = document.querySelector('.hero-swiper');
   // section-01
-  if (heroSwiper) {
-    updateSlides('.hero-swiper .swiper-wrapper', '.review-swiper .swiper-slide');
-    section01Swiper.update();
-  }
+  // if (heroSwiper) {
+  //   updateSlides('.hero-swiper .swiper-wrapper', '.review-swiper .swiper-slide');
+  //   section01Swiper.update();
+  // }
 
   // section-06-sub
   updateSlides('.section-06-sub .banner-line-carousel .swiper-wrapper', '.section-06-sub .banner-line-carousel .swiper-slide');
@@ -530,10 +554,10 @@ $(document).ready(function () {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
 
-      if (heroSwiper) {
-        updateSlides('.hero-swiper .swiper-wrapper', '.review-swiper .swiper-slide');
-        section01Swiper.update();
-      }
+      // if (heroSwiper) {
+      //   updateSlides('.hero-swiper .swiper-wrapper', '.review-swiper .swiper-slide');
+      //   section01Swiper.update();
+      // }
 
       // section-06-sub
       updateSlides('.section-06-sub .banner-line-carousel .swiper-wrapper', '.section-06-sub .banner-line-carousel .swiper-slide');
@@ -548,4 +572,11 @@ $(document).ready(function () {
       section09Swiper.update();
     }, 300);
   });
+
+  /* 모바일 대메뉴 토글 */
+  if(window.innerWidth <=1024) {
+    $('#header-container .mobile-navigation .category > p').click(function(){
+      $(this).next('ul').toggle();
+    })
+  }
 });
