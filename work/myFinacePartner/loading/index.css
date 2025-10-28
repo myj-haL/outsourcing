@@ -82,7 +82,7 @@
         background: linear-gradient(96deg, #4697FF -8.28%, #92D3FF 107.73%);
         height: 100%;
         transition: all .2s ease-in-out;
-        animation: progressBar 1s ease-in-out forwards;
+        animation: progressBar 0.5s ease-in-out forwards;
         width: 0;
 
         &.second {
