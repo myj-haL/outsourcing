@@ -1,12 +1,20 @@
 @import url('https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css');
 
+:root {
+  --scale-ratio: clamp(0.1, calc(100vw / 1920), 1);
+}
+
 .container {
   background-color: #E1EFFF;
-  padding: 47px 24px;
   box-sizing: border-box;
   font-family: 'Paperlogy';
   font-style: normal;
   font-display: swap;
+  
+  .review-box {
+    padding: 47px 24px;
+    box-sizing: border-box;
+  }
 
   .review-list {
     width: 100%;
@@ -117,14 +125,18 @@
 
 @media screen and (min-width:992px) {
   .container {
-    padding:10px 24px;
-    max-height: calc(100vh - 329px);
-    flex: 1;
     display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 100vh;
+
+    .review-box {
+      flex: 1;
+    }
 
     .review-list {
-      gap: 44px;
-      transform: scale(clamp(0.75, calc(100vw / 1920px), 1));
+      gap: calc(100vw * 44 / 1920);
+      transform: scale(clamp(0.9, calc(100vw / 1920px), 1));
 
       .review-box {
         padding: 0;
@@ -132,7 +144,7 @@
         box-shadow: initial;
         display: flex;
         align-items: center;
-        gap: 57px;
+        gap: calc(100vw * 54 / 1920);
 
         &:nth-child(odd) {
           justify-content: flex-end;
@@ -151,13 +163,15 @@
         }
 
         img {
-          width: 120px;
+          width: calc(100vw * 120 / 1920);
+          max-width: 120px;
+          min-width: 100px;
           margin: 0;
         }
       }
 
       .name {
-        font-size: 16px;
+        font-size: clamp(13px, 1vw, 18px);
 
         &.mo {
           display: none;
@@ -192,19 +206,24 @@
 
         p {
           margin-top: 12px;
-          font-size: 17px;
-          line-height: 28px;
+          font-size:  clamp(15px, 1vw, 20px);
+          line-height: clamp(25px, 1.2vw, 35px);
         }
       }
     }
   }
 
   .user-active {
-    padding: 58px 24px;
+    padding: 3.021vw 1.25vw;
+
+    > img {
+      width: calc(100vw * 840 / 1920);
+    }
     
 
     .flex-box {
-      margin-top: 34px;
+      margin-top: 1.771vw;
+      transform: scale(clamp(0.8, calc(100vw / 1920px), 1));
     }
 
     input {
