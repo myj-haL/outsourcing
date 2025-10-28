@@ -5,14 +5,14 @@
 }
 
 .container {
-  background-color: #E1EFFF;
-  box-sizing: border-box;
   font-family: 'Paperlogy';
   font-style: normal;
   font-display: swap;
   
-  .review-box {
+  .reviews {
     padding: 47px 24px;
+    box-sizing: border-box;
+    background-color: #E1EFFF;
     box-sizing: border-box;
   }
 
@@ -127,16 +127,21 @@
   .container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    max-height: 100vh;
+    height: 100%;
+    justify-content: space-between;
 
-    .review-box {
+    .reviews{
+      padding: 0;
+      height: calc(100% - 260px);
+      display: flex;
       flex: 1;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .review-list {
-      gap: calc(100vw * 44 / 1920);
-      transform: scale(clamp(0.9, calc(100vw / 1920px), 1));
+      gap: clamp(30px, 1.2vw , 44px);
+      transform: scale(clamp(0, calc(100vw / 1920px), 1));
 
       .review-box {
         padding: 0;
@@ -144,7 +149,8 @@
         box-shadow: initial;
         display: flex;
         align-items: center;
-        gap: calc(100vw * 54 / 1920);
+        gap: calc(100vw * 49 / 1920);
+        height: 100%;
 
         &:nth-child(odd) {
           justify-content: flex-end;
@@ -214,7 +220,7 @@
   }
 
   .user-active {
-    padding: 3.021vw 1.25vw;
+    padding: 2vw 1.25vw;
 
     > img {
       width: calc(100vw * 840 / 1920);
