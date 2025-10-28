@@ -72,11 +72,11 @@
       width: 1200px;
       height: 739px;
       background: #fff;
-      background: linear-gradient(
+      /* background: linear-gradient(
         0deg,
         rgb(194, 190, 190) 0%,
         rgb(253, 253, 253) 100%
-      );
+      ); */
       border-radius: 22px;
       transform: translate(-50%, -50%);
       overflow: hidden;
