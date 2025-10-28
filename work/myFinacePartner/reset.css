@@ -1,0 +1,117 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	background: transparent;
+	text-decoration: none;
+	color: #000;
+}
+body {
+	line-height: 1;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+	word-break: keep-all;
+}
+ol, ul {
+	list-style: none;
+  padding: 0;
+  margin: 0;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img {
+	width: 100%;
+	display: block;
+}
+
+html, body {
+	height: 100%;
+}
+
+nav.bread {
+	display: flex;
+	align-items: center;
+	gap: 38px;
+
+	a {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 14px;
+		letter-spacing: -1px;
+		position: relative;
+
+		&:not(:last-child)::after {
+			content: "";
+			display: block;
+			width:4px;
+			height: 7px;
+			background: url(./common/images/icon-arrow.svg) no-repeat center;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: -19px;
+		}
+
+		img {
+			width: 16px;
+		}
+	}
+}
+
+footer {
+  background-color: #2B2A35;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Pretendard';
+  line-height: 26px;
+  text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width:768px) {
+	nav.bread {
+		justify-content: flex-end;
+	}
+}
