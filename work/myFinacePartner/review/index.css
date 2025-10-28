@@ -46,7 +46,7 @@
       margin-top: 12px;
       p {
         word-break: keep-all;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
         color: #000;
         line-height: 25px;
@@ -62,7 +62,7 @@
   box-sizing: border-box;
 
   > img {
-    max-width: 1300px;
+    max-width: 840px;
     margin: 0 auto;
   }
 
@@ -117,10 +117,14 @@
 
 @media screen and (min-width:992px) {
   .container {
-    padding: 145px 24px;
+    padding:10px 24px;
+    max-height: calc(100vh - 329px);
+    flex: 1;
+    display: flex;
 
     .review-list {
-      gap: 54px;
+      gap: 44px;
+      transform: scale(clamp(0.75, calc(100vw / 1920px), 1));
 
       .review-box {
         padding: 0;
@@ -147,13 +151,13 @@
         }
 
         img {
-          width: 150px;
+          width: 120px;
           margin: 0;
         }
       }
 
       .name {
-        font-size: 18px;
+        font-size: 16px;
 
         &.mo {
           display: none;
@@ -167,7 +171,7 @@
         margin: 0;
         background-color: #fff;
         position: relative;
-        padding: 22px 28px;
+        padding: 17px 20px;
         border-radius: 30px;
         width: 100%;
         max-width: 574px;
@@ -182,13 +186,13 @@
           height: 40px;
           position: absolute;
           left: -40px;
-          bottom: 36px;
+          bottom: 26px;
           transform: scaleX(-1);
         }
 
         p {
           margin-top: 12px;
-          font-size: 20px;
+          font-size: 17px;
           line-height: 28px;
         }
       }
@@ -196,23 +200,24 @@
   }
 
   .user-active {
-    padding: 88px 24px;
+    padding: 58px 24px;
+    
 
     .flex-box {
-      margin-top: 54px;
+      margin-top: 34px;
     }
 
     input {
-      height: 82px;
-      font-size: 26px;
-      max-width: 414px;
+      height: 62px;
+      font-size: 22px;
+      max-width: 350px;
     }
 
     button {
-      height: 82px;
-      font-size: 26px;
+      height: 62px;
+      font-size: 22px;
       font-weight: 600;
-      max-width: 275px;
+      max-width: 230px;
     }
   }
 }

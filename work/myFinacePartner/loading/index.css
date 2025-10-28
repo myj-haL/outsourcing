@@ -7,7 +7,8 @@
   font-family: 'Paperlogy';
   font-style: normal;
   font-display: swap;
-  min-height: 100vh;
+  max-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
 
@@ -28,6 +29,7 @@
     padding: 37px 20px ;
     box-sizing: border-box;
     overflow: hidden;
+    transform: scale(clamp(0.5, calc(100vw / 375px), 0.95));
   }
 
   .after-loading {
@@ -149,7 +151,7 @@
   }
 
   @media screen and (min-width:992px) {
-    padding: 136px 26px 157px;
+    padding: 10px 26px;
     height: auto;
 
     &.after {
@@ -159,6 +161,7 @@
     .quote-ing {
       border-radius: 36px;
       padding: 86px 20px 0;
+      transform: scale(clamp(0.7, calc(100vw / 1920px), 0.8));
     }
 
     .loader {
