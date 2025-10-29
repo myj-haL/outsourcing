@@ -20,7 +20,7 @@
   .quote-ing,
   .after-loading {
     width: 100%;
-    max-width: 1165px;
+    max-width: 530px;
     margin: 0 auto;
     border-radius: 26px;
     background: rgba(255, 255, 255, 0.60);
@@ -29,6 +29,10 @@
     padding: 37px 20px ;
     box-sizing: border-box;
     overflow: hidden;
+  }
+
+  .quote-ing {
+    max-height: calc(100% - 74px);
   }
 
   .after-loading {
@@ -106,9 +110,11 @@
     margin: 32px -20px -37px;
 
     img {
+      /* width: calc(100vw * 172 / 375); */
       width: auto;
       height: calc(100vw * 175 / 375);
       position: relative;
+      object-fit: cover;
       
       &:first-child {
         left: -22px;
@@ -176,9 +182,10 @@
 
     .quote-ing {
       border-radius: 36px;
-      transform: scale(clamp(0.5, calc(100 * 0.8vw / 1920px), 1));
+      transform: scale(clamp(0.6, calc(100 * 0.8vw / 1920px), 1));
       padding: 86px 20px 0;
       transform-origin: center;
+      max-width: 1165px;
     }
 
     .loader {
@@ -218,6 +225,8 @@
     .after-loading {
       padding: 62px 42px;
       transform: scale(clamp(0.6, calc(100 * 0.8vw / 1920px), 1));
+      max-width: 1165px;
+      /* max-height: calc(100vh - 158px); */
     }
 
     .after-loading-title {
