@@ -1,0 +1,111 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	background: transparent;
+	text-decoration: none;
+	color: #000;
+}
+body {
+	line-height: 1;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+	word-break: keep-all;
+	background-color: #F0F3FA;
+}
+ol, ul {
+	list-style: none;
+  padding: 0;
+  margin: 0;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img {
+	width: 100%;
+	display: block;
+}
+
+html, body {
+	height: 100%;
+	overflow-x: hidden;
+}
+
+button, select {
+	border: 0;
+
+	&:active, &:focus {
+		outline: 0;
+	}
+}
+
+header {
+	height: 60px;
+	position: relative;
+	padding: 8px 16px;
+	box-sizing: border-box;
+	background-color: #fff;
+	border-bottom: 1px solid #D8D9DB;
+	
+	img {
+		width: 160px;
+		display: block;
+	}
+}
+
+@media screen and (min-width:1024px) {
+	header {
+		.inner {
+			width: 100%;
+			max-width: 1446px;
+			margin: 0 auto;
+			height: 100%;
+		}
+		height: 92px;
+		padding: 16px;
+
+		img {
+			width: 208px;
+		}
+	}
+}

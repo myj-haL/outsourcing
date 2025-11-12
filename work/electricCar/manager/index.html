@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="./index.css">
+  <title>전기차 관리자용</title>
+</head>
+<body>
+  <header>
+    <div class="inner">
+      <img src="../images/img-logo.svg" alt="서울특별시 로고">
+    </div>
+  </header>
+  <main>
+    <section class="left">
+      <!-- 주차장 정보 -->
+      <div class="box">
+        <div class="title-area">
+          <h3 class="title">주차장 정보</h3>
+          <select name="" id="" class="floor-selc">
+            <option value="" selected>지하 1층</option>
+            <option value="">지하 2층</option>
+          </select>
+        </div>
+        <div class="parking-area">
+          주차장 도면
+        </div>
+      </div>
+      <!-- //주차장 정보 -->
+      <!-- 참조사항 -->
+      <div class="box notice">
+        <div class="title-area">
+          <h3 class="title">참조사항</h3>
+        </div>
+        <ul class="notice-list">
+          <li>화재 경보 시 반드시 CCTV로 화재 여부를 확인하기 바랍니다.</li>
+          <li>불꽃 : 5초 이상의 불꽃이 감지되면 화재로 감지합니다.</li>
+          <li>배터리 온도 : 100°C에서 경고, 150°C 이상이 될 경우 화재로 감지합니다.</li>
+          <li>Co2 농도 : 2000ppm에서 경고, 3500ppm 이상이 될 경우 화재로 감지합니다.</li>
+        </ul>
+      </div>
+      <!-- //참조사항 -->
+    </section>
+    <section class="right">
+      <!-- 주차장 상시 정보 -->
+      <div class="box">
+        <div class="title-area">
+          <h3 class="title">주차장 상시 정보</h3>
+        </div>
+        <ul class="parking-status">
+          <li>
+            <span class="status-category">주차 현황</span>
+            <img src="../images/img-car.svg" alt="전기차 이미지">
+            <p class="number">
+              <b>12</b> 대
+            </p>
+          </li>
+          <li>
+            <span class="status-category">평균 온도</span>
+            <span class="temperature-bar">
+              <p class="inner-bar" style="height: 70%; background-color: #FD7723;"></p>
+            </span>
+            <p class="number">
+              <b>40</b> °C
+            </p>
+          </li>
+          <li>
+            <span class="status-category">평균 Co2</span>
+            <span class="temperature-bar">
+              <p class="inner-bar" style="height: 60%; background-color: #4E83FF;"></p>
+            </span>
+            <p class="number">
+              <b>32</b> ppm
+            </p>
+          </li>
+          <li>
+            <span class="status-category">단선 감지</span>
+            <img src="../images/icon-sensor-green.svg" alt="단선 감지 정상 아이콘">
+            <img src="../images/icon-sensor-red.svg" alt="단선 감지 이상 아이콘" style="display: none;"> <!-- 단선 감지 상태에 따라 이미지가 노출됩니다. -->
+            <p class="number red">
+              주차 10번 이상
+            </p>
+          </li>
+        </ul>
+      </div>
+      <!-- //주차장 상시 정보 -->
+      <!-- 주차 정보 -->
+      <div class="box">
+        <div class="title-area">
+          <h3 class="title">주차 정보</h3>
+          <!-- 이상 경보가 있을 경우에만 해당 UI 가 나타납니다. -->
+          <div class="flex-box">
+            <span class="caution-label">이상 경고</span>
+            <div class="btns">
+              <button type="button">전체 작동</button>
+              <button type="button">개별 중지</button>
+            </div>
+          </div>
+        </div>
+        <ul class="parking-info">
+          <li>
+            <span class="info-category">주차 위치</span>
+            <p class="number">
+              <b>10</b> 번
+            </p>
+          </li>
+          <li>
+            <span class="info-category">현재 온도</span>
+            <p class="number">
+              <!-- 이상 경보인 경우 b 태그에 클래스 red 추가합니다. -->
+              <b class="red">160</b> °C
+            </p>
+          </li>
+          <li>
+            <span class="info-category">Co2 농도</span>
+            <p class="number">
+              <!-- 이상 경보인 경우 b 태그에 클래스 red 추가합니다. -->
+              <b>3600</b> ppm
+            </p>
+          </li>
+          <li>
+            <span class="info-category">현재 상황</span>
+            <img src="../images/icon-parking-status-green.svg" alt="현재 상황 정상" style="display: none;">
+            <img src="../images/icon-parking-status-fire.svg" alt="현재 상황 화재" > <!-- 화재 발생인 경우 해당 아이콘이 노출됩니다. -->
+            <p class="number">
+              <!-- 이상 경보인 경우 b 태그에 클래스 red 추가합니다. -->
+              <b class="red">화재 발생</b>
+            </p>
+          </li>
+        </ul>
+      </div>
+      <!-- //주차 정보 -->
+    </section>
+  </main>
+</body>
+</html>

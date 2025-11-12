@@ -1,0 +1,369 @@
+main {
+  width: 100%;
+  max-width: 1430px;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: grid;
+  /* flex-wrap: wrap; */
+  gap: 24px;
+  
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &.right {
+      order: 1;
+    }
+    &.left {
+      order: 2;
+    }
+  }
+
+  .box {
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.05);
+    padding: 20px 16px 16px;
+    box-sizing: border-box;
+    height: 100%;
+
+    .title-area {
+      display: flex;
+      align-items: center;
+      margin-bottom: 13px;
+
+      .title {
+        font-size: 15px;
+        font-weight: 500;
+        color: #242427;
+      }
+
+      select {
+        margin-left: auto;
+        border-radius: 8px;
+        border: 1px solid #D6D5E2;
+        padding: 6px 37px 6px 15px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #5A5A5A;
+        appearance: none;
+        background: #F2F2F2 url(../images/icon-select.svg) no-repeat center right 13px;
+        cursor: pointer;
+      }
+    }
+
+    &.notice {
+      display: none;
+    }
+  }
+
+  .parking-area {
+    position: relative;
+    background-color: #F2F2F2;
+    border-radius: 8px;
+    padding: 17px 14px;
+    box-sizing: border-box;
+    min-height: 190px;
+  }
+
+  .notice-list {
+    list-style:disc;
+    padding-left: 24px;
+    li {
+      font-size: 18px;
+      color: #5A5A5A;
+      font-weight: 400;
+      line-height: normal;
+      + li {
+        margin-top: 18px;
+      }
+    }
+  }
+
+  .parking-status,
+  .parking-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+
+    li {
+      border-radius: 10px;
+      border: 1px solid #E8E8E8;
+      background: #F2F2F2;
+      box-sizing: border-box;
+      position: relative;
+      text-align: center;
+      padding: 12px 5px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .status-category,
+      .info-category {
+        font-size: 13px;
+        font-weight: 500;
+        color: #5A5A5A;
+        line-height: normal;
+      }
+
+      .number {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: normal;
+        b {
+          font-size: 15px;
+          font-weight: 600;
+        }
+
+        &.red {
+          font-weight: 600;
+          color: #F44B3F;
+        }
+      }
+
+      .temperature-bar {
+        height: 65px;
+        width: 9px;
+        border-radius: 100px;
+        position: relative;
+        background-color: #DADADA;
+        display: block;
+        margin: 15px auto;
+        overflow: hidden;
+
+        .inner-bar {
+          border-radius: 100px;
+          margin-top: auto;
+          display: block;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          transition: all .2s ease-in-out;
+        }
+      }
+
+      &:first-child {
+        img {
+          width: 48px;
+          margin: 15px auto;
+        }
+      }
+
+      &:last-child {
+        img {
+          width: 45px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .parking-info {
+    li {
+      justify-content: initial;
+
+      p {
+        /* flex: 1; */
+        gap: 4px;
+        margin-top: auto;
+        margin-bottom: auto;
+
+        b {
+          &.red {
+            color: #F44B3F;
+          }
+        }
+      }
+
+      &:last-child {
+        img {
+          margin: 11px auto;
+        }
+      }
+    }
+  }
+
+  .flex-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    gap: 5px;
+    margin-left: 7px;
+
+    .caution-label {
+      border-radius: 100px;
+      background-color: #F44B3F;
+      padding: 5px 9px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    button {
+      border-radius: 8px;
+      background-color: #3C4A66;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 12px;
+      cursor: pointer;
+
+      + button {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  @media screen and (min-width:1024px) {
+    grid-template-columns: repeat(2, 1fr);
+
+    section {
+      &.right {
+        order: 2;
+
+        .box {
+          padding-bottom: 36px;
+          &:last-child {
+            .title-area {
+              margin-bottom: 17px;
+            }
+          }
+        }
+      }
+      &.left {
+        order: 1;
+
+        .box {
+          &:first-child {
+            padding-top: 20px;
+
+            .title-area {
+              margin-bottom: 23px;
+            }
+          }
+        }
+      }
+    }
+
+    .box {
+      border-radius: 10px;
+      box-shadow: 0 4px 24.7px 0 rgba(135, 149, 180, 0.15);
+      padding: 24px 24px 22px;
+
+      .title-area {
+        margin-bottom: 26px;
+
+        .title {
+          font-size: 22px;
+          font-weight: 600;
+        }
+
+        select {
+          font-size: 16px;
+          padding: 7px 40px 7px 20px;
+        }
+      }
+
+      &.notice {
+        display: block;
+      }
+    }
+
+    .parking-area {
+      min-height: 350px;
+      border-radius: 16px;
+      padding: 31px 24px;
+    }
+
+    .notice-list {
+      margin-top: 42px;
+    }
+
+    .parking-status,
+    .parking-info {
+      gap: 17px;
+
+      li {
+        border-radius: 13px;
+        padding: 19px 5px 34px;
+
+        .status-category,
+        .info-category {
+          font-size: 18px;
+        }
+
+        .number {
+          font-size: 18px;
+          b {
+            font-size: 24px;
+            font-weight: 700;
+          }
+          &.red {
+            font-weight: 700;
+          }
+        }
+
+        .temperature-bar {
+          height: 160px;
+          width: 21px;
+          margin: 48px auto 27px;
+        }
+
+        &:first-child {
+          img {
+            width: 100%;
+            max-width: 109px;
+            margin: 47px auto 24px;
+          }
+        }
+
+        &:last-child {
+          img {
+            width: 100%;
+            max-width: 91px;
+          }
+        }
+      }
+    }    
+
+    .parking-info {
+      li {
+        &:last-child {
+          img {
+            width: 100%;
+            max-width: 52px;
+            margin: 37px auto 16px;
+          }
+
+          p {
+            b {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    .flex-box {
+      margin-left: 18px;
+
+      .caution-label {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+
+      button {
+        padding: 12px 23px;
+        font-size: 16px;
+
+        + button {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
