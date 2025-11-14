@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="./index.css">
+  <title>전기차 관리자용</title>
+</head>
+<body>
+  <div class="only-mobile">
+    <header class="mo">
+      <div class="inner">
+        <img src="../images/img-logo.svg" alt="서울특별시 로고">
+      </div>
+    </header>
+    <main>
+      <div class="box">
+        <ul class="car-status">
+          <li>
+            <span class="status-category">불꽃 감지</span>
+            <img src="../images/icon-no-fire.svg" alt="정상">
+            <img src="../images/icon-fire.svg" alt="화재" style="display: none;"> <!-- 차량 화재 발생 시 해당 아이콘 노출. -->
+            <p class="status">정상</p> <!-- 경고 시 클래스 warning, 화재 시 클래스 fire 추가됩니다. -->
+          </li>
+          <li>
+            <span class="status-category">배터리 온도</span>
+            <img src="../images/icon-battery-warning.svg" alt="경고">
+            <img src="../images/icon-battery-normal.svg" alt="정상" style="display: none;"> <!-- 정상일 경우 해당 아이콘 노출. -->
+            <img src="../images/icon-battery-fire.svg" alt="화재" style="display: none;"> <!-- 화재 발생 시 해당 아이콘 노출. -->
+            <p class="status warning">경고</p> <!-- 경고 시 클래스 warning, 화재 시 클래스 fire 추가됩니다. -->
+          </li>
+          <li>
+            <span class="status-category">Co2 농도</span>
+            <img src="../images/icon-gas-fire.svg" alt="화재">
+            <img src="../images/icon-gas-normal.svg" alt="정상" style="display: none;"> <!-- 정상일 경우 해당 아이콘 노출. -->
+            <img src="../images/icon-gas-warning.svg" alt="경고" style="display: none;"> <!-- 경고 발생 시 해당 아이콘 노출. -->
+            <p class="status fire">화재</p> <!-- 경고 시 클래스 warning, 화재 시 클래스 fire 추가됩니다. -->
+          </li>
+        </ul>
+      </div>
+      <div class="car-sensor"> <!-- 경고일 경우 클래스 warning, 화재 시 클래스 fire 추가됩니다. -->
+        <img src="../images/img-car-plan.png" alt="자동차 도면">
+
+        <!-- 센서 -->
+        <ul class="sensor-btns">
+          <li><button type="button" class="front-1"></button></li>
+          <li><button type="button" class="front-2 warning"></button></li>
+          <li><button type="button" class="center"></button></li>
+          <li><button type="button" class="back-1 fire"></button></li>
+          <li><button type="button" class="back-2 fire"></button></li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="title-area">
+          <h3 class="title">주차 위치 상태</h3>
+          <select name="" id="" class="floor-selc">
+            <option value="" selected>지하 1층</option>
+            <option value="">지하 2층</option>
+          </select>
+        </div>
+        <div class="parking-area">
+          주차장 도면
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- 팝업 모음 -->
+  <div class="popup" style="display: none;">
+    <!-- 주차 정보 -->
+    <div class="popup-box parking-info">
+      <h3 class="popup-title">주차 정보 <span class="label">이상 경보</span></h3>
+      <button type="button" class="close">
+        <img src="../images/icon-close.svg" alt="닫기 버튼">
+      </button>
+      <ul class="info-list">
+        <li>
+          <span class="info-category">주차 위치</span>
+          <p class="number">
+            <b>10</b> 번
+          </p>
+        </li>
+        <li>
+          <span class="info-category">현재 온도</span>
+          <p class="number">
+            <!-- 이상 경보인 경우 b 태그에 클래스 red 추가합니다. -->
+            <b class="red">160</b> °C
+          </p>
+        </li>
+        <li>
+          <span class="info-category">Co2 농도</span>
+          <p class="number">
+            <!-- 이상 경보인 경우 b 태그에 클래스 red 추가합니다. -->
+            <b class="red">3600</b> ppm
+          </p>
+        </li>
+        <li>
+          <span class="info-category">현재 상황</span>
+          <img src="../images/icon-parking-status-green.svg" alt="현재 상황 정상" style="display: none;">
+          <img src="../images/icon-parking-status-fire.svg" alt="현재 상황 화재" > <!-- 화재 발생인 경우 해당 아이콘이 노출됩니다. -->
+          <p class="number">
+            <!-- 이상 경보인 경우 b 태그에 클래스 red 추가합니다. -->
+            <b class="red">화재 발생</b>
+          </p>
+        </li>
+      </ul>
+    </div>
+    <!-- //주차 정보 -->
+
+    <!-- 불꽃 감지 -->
+    <div class="popup-box flame-info" style="display: none;">
+      <h3 class="popup-title">불꽃 감지</h3>
+      <button type="button" class="close">
+        <img src="../images/icon-close.svg" alt="닫기 버튼">
+      </button>
+      <ul class="info-list">
+        <li>
+          <img src="../images/icon-no-fire.svg" alt="불꽃 정상">
+          <span class="status-info">정상</span>
+        </li>
+        <li>
+          <img src="../images/icon-fire.svg" alt="불꽃 화재">
+          <span class="status-info fire">화재</span>
+        </li>
+      </ul>
+    </div>
+    <!-- //불꽃 감지 -->
+
+    <!-- 배터리온도 -->
+    <div class="popup-box battery-info" style="display: none;">
+      <h3 class="popup-title">배터리 온도</h3>
+      <button type="button" class="close">
+        <img src="../images/icon-close.svg" alt="닫기 버튼">
+      </button>
+      <ul class="info-list">
+        <li>
+          <img src="../images/icon-battery-normal.svg" alt="배터리 정상">
+          <span class="status-info">정상</span>
+        </li>
+        <li>
+          <img src="../images/icon-battery-warning.svg" alt="배터리 경고">
+          <span class="status-info warning">경고</span>
+        </li>
+        <li>
+          <img src="../images/icon-battery-fire.svg" alt="배터리 화재">
+          <span class="status-info fire">화재</span>
+        </li>
+      </ul>
+    </div>
+    <!-- //배터리온도 -->
+
+    <!-- Co2 농도 -->
+    <div class="popup-box co2-info" style="display: none;">
+      <h3 class="popup-title">Co2 농도</h3>
+      <button type="button" class="close">
+        <img src="../images/icon-close.svg" alt="닫기 버튼">
+      </button>
+      <ul class="info-list">
+        <li>
+          <img src="../images/icon-gas-normal.svg" alt="Co2 정상">
+          <span class="status-info">정상</span>
+        </li>
+        <li>
+          <img src="../images/icon-gas-warning.svg" alt="Co2 경고">
+          <span class="status-info warning">경고</span>
+        </li>
+        <li>
+          <img src="../images/icon-gas-fire.svg" alt="Co2 화재">
+          <span class="status-info fire">화재</span>
+        </li>
+      </ul>
+    </div>
+    <!-- //Co2 농도 -->
+
+    <!-- 전기차 상태 및 위치 -->
+    <div class="popup-box car-info" style="display: none;">
+      <h3 class="popup-title">전기차 상태 및 위치</h3>
+      <button type="button" class="close">
+        <img src="../images/icon-close.svg" alt="닫기 버튼">
+      </button>
+      <ul class="info-list">
+        <li>
+          <p class="sensor"></p>
+          <span class="status-info">정상</span>
+        </li>
+        <li>
+          <p class="sensor warning"></p>
+          <span class="status-info warning">경고</span>
+        </li>
+        <li>
+          <p class="sensor fire"></p>
+          <span class="status-info fire">화재</span>
+        </li>
+      </ul>
+    </div>
+    <!-- //전기차 상태 및 위치 -->
+
+    <!-- 주차 위치 및 상태 -->
+    <div class="popup-box parking-status" style="display: none;">
+      <h3 class="popup-title">주차 위치 및 상태</h3>
+      <button type="button" class="close">
+        <img src="../images/icon-close.svg" alt="닫기 버튼">
+      </button>
+      <ul class="info-list">
+        <li>
+          <img src="../images/icon-my-car-location.svg" alt="내 차 주차 위치">
+          <span class="location-info">내 차 주차 위치</span>
+        </li>
+        <li>
+          <img src="../images/icon-fire-location.svg" alt="화재 차량 표시">
+          <span class="location-info">화재 차량 표시</span>
+        </li>
+      </ul>
+    </div>
+    <!-- //주차 위치 및 상태 -->
+  </div>
+</body>
+</html>
