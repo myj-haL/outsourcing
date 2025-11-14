@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../reset.css">
   <link rel="stylesheet" href="./index.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <title>전기차 관리자용</title>
 </head>
 <body>
@@ -53,7 +54,7 @@
       </div>
       <div class="box">
         <div class="title-area">
-          <h3 class="title">주차 위치 상태</h3>
+          <h3 class="title">주차 위치 상태 <button type="button" class="tooltip"><img src="../images/icon-tooltip.svg" alt="툴팁"></button></h3>
           <select name="" id="" class="floor-selc">
             <option value="" selected>지하 1층</option>
             <option value="">지하 2층</option>
@@ -69,7 +70,7 @@
   <!-- 팝업 모음 -->
   <div class="popup" style="display: none;">
     <!-- 주차 정보 -->
-    <div class="popup-box parking-info">
+    <div class="popup-box parking-info" style="display: none;">
       <h3 class="popup-title">주차 정보 <span class="label">이상 경보</span></h3>
       <button type="button" class="close">
         <img src="../images/icon-close.svg" alt="닫기 버튼">
@@ -215,5 +216,16 @@
     </div>
     <!-- //주차 위치 및 상태 -->
   </div>
+
+  <script>
+    $('.popup-box .close').on('click', function() {
+      $('.popup').hide();
+    });
+
+    $('.tooltip').click(function(){
+      $('.popup').show();
+      $('.popup-box.parking-status').show();
+    });
+  </script>
 </body>
 </html>
