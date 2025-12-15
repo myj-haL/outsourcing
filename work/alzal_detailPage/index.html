@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="all" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/jejumyeongjo.css">
+    <title>에블데이 앳플리</title>
+	<style>
+		.font-jeju {
+		font-family: "Jeju Myeongjo", serif;
+		}
+
+		.border-card {
+			backdrop-filter: blur(10px);
+  		-webkit-backdrop-filter: blur(10px);
+			background: transparent;
+		}
+
+		.border-card:before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: 3.3333vw;
+			padding: 1px;
+			background: linear-gradient(90deg, 
+				rgba(255, 255, 255, 0.7) 0%, 
+				rgba(255, 255, 255, 0.2) 50%, 
+				rgba(255, 255, 255, 0.7) 100%
+			);
+			-webkit-mask: 
+				linear-gradient(#fff 0 0) content-box, 
+				linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask: 
+				linear-gradient(#fff 0 0) content-box, 
+				linear-gradient(#fff 0 0);
+			mask-composite: exclude;
+			pointer-events: none;
+			z-index: -1;
+		}
+
+		.section22:after {
+			background: url(./images/section22-bg-after.png) no-repeat center / cover;
+			content: "";
+			display: block;
+			height: 55.5556vw;
+			position: absolute;
+			left: 0;
+			width: 100%;
+			bottom: -3.6667vw;
+			z-index: 1;
+		}
+
+		@media screen and (min-width:768px) {
+			.border-card:before {
+				border-radius: 1.875rem;
+			}
+
+			.section22:after {
+				height: 31.25rem;
+			}
+		}
+
+  </style>
+</head>
+<body class="w-full max-w-[860px] mx-auto font-[Pretendard]">
+  <section class="relative bg-[url(/images/section1-bg.png)] bg-no-repeat bg-cenetr bg-cover">
+		<div class="relative bg-[url(/images/section1-bg2.png)] bg-[position:0px_-5.5556vw] md:bg-[position:0px_-3.125rem] bg-cover bg-no-repeat bg-size-[100vw] md:bg-size-[56.25rem]">
+			<div class="relative pt-[5.625rem] px-[10vw] md:px-[5.625rem]">
+				<img src="./images/logo.png" alt="atflee 로고" class="block mb-[8.8889vw] md:mb-[5rem] w-[21.4444vw] md:w-[12.0625rem]">
+				<h1 class="text-[13.3333vw] md:text-[7.5rem] font-bold text-[#191919] mb-[92vw] md:mb-[51.75rem] leading-[1.25]">에블데이<br><b class="text-[#ea6500] font-bold">앳플리</b></h1>
+			</div>
+			<div class="relative px-[10vw] md:px-[4.625rem] pb-[16.6667vw] md:pb-[9.375rem]">
+				<h2 class="text-[7.5556vw] font-bold md:text-[4.25rem] text-[#fff280] leading-[1.3] border-b-1 pb-[4.4444vw] md:pb-[2.5rem] mb-[6.6667vw] md:mb-[3.75rem]">앳플리 마이그립3<br>
+					<b class="text-[#fff] font-bold">핸드바 스마트 체중계</b>
+				</h2>
+				<h2 class="text-[5.5556vw] font-bold md:text-[3.125rem] text-[#fff] break-keep tracking-tight">
+					<b class="opacity-100 font-bold text-[#fff]">딱 15초</b><b class="font-[600] opacity-40">로</b>
+					<b class="opacity-100 font-bold text-[#fff280]">28가지 체성분</b><b class="font-[600] opacity-40">을 한 번에!</b>
+				</h2>
+			</div>
+		</div>
+	</section>
+	<section class="bg-[#fff] pt-[22.2222vw] md:pt-[12.5rem]">
+		<h1 class="text-[#191919] font-[400] text-[5.7778vw] md:text-[3.25rem] text-center mb-[8.8889vw] md:mb-[5rem]">
+			<b class="font-bold text-[#ea6500]">더 간편</b>한 <b class="font-bold text-[#ea6500]">더 정확</b>한 체형 관리
+		</h1>
+		<h2 class="leading-[1.25] text-[12.8889vw] md:text-[7.25rem] text-[#191919] text-center font-bold mb-[6.6667vw] md:mb-[3.75rem]">
+			앳플리 <br>
+			<b class="text-[#ea6500] font-bold">아이그립3</b>
+		</h2>
+		<b class="text-[6.8889vw] md:text-[3.875rem] text-[#191919] text-center block">핸드바 스마트 체중계</b>
+		<div class="relative mt-[11.1111vw] md:mt-[6.25rem]">
+			<img src="./images/section2-img.png" alt="체중계 gif" class="block w-[83.3333vw] md:w-[46.875rem] relative">
+			<div class="relative mt-[-53.3333vw] md:mt-[-30rem]">
+				<img src="./images/section2-img2.png" alt="핸드폰 이미지">
+				<span class="pl-[7.7778vw] md:pl-[4.375rem] md-[4.375rem] block relative top-[-23vw] md:top-[-12.9375rem] text-[5.7778vw] md:text-[3.25rem] text-[#191919] font-[400] leading-[1.3]">
+					<b>일체형</b>이라 <b class="text-[#ea6500]">간편</b>하고<br>
+					<b>앳플리</b>라서 <b class="text-[#ea6500]">똑똑</b>해요!
+				</span>
+			</div>
+		</div>
+	</section>
+	<section class=" pt-[22.2222vw] md:pt-[12.5rem] bg-[#191919]">
+		<div class="bg-[url(/images/section3-bg.png)] bg-cover bg-no-repeat pb-[54.6667vw] md:pb-[30.75rem] bg-[position:center_-15.5vw] md:bg-[position:center_-3.7188rem]">
+			<h1 class="text-center font-[600] text-[7.5556vw] md:text-[4.25rem] text-[#fff] leading-[1.3] mb-[16.6667vw] md:mb-[9.375rem]">
+				앳플리 체중계가 가진 <br>
+				<b class="text-[#ea6500] font-bold text-[11.1111vw] md:text-[6.25rem]">놀라운 기록</b>
+			</h1>
+			<div class="relative w-fit mx-auto mb-[11.8889vw] md:mb-[6.6875rem]">
+				<img src="./images/bling.png" alt="블링" class="absolute w-[6.6667vw] md:w-[3.75rem] top-[4.4444vw] md:top-[2.5rem] right-[13.8889vw] md:right-[7.8125rem]">
+				<img src="./images/wing-left.png" alt="왼쪽 날개" class="w-[12.8889vw] md:w-[7.25rem] inline-block">
+				<span class="inline-block text-center align-middle mx-[3.6667vw] md:mx-[2.0625rem]">
+					<p class="text-[4.6667vw] md:text-[2.625rem] text-[#dfdfdf] font-bold leading-none">누적 판매량</p>
+					<b class="text-[#ea6500] text-[9.1111vw] md:text-[5.125rem]">300만 개</b>
+					<p class="text-[3.1111vw] md:text-[1.75rem] text-[#fff] opacity-55 leading-[1.3]">*2025.06 기준<br>
+						*앳플리 체중계 전품목 기준
+					</p>
+				</span>
+				<img src="./images/wing-right.png" alt="오른쪽 날개" class="w-[12.8889vw] md:w-[7.25rem] inline-block">
+			</div>
+			<div class="relative w-fit mx-auto mb-[11.8889vw] md:mb-[6.6875rem]">
+				<img src="./images/bling.png" alt="블링" class="absolute w-[6.6667vw] md:w-[3.75rem] top-[4.4444vw] md:top-[2.5rem] right-[25vw] md:right-[13.9rem]">
+				<img src="./images/wing-left.png" alt="왼쪽 날개" class="w-[12.8889vw] md:w-[7.25rem] inline-block">
+				<span class="inline-block text-center align-middle mx-[3.6667vw] md:mx-[2.0625rem]">
+					<p class="text-[4.6667vw] md:text-[2.625rem] text-[#dfdfdf] font-bold leading-none">N사 체중계 판매량</p>
+					<b class="text-[#ea6500] text-[9.1111vw] md:text-[5.125rem]">1위</b>
+					<p class="text-[3.1111vw] md:text-[1.75rem] text-[#fff] opacity-55 leading-[1.3]">*2025.07 기준<br>
+						*일부 체중계 품목 기준
+					</p>
+				</span>
+				<img src="./images/wing-right.png" alt="오른쪽 날개" class="w-[12.8889vw] md:w-[7.25rem] inline-block">
+			</div>
+			<div class="relative w-fit mx-auto">
+				<img src="./images/bling.png" alt="블링" class="absolute w-[6.6667vw] md:w-[3.75rem] top-[4.4444vw] md:top-[2.5rem] right-[16.5vw] md:right-[9rem]">
+				<img src="./images/wing-left.png" alt="왼쪽 날개" class="w-[12.8889vw] md:w-[7.25rem] inline-block">
+				<span class="inline-block text-center align-middle mx-[3.6667vw] md:mx-[2.0625rem]">
+					<p class="text-[4.6667vw] md:text-[2.625rem] text-[#dfdfdf] font-bold leading-none">누적 후기</p>
+					<b class="text-[#ea6500] text-[9.1111vw] md:text-[5.125rem]">32만 개</b>
+					<p class="text-[3.1111vw] md:text-[1.75rem] text-[#fff] opacity-55 leading-[1.3]">*2025.06 기준<br>
+						*앳플리 체중계 전품목 기준
+					</p>
+				</span>
+				<img src="./images/wing-right.png" alt="오른쪽 날개" class="w-[12.8889vw] md:w-[7.25rem] inline-block">
+			</div>
+		</div>
+		<div class="relative">
+			<span class="text-[5.5556vw] md:text-[3.125rem] text-center block text-[#fff] mb-[6.6667vw] md:mb-[3.75rem]">밀리언셀러 브랜드 <b class="text-[#ea6500] font-bold">앳플리</b></span>
+			<h1 class="text-center text-[8.2222vw] md:text-[4.625rem] leading-[1.3]">
+				<b class="text-[#fff] fong-bold">300만명</b><b class="opacity-40 font-bold text-[#fff]">이 선택한 이유는</b><br>
+				<b class="font-bold text-[#ea6500]">확실합니다</b>
+			</h1>
+			<img src="./images/section3-flag.png" alt="깃발" class="block mt-[-4.4444vw] md:mt-[-2.5rem]">
+			<div class="relative grid gap-[3.3333vw] md:gap-[1.875rem] px-[6.7778vw] md:px-[2.375rem] mt-[-28.5556vw] md:mt-[-16.0625rem] pb-[16.6667vw] md:pb-[9.375rem]">
+				<div class="border-card  shadow-[1.44vw_1.44vw_1.78vw_0px_rgba(0,0,0,0.28)] md:shadow-[13px_13px_16px_0px_rgba(0,0,0,0.28)] relative rounded-[3.3333vw] md:rounded-[1.875rem] bg-[#191919]/40 px-[3.3333vw] md:px-[1.875rem] py-[5vw] md:py-[2.8125rem] flex justify-between items-center gap-[4vw] md:gap-[2.25rem]">
+					<span>
+						<p class="font-[600] text-[#fff] text-[4.6667vw] md:text-[2.625rem] block mb-[3.3333vw] md:mb-[1.875rem] tracking-tight">‧ 국내 개발 APP</p>
+						<p class="font-[300] text-[#969696] pl-[2.6vw] md:pl-[1.625rem] text-[4vw] md:text-[2.25rem] break-keep tracking-tighter">앳플리 앱은 기획부터 개발, 운영까지 <b class="font-[500] text-[#fff]">모두 국내에서</b> 직접 진행되고 있어요.</p>
+					</span>
+					<img src="./images/section3-icon-1.png" alt="국내 개발 APP 아이콘" class="w-[20vw] md:w-[11.25rem]">
+				</div>
+				<div class="border-card shadow-[1.44vw_1.44vw_1.78vw_0px_rgba(0,0,0,0.28)] md:shadow-[13px_13px_16px_0px_rgba(0,0,0,0.28)] relative rounded-[3.3333vw] md:rounded-[1.875rem] bg-[#191919]/40 px-[3.3333vw] md:px-[1.875rem] py-[5vw] md:py-[2.8125rem] flex justify-between items-center gap-[4vw] md:gap-[2.25rem]">
+					<span>
+						<p class="font-[600] text-[#fff] text-[4.6667vw] md:text-[2.625rem] block mb-[3.3333vw] md:mb-[1.875rem] tracking-tight">‧ 민감한 정보, 자사가 직접 관리!</p>
+						<p class="font-[300] text-[#969696] pl-[2.6vw] md:pl-[1.625rem] text-[4vw] md:text-[2.25rem] break-keep tracking-tighter">외부에 맡기지 않고 <b class="font-[500] text-[#fff]">내부 보안 기준</b>에 따라 철저히 운영되고 있어요.</p>
+					</span>
+					<img src="./images/section3-icon-2.png" alt="보안 아이콘" class="w-[20vw] md:w-[11.25rem]">
+				</div>
+				<div class="border-card shadow-[1.44vw_1.44vw_1.78vw_0px_rgba(0,0,0,0.28)] md:shadow-[13px_13px_16px_0px_rgba(0,0,0,0.28)] relative rounded-[3.3333vw] md:rounded-[1.875rem] bg-[#191919]/40 px-[3.3333vw] md:px-[1.875rem] py-[5vw] md:py-[2.8125rem] flex justify-between items-center gap-[4vw] md:gap-[2.25rem]">
+					<span>
+						<p class="font-[600] text-[#fff] text-[4.6667vw] md:text-[2.625rem] block mb-[3.3333vw] md:mb-[1.875rem] tracking-tight">‧ 외부 접근? 유출? 걱정 마세요!</p>
+						<p class="font-[300] text-[#969696] pl-[2.6vw] md:pl-[1.625rem] text-[4vw] md:text-[2.25rem] break-keep tracking-tighter">고객 데이터는 <b class="font-[500] text-[#fff]">한국에 있는 AWS 서버</b>에 안전하게 저장돼요.</p>
+					</span>
+					<img src="./images/section3-icon-3.png" alt="보안 아이콘2" class="w-[20vw] md:w-[11.25rem]">
+				</div>
+				<div class="border-card shadow-[1.44vw_1.44vw_1.78vw_0px_rgba(0,0,0,0.28)] md:shadow-[13px_13px_16px_0px_rgba(0,0,0,0.28)] relative rounded-[3.3333vw] md:rounded-[1.875rem] bg-[#191919]/40 px-[3.3333vw] md:px-[1.875rem] py-[5vw] md:py-[2.8125rem] flex justify-between items-center gap-[4vw] md:gap-[2.25rem]">
+					<span>
+						<p class="font-[600] text-[#fff] text-[4.6667vw] md:text-[2.625rem] block mb-[3.3333vw] md:mb-[1.875rem] tracking-tight">‧ 한국인 맞춤 최적화</p>
+						<p class="font-[300] text-[#969696] pl-[2.6vw] md:pl-[1.625rem] text-[4vw] md:text-[2.25rem] break-keep tracking-tighter"><b class="font-[500] text-[#fff]">앳플리 전문 알고리즘 팀</b>이 끊임없이 연구하고 있어요.</p>
+					</span>
+					<img src="./images/section3-icon-4.png" alt="관리 아이콘" class="w-[20vw] md:w-[11.25rem]">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="grid grid-cols-2">
+			<div class="bg-[url(/images/section4-img-1.png)] bg-cover bg-no-repeat bg-center relative">
+				<img src="./images/section4-phone.png" alt="핸드폰 이미지" class="absolute top-[-6.3333vw] right-[.7778vw] md:top-[-3.5625rem] md:right-[.4375rem]">
+			</div>
+			<div class="relative px-[6.6667vw] md:px-[3.75rem] py-[6.8889vw] md:py-[3.5rem]">
+				<img src="./images/section4-icon-1.png" alt="정확도 아이콘" class="w-[17.7778vw] md:w-[10rem] ml-auto block mb-[1.6667vw] md:mb-[.9375rem]">
+				<h1 class="text-[5.3333vw] md:text-[3rem] font-[600] text-[#191919]">정확도 <b class="text-[7.7778vw] md:text-[4.375rem] font-bold text-[#ea6500]">98%</b></h1>
+				<span class="block mt-[1.6667vw] md:mt-[.5625rem] text-[#191919] text-[4.2222vw] md:text-[2.375rem] font-bold mb-[.5556vw] md:mb-[.1125rem]">28가지</span>
+				<p class="text-[4.2222vw] md:text-[2.375rem]">체성분 데이터</p>
+			</div>
+		</div>
+		<div class="grid grid-cols-2">
+			<div class="relative pl-[6.6667vw] md:pl-[1.75rem] py-[6.8889vw] md:py-[3.5rem]">
+				<img src="./images/section4-icon-2.png" alt="정리 아이콘" class="w-[17.7778vw] md:w-[10rem] ml-auto block mb-[1.6667vw] md:mb-[.9375rem] mr-[6.6667vw] md:mr-[3.75rem]">
+				<h1 class="text-[5.3333vw] md:text-[3rem] font-[600] leading-[1.25] text-[#191919]">손만 떼면<br><b class="text-[6.6667vw] md:text-[3.75rem] font-bold text-[#ea6500]">한 번에 정리</b></h1>
+				<span class="block mt-[3.3333vw] md:mt-[1.875rem] text-[#191919] text-[4.2222vw] md:text-[2.375rem] font-[400]">
+					<b class="font-bold tracking-tight">드로우백 일체형</b> 핸드바
+				</span>
+			</div>
+			<div class="h-full">
+				<img src="./images/section4-img-4.png" alt="체중계 이미지" class="object-cover h-full">
+			</div>
+		</div>
+	</section>
+	<section class="bg-[url(/images/section5-bg.png)] bg-cover bg-no-repeat bg-center relative pt-[22.2222vw] md:pt-[12.5rem] pb-[11.1111vw] md:pb-[6.25rem] px-[9.7778vw] md:px-[5.5rem]">
+		<span class="text-[6.2222vw] md:text-[3.5rem] font-[400] text-[#fff] text-center block"><b class="font-bold">고장 걱정 없이</b> 오래 쓰세요</span>
+		<div class="relative inline-block w-full">
+			<h1 class="text-[#ea6500] text-[11.1111vw] break-keep md:text-[6.25rem] font-bold text-center">
+				유무상 AS 제공
+			</h1>
+			<div 
+				class="absolute inset-0 mix-blend-color-burn pointer-events-none"
+				style="
+					background: url(./images/section5-text-effect.png) no-repeat center / cover;
+					-webkit-background-clip: text;
+					background-clip: text;
+					-webkit-text-fill-color: transparent;
+					color: transparent;
+				"
+			>
+				<h1 class="text-[11.1111vw] break-keep md:text-[6.25rem] font-bold text-center">
+					유무상 AS 제공
+				</h1>
+			</div>
+		</div>
+		<img src="./images/section5-medal.png" alt="메달 이미지" class="block m-auto w-[61.1111vw] md:w-[31.25rem]">
+		<div class="bg-white/7 pt-[8.8889vw] md:pt-[5rem] pb-[6.6667vw] md:pb-[3.75rem]">
+			<span class="text-[#c8c8c8] text-[4.4444vw] md:text-[2.5rem] leading-[1.6] text-center block">
+				앳플리는 수리까지 책임져요. <br>
+				<b class="text-[#fff] font-bold">국내 설비의 기술력</b>으로 번거롭지 않게<br>
+				<b class="text-[#fff] font-bold">편리하게 수리</b>받을 수 있어요.
+			</span>
+		</div>
+		<p class="bg-white/13 py-[4.4444vw] md:py-[2.5rem] text-[#fff] text-[3.1111vw] md:text-[1.75rem] block text-center">
+			*구입 후 1년까지 무상제공 (단, 소비자 과실 제외) <br>
+			*구입 후 1년 이상 유상으로 진행
+		</p>
+	</section>
+
+	<!-- 최종시안2 -->
+	<section>최종시안 2 자리</section>
+	<!-- //최종시안2 -->
+
+	<section class="bg-[#ebebeb] pt-[16.6667vw] md:pt-[9.375rem] pb-[11.1111vw] md:pb-[6.25rem]">
+		<span class="rounded-full bg-[#ea6500] px-[3.8889vw] md:px-[2.1875rem] py-[1.1111vw] md:py-[.1875rem] text-[#fff] font-bold text-[4.4444vw] md:text-[2.5rem] block m-auto w-fit mb-[4.4444vw] md:mb-[2.5rem]">똑똑함의 핵심 02</span>
+		<h1 class="text-[#191919] font-bold text-[7.7778vw] md:text-[4.375rem] text-center mb-[6.6667vw] md:mb-[3.75rem]">4가지 종합 기록</h1>
+		<p class="text-[4.4444vw] md:text-[2.5rem] text-[#191919] leading-[1.5] text-center"><b>4가지 장르별</b>로 기록하고<br>새로운 변화를 경험하세요.</p>
+		<div class="grid grid-cols-2 items-center mt-[11.1111vw] md:mt-[6.25rem] px-[6.6667vw] md:px-[2.75rem] justify-between mb-[6.6667vw] md:mb-[3.75rem] gap-[6.5556vw] md:gap-[1.6875rem]">
+			<div class="">
+				<p class="text-[3.3333vw] md:text-[1.875rem] text-[#ea6500] mb-[1.2222vw] md:mb-[.8125rem] font-bold">Point.01</p>
+				<span class="text-[4.8889vw] md:text-[2.75rem] text-[#191919] mb-[2.4444vw] md:mb-[0.5rem] font-bold block">스마트 체중계</span>
+				<p class="text-[4vw] md:text-[2.25rem] tracking-tight">일/주/월 평균으로 <br>자유롭게 화면을 움직여<br>원하는 기간을<br>설정할 수 있어요.</p>
+			</div>
+			<img src="./images/section18-img-1.png" alt="스마트 체중계 이미지" class="w-[42.2222vw] md:w-[23.75rem]">
+		</div>
+		<div class="grid grid-cols-2 items-center mt-[11.1111vw] md:mt-[6.25rem] px-[6.6667vw] md:px-[2.75rem] justify-between gap-[4.5556vw] md:gap-[1.9rem]">
+			<img src="./images/section18-img-2.png" alt="운동 관리 기록 이미지" class="w-[42.2222vw] md:w-[23.75rem]">
+			<div class="">
+				<p class="text-[3.3333vw] md:text-[1.875rem] text-[#ea6500] mb-[1.2222vw] md:mb-[.8125rem] font-bold">Point.02</p>
+				<span class="text-[4.8889vw] md:text-[2.75rem] text-[#191919] mb-[2.4444vw] md:mb-[.5rem] font-bold block">운동 기록 관리</span>
+				<p class="text-[4vw] md:text-[2.25rem] tracking-tight">최근 일주일과 그 전주의<br>운동 부위를 비교 분석해서<br>오늘의 운동 방향을<br>정할 수 있어요.</p>
+			</div>
+		</div>
+	</section>
+	<section class="bg-[#fde17a] pt-[16.6667vw] md:pt-[9.375rem] pb-[11.1111vw] md:pb-[6.25rem] px-[6.6667vw] md:px-[3.75rem]">
+		<img src="./images/section19-img-1.png" alt="운동기록 이미지">
+		<div class="mt-[11.1111vw] md:mt-[6.25rem] grid grid-cols-2 gap-[7.7778vw] md:gap-[4.375rem] justify-between items-center">
+			<span class="text-[5.1111vw] md:text-[2.875rem] text-[#191919] font-bold">
+				<p>각 운동의 분류와<br>사용되는 근육의<br>범위를 파악하며<br><b class="text-[#ea6500] font-bold mt-[2.5556vw] block md:mt-[2.3125rem]">목적과 목표에<br> 맞는 운동 루틴을<br>찾아갈 수 있어요.</b></p>
+			</span>
+			<img src="./images/section19-img-2.png" alt="운동 추가 이미지">
+		</div>
+	</section>
+	<section class="bg-[#ebebeb] py-[16.6667vw] md:py-[9.375rem] px-[6.6667vw] md:px-[3.75rem]">
+		<div class="grid grid-cols-2 items-center justify-between mb-[11.1111vw] md:mb-[6.25rem] gap-[6.5556vw] md:gap-[1.6875rem]">
+			<div class="">
+				<p class="text-[3.3333vw] md:text-[1.875rem] text-[#ea6500] mb-[1.2222vw] md:mb-[.8125rem] font-bold">Point.03</p>
+				<span class="text-[4.8889vw] md:text-[2.75rem] text-[#191919] mb-[2.4444vw] md:mb-[0.5rem] font-bold block">식단 기록 관리</span>
+				<p class="text-[4vw] md:text-[2.25rem] tracking-tight">오늘 먹은 음식과 <br>섭취량을 기록하고<br>현재까지 기록된 섭취량<br>그래프를 체크하세요.</p>
+			</div>
+			<img src="./images/section20-img-1.png" alt="식단 관리 기록 이미지" class="w-[42.2222vw] md:w-[23.75rem]">
+		</div>
+		<img src="./images/section20-img-2.png" alt="식습관 설정 이미지" class="scale-[1.1]" />
+		<span class="relative text-[5.1111vw] md:text-[2.875rem] font-bold leading-[1.25] mt-[-11.3333vw] md:mt-[-6.875rem] block">오늘보다 더 건강한<br><b class="text-[#ea6500] font-bold">내일의 식습관을<br>계획할 수 있을 거에요.</b></span>
+	</section>
+	<section class="bg-[#f5f5f5] pt-[16.6667vw] md:pt-[9.375rem]">
+		<div class="grid grid-cols-2 items-center px-[6.6667vw] md:px-[2.75rem] justify-between mb-[8.3333vw] md:mb-[4.6875rem] gap-[6.5556vw] md:gap-[1.6875rem]">
+			<img src="./images/section21-img-1.png" alt="감정기록 관리 이미지" class="w-[42.2222vw] md:w-[23.75rem]">
+			<div class="">
+				<p class="text-[3.3333vw] md:text-[1.875rem] text-[#ea6500] mb-[1.2222vw] md:mb-[.8125rem] font-bold">Point.04</p>
+				<span class="text-[4.8889vw] md:text-[2.75rem] text-[#191919] mb-[2.4444vw] md:mb-[0.5rem] font-bold block">감정 기록 관리</span>
+				<p class="text-[4vw] md:text-[2.25rem] tracking-tight">계획한 운동과 식단을<br>더 즐겁게 이뤄내 줄<br>내면 건강까지 케어할 수<br>있어요.</p>
+			</div>
+		</div>
+		<img src="./images/section21-img-2.png" alt="감정 기록 관리 이미지 2">
+		<div class="relative pt-[14.1111vw] md:pt-[7.9375rem] pl-[7.6667vw] md:pl-[4.3125rem] pb-[11vw] md:pb-[6.1875rem]">
+			<img src="./images/section21-img-3.png" alt="감정 기록 완료 이미지" class="w-[46.7778vw] md:w-[26.3125rem] absolute right-[4.4444vw] md:right-[2.5rem] top-[-12.6667vw] md:top-[-7.125rem]">
+			<span class="text-[5.1111vw] md:text-[2.875rem] text-[#191919] font-[600]">
+				<p class="block mb-[6.5556vw] md:mb-[3.6875rem]">계획한 운동과<br>식단을 <b class="text-[#ea6500] font-[600]">'즐겁게'</b><br>이뤄내고 싶다면</p>
+				<p><b class="text-[#ea6500] font-[600]">내면의 건강</b>을 케어하는 것에<br>먼저 집중해볼까요?</p>
+			</span>
+		</div>
+	</section>
+	<section class="bg-[#ea6500] pt-[16.6667vw] md:pt-[9.375rem] px-[7.6667vw] md:px-[4.3125rem] relative section22 pb-[17.3333vw] md:pb-[9.75rem]">
+		<span class="rounded-full bg-[#fff] px-[3.8889vw] md:px-[2.1875rem] py-[1.1111vw] md:py-[.1875rem] text-[#ea6500] font-bold text-[4.4444vw] md:text-[2.5rem] block w-fit mb-[3.3333vw] md:mb-[1.875rem]">똑똑함의 핵심 03</span>
+		<h1 class="text-[#fff] text-[7.7778vw] md:text-[4.375rem] font-bold mb-[6.6667vw] md:mb-[3.75rem]">온 가족 모두 관리</h1>
+		<p class="text-[4.4444vw] md:text-[2.5rem] font-[400] text-[#ffc69a]">
+			소중한 <b class="text-[#fff] font-[bold]">아이와 배우자,</b><br>심지어 <b class="text-[#fff] font-[bold]">반려동물</b>까지! <br>
+			<b class="text-[#fff] font-[bold]">최대 10명</b>까지 프로필 등록하고 <br>
+			관리할 수 있어요.
+		</p>
+		<img src="./images/section22-img-1.png" alt="반려동물 이미지" class="absolute right-[2.2222vw] md:right-[1.25rem] top-[30.7778vw] md:top-[16.625rem] w-[40vw] md:w-[22.5rem]">
+		<img src="./images/section22-img-2.png" alt="반려동물 관리 이미지2" class="block mt-[22.4444vw] md:mt-[12.625rem] scale-[1.02] z-2 relative">
+	</section>
+	<section class="bg-[#ebebeb] pt-[22.2222vw] md:pt-[12.5rem] px-[7.6667vw] md:px-[4.3125rem] pb-[14.4444vw] md:pb-[8.125rem]">
+		<h1 class="text-[#191919] text-[6.8889vw] md:text-[3.875rem] font-bold leading-[1.5] block mb-[6.6667vw] md:mb-[3.75rem]">우리 아이와<br>반려동물을 위한 성장 기록지</h1>
+		<p class="block mb-[6.5556vw] md:mb-[3.6875rem] font-[400] text-[5.1111vw] md:text-[2.875rem]"><b class="text-[#ea6500] font-[600]">매일 성장</b>하는 우리 아이의<br>놀라운 변화를 언제든지<br>기록하고 꺼내서 확인해요.</p>
+		<img src="./images/section23-img.png" alt="성장 기록지 이미지" class="scale-[1.06]">
+	</section>
+	<section class="bg-[#f5f5f5] pt-[22.2222vw] md:pt-[12.5rem] px-[7.7778vw] md:px-[4.375rem] pb-[11.1111vw] md:pb-[6.25rem]">
+		<h1 class="text-[7.7778vw] md:text-[4.375rem] text-[#191919] font-bold leading-[1.5] block mb-[11.1111vw] md:mb-[6.25rem]">
+			<b class="text-[#ea6500] font-bold">아이그립3</b><br>
+			스마트 핸드바 체중계 <br>
+			사용 방법
+		</h1>
+		<img src="./images/section24-img.png" alt="체중계 사용방법 이미지">
+	</section>
+	<section class="bg-[#ebebeb] pt-[19.4444vw] md:pt-[10.9375rem] px-[4.4444vw] md:px-[2.5rem] pb-[9.5556vw] md:pb-[5.375rem]">
+		<img src="./images/section25-logo.png" alt="로고" class="w-[27.7778vw] md:w-[15.625rem] mx-auto block mb-[5.5556vw] md:mb-[3.125rem]">
+		<h1 class="text-[8vw] md:text-[4.5rem] text-[#191919] text-center font-bold mb-[4.4444vw] md:mb-[2.5rem]">제품 필수 설정 방법</h1>
+		<p class="text-[4.4444vw] md:text-[2.5rem] text-center leading-[1.5] font-[400] pb-[6.6667vw] md:pb-[3.75rem] border-b-1 border-[#191919] mb-[9.3333vw] md:mb-[5.25rem]">아래의 방식으로 연결하셔야만, <br>원활한 사용이 가능합니다.</p>
+		<div class="grid grid-cols-2 gap-[4.6667vw] md:gap-[1.75rem]">
+			<div>
+				<span class="rounded-full bg-[#ea6500] px-[3.8889vw] md:px-[2.1875rem] py-[1.1111vw] md:py-[.1875rem] text-[#fff] font-bold text-[3.8889vw] md:text-[2.1875rem] block w-fit mb-[2.5556vw] md:mb-[1.4375rem]">STEP 01</span>
+				<img src="./images/section25-step-1.png" alt="step 01">
+				<p class="text-[3.8889vw] md:text-[2.1875rem] text-[#333333] mt-[4.8889vw] md:mt-[2.75rem] break-keep">
+					<b class="font-bold text-[#ea6500] tracking-tight text-[4.2222vw] md:text-[2.375rem]">앱스토어 / 플레이 스토어에서<br></b>
+					<b class="text-[5vw] md:text-[2.8125rem]">'앳플리'</b>를 검색해 앱을 <br>설치하고 회원가입을 합니다.
+				</p>
+			</div>
+			<div>
+				<span class="rounded-full bg-[#ea6500] px-[3.8889vw] md:px-[2.1875rem] py-[1.1111vw] md:py-[.1875rem] text-[#fff] font-bold text-[3.8889vw] md:text-[2.1875rem] block w-fit mb-[2.5556vw] md:mb-[1.4375rem]">STEP 02</span>
+				<img src="./images/section25-step-2.png" alt="step 02">
+				<p class="text-[3.8889vw] md:text-[2.1875rem] text-[#333333] mt-[4.8889vw] md:mt-[2.75rem] break-keep">
+					<b class="font-bold text-[#ea6500] tracking-tight text-[4.2222vw] md:text-[2.375rem]">사진 촬영/녹화를<br>허용해 주세요</b><br>
+					프로필 사진 촬영, 음식사진 촬영, 1:1문의 시 필요한 사진 촬영을 위해 사용됩니다.
+				</p>
+			</div>
+		</div>
+		<div class="grid grid-cols-2 gap-[4.6667vw] md:gap-[2.5rem] mt-[10vw] md:mt-[5.625rem]">
+			<div>
+				<span class="rounded-full bg-[#ea6500] px-[3.8889vw] md:px-[2.1875rem] py-[1.1111vw] md:py-[.1875rem] text-[#fff] font-bold text-[3.8889vw] md:text-[2.1875rem] block w-fit mb-[2.5556vw] md:mb-[1.4375rem]">STEP 03</span>
+				<img src="./images/section25-step-3.png" alt="step 03">
+				<p class="text-[3.8889vw] md:text-[2.1875rem] text-[#333333] mt-[4.8889vw] md:mt-[2.75rem] break-keep">
+					<b class="font-bold text-[#ea6500] tracking-tight text-[4.2222vw] md:text-[2.375rem]">위치 정보를 허용해 주세요</b><br>
+					안드로이드 기기의 경우, <b class="font-[600]">버전에 따라 근처 기기 권한 또는 위치 권한을 허용해 주세요.</b>
+				</p>
+				<p class="mt-[2.2222vw] md:mt-[1.25rem] text-[3.8889vw] md:text-[2.1875rem] tracking-tight">
+					- 안드로이드 12.0 이상 : 근처 기기 권한<br>
+					- 안드로이드 12.0 미만 : 위치 권한
+				</p>
+				<p class="mt-[2.2222vw] md:mt-[1.25rem] text-[3.1111vw] md:text-[1.75rem] text-[#6d6d6d] tracking-tight">
+					위치 권한은 블루투스 연동을 위해 요청하는 것으로, 고객님의 위치 정보를 저장하거나 수집하지 않습니다.
+				</p>
+			</div>
+			<div>
+				<span class="rounded-full bg-[#ea6500] px-[3.8889vw] md:px-[2.1875rem] py-[1.1111vw] md:py-[.1875rem] text-[#fff] font-bold text-[3.8889vw] md:text-[2.1875rem] block w-fit mb-[2.5556vw] md:mb-[1.4375rem]">STEP 04</span>
+				<img src="./images/section25-step-4.png" alt="step 04">
+				<p class="text-[3.8889vw] md:text-[2.1875rem] text-[#333333] mt-[4.8889vw] md:mt-[2.75rem] break-keep ">
+					<b class="font-bold text-[#ea6500] tracking-tight text-[4.2222vw] md:text-[2.375rem]">사진 및 미디어를<br>허용합니다</b><br>
+					식단 기록, 기기 공유, 1:1문의 시 사진 전송, 데이터 저장을 위해 사용됩니다.
+				</p>
+			</div>
+		</div>
+		<span class="rounded-full bg-[#ea6500] px-[3.8889vw] md:px-[2.1875rem] py-[1.1111vw] md:py-[.1875rem] text-[#fff] font-bold text-[3.8889vw] md:text-[2.1875rem] block w-fit m-auto mb-[5.5556vw] md:mb-[3.125rem] mt-[13.3333vw] md:mt-[7.5rem]">STEP 05</span>
+		<div class="grid grid-cols-2 gap-[4.6667vw] md:gap-[1.75rem]">
+			<div>
+				<img src="./images/section25-step-5.png" alt="step 05">
+				<b class="font-[600] text-[#333] tracking-tight text-[3.8889vw] md:text-[2.1875rem] mt-[3.2222vw] md:mt-[1.8125rem] break-keep block">1. 홈 화면 오른쪽 상단 <img src="./images/section25-person-icon.png" alt="사람 아이콘" class="w-[3.2222vw] md:w-[1.8125rem] inline-block align-middle">아이콘을 누릅니다.</b>
+			</div>
+			<div>
+				<img src="./images/section25-step-6.png" alt="step 06">
+				<b class="font-[600] text-[#333] tracking-tight text-[3.8889vw] md:text-[2.1875rem] mt-[3.2222vw] md:mt-[1.8125rem] break-keep block">2. "스마트 기기 추가"를 누릅니다.</b>
+			</div>
+		</div>
+		<div class="grid grid-cols-2 gap-[4.6667vw] md:gap-[1.75rem] mt-[6vw] md:mt-[2.625rem]">
+			<div>
+				<img src="./images/section25-step-7.png" alt="step 07">
+				<b class="font-[600] text-[#333] tracking-tight text-[3.8889vw] md:text-[2.1875rem] mt-[3.2222vw] md:mt-[1.8125rem] break-keep block">3. 블루투스 연결을 위해 ‘허용’을 누릅니다.</b>
+			</div>
+			<div>
+				<img src="./images/section25-step-8.png" alt="step 08">
+				<b class="font-[600] text-[#333] tracking-tight text-[3.8889vw] md:text-[2.1875rem] mt-[3.2222vw] md:mt-[1.8125rem] break-keep block">4. 연결할 기기를 선택 후 ‘추가하기’를 누르면 연동이 완료됩니다.</b>
+			</div>
+		</div>
+	</section>
+	<section class="bg-[#f5f5f5] pt-[22.2222vw] md:pt-[12.5rem] px-[6.6667vw] md:px-[3.75rem] pb-[11.1111vw] md:pb-[6.25rem]">
+		<span class="font-bold block text-center mb-[1.1111vw] md:mb-[.625rem] text-[4.8889vw] md:text-[2.75rem] text-[#191919] tracking-tight">스마트 핸드바 체중계 <b class="text-[#ea6500] font-bold">아이그립3</b></span>
+		<h1 class="text-[#191919] text-[7.7778vw] md:text-[4.375rem] block text-center font-bold mb-[11.1111vw] md:mb-[6.25rem]">PRODUCT DETAIL</h1>
+		<span class="rounded-full bg-[#505050] px-[3.8889vw] md:px-[2.1875rem] py-[1.1111vw] md:py-[.1875rem] text-[#fff] font-bold text-[4.4444vw] md:text-[2.5rem] block w-fit m-auto mb-[4.4444vw] md:mb-[2.5rem]">핸드바 앞면</span>
+		<img src="./images/section26-img-1.png" alt="핸드바 앞면" class="block mb-[9vw] md:mb-[5.0625rem]">
+		<span class="rounded-full bg-[#505050] px-[3.8889vw] md:px-[2.1875rem] py-[1.1111vw] md:py-[.1875rem] text-[#fff] font-bold text-[4.4444vw] md:text-[2.5rem] block w-fit m-auto mb-[4.4444vw] md:mb-[2.5rem]">핸드바 뒷면</span>
+		<img src="./images/section26-img-2.png" alt="핸드바 뒷면" class="block mb-[11.1111vw] md:mb-[6.25rem]">
+		<img src="./images/section26-img-3.png" alt="핸드바 뒷면">
+	</section>
+	<section class="bg-[#ebebeb] pt-[22.2222vw] md:pt-[12.5rem] px-[6.6667vw] md:px-[3.75rem] pb-[11.1111vw] md:pb-[6.25rem]">
+		<h1 class="text-[7.7778vw] text-[#191919] md:text-[4.375rem] font-bold block text-center mb-[9vw] md:mb-[5.0625rem]">SPECIFICATION</h1>
+		<div class="border-t-1 border-b-1 border-[#585858]">
+			<span class="flex items-start py-[2.2222vw] md:py-[1.25rem] border-b-[0.5px] border-[#585858]">
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] pl-[2.3333vw] md:pl-[1.3125rem] block font-[600] basis-[32%]">모델명</p>
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] block font-[300] basis-[70%] tracking-tighter">앳플리 아이그립3 핸드바 스마트 체중계</p>
+			</span>
+			<span class="flex items-start py-[2.2222vw] md:py-[1.25rem] border-b-[0.5px] border-[#585858]">
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] pl-[2.3333vw] md:pl-[1.3125rem] block font-[600] basis-[32%]">사이즈</p>
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] block font-[300] tracking-tighter">[체중계] W330 x D310 x H34 <br>[핸드바] W280 x D30 x H30</p>
+			</span>
+			<span class="flex items-start py-[2.2222vw] md:py-[1.25rem] border-b-[0.5px] border-[#585858]">
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] pl-[2.3333vw] md:pl-[1.3125rem] block font-[600] basis-[32%]">제품 무게</p>
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] block font-[300] tracking-tighter">2.1Kg</p>
+			</span>
+			<span class="flex items-start py-[2.2222vw] md:py-[1.25rem] border-b-[0.5px] border-[#585858]">
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] pl-[2.3333vw] md:pl-[1.3125rem] block font-[600] basis-[32%]">재질</p>
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] block font-[300] tracking-tighter">ABS, 강화유리, 메탈</p>
+			</span>
+			<span class="flex items-start py-[2.2222vw] md:py-[1.25rem] border-b-[0.5px] border-[#585858]">
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] pl-[2.3333vw] md:pl-[1.3125rem] block font-[600] basis-[32%]">최소 측정 중량</p>
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] block font-[300] basis-[70%] tracking-tighter">5kg <br>
+					(이하의 유아나 반려동물은 별도 사용모드로
+					측정 가능합니다.)</p>
+			</span>
+			<span class="flex items-start py-[2.2222vw] md:py-[1.25rem] border-b-[0.5px] border-[#585858]">
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] pl-[2.3333vw] md:pl-[1.3125rem] block font-[600] basis-[32%]">최대 측정 중량</p>
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] block font-[300] tracking-tighter">180Kg</p>
+			</span>
+			<span class="flex items-start py-[2.2222vw] md:py-[1.25rem] border-b-[0.5px] border-[#585858]">
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] pl-[2.3333vw] md:pl-[1.3125rem] block font-[600] basis-[32%]">전원</p>
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] block font-[300] tracking-tighter">6V / AA 건전지*4</p>
+			</span>
+			<span class="flex items-start py-[2.2222vw] md:py-[1.25rem] border-b-[0.5px] border-[#585858]">
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] pl-[2.3333vw] md:pl-[1.3125rem] block font-[600] basis-[32%]">블루투스</p>
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] block font-[300] tracking-tighter">5.0</p>
+			</span>
+			<span class="flex items-start py-[2.2222vw] md:py-[1.25rem] border-b-[0.5px] border-[#585858]">
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] pl-[2.3333vw] md:pl-[1.3125rem] block font-[600] basis-[32%]">호환</p>
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] block font-[300] tracking-tighter">iOS 14.0 이상 / Android 7.0 이상</p>
+			</span>
+			<span class="flex items-start py-[2.2222vw] md:py-[1.25rem]">
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] pl-[2.3333vw] md:pl-[1.3125rem] block font-[600] basis-[32%]">지원 언어</p>
+				<p class="text-[3.7778vw] md:text-[2.125rem] text-[#191919] block font-[300] tracking-tighter">한국어 영어 중국어(번체)</p>
+			</span>
+		</div>
+		<span class="text-[4.2222vw] md:text-[2.375rem] text-[#191919] block text-center mt-[6.7778vw] md:mt-[3.8125rem] mb-[8.8889vw] md:mb-[5rem]">
+			앳플리 스마트 핸드바 체중계 아이그립3는 <br>
+			<b>국가통합 인증마크</b> (Korea Cerification Mark)를 <br>취득한 안전한 제품입니다.
+		</span>
+		<img src="./images/section26-certifi-mark.png" alt="인증 마크 이미지">
+	</section>
+	<section class="bg-[#f5f5f5] pt-[12.6667vw] md:pt-[7.125rem] px-[6.8889vw] md:px-[3.875rem] pb-[14vw] md:pb-[7.875rem]">
+		<span class="rounded-full bg-[#3fcccc] px-[3.8889vw] md:px-[2.1875rem] py-[1.1111vw] md:py-[.1875rem] text-[#fff] font-[500] text-[5.3333vw] md:text-[3rem] block w-fit m-auto mb-[6vw] md:mb-[3.375rem]">사용 전 주의사항</span>
+		<ul class="list-disc">
+			<li class="text-[3.8889vw] md:text-[2.1875rem] text-[#494949] tracking-tight break-keep mb-[2.2222vw] md:mb-[1.25rem]"><b>심박 조절기(Pacemaker), 이식형/전자 의료기기</b>와 같은 생명 유지에 필수적 의료기기가 장착된 개인은 사용하지 마세요.</li>
+			<li class="text-[3.8889vw] md:text-[2.1875rem] text-[#494949] tracking-tight break-keep mb-[2.2222vw] md:mb-[1.25rem]"><b>신체 내에 금속성 물질을 삽입</b>한 개인의 경우 사용이 가능하나, 금속성 물질로 인해 체성분 결과값이 정확하지 않을 수 있습니다.</li>
+			<li class="text-[3.8889vw] md:text-[2.1875rem] text-[#494949] tracking-tight break-keep mb-[2.2222vw] md:mb-[1.25rem]"><b>투석/심장/혈관 관련 치료</b>를 받는 개인의 경우 담당 의사 또는 전문가와 상담해 사용하세요.</li>
+			<li class="text-[3.8889vw] md:text-[2.1875rem] text-[#494949] tracking-tight break-keep mb-[2.2222vw] md:mb-[1.25rem]">BIA(생체전기저항분석법) 방식은 체내에 미세 전류를 흘려 보내는 것을 바탕으로 측정하므로 인체에 무해합니다. <br><b>임신 중 BIA 방식 체성분 측정에 대한 알려진 위험은 없지만, 예방 차원에서 의사 또는 전문가와 상담 후 사용하세요</b></li>
+		</ul>
+	</section>
+</body>
+</html>
