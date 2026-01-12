@@ -129,8 +129,20 @@ section {
         display: block;
         color: #FFFFFFB2;
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 400;
         margin-bottom: 20px;
+        b {
+            color: #0096E0;
+            font-weight: 700;
+        }
+    }
+
+    .floating {
+        position: fixed;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 99;
     }
 
     .hero-cta {
@@ -147,6 +159,7 @@ section {
         display: block;
         text-decoration: none;
         line-height: 52px;
+        text-align: center;
     }
 
     .hero-note {
@@ -623,42 +636,42 @@ section {
 
         .hero-title-front {
             text-align: left;
-            font-size: 30px;
-            line-height: 42px;
-            margin-bottom: 110px;
+            font-size: clamp(20px, 1.5625vw, 30px);
+            line-height: clamp(28px, 2.1875vw, 42px);
+            margin-bottom: clamp(60px, 5.729vw, 110px);
         }
         .hero-title {
-            font-size: 90px;
+            font-size: clamp(50px, 4.6875vw, 90px);
             text-align: left;
-            line-height: 108px;
-            letter-spacing: -2.7px;
-            margin-bottom: 60px;
+            line-height: clamp(60px, 5.625vw, 108px);
+            letter-spacing: clamp(-1.5px, -0.14vw, -2.7px);
+            margin-bottom: clamp(30px, 3.125vw, 60px);
         }
         .hero-subtitle {
-            font-size: 30px;
+            font-size: clamp(20px, 1.5625vw, 30px);
             line-height: normal;
             text-align: left;
-            margin-bottom: 150px;
+            margin-bottom: clamp(50px, 7.8125vw, 150px);
         }
         .cta-txt {
-            font-size: 24px;
-            margin-bottom: 30px;
+            font-size: clamp(18px, 1.25vw, 24px);
+            margin-bottom: clamp(20px, 1.5625vw, 30px);
         }
 
         .hero-cta {
-            font-size: 24px;
-            max-width: 371px;
-            margin-bottom: 88px;
-            height: 70px;
-            line-height: 70px;
+            font-size: clamp(18px, 1.25vw, 24px);
+            max-width: clamp(280px, 19.323vw, 371px);
+            margin-bottom: clamp(30px, 2.75vw, 53px);
+            height: clamp(56px, 3.646vw, 70px);
+            line-height: clamp(56px, 3.646vw, 70px);
         }
 
         .hero-note {
             position: absolute;
-            bottom: 30px;
+            bottom: clamp(20px, 1.5625vw, 30px);
             left: 50%;
             transform: translateX(-50%);
-            font-size: 18px;
+            font-size: clamp(14px, 0.9375vw, 18px);
         }
     }
 
