@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./index.css">
+  <title>샷시 국가대표 | 대한민국 No.1 샷시 교체</title>
+</head>
+<body>
+
+  <div class="pc-page">
+    <!-- 배경 -->
+    <div class="pc-page__bg">
+      <img src="./image/img/pc_bg.png" alt="">
+    </div>
+    <div class="pc-page__overlay"></div>
+
+    <!-- 헤더 -->
+    <header class="pc-header">
+      <img src="./image/icon/logo.svg" alt="샷시국가대표" class="pc-header__logo">
+      <a href="tel:01065567889" class="pc-header__cta">견적문의 010-6556-7889</a>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="pc-page__content">
+      <!-- 왼쪽: 텍스트 -->
+      <div class="pc-page__left">
+        <p class="pc-page__eyebrow">대한민국 No.1 샷시 교체</p>
+        <h1 class="pc-page__title">
+          맘에 쏙 드는 샷시교체<br>
+          <span>샷시국가대표는 가능합니다</span>
+        </h1>
+        <p class="pc-page__desc">
+          상담, 견적, 시공까지 대한민국No.1의 자부심으로<br>
+          후회없는 선택을 경험할 수 있습니다.<br>
+          KCC / LX 현대 / 영림 / 예림 정품 샷시와 유리만 취급합니다.
+        </p>
+        <div class="pc-page__btns">
+          <a href="#" class="pc-page__btn-primary">무료 견적 신청하기</a>
+          <a href="index.html" class="pc-page__btn-secondary">모바일 페이지 보기</a>
+        </div>
+        <div class="pc-page__features">
+          <div class="pc-page__feature">
+            <span class="pc-page__feature-num">100%</span>
+            <span class="pc-page__feature-text">만족 보장</span>
+          </div>
+          <div class="pc-page__feature">
+            <span class="pc-page__feature-num">1일</span>
+            <span class="pc-page__feature-text">원데이 시공</span>
+          </div>
+          <div class="pc-page__feature">
+            <span class="pc-page__feature-num">15년</span>
+            <span class="pc-page__feature-text">유·무상 A/S</span>
+          </div>
+          <div class="pc-page__feature">
+            <span class="pc-page__feature-num">2년</span>
+            <span class="pc-page__feature-text">무상 A/S</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 오른쪽: 폰 모형 -->
+      <div class="pc-page__right">
+        <div class="pc-page__phone">
+          <div class="pc-page__phone-screen">
+            <img src="./image/img/hero_bg.png" alt="샷시국가대표 모바일 랜딩페이지">
+          </div>
+        </div>
+        <span class="pc-page__badge">EVENT 50% 할인</span>
+      </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="pc-footer">
+      <p class="pc-footer__info">
+        사업자번호 : 529-86-03287 &nbsp;|&nbsp; 상호 : 샷시국가대표 &nbsp;|&nbsp; 대표 : 정부길, 전두열 &nbsp;|&nbsp;
+        주소 : 경기도 안산시 단원구 산단로 325 &nbsp;|&nbsp; Tel : 010-6556-7889
+      </p>
+    </footer>
+  </div>
+
+
+  <!-- ===================================================
+       모달 1: 고객 문의폼
+       =================================================== -->
+  <div class="modal-overlay" id="modalForm" role="dialog" aria-modal="true" aria-label="고객 문의폼">
+    <div class="modal-form">
+
+      <div class="modal-form__header">
+        <button class="modal-form__close" id="btnFormClose" aria-label="닫기">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M15 18l-6-6 6-6" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <span class="modal-form__title">샷시교체 상담/견적 문의하기</span>
+      </div>
+
+      <div class="modal-form__intro">
+        <p class="modal-form__intro-sub">샷시는 인테리어가 아닙니다.</p>
+        <p class="modal-form__intro-main">샷시만 전문으로 시공하는<br>샷시 전문가에게 문의하세요.</p>
+      </div>
+
+      <div class="modal-form__promo">
+        <div class="modal-form__review">
+          <span class="modal-form__review-name">김** 고객님</span>
+          <span class="modal-form__review-text">통화를 해보면 잘했구나 싶어요.</span>
+        </div>
+        <img src="./image/img/form_worker.png" alt="" class="modal-form__worker" aria-hidden="true">
+      </div>
+
+      <form id="inquiryForm" class="modal-form__body" novalidate>
+        <div class="modal-form__fields">
+          <div class="modal-form__row">
+            <label class="modal-form__label" for="fieldName">이름</label>
+            <input id="fieldName" type="text" name="user_name" class="modal-form__input" placeholder="고객님 성함을 적어주세요" required autocomplete="name">
+          </div>
+          <div class="modal-form__row">
+            <label class="modal-form__label" for="fieldPhone">연락처</label>
+            <input id="fieldPhone" type="tel" name="user_phone" class="modal-form__input" placeholder="핸드폰 번호를 적어주세요" required autocomplete="tel">
+          </div>
+          <div class="modal-form__row">
+            <label class="modal-form__label" for="fieldAddr">주소</label>
+            <input id="fieldAddr" type="text" name="user_address" class="modal-form__input" placeholder="주소와 아파트명을 적어주세요" required autocomplete="street-address">
+          </div>
+          <div class="modal-form__row">
+            <label class="modal-form__label" for="fieldScope">시공범위</label>
+            <select id="fieldScope" name="scope" class="modal-form__select" required>
+              <option value="" disabled selected>선택해 주세요</option>
+              <option value="전체창">전체창</option>
+              <option value="베란다창">베란다창</option>
+              <option value="방창">방창</option>
+              <option value="일부창">일부창</option>
+              <option value="기타">기타</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-form__agree">
+          <div class="modal-form__agree-left">
+            <input type="checkbox" id="agreeCheck" class="modal-form__checkbox">
+            <label for="agreeCheck" class="modal-form__agree-label">개인정보처리방침에 동의합니다.</label>
+          </div>
+          <button type="button" class="modal-form__agree-view" id="btnPrivacy">보기</button>
+        </div>
+
+        <button type="submit" class="modal-form__submit" id="btnFormSubmit">상담/견적 신청하기</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       모달 2: 개인정보 처리방침
+       =================================================== -->
+  <div class="modal-overlay modal-overlay--center" id="modalPrivacy" role="dialog" aria-modal="true" aria-label="개인정보 처리방침">
+    <div class="modal-privacy">
+      <button class="modal-privacy__close" id="btnPrivacyClose" aria-label="닫기">
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
+          <line x1="6" y1="6" x2="19" y2="19" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+          <line x1="19" y1="6" x2="6" y2="19" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <h3 class="modal-privacy__title">개인정보처리방침</h3>
+      <div class="modal-privacy__body">
+        <p>샷시국가대표는 최소한의 개인정보를 수집하고 있으며, 명시된 목적 이외의 용도로는 사용되지 않습니다.</p><br>
+        <p><strong>1. 개인정보 수집 항목 및 수집·이용 목적</strong><br>
+        (1) 수집항목 : 이름, 연락처, 주소, 주거형태<br>
+        (2) 수집ㆍ이용 목적 : 전문가 상담신청 (견적상담, 실측요청, 제품문의 등)</p><br>
+        <p><strong>2. 개인정보의 보유 및 이용기간</strong><br>
+        전자상거래 등에서의 소비자보호에 관한 법률 제6조 동법 시행령 6조에 의한 보관<br>
+        - 소비자 불만 또는 분쟁처리에 관한 기록 : 3년<br>
+        다만, 이용자가 개인정보의 삭제를 요청하는 경우 지체 없이 해당 정보를 파기합니다.</p><br>
+        <p><strong>3. 개인정보 파기절차 및 방법</strong><br>
+        (1) 파기절차 : 입력한 개인정보는 내부규정에 따라 일정기간 보관 후 파기됩니다.<br>
+        (2) 파기방법 : 전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 방법으로 삭제됩니다.</p><br>
+        <p>4. 이용자는 개인정보 수집 및 이용과 관련하여 동의를 거부할 권리가 있으나, 동의거부 시 상담신청이 불가합니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       모달 3: 견적 신청 완료
+       =================================================== -->
+  <div class="modal-overlay modal-overlay--bottom" id="modalComplete" role="dialog" aria-modal="true" aria-label="신청 완료">
+    <div class="modal-complete">
+      <div class="modal-complete__handle"></div>
+      <button class="modal-complete__close" id="btnCompleteClose" aria-label="닫기">
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
+          <line x1="6" y1="6" x2="19" y2="19" stroke="#666" stroke-width="2" stroke-linecap="round"/>
+          <line x1="19" y1="6" x2="6" y2="19" stroke="#666" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <img src="./image/img/form_success.png" alt="신청 완료" class="modal-complete__icon">
+      <h2 class="modal-complete__title">상담/견적신청이<br>확인되었습니다</h2>
+      <div class="modal-complete__summary">
+        <div class="modal-complete__row">
+          <span class="modal-complete__key">이름</span>
+          <span class="modal-complete__val" id="summaryName">-</span>
+        </div>
+        <div class="modal-complete__row">
+          <span class="modal-complete__key">연락처</span>
+          <span class="modal-complete__val" id="summaryPhone">-</span>
+        </div>
+        <div class="modal-complete__row">
+          <span class="modal-complete__key">주소</span>
+          <span class="modal-complete__val" id="summaryAddress">-</span>
+        </div>
+        <div class="modal-complete__row modal-complete__row--last">
+          <span class="modal-complete__key">시공범위</span>
+          <span class="modal-complete__val" id="summaryScope">-</span>
+        </div>
+      </div>
+      <button class="modal-complete__home" id="btnCompleteHome">홈으로 이동</button>
+    </div>
+  </div>
+
+  <!-- EmailJS CDN -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- 모달 스크립트 -->
+  <script src="./modal.js"></script>
+</body>
+</html>
