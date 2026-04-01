@@ -345,12 +345,12 @@
 
   <!-- ===== 섹션7: 제품 특성 ===== -->
   <section class="features">
-    <div class="features__photo-bg">
-      <img src="./image/img/section7_photo.png" alt="샷시 시공">
-      <div class="features__photo-overlay"></div>
-    </div>
+    <!-- 상단: 파란 배경 -->
     <div class="features__top">
-      <h2 class="features__title">봄부터 겨울까지<br>샷시의 가치는 계속됩니다.</h2>
+      <div class="features__photo-wrap">
+        <img src="./image/img/section7_photo.png" alt="샷시 시공" class="features__photo">
+        <h2 class="features__title">봄부터 겨울까지<br>샷시의 가치는 계속됩니다.</h2>
+      </div>
       <div class="features__icons">
         <div class="features__icon-item">
           <div class="features__icon-circle">
@@ -390,25 +390,13 @@
         </div>
       </div>
     </div>
-
+    <!-- 하단: 회색 배경 -->
     <div class="features__bottom">
       <div class="features__brand-logos">
         <img src="./image/img/brand_kcc.png" alt="KCC글라스">
         <img src="./image/img/brand_emax.png" alt="이맥스클럽">
         <img src="./image/img/brand_lx.png" alt="LX글라스">
         <img src="./image/img/brand_duolite.png" alt="듀오라이트">
-      </div>
-      <div class="features__gallery">
-        <div class="features__gallery-row">
-          <img src="./image/img/product6.png" alt="제품">
-          <img src="./image/img/product5.png" alt="제품">
-          <img src="./image/img/product4.png" alt="제품">
-        </div>
-        <div class="features__gallery-row">
-          <img src="./image/img/product3.png" alt="제품">
-          <img src="./image/img/product2.png" alt="제품">
-          <img src="./image/img/product1.png" alt="제품">
-        </div>
       </div>
       <p class="features__brand-text">
         같은 브랜드 다른 품질<br>
@@ -417,30 +405,29 @@
         E-max, DUOLITE 등 고객이 신뢰할 수 있는<br>
         제품만을 사용하고 있습니다.
       </p>
+      <img src="./image/img/certification.png" alt="인증서" class="features__cert-img">
     </div>
   </section>
 
   <!-- ===== 섹션8: 양심선언 ===== -->
   <section class="declaration">
-    <div class="declaration__bg">
-      <img src="./image/img/declaration_bg.png" alt="">
-      <div class="declaration__overlay"></div>
-    </div>
-    <div class="declaration__inner">
-      <p class="declaration__en">We are best!</p>
+    <!-- 상단: 배경 이미지 + 타이틀 -->
+    <div class="declaration__hero">
+      <img src="./image/img/we_are_best.png" alt="We are best!" class="declaration__en-img">
       <h2 class="declaration__title">샷시교체 양심선언</h2>
-      <div class="declaration__box">
+    </div>
+    <!-- 하단: 검정 텍스트 영역 -->
+    <div class="declaration__content">
+      <span>
         <p class="declaration__name">샷시국가대표의 이름에</p>
         <p class="declaration__highlight">자부심을 걸겠습니다.</p>
-        <p class="declaration__body">
-          국가대표라는 두근거림을 전면에 내세우고 열심히 뛰는 이유는 무엇일까요?<br><br>
-          수 많은 업체들이 생기고 사라지고 터무니 없는 가격에 실망했습니다.<br><br>
-          고무줄 같은 가격에 옵션을 숨기며 고객을 기만하는 태도에 화가 났습니다.<br><br>
-          샷시교체를 고민하는 고객을 위해 가격 앞에서 품질 앞에서 한치의 부끄럼 없이 샷시국가대표는 업계의 대표라는 자긍심으로<br><br>
-          모든 고객님께 최고의 친절함과 최고의 시공으로 보답하겠습니다.
-        </p>
-        <p class="declaration__signer">샷시국가대표 임직원 일동</p>
-      </div>
+      </span>
+      <p class="declaration__body">국가대표라는 두근거림을 <br>전면에 내세우고 열심히 뛰는 이유는 <br>무엇일까요?</p>
+      <p class="declaration__body">수 많은 업체들이 생기고 사라지고 <br>터무니 없는 가격에 실망했습니다.</p>
+      <p class="declaration__body">고무줄 같은 가격에 옵션을 <br>숨기며 고객을 기만하는 태도에 화가 났습니다.</p>
+      <p class="declaration__body">샷시교체를 고민하는 고객을 위해 <br>가격 앞에서 품질 앞에서 한치의 부끄럼 없이 <br>샷시국가대표는 업계의 대표라는 자긍심으로</p>
+      <p class="declaration__body">모든 고객님께 최고의 친절함과 최고의 <br>시공으로 보답하겠습니다.</p>
+      <p class="declaration__signer">샷시국가대표 임직원 일동</p>
     </div>
   </section>
 
