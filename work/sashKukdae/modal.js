@@ -139,6 +139,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ── 후기 슬라이더 (Swiper.js) ── */
+  if (typeof Swiper !== 'undefined') {
+    new Swiper('.reviews-swiper', {
+      slidesPerView: 1.2,
+      spaceBetween: 15,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.reviews-swiper .swiper-pagination',
+        clickable: true,
+      },
+    });
+  }
+
   /* ── 폼 제출 & EmailJS 발송 ── */
   var inquiryForm = document.getElementById('inquiryForm');
   if (!inquiryForm) return;
