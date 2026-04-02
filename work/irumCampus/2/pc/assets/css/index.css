@@ -1,0 +1,74 @@
+@keyframes rotate_image { 
+  100% { transform: rotate(360deg); }
+}
+.app-intro { position: relative; width: 1920px; margin: auto; }
+.app-intro .floating-menu { position: fixed; top: 20px; right: 20px; width: 370px; padding: 35px 0px 15px; background: linear-gradient(rgb(0, 44, 88) 0%, rgb(178, 206, 221) 100%); }
+.app-intro .floating-menu .tit-1 { color: rgb(255, 255, 255); text-align: center; }
+.app-intro .floating-menu .form_box { padding: 30px 30px 0px; }
+.app-intro .floating-menu .input-wrap { position: relative; padding-left: 90px; margin-bottom: 15px; font-size: 14px; }
+.app-intro .floating-menu .input-wrap label { position: absolute; top: 14px; left: -15px; color: rgb(255, 255, 255); font-weight: 600; font-size: 18px; text-align: center; }
+.app-intro .floating-menu .input-wrap input { display: inline-block; width: 219px; padding: 15px 5px; border: none; outline: none; vertical-align: top; }
+.app-intro .floating-menu .input-wrap .input-group { white-space: nowrap; font-size: 0px; }
+.app-intro .floating-menu .input-wrap .input-group input { width: 32.3%; margin-right: 3px; }
+.app-intro .floating-menu .input-wrap .input-group select { padding: 4px 5px; width: 32.3%; height: 45px; margin-right: 3px; border: none; outline: none; }
+.app-intro .floating-menu .input-wrap textarea { display: inline-block; width: 100%; height: 87px; padding: 5px; border: none; outline: none; resize: none; vertical-align: top; }
+.app-intro .floating-menu .input-wrap.btn { margin: 15px 0px; padding: 10px 0px 15px; text-align: center; background: linear-gradient(rgb(0, 44, 88) 0%, rgb(0, 94, 164) 100%); }
+.app-intro .floating-menu .input-wrap.btn .check-agree > * { display: inline-block; line-height: 1; vertical-align: top; }
+.app-intro .floating-menu .input-wrap.btn .check-agree input { width: inherit; }
+.app-intro .floating-menu .input-wrap.btn .check-agree label { position: inherit; font-size: 12px; }
+.app-intro .floating-menu .input-wrap.btn .check-agree .detail { position: relative; top: -2px; padding: 2px 4px; margin-left: 10px; font-size: 10px; background-color: rgb(255, 255, 255); }
+.app-intro .floating-menu .input-wrap.btn .check-agree .detail { position: relative; top: -2px; padding: 2px 4px; margin-left: 10px; font-size: 10px; background-color: rgb(255, 255, 255); }
+.app-intro .floating-menu .input-wrap.btn button { background: rgba(51, 51, 51, 0); border: none; outline: none; color: rgb(0, 44, 88); font-size: 20px; font-weight: 700; border-radius: 7px; margin-top: 10px; }
+.app-intro .floating-menu .input-wrap.btn button img.loading { display: none; position: absolute; left: 105px; top: 12px; width: 23px; transform-origin: 50% 50%; animation: 0.5s linear 0s infinite normal none running rotate_image; }
+.app-intro .floating-menu .input-wrap.btn button.loading { pointer-events: none; background-color: gray; }
+.app-intro .floating-menu .input-wrap.btn button.loading img.loading { display: block; }
+.app-intro .floating-menu .info {margin-bottom: 10px;font-size: 11px;color: rgb(0, 44, 88);font-weight: 600;text-align: center;}
+.app-intro .floating-menu .btn-group { margin: 25px 0px 10px; }
+.app-intro .floating-menu .btn-group .btn { width: 100%; height: 52px; margin: 5px auto; background: url("../images/btn.png") center center no-repeat; }
+.app-intro .floating-menu .btn-group .btn.kakao { background-position: 60px 0px; }
+.app-intro .floating-menu .btn-group .btn.call { background-position: 60px -56px; }
+.app-dialog { display: none; position: fixed; inset: 0px; z-index: 100; }
+.app-dialog.show { display: block; }
+.app-dialog-layer { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }
+.app-dialog .app-dialog-container { position: absolute; top: 50%; left: 50%; width: 50%; max-width: 800px; min-width: 300px; height: 80%; max-height: 1000px; min-height: 800px; transform: translate(-50%, -50%); background-color: white; }
+.app-dialog .app-dialog-container .header { background-color: white; padding: 10px; position: absolute; top: 0px; left: 0px; width: 100%; border-bottom: 1px solid lightgray; font-size: 16px; }
+.app-dialog .app-dialog-container .header .btn-close { position: absolute; top: 0px; right: 0px; padding: 10px; cursor: pointer; }
+.app-dialog .app-dialog-container .content { padding: 70px 20px 20px; height: 100%; font-size: 13px; overflow-y: auto; }
+.app-dialog .app-dialog-container .content h1 { font-size: 16px; margin: 15px 0px; }
+.app-dialog .app-dialog-container .content h2 { font-size: 14px; margin: 10px 0px; }
+.app-dialog .app-dialog-container .content h3 { font-size: 13px; margin: 10px 0px; }
+.app-intro section { position: relative; background-position: center center; background-size: cover; background-repeat: no-repeat; overflow: hidden; }
+.app-intro .section-1 { background-image: url("../images/1.png"); min-height: 1082px; }
+.app-intro .section-2 { background-image: url("../images/2.png"); min-height: 897px; }
+.app-intro .section-3 { background-image: url("../images/3.png"); min-height: 740px; }
+.app-intro .section-4 { background-image: url("../images/4.png"); min-height: 897px; }
+.app-intro .section-5 { background-image: url("../images/5.png"); min-height: 792px; }
+.app-intro .section-6 { background-image: url("../images/6.png"); min-height: 288px; }
+.app-intro .section-7 { background-image: url("../images/7.png"); min-height: 1373px; }
+.app-intro .section-8 { background-image: url("../images/8.png"); min-height: 208px; }
+.app-intro .section-9 { background-image: url("../images/9.png"); min-height: 179px; }
+.app-intro .section-10 { background-image: url("../images/10.png"); min-height: 136px; }
+.app-intro .section-9 { background-color: rgb(44, 141, 196); }
+.app-intro .section-8 .estimate-inquiry { position: absolute; top: 61px; left: calc(50% - 300px); width: 600px; height: 97px; }
+.app-intro .section-9 .section-inner { text-align: center; padding: 25px 0px 20px; font-family: "THEmpgt"; }
+.app-intro .section-9 .sub-tit { color: rgb(255, 255, 255); font-size: 20px; }
+.app-intro .section-9 .inquiry { margin-top: 27px; }
+.app-intro .section-9 .inquiry { margin-top: 27px; }
+.app-intro .section-9 .inquiry-inner { max-width: 895px; margin: auto; font-size: 0px; }
+.app-intro .section-9 .inquiry-inner .input-wrap { display: inline-block; width: 25%; font-size: 13px; vertical-align: top; }
+.app-intro .section-9 .inquiry-inner .input-wrap .input-inner { padding: 0px 15px; }
+.app-intro .section-9 .inquiry-inner .input-wrap .input .input-group { white-space: nowrap; font-size: 0px; }
+.app-intro .section-9 .inquiry-inner .input-wrap .input .input-group input { width: 32%; margin-right: 3px; }
+.app-intro .section-9 .inquiry-inner .input-wrap .input .input-group select { width: 32%; margin-right: 3px; border: none; outline: none; padding: 6px 0px; background: rgb(255, 255, 255); }
+.app-intro .section-9 .inquiry-inner .input-wrap .input { position: relative; padding-left: 53px; margin-bottom: 5px; }
+.app-intro .section-9 .inquiry-inner .input-wrap .input.btn-inquiry { padding-left: 0px; }
+.app-intro .section-9 .inquiry-inner .input-wrap .input.btn-inquiry button { position: relative; padding: 7px 0px; border: none; border-radius: 15px; background-color: rgba(51, 51, 51, 0); }
+.app-intro .section-9 .inquiry-inner .input-wrap .input.btn-inquiry button img.loading { display: none; position: absolute; left: 70px; top: 9px; width: 23px; transform-origin: 50% 50%; animation: 0.5s linear 0s infinite normal none running rotate_image; }
+.app-intro .section-9 .inquiry-inner .input-wrap .input.btn-inquiry button.loading { pointer-events: none; background-color: gray; }
+.app-intro .section-9 .inquiry-inner .input-wrap .input.btn-inquiry button.loading img.loading { display: block; }
+.app-intro .section-9 .inquiry-inner .input-wrap .input label { position: absolute; top: 6px; left: 0px; color: rgb(255, 255, 255); }
+.app-intro .section-9 .inquiry-inner .input-wrap .input input { width: 141px; padding: 7px 5px; border: none; outline: none; }
+.app-intro .section-9 .inquiry-inner .input-wrap .input textarea { width: 100%; padding: 7px 5px; border: none; outline: none; resize: none; }
+.app-intro .section-9 .inquiry-inner .input-wrap .check-agree { font-size: 11px; text-align: right; white-space: nowrap; }
+.app-intro .section-9 .inquiry-inner .input-wrap .check-agree >a{padding: 2px 5px;color: #fff;background: #333; border-radius: 5px;} 
+.app-intro .section-9 .inquiry-inner .input-wrap .check-agree > * { display: inline-block; line-height: 1; vertical-align: top; }

@@ -1,0 +1,315 @@
+@keyframes rotate_image {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.app-intro {
+  position:relative;
+  max-width:860px;
+  margin: auto;
+}
+
+.app-intro footer .footer {
+  padding-top: 15.6976%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-image: url("assets/images/9.png");
+}
+
+.app-intro .floating-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.app-intro .floating-menu .btn {
+  width: 45%;
+}
+
+.app-intro .floating-menu .btn.call {
+  float: left;
+}
+
+.app-intro .floating-menu .btn.kakao {
+  float: right;
+}
+
+.app-dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.app-dialog.show {
+  display: block;
+}
+
+.app-dialog-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.app-dialog .app-dialog-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 85%;
+  max-width: 800px;
+  min-width: 300px;
+  height: 80%;
+  max-height: 1000px;
+  min-height: 500px;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+
+.app-dialog .app-dialog-container .header {
+  background-color: white;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  font-size: 14px;
+}
+
+.app-dialog .app-dialog-container .header .btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.app-dialog .app-dialog-container .content {
+  padding: 50px 10px 10px;
+  height: 100%;
+  font-size: 12px;
+  overflow-y: auto;
+}
+
+.app-dialog .app-dialog-container .content h1 {
+  font-size: 14px;
+  margin: 12px 0;
+}
+
+.app-dialog .app-dialog-container .content h2 {
+  font-size: 13px;
+  margin: 7px 0;
+}
+
+.app-dialog .app-dialog-container .content h3 {
+  font-size: 12px;
+  margin: 7px 0;
+}
+
+.app-intro section {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.app-intro .section-1 {
+  padding-top: 72.093%;
+  background-image: url("assets/images/mo-1.png");
+}
+
+.app-intro .section-2 {
+  padding-top: 18.953%;
+  background-image: url("assets/images/mo-2.png");
+}
+
+.app-intro .section-3 {
+  padding-top: 581.5116%;
+  background-image: url("assets/images/mo-3.png");
+}
+
+.app-intro .section-4 {
+  padding-top: 147.674%;
+  background-image: url("assets/images/mo-4.png");
+}
+
+.app-intro .section-5 {
+  padding-top: 121%;
+  background-image: url("assets/images/mo-5.png");
+}
+
+.app-intro .section-6 {
+  padding-top: 273%;
+  background-image: url("assets/images/mo-6.png");
+}
+
+.app-intro .section-7 {
+  padding-top: 177%;
+  background-image: url("assets/images/mo-7.png");
+}
+
+.app-intro .section-bottom {
+  padding-top: 520%;
+  background-image: url("assets/images/mo-8.png");
+}
+
+.app-intro .section-8 {
+  background-color: #2c8dc4;
+}
+
+.app-intro .section-8 .section-inner {
+  text-align: center;
+  padding: 20px 0;
+  font-family: 'noto-sans-kr';
+}
+
+.app-intro .section-8 .sub-tit {
+  color: #fff;
+  font-size: 16px;
+}
+
+.app-intro .section-8 .tit {
+  color: #020709;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.app-intro .section-8 .inquiry {
+  margin-top: 27px;
+}
+
+.app-intro .section-8 .inquiry-inner {
+  width: 80%;
+  min-width: 300pxz;
+  margin: auto;
+  font-size: 0;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap {
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input-inner {
+  padding: 0 15px
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input .input-group {
+  white-space: nowrap;
+  font-size: 0;
+  margin: 0 -1.5px;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input .input-group .input-item {
+  display: inline-block;
+  width: 33.33%;
+  padding: 0 1.5px;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input .input-group select {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 5px 0 6px;
+  background: #fff;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input {
+  position: relative;
+  padding-left: 53px;
+  margin-bottom: 5px;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input.btn-inquiry {
+  padding-left: 0;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input.btn-inquiry button {
+  position: relative;
+  width: 100%;
+  padding: 7px 0;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #211f20;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input.btn-inquiry button img.loading {
+  display: none;
+  position: absolute;
+  left: 70px;
+  top: 9px;
+  width: 23px;
+  transform-origin: 50% 50%;
+  animation: rotate_image .5s linear infinite;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input.btn-inquiry button.loading {
+  pointer-events: none;
+  background-color: gray;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input.btn-inquiry button.loading img.loading {
+  display: block;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input input {
+  width: 100%;
+  padding: 7px 5px;
+  font-size: 12px;
+  border: none;
+  outline: none;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .input textarea {
+  width: 100%;
+  padding: 7px 5px;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .check-agree {
+  margin: 10px 0 25px;
+  font-size: 13px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .check-agree > * {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: top;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .check-agree label {
+  color: #fff;
+}
+
+.app-intro .section-8 .inquiry-inner .input-wrap .check-agree .detail {
+  padding: 2px 4px;
+  margin-left: 10px;
+  font-size: 11px;
+  color: #fff;
+  background-color: #31302e;
+}
