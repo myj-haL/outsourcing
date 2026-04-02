@@ -2,10 +2,25 @@
    샷시국가대표 - 공통 + 모바일 스타일
    ========================================= */
 
-/* ---- 모바일 최대 너비 ---- */
+/* ---- reset.css의 html,body { height:100%; overflow-x:hidden } 부작용 차단 ----
+   html에 height:100% + overflow-x:hidden이 걸리면 overflow-y가 auto로 강제 변환되어
+   html 자체가 스크롤 컨테이너가 됨 → window.pageYOffset = 0 → 헤더 스크롤 감지 불가.
+   height:auto로 덮어써서 viewport가 스크롤하도록 복구. */
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+html {
+  height: auto;
+}
 body {
-  max-width: 450px;
+  overflow: visible;
+}
+
+/* ---- 모바일 최대 너비 ---- */
+.mo {
+  max-width: 390px;
   margin: 0 auto;
+  box-shadow: 0 4.678px 58.472px 0 rgba(57, 70, 119, 0.3);
 }
 
 /* ---- 변수 ---- */
@@ -34,7 +49,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 450px;
+  max-width: 390px;
   height: 60px;
   display: flex;
   align-items: center;
@@ -42,30 +57,37 @@ body {
   padding: 0 20px;
   z-index: 100;
   box-sizing: border-box;
-  background: rgba(10, 14, 35, 0.9);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  background: transparent;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  border-bottom: 1px solid transparent;
 }
 
 .header--scrolled {
   background: var(--white);
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
+  border-bottom-color: #F4F4F4;
 }
 
 .header__logo {
   height: 30px;
   width: auto;
-  filter: brightness(0) invert(1);
-  transition: filter 0.3s ease;
 }
 
-.header--scrolled .header__logo {
-  filter: none;
+.header__logo--color {
+  display: none;
+}
+
+.header--scrolled .header__logo--white {
+  display: none;
+}
+
+.header--scrolled .header__logo--color {
+  display: block;
 }
 
 .header__right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 18px;
 }
 
 .header__call {
@@ -77,8 +99,8 @@ body {
 }
 
 .header__call img {
-  width: 22px;
-  height: 22px;
+  width: 100%;
+  height: 100%;
   filter: brightness(0) invert(1);
   transition: filter 0.3s ease;
 }
@@ -95,12 +117,11 @@ body {
   border: 1px solid var(--white);
   border-radius: 50px;
   color: var(--white);
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 500;
   white-space: nowrap;
   background: none;
   cursor: pointer;
-  font-family: inherit;
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 
@@ -118,7 +139,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 48px);
-  max-width: 402px;
+  max-width: 310px;
   padding: 18px 0;
   background: var(--blue);
   color: var(--white);
@@ -127,7 +148,7 @@ body {
   text-align: center;
   border-radius: 12px;
   box-shadow: 0px 4px 20px rgba(14, 108, 211, 0.45);
-  z-index: 999;
+  z-index: 100;
   white-space: nowrap;
   box-sizing: border-box;
 }
@@ -467,6 +488,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  contain: paint; /* repaint 범위를 이 요소 내부로 한정 */
 }
 
 .reviews__banner::after {
@@ -480,21 +502,24 @@ body {
   pointer-events: none;
 }
 
-.reviews__banner-row { overflow: hidden; }
+.reviews__banner-row {
+  overflow: hidden;
+  will-change: transform; /* overflow 클리핑을 컴포지터 스레드로 이동 */
+}
 
 .reviews__banner-track {
   display: flex;
   gap: 6px;
   width: max-content;
+  will-change: transform;
 }
 
 .reviews__banner-track--left  { animation: scrollLeft  30s linear infinite; }
 .reviews__banner-track--right { animation: scrollRight 30s linear infinite; }
 
 .reviews__banner-track img {
-  width: 100%;
-  max-width: 123px;
-  aspect-ratio: 1/0.748;
+  width: 123px;
+  height: 92px; /* aspect-ratio 대신 명시적 크기로 레이아웃 재계산 방지 */
   object-fit: cover;
   flex-shrink: 0;
   display: block;
@@ -633,7 +658,7 @@ body {
    ========================================= */
 .event {
   background: #00000A;
-  padding: 140px 0 80px;
+  padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
 }
@@ -641,7 +666,7 @@ body {
 .event::before {
   content: '';
   position: absolute;
-  top: -25px;
+  top: -60px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -1303,6 +1328,7 @@ body {
   border-bottom: 1px solid #444;
   padding: 12px;
   gap: 50px;
+  box-sizing: border-box;
 }
 
 .footer__sns img {
@@ -1326,234 +1352,186 @@ body {
 }
 
 /* =========================================
-   PC 스타일 (pc.html에서 사용)
+   PC 레이아웃 (min-width: 1024px)
    ========================================= */
-.pc-page {
-  width: 100%;
+
+/* 모바일 기본: pc-left 숨김, pc-layout은 블록 */
+.pc-left { display: none; }
+
+.contents {
+  background: url(./image/img/pc_bg.png) no-repeat center bottom / contain;
   height: 100vh;
-  position: relative;
   overflow: hidden;
-  background: var(--dark);
+  overflow-y: scroll;
 }
 
-.pc-page__bg {
-  position: absolute;
-  inset: 0;
-}
+@media (min-width: 1024px) {
+  html, body { height: 100%; overflow: hidden; }
 
-.pc-page__bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
-.pc-page__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 2, 11, 0.65);
-}
+  .pc-layout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    max-width: 986px;
+    margin: 0 auto;
+    gap: 50px;
+  }
 
-.pc-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 28px 60px;
-}
+  /* ── 왼쪽 패널 ── */
+  .pc-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 50px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
 
-.pc-header__logo {
-  height: 36px;
-  width: auto;
-}
+  .pc-left__mid > img {
+    width: 100%;
+    max-width: 234px;
+    display: block;
+    margin-top: 80px;
+  }
 
-.pc-header__cta {
-  padding: 12px 28px;
-  border: 1px solid rgba(255,255,255,0.7);
-  border-radius: 50px;
-  color: var(--white);
-  font-size: 14px;
-  font-weight: 400;
-  transition: background 0.3s;
-}
+  .pc-left__logo {
+    height: 40px;
+    width: auto;
+  }
 
-.pc-header__cta:hover {
-  background: rgba(255,255,255,0.1);
-}
+  .pc-left__mid {
+    display: flex;
+    flex-direction: column;
+  }
 
-.pc-page__content {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 80px 60px 60px;
-  gap: 40px;
-}
+  .pc-left__sub {
+    font-size: 18px;
+    color: var(--sub-grey);
+    font-weight: 400;
+    margin-bottom: 40px;
+  }
 
-.pc-page__left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  max-width: 700px;
-}
+  .pc-left__grad {
+    font-size: 38px;
+    font-weight: 700;
+    background: linear-gradient(270deg, #ED222C 50%, #1180E8 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
 
-.pc-page__eyebrow {
-  font-size: 13px;
-  color: var(--gold);
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
+  .pc-left__bold {
+    font-size: 38px;
+    font-weight: 700;
+    color: #333;
+  }
 
-.pc-page__title {
-  font-size: clamp(40px, 4vw, 58px);
-  font-weight: 700;
-  color: var(--white);
-  line-height: 1.2;
-}
+  .pc-left__img {
+    position: absolute;
+    right: 0;
+    bottom: 90px;
+    width: 58%;
+    max-width: 300px;
+    object-fit: contain;
+  }
 
-.pc-page__title span {
-  display: block;
-  background: linear-gradient(270deg, #FF565E 0%, #50AAFF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+  .pc-left__bot {
+    position: relative;
+    z-index: 1;
+  }
 
-.pc-page__desc {
-  font-size: 17px;
-  color: rgba(255,255,255,0.72);
-  line-height: 1.75;
-  max-width: 520px;
-}
+  .pc-left__bot-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 
-.pc-page__btns {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
+  .pc-left__biz {
+    font-size: 12px;
+    color: #C5E3FF;
+    font-style: normal;
+    line-height: 18px;
+  }
 
-.pc-page__btn-primary {
-  padding: 16px 36px;
-  background: var(--blue);
-  color: var(--white);
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: var(--radius);
-  transition: opacity 0.2s;
-}
+  .pc-left__biz strong {
+    font-weight: 700;
+    color: #C5E3FF;
+    font-size: 12px;
+  }
 
-.pc-page__btn-primary:hover {
-  opacity: 0.88;
-}
+  .pc-left__sns-list {
+    display: flex;
+    gap: 20px;
+    flex-shrink: 0;
+  }
 
-.pc-page__btn-secondary {
-  padding: 15px 36px;
-  border: 1.5px solid rgba(255,255,255,0.45);
-  color: var(--white);
-  font-size: 15px;
-  font-weight: 400;
-  border-radius: var(--radius);
-  transition: background 0.2s;
-}
+  .pc-left__sns-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+    flex-shrink: 0;
+  }
 
-.pc-page__btn-secondary:hover {
-  background: rgba(255,255,255,0.08);
-}
+  .pc-left__sns-btn img {
+    width: 32px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+  }
 
-.pc-page__features {
-  display: flex;
-  gap: 32px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(255,255,255,0.15);
-}
+  /* ── 오른쪽: 모바일 뷰 ── */
+  .pc-right {
+    width: 390px;
+    flex-shrink: 0;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
 
-.pc-page__feature {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
+  /* PC에서 헤더: pc-right 기준 absolute로 항상 상단 고정 */
+  .header {
+    position: absolute;
+    top: 0;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 390px;
+    z-index: 100;
+  }
 
-.pc-page__feature-num {
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--gold);
-}
+  /* mo: pc-right 꽉 채우며 단독 스크롤 */
+  .mo {
+    height: 100%;
+    max-width: 390px;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    box-sizing: border-box;
+  }
+  .mo::-webkit-scrollbar { display: none; }
 
-.pc-page__feature-text {
-  font-size: 12px;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.4;
-}
-
-.pc-page__right {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.pc-page__phone {
-  width: 260px;
-  background: #111;
-  border-radius: 38px;
-  padding: 14px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
-  border: 1.5px solid rgba(255,255,255,0.12);
-  max-height: calc(100vh - 140px);
-  overflow: hidden;
-}
-
-.pc-page__phone-screen {
-  border-radius: 26px;
-  overflow: hidden;
-  background: var(--dark);
-}
-
-.pc-page__phone-screen img {
-  width: 100%;
-  display: block;
-}
-
-.pc-page__badge {
-  position: absolute;
-  top: 20px;
-  right: -30px;
-  background: var(--blue);
-  color: var(--white);
-  font-size: 13px;
-  font-weight: 700;
-  padding: 10px 18px;
-  border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(14,108,211,0.45);
-  white-space: nowrap;
-}
-
-.pc-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 18px 60px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-.pc-footer__info {
-  font-size: 11px;
-  color: rgba(255,255,255,0.3);
-  text-align: center;
-  line-height: 1.6;
+  /* PC에서 cta-fixed: pc-right 기준 absolute로 항상 하단 고정 */
+  .cta-fixed {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 48px);
+    max-width: 402px;
+  }
 }
 
 /* =========================================
@@ -1612,8 +1590,9 @@ body {
   display: flex;
   align-items: center;
   height: 60px;
-  padding: 0 20px;
+  padding:10px;
   border-bottom: 1px solid #F4F4F4;
+  box-sizing: border-box;
 }
 
 .modal-form__close {
@@ -1625,7 +1604,9 @@ body {
   background: none;
   cursor: pointer;
   flex-shrink: 0;
-  margin-left: -8px;
+  appearance: none;
+  padding: 0;
+  border: 0;
 }
 
 .modal-form__title {
@@ -1634,34 +1615,30 @@ body {
   font-size: 16px;
   font-weight: 500;
   color: var(--black);
-  padding-right: 32px;
+  padding-right: 30px;
 }
 
 .modal-form__intro {
-  padding: 24px 20px 16px;
+  padding: 25px 0 ;
   text-align: center;
 }
 
 .modal-form__intro-sub {
   font-size: 16px;
   color: #555;
-  margin-bottom: 10px;
+  font-weight: 400;
+  margin-bottom: 15px;
 }
 
 .modal-form__intro-main {
   font-size: 24px;
   font-weight: 400;
   color: var(--black);
-  line-height: 1.35;
+  line-height: 32px;
 }
 
 .modal-form__promo {
-  margin: 0 10px 24px;
-  height: 136px;
-  border-radius: 10px;
-  background: linear-gradient(210deg, rgba(253,231,232,1) 0%, rgba(225,236,248,1) 100%);
-  position: relative;
-  overflow: hidden;
+  margin: 0 10px 25px;
 }
 
 .modal-form__review {
@@ -1708,18 +1685,20 @@ body {
   padding: 0 35px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 12px;
 }
 
 .modal-form__row {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   min-height: 48px;
   gap: 8px;
 }
 
 .modal-form__label {
-  width: 60px;
+  width: 70px;
+  min-width: 70px;
   flex-shrink: 0;
   font-size: 15px;
   font-weight: 700;
@@ -1734,7 +1713,6 @@ body {
   border-radius: 7px;
   padding: 0 15px;
   font-size: 15px;
-  font-family: inherit;
   color: var(--black);
   background: var(--white);
   outline: none;
@@ -1747,7 +1725,7 @@ body {
 }
 
 .modal-form__input:focus {
-  border-color: #17579D;
+  border-color: #0E6CD3;
 }
 
 .modal-form__select {
@@ -1769,7 +1747,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 14px 10px 0;
+  margin: 25px 10px 0;
   padding: 20px 25px;
   background: #F5F5F5;
   border-radius: 7px;
@@ -1787,6 +1765,7 @@ body {
   cursor: pointer;
   flex-shrink: 0;
   accent-color: var(--blue);
+  margin: 0;
 }
 
 .modal-form__agree-label {
@@ -1805,23 +1784,24 @@ body {
   text-decoration: underline;
   flex-shrink: 0;
   white-space: nowrap;
+  appearance: none;
+  border: 0;
 }
 
 .modal-form__submit {
   display: block;
   width: calc(100% - 20px);
-  margin: 14px 10px 34px;
-  padding: 20px 0;
-  background: var(--blue);
+  margin: 25px 10px 10px;
+  padding: 20px;
+  background: #0E6CD3;
   color: var(--white);
   font-size: 18px;
   font-weight: 500;
-  font-family: inherit;
   border-radius: 10px;
   cursor: pointer;
   text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.28);
-  transition: opacity 0.2s;
+  appearance: none;
+  border: 0;
 }
 
 .modal-form__submit:disabled {
@@ -1838,7 +1818,7 @@ body {
   max-height: 570px;
   background: var(--white);
   border-radius: 20px;
-  padding: 23px 20px 30px;
+  padding: 23px 20px 27px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   transform: scale(0.92) translateY(12px);
@@ -1851,15 +1831,18 @@ body {
 
 .modal-privacy__close {
   position: absolute;
-  top: 20px;
+  top: 15px;
   right: 20px;
   width: 25px;
   height: 25px;
+  padding: 0;
   background: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  appearance: none;
+  border: 0;
 }
 
 .modal-privacy__title {
@@ -1867,14 +1850,23 @@ body {
   font-weight: 700;
   color: var(--black);
   margin-bottom: 18px;
-  padding-right: 30px;
-  line-height: 1.43;
 }
 
 .modal-privacy__body {
+  font-size: 13px;
+  color: #555;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.modal-privacy__body p {
+  color: #555;
+}
+
+.modal-privacy__body strong {
   font-size: 14px;
   color: #333;
-  line-height: 1.7;
+  font-weight: 400;
 }
 
 /* =========================================
@@ -1886,7 +1878,7 @@ body {
   max-width: 390px;
   background: linear-gradient(180deg, rgba(225,236,248,1) 0%, rgba(255,255,255,1) 60%);
   border-radius: 20px 20px 0 0;
-  padding: 16px 10px 40px;
+  padding: 0px 10px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1901,9 +1893,10 @@ body {
 .modal-complete__handle {
   width: 50px;
   height: 4px;
-  background: rgba(0, 0, 0, 0.15);
+  background: #fff;
   border-radius: 50px;
-  margin-bottom: 8px;
+  position: absolute;
+  top: -20px;
 }
 
 .modal-complete__close {
@@ -1917,13 +1910,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  appearance: none;
+  border: 0;
+  padding: 0;
 }
 
 .modal-complete__icon {
   width: 55px;
   height: 55px;
   object-fit: contain;
-  margin: 24px 0 20px;
+  margin: 50px 0 20px;
 }
 
 .modal-complete__title {
@@ -1931,16 +1927,17 @@ body {
   font-weight: 700;
   color: var(--black);
   text-align: center;
-  line-height: 1.32;
-  margin-bottom: 24px;
+  line-height: 37px;
+  margin-bottom: 30px;
 }
 
 .modal-complete__summary {
-  width: calc(100% - 20px);
+  width: 100%;
   background: var(--white);
   border-radius: 10px;
-  padding: 0 5px;
-  margin-bottom: 20px;
+  padding: 0 15px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
 }
 
 .modal-complete__row {
@@ -1961,6 +1958,7 @@ body {
   color: #888;
   white-space: nowrap;
   flex-shrink: 0;
+  line-height: 23px;
 }
 
 .modal-complete__val {
@@ -1969,22 +1967,23 @@ body {
   color: #333;
   text-align: right;
   word-break: break-all;
+  line-height: 23px;
 }
 
 .modal-complete__home {
   display: block;
-  width: calc(100% - 20px);
+  width: 100%;
   padding: 20px 0;
-  background: var(--blue);
+  background: #0E6CD3;
   color: var(--white);
   font-size: 18px;
   font-weight: 500;
-  font-family: inherit;
   border-radius: 10px;
   cursor: pointer;
   text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.28);
   transition: opacity 0.2s;
+  appearance: none;
+  border: 0;
 }
 
 .modal-complete__home:hover {
