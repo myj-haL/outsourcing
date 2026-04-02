@@ -20,7 +20,7 @@ body {
 .mo {
   max-width: 390px;
   margin: 0 auto;
-  box-shadow: 0 4.678px 58.472px 0 rgba(57, 70, 119, 0.3);
+  box-shadow: 0 4.678px 58.472px 0 rgba(63, 57, 119, 0.3);
 }
 
 /* ---- 변수 ---- */
@@ -1498,6 +1498,7 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4.678px 58.472px 0 rgba(63, 57, 119, 0.3);
   }
 
   /* PC에서 헤더: pc-right 기준 absolute로 항상 상단 고정 */
