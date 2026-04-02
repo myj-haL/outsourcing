@@ -9,18 +9,48 @@ document.addEventListener('DOMContentLoaded', function () {
   inquiryForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    var agreeCheck = document.getElementById('agreeCheck');
-    if (!agreeCheck || !agreeCheck.checked) {
-      alert('개인정보처리방침에 동의해 주세요.');
-      return;
-    }
-
     var form      = e.target;
     var submitBtn = document.getElementById('btnFormSubmit');
     var name      = form.user_name.value.trim();
     var phone     = form.user_phone.value.trim();
     var address   = form.user_address.value.trim();
     var scope     = form.scope.value;
+    var agreeCheck = document.getElementById('agreeCheck');
+
+    if (!name) {
+      alert('이름을 입력해 주세요.');
+      form.user_name.focus();
+      return;
+    }
+    if (!phone) {
+      alert('연락처를 입력해 주세요.');
+      form.user_phone.focus();
+      return;
+    }
+    if (!/^01[016789][0-9]{7,8}$/.test(phone.replace(/-/g, ''))) {
+      alert('올바른 핸드폰 번호를 입력해 주세요.\n예) 010-1234-5678');
+      form.user_phone.focus();
+      return;
+    }
+    if (!address) {
+      alert('주소를 입력해 주세요.');
+      form.user_address.focus();
+      return;
+    }
+    if (address.length < 5 || !/[가-힣]/.test(address)) {
+      alert('올바른 주소를 입력해 주세요.\n예) 서울시 강남구 역삼동 123 ○○아파트');
+      form.user_address.focus();
+      return;
+    }
+    if (!scope) {
+      alert('시공범위를 선택해 주세요.');
+      form.scope.focus();
+      return;
+    }
+    if (!agreeCheck || !agreeCheck.checked) {
+      alert('개인정보처리방침에 동의해 주세요.');
+      return;
+    }
 
     if (submitBtn) {
       submitBtn.disabled = true;
@@ -54,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+    if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== '6PXA0iKEx_UuA4UER') {
       emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
         .then(function () { showComplete(); })
         .catch(function (err) {
