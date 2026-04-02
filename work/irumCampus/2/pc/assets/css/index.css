@@ -1,7 +1,7 @@
-@keyframes rotate_image { 
+@keyframes rotate_image {
   100% { transform: rotate(360deg); }
 }
-.app-intro { position: relative; width: 1920px; margin: auto; }
+.app-intro { position: relative; width: 100%; max-width: 1920px; min-width: 1920px; margin: auto; }
 .app-intro .floating-menu { position: fixed; top: 20px; right: 20px; width: 370px; padding: 35px 0px 15px; background: linear-gradient(rgb(0, 44, 88) 0%, rgb(178, 206, 221) 100%); }
 .app-intro .floating-menu .tit-1 { color: rgb(255, 255, 255); text-align: center; }
 .app-intro .floating-menu .form_box { padding: 30px 30px 0px; }
@@ -38,37 +38,36 @@
 .app-dialog .app-dialog-container .content h2 { font-size: 14px; margin: 10px 0px; }
 .app-dialog .app-dialog-container .content h3 { font-size: 13px; margin: 10px 0px; }
 .app-intro section { position: relative; background-position: center center; background-size: cover; background-repeat: no-repeat; overflow: hidden; }
-.app-intro .section-1 { background-image: url("../images/1.png"); min-height: 1082px; }
-.app-intro .section-2 { background-image: url("../images/2.png"); min-height: 897px; }
-.app-intro .section-3 { background-image: url("../images/3.png"); min-height: 740px; }
-.app-intro .section-4 { background-image: url("../images/4.png"); min-height: 897px; }
-.app-intro .section-5 { background-image: url("../images/5.png"); min-height: 792px; }
-.app-intro .section-6 { background-image: url("../images/6.png"); min-height: 288px; }
-.app-intro .section-7 { background-image: url("../images/7.png"); min-height: 1373px; }
-.app-intro .section-8 { background-image: url("../images/8.png"); min-height: 208px; }
-.app-intro .section-9 { background-image: url("../images/9.png"); min-height: 179px; }
-.app-intro .section-10 { background-image: url("../images/10.png"); min-height: 136px; }
+.app-intro .section-1 { background-image: url("../images/1.png"); padding-top: 56%;}
+.app-intro .section-2 { background-image: url("../images/2.png"); padding-top: 46%;}
+.app-intro .section-3 { background-image: url("../images/3.png"); padding-top: 38%;}
+.app-intro .section-4 { background-image: url("../images/4.png"); padding-top: 47%;}
+.app-intro .section-5 { background-image: url("../images/5.png"); padding-top: 129%;}
+.app-intro .section-6 { background-image: url("../images/6.png"); padding-top: 128%;}
+.app-intro .section-7 { background-image: url("../images/7.png"); padding-top: 10%;}
+.app-intro .section-8 { background-image: url("../images/8.png"); }
+.app-intro .section-9 { background-image: url("../images/9.png"); padding-top: 7%;}
 .app-intro .section-9 { background-color: rgb(44, 141, 196); }
-.app-intro .section-8 .estimate-inquiry { position: absolute; top: 61px; left: calc(50% - 300px); width: 600px; height: 97px; }
-.app-intro .section-9 .section-inner { text-align: center; padding: 25px 0px 20px; font-family: "THEmpgt"; }
-.app-intro .section-9 .sub-tit { color: rgb(255, 255, 255); font-size: 20px; }
-.app-intro .section-9 .inquiry { margin-top: 27px; }
-.app-intro .section-9 .inquiry { margin-top: 27px; }
-.app-intro .section-9 .inquiry-inner { max-width: 895px; margin: auto; font-size: 0px; }
-.app-intro .section-9 .inquiry-inner .input-wrap { display: inline-block; width: 25%; font-size: 13px; vertical-align: top; }
-.app-intro .section-9 .inquiry-inner .input-wrap .input-inner { padding: 0px 15px; }
-.app-intro .section-9 .inquiry-inner .input-wrap .input .input-group { white-space: nowrap; font-size: 0px; }
-.app-intro .section-9 .inquiry-inner .input-wrap .input .input-group input { width: 32%; margin-right: 3px; }
-.app-intro .section-9 .inquiry-inner .input-wrap .input .input-group select { width: 32%; margin-right: 3px; border: none; outline: none; padding: 6px 0px; background: rgb(255, 255, 255); }
-.app-intro .section-9 .inquiry-inner .input-wrap .input { position: relative; padding-left: 53px; margin-bottom: 5px; }
-.app-intro .section-9 .inquiry-inner .input-wrap .input.btn-inquiry { padding-left: 0px; }
-.app-intro .section-9 .inquiry-inner .input-wrap .input.btn-inquiry button { position: relative; padding: 7px 0px; border: none; border-radius: 15px; background-color: rgba(51, 51, 51, 0); }
-.app-intro .section-9 .inquiry-inner .input-wrap .input.btn-inquiry button img.loading { display: none; position: absolute; left: 70px; top: 9px; width: 23px; transform-origin: 50% 50%; animation: 0.5s linear 0s infinite normal none running rotate_image; }
-.app-intro .section-9 .inquiry-inner .input-wrap .input.btn-inquiry button.loading { pointer-events: none; background-color: gray; }
-.app-intro .section-9 .inquiry-inner .input-wrap .input.btn-inquiry button.loading img.loading { display: block; }
-.app-intro .section-9 .inquiry-inner .input-wrap .input label { position: absolute; top: 6px; left: 0px; color: rgb(255, 255, 255); }
-.app-intro .section-9 .inquiry-inner .input-wrap .input input { width: 141px; padding: 7px 5px; border: none; outline: none; }
-.app-intro .section-9 .inquiry-inner .input-wrap .input textarea { width: 100%; padding: 7px 5px; border: none; outline: none; resize: none; }
-.app-intro .section-9 .inquiry-inner .input-wrap .check-agree { font-size: 11px; text-align: right; white-space: nowrap; }
-.app-intro .section-9 .inquiry-inner .input-wrap .check-agree >a{padding: 2px 5px;color: #fff;background: #333; border-radius: 5px;} 
-.app-intro .section-9 .inquiry-inner .input-wrap .check-agree > * { display: inline-block; line-height: 1; vertical-align: top; }
+.app-intro .section-7 .estimate-inquiry { position: absolute; top: 52px; left: calc(50% - 300px); width: 600px; height: 97px; }
+.app-intro .section-8 .section-inner { text-align: center; padding: 25px 0px 20px; font-family: "THEmpgt"; }
+.app-intro .section-8 .sub-tit { color: rgb(255, 255, 255); font-size: 20px; }
+.app-intro .section-8 .inquiry { margin-top: 27px; }
+.app-intro .section-8 .inquiry { margin-top: 27px; }
+.app-intro .section-8 .inquiry-inner { max-width: 895px; margin: auto; font-size: 0px; }
+.app-intro .section-8 .inquiry-inner .input-wrap { display: inline-block; width: 25%; font-size: 13px; vertical-align: top; }
+.app-intro .section-8 .inquiry-inner .input-wrap .input-inner { padding: 0px 15px; }
+.app-intro .section-8 .inquiry-inner .input-wrap .input .input-group { white-space: nowrap; font-size: 0px; }
+.app-intro .section-8 .inquiry-inner .input-wrap .input .input-group input { width: 32%; margin-right: 3px; }
+.app-intro .section-8 .inquiry-inner .input-wrap .input .input-group select { width: 32%; margin-right: 3px; border: none; outline: none; padding: 6px 0px; background: rgb(255, 255, 255); }
+.app-intro .section-8 .inquiry-inner .input-wrap .input { position: relative; padding-left: 53px; margin-bottom: 5px; }
+.app-intro .section-8 .inquiry-inner .input-wrap .input.btn-inquiry { padding-left: 0px; }
+.app-intro .section-8 .inquiry-inner .input-wrap .input.btn-inquiry button { position: relative; padding: 7px 0px; border: none; border-radius: 15px; background-color: rgba(51, 51, 51, 0); }
+.app-intro .section-8 .inquiry-inner .input-wrap .input.btn-inquiry button img.loading { display: none; position: absolute; left: 70px; top: 9px; width: 23px; transform-origin: 50% 50%; animation: 0.5s linear 0s infinite normal none running rotate_image; }
+.app-intro .section-8 .inquiry-inner .input-wrap .input.btn-inquiry button.loading { pointer-events: none; background-color: gray; }
+.app-intro .section-8 .inquiry-inner .input-wrap .input.btn-inquiry button.loading img.loading { display: block; }
+.app-intro .section-8 .inquiry-inner .input-wrap .input label { position: absolute; top: 6px; left: 0px; color: rgb(255, 255, 255); }
+.app-intro .section-8 .inquiry-inner .input-wrap .input input { width: 141px; padding: 7px 5px; border: none; outline: none; }
+.app-intro .section-8 .inquiry-inner .input-wrap .input textarea { width: 100%; padding: 7px 5px; border: none; outline: none; resize: none; }
+.app-intro .section-8 .inquiry-inner .input-wrap .check-agree { font-size: 11px; text-align: right; white-space: nowrap; }
+.app-intro .section-8 .inquiry-inner .input-wrap .check-agree >a{padding: 2px 5px;color: #fff;background: #333; border-radius: 5px;}
+.app-intro .section-8 .inquiry-inner .input-wrap .check-agree > * { display: inline-block; line-height: 1; vertical-align: top; }

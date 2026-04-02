@@ -1,0 +1,48 @@
+@keyframes rotate_image { 
+  100% { transform: rotate(360deg); }
+}
+.app-intro { position: relative; max-width: 860px; margin: auto; }
+.app-intro section { position: relative; width: 100%; margin: 0px; padding: 0px; display: flex; }
+.app-intro footer .footer { background-position: center center; background-size: cover; background-repeat: no-repeat; overflow: hidden; background-image: url("../images/7.png"); }
+.app-intro .floating-menu {position: fixed;bottom: 0px;left: 0px;width: 100%;}
+.app-intro .floating-menu .btn {width: 45%;}
+.app-intro .floating-menu .btn.call { float: left; }
+.app-intro .floating-menu .btn.kakao {float: right;text-align: right;}
+.app-dialog { display: none; position: fixed; inset: 0px; z-index: 100; }
+.app-dialog.show { display: block; }
+.app-dialog-layer { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }
+.app-dialog .app-dialog-container { position: absolute; top: 50%; left: 50%; width: 85%; max-width: 800px; min-width: 300px; height: 80%; max-height: 1000px; min-height: 500px; transform: translate(-50%, -50%); background-color: white; }
+.app-dialog .app-dialog-container .header { background-color: white; padding: 10px; position: absolute; top: 0px; left: 0px; width: 100%; border-bottom: 1px solid lightgray; font-size: 14px; }
+.app-dialog .app-dialog-container .header .btn-close { position: absolute; top: 0px; right: 0px; padding: 10px; cursor: pointer; }
+.app-dialog .app-dialog-container .content { padding: 50px 10px 10px; height: 100%; font-size: 12px; overflow-y: auto; }
+.app-dialog .app-dialog-container .content h1 { font-size: 14px; margin: 12px 0px; }
+.app-dialog .app-dialog-container .content h2 { font-size: 13px; margin: 7px 0px; }
+.app-dialog .app-dialog-container .content h3 { font-size: 12px; margin: 7px 0px; }
+.app-intro .section-6 { background: url(../images/6.png);}
+.app-intro .section-6 .section-inner {text-align: center;padding: 20px 0px;font-family: "THEmpgt";margin: 0 auto;}
+.app-intro .section-6 .sub-tit { }
+.app-intro .section-6 .inquiry {margin-top: 27px;margin: 27px auto;}
+.app-intro .section-6 .inquiry-inner {width: 80%;margin: auto;font-size: 0px;}
+.app-intro .section-6 .inquiry-inner .input-wrap { font-size: 12px; vertical-align: top; }
+.app-intro .section-6 .inquiry-inner .input-wrap .input-inner {padding: 0px 15px;}
+.app-intro .section-6 .inquiry-inner .input-wrap .input .input-group { white-space: nowrap; font-size: 0px; margin: 0px -1.5px; }
+.app-intro .section-6 .inquiry-inner .input-wrap .input .input-group .input-item {display: inline-block;width: 33.33%;}
+.app-intro .section-6 .inquiry-inner .input-wrap .input .input-group .input-item~.input-item{padding-left:5px}
+.app-intro .section-6 .inquiry-inner .input-wrap .input .input-group .input-item.select_s{position: relative;}
+.app-intro .section-6 .inquiry-inner .input-wrap .input .input-group .input-item.select_s::before{position: absolute;top:calc(50% - 10px);right: 0;content: '';display: block;width: 26px;height: 20px;background: url(../images/icon_select.png) no-repeat;z-index: 10;}
+.app-intro .section-6 .inquiry-inner .input-wrap .input .input-group select {appearance:none;position: relative;width: 100%;border: none;outline: none;padding: 10px;background: rgb(255, 255, 255);height: 55px;}
+
+.app-intro .section-6 .inquiry-inner .input-wrap .input {position: relative;padding-left: 21%;margin-bottom: 50px;}
+.app-intro .section-6 .inquiry-inner .input-wrap .input.btn-inquiry {padding-left: 0px;margin-bottom: 30px;}
+.app-intro .section-6 .inquiry-inner .input-wrap .input.btn-inquiry button { position: relative; width: 100%; border: none; outline: none;  background: #3330;}
+.app-intro .section-6 .inquiry-inner .input-wrap .input.btn-inquiry button img.loading { display: none; position: absolute; left: 70px; top: 9px; width: 23px; transform-origin: 50% 50%; animation: 0.5s linear 0s infinite normal none running rotate_image; }
+.app-intro .section-6 .inquiry-inner .input-wrap .input.btn-inquiry button.loading { pointer-events: none; background-color: gray; }
+.app-intro .section-6 .inquiry-inner .input-wrap .input.btn-inquiry button.loading img.loading { display: block; }
+.app-intro .section-6 .inquiry-inner .input-wrap .input label {position: absolute;top: 15px;left: 0;color: rgb(255, 255, 255);font-size: 18px;letter-spacing: .2rem;}
+.app-intro .section-6 .inquiry-inner .input-wrap .input input {width: 100%;padding: 10px;font-size: 14px;border: none;outline: none;height: 56px;}
+.app-intro .section-6 .inquiry-inner .input-wrap .input textarea {width: 100%;padding: 7px 5px;border: none;outline: none;resize: none;height: 100px;}
+.app-intro .section-6 .inquiry-inner .input-wrap .check-agree {margin: 0 0px 25px;font-size: 13px;text-align: center;white-space: nowrap;}
+.app-intro .section-6 .inquiry-inner .input-wrap .check-agree > * { display: inline-block; line-height: 1; vertical-align: top; }
+.app-intro .section-6 .inquiry-inner .input-wrap .check-agree label {color: rgb(255, 255, 255);font-size: 20px;}
+.app-intro .section-6 .inquiry-inner .input-wrap .check-agree input {width: 22px;height: 21px;}
+.app-intro .section-6 .inquiry-inner .input-wrap .check-agree .detail {padding: 4px 6px;margin-left: 10px;font-size: 22px;color: rgb(255, 255, 255);background-color: rgb(49, 48, 46);}

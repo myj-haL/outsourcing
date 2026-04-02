@@ -1,36 +1,17 @@
-@font-face {
-  font-family: 'noto-sans-kr';
-  src: url("../fonts/noto-sans-kr-v25-latin_korean-900.woff") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-}
 
 @font-face {
-  font-family: 'noto-sans-kr';
-  src: url("../fonts/noto-sans-kr-v25-latin_korean-700.woff") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'noto-sans-kr';
-  src: url("../fonts/noto-sans-kr-v25-latin_korean-500.woff") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'noto-sans-kr';
-  src: url("../fonts/noto-sans-kr-v25-latin_korean-regular.woff") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'noto-sans-kr';
-  src: url("../fonts/noto-sans-kr-v25-latin_korean-300.woff") format("truetype");
+  font-family: 'THEmpgt';
+  src: url("../fonts/THEmpgtM.otf") format("truetype");
   font-weight: 300;
   font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'THEmpgt';
+  src: url("../fonts/THEmpgtM_U.otf") format("truetype");
+  font-weight: 500;
+  font-style: bold;
 }
 
 body {
