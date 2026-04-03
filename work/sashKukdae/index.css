@@ -1637,9 +1637,7 @@ body {
   line-height: 32px;
 }
 
-.modal-form__promo {
-  margin: 0 10px 25px;
-}
+/* .modal-form__promo styles moved to bottom additions */
 
 .modal-form__review {
   position: absolute;
@@ -1988,4 +1986,93 @@ body {
 
 .modal-complete__home:hover {
   opacity: 0.88;
+}
+
+/* =========================================
+   [추가] 스크롤 진입 애니메이션 (IntersectionObserver) [1]
+   ========================================= */
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-aos="fade-up"].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   [추가] 파트너 연결선 애니메이션 [3]
+   ========================================= */
+.partners__line {
+  width: 2px;
+  height: 36px;
+  background: rgba(14, 108, 211, 0.15);
+  margin: 10px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.partners__line-fill {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #0E6CD3, #50AAFF);
+  border-radius: 2px;
+}
+.partners__line.is-animated .partners__line-fill {
+  animation: lineFlow 1s ease forwards;
+}
+@keyframes lineFlow {
+  from { top: -100%; }
+  to   { top: 0; }
+}
+
+/* 우리집 맞춤 샷시 글로우 [3] */
+@keyframes customSashGlow {
+  0%, 100% { filter: drop-shadow(0 0 0px rgba(14, 108, 211, 0)); }
+  50%       { filter: drop-shadow(0 0 14px rgba(14, 108, 211, 0.65)); }
+}
+.custom-sash.is-animated {
+  animation: customSashGlow 2.2s ease-in-out infinite;
+}
+
+/* =========================================
+   [추가] 고객 후기 롤링 (modal-form__promo) [2]
+   ========================================= */
+.modal-form__promo {
+  position: relative;
+  min-height: 228px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #EFF5FF 0%, #E8F0FC 100%);
+  margin: 0 10px 25px;
+}
+.modal-form__review {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.modal-form__review.is-active {
+  opacity: 1;
+}
+.modal-form__review-stars {
+  color: #E8B425;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+/* =========================================
+   [추가] 타이핑 커서 [4]
+   ========================================= */
+#typingText::after {
+  content: '|';
+  font-weight: 300;
+  animation: blink 0.7s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }
