@@ -102,18 +102,51 @@ document.addEventListener('DOMContentLoaded', function () {
     partnerObserver.observe(partnersEl);
   }
 
-  /* ── [2] 모달 후기 롤링 ── */
-  function initReviewRoller() {
-    var reviews = document.querySelectorAll('.modal-form__review');
-    if (reviews.length < 2) return;
-    var current = 0;
-    setInterval(function () {
-      reviews[current].classList.remove('is-active');
-      current = (current + 1) % reviews.length;
-      reviews[current].classList.add('is-active');
-    }, 3200);
-  }
-  initReviewRoller();
+  /* ── [2] 후기 카드 스택 — Vanilla JS + CSS transform
+     상태 3종: is-active(맨 앞) / is-next(뒤 스택) / is-hidden(숨김)
+     JS는 클래스 교체만, 전환 애니메이션은 CSS transition 처리
+     interval: 2800ms, 호버 시 일시정지                              ── */
+  (function () {
+    var stack = document.getElementById('reviewStack');
+    if (!stack) return;
+    var cards = Array.prototype.slice.call(
+      stack.querySelectorAll('.review-slider__card')
+    );
+    if (cards.length < 2) return;
+
+    var timer = null;
+
+    function advance() {
+      var activeEl = stack.querySelector('.is-active');
+      var nextEl   = stack.querySelector('.is-next');
+      var hiddenEl = stack.querySelector('.is-hidden');
+      if (!activeEl || !nextEl) return;
+
+      /* 1) 메인 전환 먼저: next가 y=+16에서 출발하기 전에 텔레포트 카드와 겹치지 않도록 */
+      activeEl.classList.replace('is-active', 'is-hidden');
+      nextEl.classList.replace('is-next', 'is-active');
+
+      /* 2) 다음 프레임에 텔레포트: next가 이미 y=+16을 떠난 뒤 hidden 카드를 아래로 배치 */
+      if (hiddenEl) {
+        var card = hiddenEl;
+        requestAnimationFrame(function () {
+          card.style.transition = 'none';
+          card.style.opacity = '0';
+          card.classList.replace('is-hidden', 'is-next');
+          card.offsetHeight; /* reflow */
+          card.style.transition = '';
+          card.style.opacity = ''; /* 0 → 0.45 페이드인 */
+        });
+      }
+    }
+
+    function start() { timer = setInterval(advance, 2800); }
+    function stop()  { clearInterval(timer); }
+
+    start();
+    stack.addEventListener('mouseenter', stop);
+    stack.addEventListener('mouseleave', start);
+  }());
 
   /* ── [4] 히어로 타이핑 효과 ("수 없이 증명되고 있는" 순환) ── */
   function initTypingEffect() {

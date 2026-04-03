@@ -292,8 +292,18 @@ body {
 }
 
 .custom-sash {
-  max-width: 241px;
+  max-width: 205px;
   margin: 0 auto;
+  padding: 20px 50px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 50px;
+  border: 1px solid #96B9E0;
+  background: #202028;
+  box-shadow: 0 0 4px 0 #619EE2;
+  display: block;
+  width: fit-content;
 }
 
 /* =========================================
@@ -432,7 +442,7 @@ body {
 }
 
 .brand__item-text h3 {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   color: var(--white);
   line-height: 1.4;
@@ -1665,15 +1675,7 @@ body {
   line-height: 1.3;
 }
 
-.modal-form__worker {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 152px;
-  height: 228px;
-  object-fit: cover;
-  object-position: top center;
-}
+/* .modal-form__worker — see bottom additions */
 
 .modal-form__body {
   padding: 0;
@@ -1824,7 +1826,7 @@ body {
 }
 
 .modal-overlay--center.is-open .modal-privacy {
-  transform: scale(1) translateY(0);
+  transform: translateY(0);
 }
 
 .modal-privacy__close {
@@ -2033,35 +2035,140 @@ body {
 /* 우리집 맞춤 샷시 글로우 [3] */
 @keyframes customSashGlow {
   0%, 100% { filter: drop-shadow(0 0 0px rgba(14, 108, 211, 0)); }
-  50%       { filter: drop-shadow(0 0 14px rgba(14, 108, 211, 0.65)); }
+  50%       { filter: drop-shadow(0 0 15px rgba(14, 108, 211, 0.8)); }
 }
 .custom-sash.is-animated {
-  animation: customSashGlow 2.2s ease-in-out infinite;
+  animation: customSashGlow 2s ease-in-out infinite;
 }
 
 /* =========================================
-   [추가] 고객 후기 롤링 (modal-form__promo) [2]
+   [추가] Frame 5 — 고객 후기 slide-up 슬라이더 (피그마 2148:1145)
    ========================================= */
+
+/* Frame 5 전체: 370×136, 그라디언트 bg */
 .modal-form__promo {
   position: relative;
-  min-height: 228px;
+  height: 136px;
+  display: flex;
+  align-items: center;
   overflow: hidden;
   border-radius: 10px;
-  background: linear-gradient(135deg, #EFF5FF 0%, #E8F0FC 100%);
+  background: linear-gradient(210deg, rgba(253, 231, 232, 1) 0%, rgba(225, 236, 248, 1) 100%);
   margin: 0 10px 25px;
+  padding: 0 20px;
 }
-.modal-form__review {
-  opacity: 0;
-  transition: opacity 0.5s ease;
+
+/* 누끼 1: x=223, w=152, h=228 (아래로 넘침, 부모 overflow:hidden으로 클립) */
+.modal-form__worker {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 152px;
+  object-fit: cover;
+  object-position: top center;
 }
-.modal-form__review.is-active {
+
+/* 카드 스택 컨테이너
+   left = 그룹x(20) + 카드 offset(11) = 31px, width = 202-22 = 180px */
+.review-card-stack {
+  position: absolute;
+  width: 202px;
+  height: 94px;
+  top: 57%;
+  transform: translateY(-50%);
+}
+
+/* 카드 3장을 같은 자리에 겹쳐 쌓기 */
+.review-card-stack .review-slider__card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  transition: transform 0.45s cubic-bezier(0, 0, 0.2, 1),
+              opacity   0.45s cubic-bezier(0, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+/* active: 맨 앞, 전체 크기, opacity 1 */
+.review-card-stack .review-slider__card.is-active {
+  transform: scale(1) translateY(0);
   opacity: 1;
+  z-index: 3;
 }
-.modal-form__review-stars {
-  color: #E8B425;
-  font-size: 13px;
-  letter-spacing: 1px;
-  margin-bottom: 4px;
+
+/* next: 아직 활성화 안된 카드 — 아래에서 대기 */
+.review-card-stack .review-slider__card.is-next {
+  transform: scale(0.90) translateY(16px);
+  opacity: 1;
+  z-index: 2;
+  background: #FBFBFB;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.10);
+  filter: blur(0.5px);
+  border: 0;
+}
+
+/* hidden: 지나간 카드 — 위로 */
+.review-card-stack .review-slider__card.is-hidden {
+  transform: scale(0.90) translateY(-16px);
+  opacity: 1;
+  z-index: 1;
+  background: #FBFBFB;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.10);
+  filter: blur(0.5px);
+  border: 0;
+}
+
+/* Frame 8: 흰 카드 — padding 13px 15px, border #17579D 0.5px, shadow */
+.review-slider__card {
+  background: #FFFFFF;
+  border: 0.5px solid #17579D;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.09);
+  padding: 13px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Frame 7: 상단 행 — row, center, gap 8px */
+.review-slider__top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 이름 텍스트: Pretendard 12px, #709BCC */
+.review-slider__name {
+  font-size: 12px;
+  font-weight: 400;
+  color: #709BCC;
+  white-space: nowrap;
+}
+
+/* 세로 구분선 (Vector 3): width=0, height=10px, stroke #709BCC 0.5px */
+.review-slider__divider {
+  display: inline-block;
+  width: 0;
+  height: 10px;
+  border-left: 0.5px solid #709BCC;
+  flex-shrink: 0;
+}
+
+/* 별점 컨테이너: row, gap 3px, 각 별 10×9px */
+.review-slider__stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+/* 후기 본문: Pretendard 14px, #111111 */
+.review-slider__text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #111111;
+  line-height: normal;
 }
 
 /* =========================================
