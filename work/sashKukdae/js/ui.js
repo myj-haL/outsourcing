@@ -155,8 +155,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var texts = [
       '수 없이 증명되고 있는',
-      '고객이 직접 선택하는',
-      '전문가가 자신하는',
+      '더 저렴하고 더 꼼꼼한',
+      '수 많은 고객이 만족한',
     ];
     var idx = 0, charIdx = 0, isDeleting = false;
 
