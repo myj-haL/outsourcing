@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
       slidesPerView: 1.2,
       spaceBetween: 15,
       loop: true,
-      speed: 4000,
+      speed: 10000,
       freeMode: true,
       autoplay: {
         delay: 0,

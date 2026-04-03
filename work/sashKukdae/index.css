@@ -574,7 +574,7 @@ body {
   width: 100%;
 }
 
-.reviews-swiper .swiper-wrapper { align-items: stretch;}
+.reviews-swiper .swiper-wrapper { align-items: stretch; transition-timing-function: linear !important;}
 
 .reviews__slide {
   display: flex;
@@ -1758,8 +1758,8 @@ body {
 }
 
 .modal-form__checkbox {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   flex-shrink: 0;
   accent-color: var(--blue);
@@ -1767,14 +1767,14 @@ body {
 }
 
 .modal-form__agree-label {
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   cursor: pointer;
   line-height: 1.4;
 }
 
 .modal-form__agree-view {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   color: #888;
   background: none;
