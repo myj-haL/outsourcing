@@ -285,6 +285,55 @@ body {
   margin-top: 423px;
 }
 
+.partners_brand {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 88px;
+}
+
+.brand_list {
+  justify-content: center;
+}
+.brand_list li {
+  position: relative;
+}
+
+.brand_list li .moving_dash {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.brand_list li .moving_dash path {
+  animation: flowDown 1.5s linear infinite;
+}
+
+@keyframes flowDown {
+  0%   { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -15; } /* dasharray 1세트: 2+2=4 */
+}
+
+.brand_list.first {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 0 9px;
+}
+.brand_list.first img {
+  width: auto;
+  height: 45px;
+}
+.brand_list.second {
+  display: flex;
+  gap: 0 40px;
+}
+
+.brand_list.second img {
+  height: 30px;
+  width: auto;
+  margin: 0 auto;
+}
+
 .partners__connector {
   flex: 0 0 16px;
   height: 2px;
