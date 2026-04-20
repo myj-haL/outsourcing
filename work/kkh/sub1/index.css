@@ -1,0 +1,271 @@
+@import url("https://cdn.jsdelivr.net/gh/poposnail61/min-sans@main/web/css/minsansvf-dynamic-subset.css");
+
+body {
+  font-family: 'Min Sans', sans-serif !important;
+}
+
+.contribution {
+}
+
+.width1100 {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   History Section
+   =========================== */
+
+.history-section {
+  padding: 60px 16px;
+  box-sizing: border-box;
+}
+
+.history-section__title {
+  font-size: 1.375rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 0 28px;
+  color: #111;
+}
+
+/* Tabs */
+.history-tabs {
+  display: flex;
+  border-bottom: 2px solid #C9231F;
+  margin-bottom: 32px;
+  overflow-x: auto;
+}
+
+.history-tab {
+  border: 0;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  cursor: pointer;
+  border-top: 2px solid #C9231F;
+  border-left: 2px solid #C9231F;
+  border-bottom: none;
+  background: #fff;
+  color: #C9231F;
+  transition: background 0.2s, color 0.2s;
+  line-height: 1.4;
+  outline: 0;
+  flex: 0 0 110px;
+}
+
+.history-tab:last-child{
+  border-right: 2px solid #C9231F;
+}
+
+.history-tab.is-active {
+  background: #C9231F;
+  color: #fff;
+}
+
+/* Content panels */
+.history-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.history-content.is-active {
+  display: block;
+}
+
+.history-content.is-visible {
+  opacity: 1;
+}
+
+/* Empty state */
+.history-empty {
+  text-align: center;
+  color: #999;
+  font-size: 1.25rem;
+  padding: 40px 0;
+}
+
+/* Month block */
+.history-block {
+  padding: 0 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.history-block:last-child {
+  padding-bottom: 0;
+}
+
+.history-block.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.history-block__date {
+  font-size: 2.25rem;
+  font-weight: 500;
+  color: #E0DEDC;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.history-block__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.history-block__item {
+  font-size: 1.05rem;
+  color: #5E514C;
+  line-height: 1.7;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.contribution .banner {
+  background-image: none;
+}
+
+.contribution .banner .width1100 dt {
+  display: block;
+}
+
+.contribution .banner .width1100 dt img {
+  min-height: 150px;
+  object-fit: cover;
+}
+
+.contribution .banner .width1100 dd {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+.contribution .banner .width1100 .text p {
+  color: #5b514a;
+  font-size: 1.25rem;
+  letter-spacing: -0.5pt;
+  line-height: 170%;
+  word-break: keep-all;
+  text-align: center;
+}
+
+.contribution .banner .goBtn a.btnBusiness {
+  text-align: center;
+  display: inline-block;
+  border: 1px solid #c7241f;
+  letter-spacing: -.35pt;
+  color: #fff;
+  transition: all 0.3s ease-out;
+  box-sizing: border-box;
+  background: #c7241f;
+  width: 100%;
+  max-width: 215px;
+  height: 55px;
+  line-height: 55px;
+  margin: 30px auto 0;
+  display: block;
+}
+
+.contribution .banner .width1100 .text p.subTitle {
+  color: #000;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .history-section {
+    padding: 140px 16px;
+  }
+
+  .history-section__title {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+  }
+
+  .history-tabs {
+    margin-bottom: 80px;
+  }
+
+  .history-tab {
+    padding: 10px 24px;
+    font-size: 1.5625rem;
+    flex: 0 0 250px;
+  }
+
+  .history-block {
+    gap: 40px;
+    padding: 0 0 80px;
+  }
+
+  .history-block__date {
+    font-size: 3.75rem;
+    flex-shrink: 0;
+  }
+
+  .history-block__item {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 980px) {
+  .contribution .banner .width1100 dt {
+    display: none;
+  }
+
+  .contribution .banner {
+    background: url(./assets/img/contribution_bn_m.png) top center no-repeat;
+    background-size: cover;
+  }
+  .contribution .banner .width1100 {
+    height: 668px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .contribution .banner .width1100 dd {
+    width: 100%;
+    align-self: center;
+    box-sizing: border-box;
+  }
+
+  .contribution .banner .goBtn a.btnBusiness {
+    width: 215px;
+    height: 60px;
+    line-height: 60px;
+    margin: initial;
+  }
+
+  .contribution .banner .goBtn {
+    margin-top: 46px;
+  }
+
+  .contribution .banner .width1100 .text p.subTitle {
+    font-size: 40px;
+    margin-bottom: 45px;
+    color: #000;
+    font-weight: 400;
+    line-height: normal;
+    display: block;
+  }
+
+  .contribution .banner .width1100 .text p {
+    text-align: left;
+    line-height: 200%;
+  }
+}
