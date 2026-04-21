@@ -4,7 +4,7 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-var MOBILE_BREAK = 992;
+var MOBILE_BREAK = 980;
 
 /* ── 하드코딩 데이터 ──────────────────────────────────── */
 var TIMELINE_DATA = [
@@ -113,7 +113,7 @@ function setupScrollTrigger() {
     _scrollST = null;
   }
 
-  var section = document.querySelector('.scroll_inner');
+  var section = document.querySelector('.timeline-section');
   var track   = document.querySelector('.timeline-section');
   if (!section || !track) return;
 
