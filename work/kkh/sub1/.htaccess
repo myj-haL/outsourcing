@@ -1,0 +1,14 @@
+# ② history.json 외부 직접 접근 차단
+# uploads/ 폴더 내 PHP 실행 방지
+
+<Files "history.json">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Directory "uploads">
+    <FilesMatch "\.php$">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+</Directory>

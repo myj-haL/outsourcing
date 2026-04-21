@@ -14,6 +14,36 @@ body {
 }
 
 /* ===========================
+   top Section
+   =========================== */
+.top img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 20px;
+}
+
+.top .desc {
+  text-align: center;
+  color: #5E514C;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  display: block;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 100px;
+  background-color: #BDBDBD;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+
+/* ===========================
    History Section
    =========================== */
 
@@ -36,6 +66,8 @@ body {
   border-bottom: 2px solid #C9231F;
   margin-bottom: 32px;
   overflow-x: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .history-tab {
@@ -186,7 +218,118 @@ body {
   font-size: 1.5rem;
 }
 
-/* Desktop */
+/* ===========================
+   Timeline Section (.scroll_ani)
+   =========================== */
+
+.scroll_ani {
+  background: linear-gradient(to right, #C9231F, #87100F, #730B0A);
+  position: relative;
+}
+
+/* ── Mobile First ─────────────────────────────── */
+.timeline-section {
+  padding: 60px 16px;
+  box-sizing: border-box;
+}
+
+.timeline-fixed {
+  margin-bottom: 40px;
+}
+
+.timeline-fixed p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #fff;
+  word-break: keep-all;
+}
+
+/* 모바일: 연도 그룹 세로 나열 */
+.timeline-track {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-col {
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+/* 연도 + 점 축 */
+.timeline-axis {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.timeline-year {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: #fff;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+/* 모바일: 카드 (투명 배경, 흰 텍스트, fade-up) */
+.timeline-card {
+  background: transparent;
+  color: #fff;
+  padding: 0 0 24px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.timeline-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 제목: 불릿 포함 */
+.timeline-card__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.55;
+  margin: 0 0 8px;
+  word-break: keep-all;
+  color: #fff;
+}
+
+/* 설명: 일반 텍스트 */
+.timeline-card__desc {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  opacity: 0.85;
+  margin: 0;
+  word-break: keep-all;
+  color: #fff;
+}
+
+.timeline-card__img {
+  display: block;
+  width: 100%;
+  max-width: 490px;
+  margin-top: 14px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.center-line {
+  display: none;
+}
+
+/* ── PC (min-width: 992px) ────────────────────── */
 @media (min-width: 768px) {
   .history-section {
     padding: 140px 16px;
@@ -220,9 +363,205 @@ body {
   .history-block__item {
     font-size: 1.25rem;
   }
+
+  .top img {
+    margin-bottom: 30px;
+  }
+
+  .top .desc {
+    margin-bottom: 60px;
+  }
+
+  .dot {
+    margin-bottom: 23px;
+  }
+
 }
 
 @media (min-width: 980px) {
+  .timeline-section {
+    position: relative;
+    height: 100vh;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+  }
+
+  .timeline-fixed {
+    position: relative;
+    left: 0;
+    margin-bottom: 0;
+    z-index: 10;
+    box-sizing: border-box;
+    width: fit-content;
+    padding-left: 40px;
+  }
+
+  .timeline-fixed p {
+    font-size: 2.5rem;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+
+  /* 가로 트랙 */
+  .timeline-track {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 0;
+    will-change: transform;
+    position: relative;
+    z-index: 2;
+    height: 90%;
+    padding-left: 80px;
+  }
+
+  /* 연도 컬럼: 50vw → 화면에 2개 표시 */
+  .timeline-col {
+    width: auto;
+    flex-shrink: 0;
+    height: 100%;
+    margin-bottom: 0;
+    padding: 0 24px;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  /* 수직 점선: 상단 카드 하단 ~ 축 */
+  .timeline-card--top {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+    position: relative;
+  }
+
+  .timeline-card--top::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 20px;
+    border-left: 1px dashed rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+  }
+
+  /* 축: 연도 + 도트 */
+  .timeline-axis {
+    flex-shrink: 0;
+    padding: 0;
+    position: relative;
+    height: fit-content;
+    top: 45%;
+    transform: translateY(-50%);
+  }
+
+  .timeline-year {
+    font-size: 2.5rem;
+  }
+
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* 수직 점선: 축 ~ 하단 카드 상단 */
+  .timeline-card--bottom {
+    flex: 1;
+    padding-top: 20px;
+    overflow-y: auto;
+    position: relative;
+    justify-content:flex-end;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timeline-card--bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 20px;
+    border-left: 1px dashed rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+  }
+
+  /* 카드 공통 PC 재정의 */
+  .timeline-card {
+    background: transparent;
+    color: #fff;
+    padding: 0;
+    opacity: 1;
+    transform: none;
+    transition: none;
+    box-sizing: border-box;
+  }
+
+  .timeline-card__title {
+    font-size: 1.2rem;
+  }
+
+  .timeline-card__desc {
+    font-size: 0.82rem;
+  }
+
+  .timeline-card__img {
+    border-radius: 6px;
+    margin-top: 14px;
+  }
+
+  /* ── 지그재그: 홀수 컬럼은 상단 카드 크게, 짝수 컬럼은 하단 카드 크게 ── */
+  .timeline-col:nth-child(odd) .timeline-card--top {
+    flex: 2;
+  }
+  .timeline-col:nth-child(odd) .timeline-card--bottom {
+    flex: 1;
+  }
+
+  .timeline-col:nth-child(even) .timeline-card--top {
+    flex: 1;
+  }
+  .timeline-col:nth-child(even) .timeline-card--bottom {
+    flex: 2;
+  }
+
+  .center-line {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1px;
+    width: 100%;
+    background-color: #fff;
+    left: 30%;
+  }
+
+  .center-line:before,
+  .center-line:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 100px;
+    background-color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+
+  .center-line:after {
+    left: auto;
+    right: 0;
+  }
+
   .contribution .banner .width1100 dt {
     display: none;
   }

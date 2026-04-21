@@ -5,11 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../reset.css">
   <link rel="stylesheet" href="./index.css">
-  <script src="./assets/js/index.js"></script>
   <title>국가공헌협회 - 공헌의 발자취</title>
 </head>
 <body>
   <div class="contribution" id="#container">
+    <section class="top width1100">
+      <img src="./assets/img/title.png" alt="보내주신 마음이 모여 산뢰의 이름으로 남았습니다.">
+      <span class="mTxt desc">
+        여러 사람들의 마음이 하나로 이어져<br>도움이 필요한 분들께 닿았고<br>그 시간이 신뢰라는 이름으로 남았습니다.
+      </span>
+    </section>
+    <p class="dot" style="opacity: 0.37;"></p>
+    <p class="dot" style="opacity: 0.6;"></p>
+    <p class="dot" style="opacity: 1;"></p>
+    <section class="scroll_ani">
+      <div class="scroll_inner">
+        <div class="timeline-section">
+          <div class="timeline-fixed">
+            <p>국가공헌협회의 노력은<br>사회 곳곳으로 이어지고 있습니다.</p>
+          </div>
+          <p class="center-line"></p>
+          <div class="timeline-track"></div>
+        </div>
+      </div>
+    </section>
     <section class="history-section contentArea width1100">
       <h3 class="history-section__title title">국가공헌협회가 걸어온 길</h3>
       <div class="history-tabs">
@@ -35,5 +54,10 @@
          </dl>
       </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="./assets/js/index.js"></script>
+  <script src="./assets/js/history-render.js"></script>
+  <script src="./assets/js/scroll.js"></script>
 </body>
 </html>
