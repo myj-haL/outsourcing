@@ -12,33 +12,33 @@ var TIMELINE_DATA = [
     year: 2022,
     position: 'bottom',
     title: '대한노인회 표창 수상',
-    desc: '대한민국 천년희망프로젝트 제10회 도전페스티벌 대한노인회장상 수상\n국가와 국민을 위한 공헌과 헌신으로 대한민국 사회에 선한 영향력 확산에 이바지한 공로를 인정받아 수상',
+    desc: '대한민국 천년희망프로젝트 제10회 도전페스티벌 대한노인회장상 수상\n\n국가와 국민을 위한 공헌과 헌신으로 대한민국 사회에 선한 영향력 확산에\n이바지한 공로를 인정받아 수상',
     image: 'assets/img/2022-1.png'
   },
   {
     year: 2022,
     position: 'top',
     title: '국회 기획재정위원장 표창 수상',
-    desc: '국가공헌협회의 투명하게 운영되는 투명성과 더불어 타 단체의 모범이 되는 점 등의 공로를 인정받아 수상',
+    desc: '국가공헌협회의 투명하게 운영되는 투명성과 더불어\n타 단체의 모범이 되는 점 등의 공로를 인정받아 수상',
     image: 'assets/img/2022-2.png'
   },
   {
     year: 2025,
     position: 'bottom',
     title: '서울특별시의회 의장 표창 수상',
-    desc: '따스한채움터와 진행한 취약계층을 위한 무료급식 지원 공로를 인정받아 수상',
+    desc: '따스한채움터와 진행한 취약계층을 위한\n무료급식 지원 공로를 인정받아 수상',
     image: 'assets/img/2025-1.png'
   },
   {
     year: 2025,
     position: 'top',
     title: '서울지방보훈청 표창 수상',
-    desc: '힐링사운드 합창단 정기 후원을 통해 국가유공자 복지 증진 공로를 인정받아 수상',
+    desc: '힐링사운드 합창단 정기 후원을 통해\n국가유공자 복지 증진 공로를 인정받아 수상',
     image: 'assets/img/2025-2.png'
   },
   {
     year: 2026,
-  }
+  },
 ];
 
 /* ── XSS 방지 ─────────────────────────────────────────── */
@@ -107,37 +107,36 @@ function renderCards() {
 var _scrollST = null;
 
 function setupScrollTrigger() {
-  // 기존 인스턴스 제거
   if (_scrollST) {
     _scrollST.kill();
     _scrollST = null;
   }
 
-  var section = document.querySelector('.timeline-section');
-  var track   = document.querySelector('.timeline-section');
-  if (!section || !track) return;
+  const section = document.querySelector('.scroll_ani');   // pin 대상
+  const inner   = document.querySelector('.scroll_inner'); // 움직이는 대상
 
-  gsap.set(track, { x: 0 });
+  if (!section || !inner) return;
 
-  var scrollAmount = track.scrollWidth - window.innerWidth;
+  // 초기화
+  gsap.set(inner, { x: 0 });
 
-  if (scrollAmount <= 0) {
-    console.warn('[scroll] scrollAmount <= 0');
-    return;
-  }
+  // 🔥 전체 길이 기준 (왼쪽 텍스트 + 오른쪽 트랙 + padding 포함)
+  const scrollAmount = inner.scrollWidth - window.innerWidth;
 
-  console.log('[scroll] scrollAmount:', scrollAmount);
+  if (scrollAmount <= 0) return;
 
-  _scrollST = ScrollTrigger.create({
-    animation: gsap.to(track, { x: -scrollAmount, ease: 'none' }),
-    trigger  : section,
-    start    : 'top top',
-    end      : '+=' + scrollAmount,
-    pin      : true,
-    scrub    : 1,
-    invalidateOnRefresh: true,
-    onEnter  : function () { console.log('[scroll] pin 시작'); },
-    onLeave  : function () { console.log('[scroll] pin 해제'); },
+  _scrollST = gsap.to(inner, {
+    x: -scrollAmount,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: section,
+      start: 'top top',
+      end: () => "+=" + scrollAmount,
+      scrub: 1,
+      pin: true,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+    }
   });
 }
 
@@ -186,3 +185,42 @@ function initTimeline() {
   window.addEventListener("load", function() {
     initTimeline();
   });
+
+
+  function applyLineHeight() {
+    const section = document.querySelector('.timeline-section');
+    const center  = document.querySelector('.center-line');
+
+    if (!section || !center) return;
+
+    const sectionRect = section.getBoundingClientRect();
+    const centerRect  = center.getBoundingClientRect();
+
+    const centerY = centerRect.top - sectionRect.top + centerRect.height / 2;
+
+    /* ───────── 공통: title 기준 ───────── */
+    document.querySelectorAll('.timeline-card').forEach(card => {
+      const title = card.querySelector('.timeline-card__title');
+      if (!title) return;
+
+      const rect = title.getBoundingClientRect();
+      const titleCenter = rect.top - sectionRect.top + rect.height / 2;
+
+      let gap;
+
+      if (card.classList.contains('timeline-card--top')) {
+        // 중앙선 위 → 아래로 내려감
+        gap = centerY - titleCenter;
+      } else {
+        // 중앙선 아래 → 위로 올라감
+        gap = titleCenter - centerY;
+      }
+
+      card.style.setProperty('--line', Math.max(gap, 0) + 'px');
+    });
+  }
+
+window.addEventListener('load', applyLineHeight);
+window.addEventListener('resize', applyLineHeight);
+
+ScrollTrigger.addEventListener("refresh", applyLineHeight);

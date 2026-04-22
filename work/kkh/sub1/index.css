@@ -2,9 +2,7 @@
 
 body {
   font-family: 'Min Sans', sans-serif !important;
-}
-
-.contribution {
+  overflow-x: clip;
 }
 
 .width1100 {
@@ -40,6 +38,10 @@ body {
   background-color: #BDBDBD;
   display: block;
   margin: 0 auto 20px;
+}
+
+.dot.last {
+  margin-bottom: 45px;
 }
 
 
@@ -223,8 +225,18 @@ body {
    =========================== */
 
 .scroll_ani {
-  background: linear-gradient(to right, #C9231F, #87100F, #730B0A);
   position: relative;
+  background: linear-gradient(to right, #C9231F, #87100F, #730B0A);
+}
+
+.scroll_inner:before,
+.scroll_inner:after {
+  content: "";
+  display: block;
+  background: url(./assets/img/history_bg.png) no-repeat center / contain;
+  position: absolute;
+  aspect-ratio: 1/1;
+  z-index: 1;
 }
 
 /* ── Mobile First ─────────────────────────────── */
@@ -248,7 +260,12 @@ body {
 /* 모바일: 연도 그룹 세로 나열 */
 .timeline-track {
   display: flex;
+  width: max-content;
   flex-direction: column;
+}
+
+.timeline-track > * {
+  flex-shrink: 0;         /* 🔥 이거 없으면 width 깨짐 */
 }
 
 .timeline-col {
@@ -268,7 +285,6 @@ body {
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: -2px;
   color: #fff;
 }
 
@@ -289,6 +305,7 @@ body {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.55s ease, transform 0.55s ease;
+  position: relative;
 }
 
 .timeline-card.is-visible {
@@ -319,7 +336,7 @@ body {
 .timeline-card__img {
   display: block;
   width: 100%;
-  max-width: 490px;
+  max-width: 400px;
   margin-top: 14px;
   border-radius: 4px;
   object-fit: cover;
@@ -327,6 +344,12 @@ body {
 
 .center-line {
   display: none;
+}
+
+.scroll_inner {
+  /* background: linear-gradient(to right, #C9231F, #87100F, #730B0A); */
+  padding: 0 20px;
+  width: 100%;
 }
 
 /* ── PC (min-width: 992px) ────────────────────── */
@@ -396,13 +419,15 @@ body {
     z-index: 10;
     box-sizing: border-box;
     width: fit-content;
-    padding-left: 40px;
+    padding-left: 0;
+    flex-shrink: 0;
   }
 
   .timeline-fixed p {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     color: #fff;
     white-space: nowrap;
+    line-height: 1.3;
   }
 
 
@@ -412,12 +437,13 @@ body {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: stretch;
-    gap: 0;
+    gap: 80px;
     will-change: transform;
     position: relative;
     z-index: 2;
     height: 90%;
-    padding-left: 80px;
+    padding-left: 120px;
+    padding-right: 10px;
   }
 
   /* 연도 컬럼: 50vw → 화면에 2개 표시 */
@@ -441,24 +467,13 @@ body {
     position: relative;
   }
 
-  .timeline-card--top::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 1px;
-    height: 20px;
-    border-left: 1px dashed rgba(255, 255, 255, 0.4);
-    pointer-events: none;
-  }
-
   /* 축: 연도 + 도트 */
   .timeline-axis {
     flex-shrink: 0;
     padding: 0;
     position: relative;
     height: fit-content;
-    top: 45%;
+    top: 46%;
     transform: translateY(-50%);
   }
 
@@ -473,24 +488,12 @@ body {
 
   /* 수직 점선: 축 ~ 하단 카드 상단 */
   .timeline-card--bottom {
-    flex: 1;
     padding-top: 20px;
-    overflow-y: auto;
     position: relative;
-    justify-content:flex-end;
+    /* justify-content:flex-end; */
+    margin-top: auto;
     display: flex;
     flex-direction: column;
-  }
-
-  .timeline-card--bottom::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1px;
-    height: 20px;
-    border-left: 1px dashed rgba(255, 255, 255, 0.4);
-    pointer-events: none;
   }
 
   /* 카드 공통 PC 재정의 */
@@ -502,23 +505,26 @@ body {
     transform: none;
     transition: none;
     box-sizing: border-box;
+    height: fit-content;
+    padding-left: 30px;
   }
 
   .timeline-card__title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .timeline-card__desc {
-    font-size: 0.82rem;
+    font-size: 0.95rem;
   }
 
   .timeline-card__img {
     border-radius: 6px;
-    margin-top: 14px;
+    margin-top: 18px;
+    min-width: 400px;
   }
 
   /* ── 지그재그: 홀수 컬럼은 상단 카드 크게, 짝수 컬럼은 하단 카드 크게 ── */
-  .timeline-col:nth-child(odd) .timeline-card--top {
+  /* .timeline-col:nth-child(odd) .timeline-card--top {
     flex: 2;
   }
   .timeline-col:nth-child(odd) .timeline-card--bottom {
@@ -530,17 +536,17 @@ body {
   }
   .timeline-col:nth-child(even) .timeline-card--bottom {
     flex: 2;
-  }
+  } */
 
   .center-line {
     display: block;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    height: 1px;
-    width: 100%;
+    height: 0.5px;
+    width: calc(100% - 630px);
     background-color: #fff;
-    left: 30%;
+    left: 630px;
   }
 
   .center-line:before,
@@ -548,8 +554,8 @@ body {
     content: "";
     display: block;
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 13px;
+    height: 13px;
     border-radius: 100px;
     background-color: #fff;
     top: 50%;
@@ -606,5 +612,80 @@ body {
   .contribution .banner .width1100 .text p {
     text-align: left;
     line-height: 200%;
+  }
+
+  .scroll_inner {
+    width: max-content;
+    padding: 0 140px;
+  }
+
+  .scroll_inner:before {
+    width: 370px;
+    left: -160px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .scroll_inner::after {
+    width: 500px;
+    right: -250px;
+    bottom: -100px;
+    opacity: 0.4;
+  }
+
+  /* .timeline-card--top::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5%;
+    height: var(--line-height);
+    border-left: 1px dashed rgba(255,255,255,0.4);
+  }
+
+  .timeline-card--bottom::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 95%;
+    height: var(--line-height);
+    border-left: 1px dashed rgba(255,255,255,0.4);
+  } */
+
+  .timeline-card--top {
+    margin-bottom: auto;
+  }
+
+  .timeline-card--top::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4%;
+    height: var(--line);
+    border-left: 1px dashed rgba(255,255,255,0.4);
+  }
+
+  .timeline-card--top::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 100px;
+    left: -3.5px;
+    top: 14px;
+  }
+
+  .timeline-card--bottom .timeline-card__title {
+    margin-top: auto;
+  }
+
+  .timeline-card--bottom::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: calc(45% - var(--line));
+    height: var(--line);
+    border-left: 1px dashed rgba(255,255,255,0.4);
   }
 }
