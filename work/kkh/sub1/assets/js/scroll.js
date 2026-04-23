@@ -186,41 +186,67 @@ function initTimeline() {
     initTimeline();
   });
 
+function applyLineHeight() {
+  const section = document.querySelector('.timeline-section');
+  if (!section) return;
 
-  function applyLineHeight() {
-    const section = document.querySelector('.timeline-section');
-    const center  = document.querySelector('.center-line');
+  const sectionRect = section.getBoundingClientRect();
+  const centerY = sectionRect.height / 2; // ✅ 중앙선 = 섹션 높이의 50%
 
-    if (!section || !center) return;
+  document.querySelectorAll('.timeline-card').forEach(card => {
+    const title = card.querySelector('.timeline-card__title');
+    if (!title) return;
 
-    const sectionRect = section.getBoundingClientRect();
-    const centerRect  = center.getBoundingClientRect();
+    const rect = title.getBoundingClientRect();
+    const titleCenter = rect.top - sectionRect.top + rect.height / 2;
 
-    const centerY = centerRect.top - sectionRect.top + centerRect.height / 2;
+    let gap;
 
-    /* ───────── 공통: title 기준 ───────── */
-    document.querySelectorAll('.timeline-card').forEach(card => {
-      const title = card.querySelector('.timeline-card__title');
-      if (!title) return;
-
-      const rect = title.getBoundingClientRect();
+    if (card.classList.contains('timeline-card--top')) {
+      gap = centerY - titleCenter;
+    } else {
+      const titleTop = rect.top - sectionRect.top;
       const titleCenter = rect.top - sectionRect.top + rect.height / 2;
+      gap = titleCenter - centerY;
 
-      let gap;
+      const cardTop = card.getBoundingClientRect().top - sectionRect.top;
+      const offsetFromCardTop = cardTop - centerY;
+      card.style.setProperty('--line-offset', Math.max(offsetFromCardTop, 0) + 'px');
+    }
 
-      if (card.classList.contains('timeline-card--top')) {
-        // 중앙선 위 → 아래로 내려감
-        gap = centerY - titleCenter;
-      } else {
-        // 중앙선 아래 → 위로 올라감
-        gap = titleCenter - centerY;
+    card.style.setProperty('--line', Math.max(gap, 0) + 'px');
+  });
+}
+
+function safeApply() {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(applyLineHeight);
+  });
+}
+
+function initFadeUp() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        safeApply(); // 카드 위치 확정 후 선 재계산
+        observer.unobserve(entry.target);
       }
-
-      card.style.setProperty('--line', Math.max(gap, 0) + 'px');
     });
-  }
+  }, { threshold: 0.2 });
 
-window.addEventListener('load', applyLineHeight);
-window.addEventListener('resize', applyLineHeight);
+  document.querySelectorAll('.timeline-card').forEach(card => {
+    observer.observe(card);
+  });
+}
 
+window.addEventListener('load', () => {
+  safeApply();
+  initFadeUp();
+});
+
+window.addEventListener('resize', safeApply);
+document.fonts.ready.then(safeApply);
+
+// GSAP 쓰는 경우에만 유지, 아니면 삭제
 ScrollTrigger.addEventListener("refresh", applyLineHeight);

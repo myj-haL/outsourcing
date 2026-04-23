@@ -107,6 +107,7 @@ body {
 
 .history-content.is-active {
   display: block;
+  opacity: 1;
 }
 
 .history-content.is-visible {
@@ -502,11 +503,14 @@ body {
     color: #fff;
     padding: 0;
     opacity: 1;
-    transform: none;
-    transition: none;
     box-sizing: border-box;
     height: fit-content;
     padding-left: 30px;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  .timeline-card.is-visible {
+    opacity: 1;
   }
 
   .timeline-card__title {
@@ -684,8 +688,19 @@ body {
     content: '';
     position: absolute;
     left: 0;
-    top: calc(45% - var(--line));
+    top: calc(-1 * var(--line-offset));   /* JS에서 정확히 계산한 값 */
     height: var(--line);
     border-left: 1px dashed rgba(255,255,255,0.4);
+  }
+
+  .timeline-card--bottom::after {
+    content: '';
+    position: absolute;
+    left: -3.5px;                              /* ::before left 기준으로 중앙 정렬 */
+    top: calc(-1 * var(--line-offset) + var(--line) - 4px); /* 선 끝점 */
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;   /* 점선 색상과 맞춤 */
   }
 }
