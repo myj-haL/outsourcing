@@ -1,14 +1,7 @@
-/* ===================================================================
-   국가공헌협회 — 추가섹션 스타일
-   파일 : addSectionCollection/index.css
-   이관 : 운영 sub.css 계열 append
-   ※ 운영 사이트 CSS 규칙 준수
-      rem 단위 / % line-height / pt letter-spacing
-      flex-wrap 레이아웃 / 평면 선택자 / 분기별 재선언
-=================================================================== */
-
-
 /* ===== 1. 공통 타이포 클래스 ===== */
+html, body {
+  word-break: keep-all;
+}
 
 /* 섹션 헤드라인 — sec01·03 (PC 33px ÷ 16 = 2.063rem) */
 .fs_sectionTitle {font-size: 2.5rem;}
@@ -24,13 +17,6 @@
 .fs_body { font-size:1.000rem; }
 
 
-/* ===== 2. 공통 컬러 / 배경 클래스 ===== */
-
-/* 섹션01·03 배경 */
-.add_bgGray { background-color:#f9f9f9; }
-
-
-/* ===== 3. 공통 여백 / 레이아웃 클래스 ===== */
 
 /* 섹션 기본 패딩 (kkh.css 실측 PC 값) */
 .add_sec01,
@@ -46,16 +32,9 @@
 .add_colWrap { display:flex; flex-wrap:wrap; }
 
 
-/* ===== 4. 섹션별 스타일 ===== */
-
-/* ─────────────────────────────────────────
-   add_sec01 — 소개 인트로
-   Figma PC: 126:146 / MO: 195:28
-   배경 #f9f9f9 / 2열 (텍스트 좌 · 이미지 우)
-───────────────────────────────────────── */
 .add_sec01 { background-color:#f9f9f9; padding: 83px 0; }
 
-.add_sec01 .add_colWrap { align-items:top; margin-top: 32px;}
+.add_sec01 .add_colWrap { align-items:top;}
 
 .add_sec01 .txtBox { width:52%; }
 
@@ -66,29 +45,18 @@
   position:relative;
   overflow:visible;
   aspect-ratio:500 / 661;
-  margin-top: -70px;
+  max-width: 500px;
+  margin-top: 65px;
 }
 
-.add_sec01 .imgBox img { display:block; width:100%; height:100%; object-fit:cover; position:relative; z-index:0; }
-
-/* 빨강 bar — 이미지 기준 % 환산: 82/500=16.4% / 205/661=31% */
-.add_sec01 .redBar {
-  position:absolute;
-  left:-8.2%;
-  top:0;
-  width:16.4%;
-  height:31%;
-  background-color:#c7241f;
-  z-index:1;
-  opacity: .8;
-}
+.add_sec01 .imgBox img { display:block; width:100%; height:auto; object-fit:cover; position:relative; z-index:0; }
 
 /* 헤드라인 — PC 33px / 600 / 160% / #222+#c7241f */
 .add_sec01 .headLine { font-weight:600; line-height:160%; color:#222; }
 .add_sec01 .headLine .point { color:#c7241f; }
 
 /* 본문 — PC 16px / 400 / 169% / #777 */
-.add_sec01 .bodyTxt { color:#777; line-height:170%;}
+.add_sec01 .bodyTxt { color:#777; line-height:170%; margin-top: 32px;}
 
 
 /* ─────────────────────────────────────────
@@ -249,22 +217,10 @@
   position:relative;
   overflow:visible;
   aspect-ratio:500 / 661;
-  margin-top: -45px;
+  margin-top: 60px;
 }
 
 .add_sec03 .imgBox img { display:block; width:100%; height:100%; object-fit:cover; position:relative; z-index:0; }
-
-/* 빨강 bar — sec01과 동일 비율 */
-.add_sec03 .redBar {
-  position:absolute;
-  left:-8.2%;
-  top:0;
-  width:16.4%;
-  height:31%;
-  background-color:#c7241f;
-  z-index:1;
-  opacity: .8;
-}
 
 /* 헤드라인 — PC 33px / 700 / 160% / #222+#c7241f (sec03: PC700 / MO600) */
 .add_sec03 .headLine { font-weight:600; line-height:160%; color:#222; }
@@ -336,193 +292,6 @@
   /*** add_sec07 — 카드 padding 조정 ***/
   .add_sec07 .cardItem { padding:50px 24px 30px; }
 }
-
-/* @media ~ 980px */
-@media all and (max-width:980px) {
-
-  /*** add_sec01 ***/
-  .add_sec01 { padding:80px 0; }
-  /* redBar 는 % 비율로 자동 축소 — 별도 선언 불필요 */
-
-  /*** add_sec02 ***/
-  .add_sec02 { padding:80px 0; }
-
-  /*** add_sec03 ***/
-  .add_sec03 { padding:80px 0; }
-  /* redBar 는 % 비율로 자동 축소 — 별도 선언 불필요 */
-
-  /*** add_sec04 ***/
-  .add_sec04 { padding:80px 0; }
-
-  /*** add_sec05 ***/
-  .add_sec05 { padding:80px 0; }
-  .add_sec05 .para { font-size:1.5rem; }
-
-  /*** add_sec06 ***/
-  .add_sec06 { padding:80px 0; }
-  .add_sec06 .decoNum { font-size:5.000rem; }
-
-  /*** add_sec07 ***/
-  .add_sec07 { padding:80px 0; }
-  .add_sec07 .groupTit { font-size:2.000rem; }
-
-  /*** add_sec08 ***/
-  .add_sec08 { padding:80px 0; }
-  .add_sec08 .headLine { font-size:2.000rem; }
-  .add_sec08 .bodyTxt  { font-size:1.188rem; }
-}
-
-/* @media ~ 768px */
-@media all and (max-width:768px) {
-
-  /*** add_sec01 ***/
-  .add_sec01 { padding:60px 0; }
-  .add_sec01 .txtBox { width:100%; order:2; }
-  .add_sec01 .imgBox { width:100%; margin-left:0; order:1; margin-bottom:40px; }
-
-  /*** add_sec02 — PC 숨김 / MO 표시 ***/
-  .add_sec02 { padding:60px 0; }
-  .add_sec02_pc { display:none; }
-  .add_sec02_mo { display:block; }
-
-  /*** add_sec03 ***/
-  .add_sec03 { padding:60px 0; }
-  .add_sec03 .txtBox { width:100%; order:2; }
-  .add_sec03 .imgBox { width:100%; margin-left:0; order:1; margin-bottom:40px; }
-
-  /*** add_sec04 ***/
-  .add_sec04 { padding:60px 0; }
-  .add_sec04 .cardItem { width:100%; margin-right:0; margin-bottom:30px; }
-  .add_sec04 .cardItem:last-child { margin-bottom:0; }
-
-  /*** add_sec05 — MO 배경 전환 ***/
-  .add_sec05 { padding:60px 0; background:url(assets/sec05_bg_left.jpg) no-repeat center / cover; }
-  .add_sec05 .bgWrap { display:none; }
-  /* 하단 fade 오버레이 */
-  .add_sec05::after {
-    content:"";
-    position:absolute;
-    bottom:0; left:0; right:0;
-    height:40%;
-    background:linear-gradient(to bottom, transparent, #fff);
-  }
-  /* PC 전용 제목 숨김, MO 전용 제목 표시 */
-  .add_sec05 .titlePc { display:none; }
-  .add_sec05 .titleMo { display:block; }
-
-  /*** add_sec06 — 카드 세로 스택 ***/
-  .add_sec06 { padding:60px 0; }
-  .add_sec06 .cardItem { width:100%; margin-right:0; margin-bottom:30px; }
-  .add_sec06 .cardItem:last-child { margin-bottom:0; }
-  /* MO 카드제목 전환 (원칙 둘: PC vs MO 텍스트 다름) */
-  .add_sec06 .cardTit_pc { display:none; }
-  .add_sec06 .cardTit_mo { display:block; }
-  /* sec08 PC 전용 줄바꿈 숨김 */
-  .add_sec08 .pc_br { display:none; }
-
-  /*** add_sec07 — 카드 세로 스택 ***/
-  .add_sec07 { padding:60px 0; }
-  .add_sec07 .cardItem { width:100%; margin-right:0; margin-bottom:20px; }
-  .add_sec07 .cardItem:last-child { margin-bottom:0; }
-  .add_sec07 .missionGroup { margin-bottom:40px; }
-
-  /*** add_sec08 — MO 레이아웃 ***/
-  .add_sec08 { padding:0 0 60px; }
-  .add_sec08 .handImg { display:none; }
-  .add_sec08 .moBanner { display:block; }
-  /* MO 손 이미지: 하단→상단 fade (좌측 fade) */
-  .add_sec08 .moBanner img {
-    width:100%;
-    display:block;
-    -webkit-mask-image:linear-gradient(to left, transparent 0%, #000 40%);
-    mask-image:linear-gradient(to left, transparent 0%, #000 40%);
-  }
-  .add_sec08 .inner { text-align:center; padding-top:40px; }
-  .add_sec08 .btnWrap { justify-content:center; flex-direction:column; align-items:center; gap:12px; }
-}
-
-/* @media ~ 480px */
-@media all and (max-width:480px) {
-
-  /*** add_sec01 ***/
-  .add_sec01 { padding:50px 0; }
-  /* 헤드라인 MO: 28px ÷ 14 = 2.000rem / LH 129% */
-  .add_sec01 .headLine { font-size:2.000rem; line-height:129%; }
-  /* 본문 MO: 16px ÷ 14 = 1.143rem */
-  .add_sec01 .bodyTxt { font-size:1.143rem; }
-  /* 빨강 bar MO: 51×128 */
-  .add_sec01 .redBar { width:51px; height:128px; }
-
-  /*** add_sec02 ***/
-  .add_sec02 { padding:50px 0; }
-  /* MO 섹션제목: 24px ÷ 14 = 1.714rem / LS -0.75pt */
-  .add_sec02_mo h3.title { font-size:1.714rem; letter-spacing:-0.75pt; }
-  /* MO 배너텍스트: 16px ÷ 14 = 1.143rem */
-  .add_sec02_mo .bannerTxt { font-size:1.143rem; }
-  /* MO 카드번호: 17px ÷ 14 = 1.214rem */
-  .add_sec02_mo .cardNum { font-size:1.214rem; }
-  /* MO 카드제목: 17px ÷ 14 = 1.214rem */
-  .add_sec02_mo .cardTit { font-size:1.214rem; }
-  /* MO 카드본문: 14px ÷ 14 = 1.000rem / LH 157% / LS -0.32pt */
-  .add_sec02_mo .cardBody { font-size:1.000rem; line-height:157%; letter-spacing:-0.32pt; }
-
-  /*** add_sec03 ***/
-  .add_sec03 { padding:50px 0; }
-  /* 헤드라인 MO: 29px ÷ 14 = 2.071rem / LH 131% / weight 600 */
-  .add_sec03 .headLine { font-size:2.071rem; line-height:131%; font-weight:600; }
-  /* 본문 MO: 16px ÷ 14 = 1.143rem / LH 156% */
-  .add_sec03 .bodyTxt { font-size:1.143rem; line-height:156%; }
-  /* 빨강 bar MO: 51×128 */
-  .add_sec03 .redBar { width:51px; height:128px; }
-
-  /*** add_sec04 ***/
-  .add_sec04 { padding:50px 0; }
-  /* MO 섹션제목: 28px ÷ 14 = 2.000rem / LH 129% */
-  .add_sec04 h3.title { font-size:2.000rem; line-height:129%; }
-  /* MO 카드제목: 17px ÷ 14 = 1.214rem */
-  .add_sec04 .cardTit { font-size:1.214rem; }
-  /* MO 카드본문: 14px ÷ 14 = 1.000rem / LH 163% */
-  .add_sec04 .cardBody { font-size:1.000rem; line-height:163%; }
-
-  /*** add_sec05 ***/
-  .add_sec05 { padding:50px 0; }
-  /* MO 제목: 28px ÷ 14 = 2.000rem / LH 121% */
-  .add_sec05 .titleMo { font-size:2.000rem; line-height:121%; }
-  /* MO 본문: 17px ÷ 14 = 1.214rem / LH 129% */
-  .add_sec05 .para { font-size:1.214rem; line-height:129%; margin-bottom:2rem; }
-
-  /*** add_sec06 ***/
-  .add_sec06 { padding:50px 0; }
-  /* MO 원칙태그: 17px ÷ 14 = 1.214rem */
-  .add_sec06 .tagLine { font-size:1.214rem; }
-  /* MO 카드제목: 17px ÷ 14 = 1.214rem / LH 153% */
-  .add_sec06 .cardTit { font-size:1.214rem; line-height:153%; }
-  /* ⚠️ PC(13px) < MO(14px) 역전 — 시안대로 */
-  /* MO 카드본문: 14px ÷ 14 = 1.000rem / LH 161% / LS -0.32pt */
-  .add_sec06 .cardBody { font-size:1.000rem; letter-spacing:-0.32pt; }
-  /* MO 장식번호: 90px ÷ 14 = 6.429rem */
-  .add_sec06 .decoNum { font-size:6.429rem; top:-5px; right:0; opacity:0.4; }
-
-  /*** add_sec07 ***/
-  .add_sec07 { padding:50px 0; }
-  /* MO 그룹제목: 24px ÷ 14 = 1.714rem / LS -0.75pt */
-  .add_sec07 .groupTit { font-size:1.714rem; letter-spacing:-0.75pt; }
-  /* MO 카드제목: 17px ÷ 14 = 1.214rem */
-  .add_sec07 .cardTit { font-size:1.214rem; }
-  /* MO 카드본문: 14px ÷ 14 = 1.000rem / LH 150% */
-  .add_sec07 .cardBody { font-size:1.000rem; line-height:150%; }
-  .add_sec07 .cardItem { padding:53px 40px 30px; }
-
-  /*** add_sec08 ***/
-  .add_sec08 { padding-bottom:50px; }
-  /* MO 헤드라인: 20px ÷ 14 = 1.429rem / LS -0.375pt / #000 */
-  .add_sec08 .headLine { font-size:1.429rem; letter-spacing:-0.375pt; color:#000; }
-  /* MO 본문: 18px ÷ 14 = 1.286rem / LH 172% / LS -0.525pt / #5b514a */
-  .add_sec08 .bodyTxt { font-size:1.286rem; line-height:172%; letter-spacing:-0.525pt; color:#5b514a; }
-  /* MO 버튼: 14px ÷ 14 = 1.000rem / 400 — 고정폭 없음, padding 으로만 크기 제어 */
-  .add_sec08 .btn { font-size:1.000rem; font-weight:400; padding:16px 32px; text-align:center; }
-}
-
 
 /* ─────────────────────────────────────────
    add_sec05 — 영웅을 기억해야 하는 이유
@@ -843,16 +612,87 @@ body,html {
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
-@media all and (max-width:768px) { body,html { font-size:15px; } }
-@media all and (max-width:480px) { body,html { font-size:14px; } }
-@media all and (max-width:360px) { body,html { font-size:13px; } }
 
 /* 컨테이너 */
-.width1100 { position:relative; width:98%; max-width:1100px; margin:0 auto; box-sizing:border-box; }
-@media all and (max-width:1200px) { .width1100 { width:97%; } }
-@media all and (max-width:980px)  { .width1100 { width:96%; } }
-@media all and (max-width:768px)  { .width1100 { width:94%; } }
-@media all and (max-width:480px)  { .width1100 { width:93%; } }
+.width1100 { position:relative; width:100%; padding: 0 11px; max-width:1100px; margin:0 auto; box-sizing:border-box; }
 
 /* 개발 확인용 래퍼 */
 .contents_in { min-height:300px; }
+
+/* @media ~ 980px */
+@media all and (max-width:980px) {
+
+  /*** add_sec01 ***/
+  .add_sec01 { padding:50px 0; }
+  /* redBar 는 % 비율로 자동 축소 — 별도 선언 불필요 */
+
+  .add_sec01 .add_colWrap {flex-direction: column; gap: 36px;}
+  .add_sec01 .imgBox {order: 1; max-width: initial; width: 100%; margin: 0; aspect-ratio: auto;}
+  .add_sec01 .txtBox {order: 2; width: 100%;}
+  .add_sec01 .headLine {font-size: 1.75rem; line-height: 130%;}
+  .add_sec01 .bodyTxt {margin-top: 20px;}
+
+  /*** add_sec02 ***/
+  .add_sec02 { padding:60px 0 70px; }
+  .add_sec02_pc .bannerWrap {flex-direction: column; gap: 87px;}
+  .add_sec02_pc .cardList {grid-template-columns: none; margin: 35px auto 0; gap: 10px;}
+  .add_sec02_pc .cardItem {padding: 25px 20px 38px;}
+  .add_sec02_pc .cardNum {font-size: 1.0625rem;}
+  .add_sec02_pc .cardTit {font-size: 1.0625rem;}
+  .add_sec02_pc .cardBody {font-size: .875rem;}
+  .add_sec02_pc .cardItem .icon {top:  auto; bottom: 21px;}
+  .add_sec02_pc .bannerItem {width: 100%;}
+  .add_sec02 .title {font-size: 1.5rem;}
+  .add_sec02 .title::after {margin-top: 15px; width: 48px;}
+  .add_sec02_pc .bannerTxt {font-size: 1rem;}
+
+  /*** add_sec03 ***/
+  .add_sec03 { padding:50px 0; }
+  .add_sec03 .add_colWrap {flex-direction: column; gap: 36px;}
+  .add_sec03 .imgBox {order: 1; max-width: initial; width: 100%; margin: 0; aspect-ratio: auto;}
+  .add_sec03 .txtBox {order: 2; width: 100%;}
+  .add_sec03 .headLine {font-size: 1.75rem; line-height: 130%;}
+  .add_sec03 .bodyGroup {margin-top: 20px;}
+
+  /*** add_sec04 ***/
+  .add_sec04 { padding:60px 0; }
+  .add_sec04 .title {font-size: 1.75rem; line-height: 130%;}
+  .add_sec04 .cardList {flex-direction: column; margin-top: 27px; gap: 27px;}
+  .add_sec04 .cardItem {width: 100%;}
+  .add_sec04 .cardTxtBox {padding: 30px 20px;}
+  .add_sec04 .cardTit {font-size: 1.0625rem;}
+  .add_sec04 .cardBody {font-size: .875rem; margin-top: 10px;}
+
+  /*** add_sec05 ***/
+  .add_sec05 { padding:80px 0; }
+  .add_sec05 .para { font-size:1.5rem; }
+
+  /*** add_sec06 ***/
+  .add_sec06 { padding:60px 0; }
+  .add_sec06 .decoNum { font-size: 5.625rem; right: -9px; top: -23px;}
+  .add_sec06 .cardList {flex-direction: column; gap: 21px;}
+  .add_sec06 .cardItem {width: 100%; margin: 0; padding: 25px 20px 35px;}
+  .add_sec06 .tagLine, .add_sec06 .cardTit {font-size: 1.0625rem;}
+  .add_sec06 .cardTit, .add_sec06 .cardBody {margin-top: 10px;}
+  .add_sec06 .cardBody br {display: none;}
+
+
+  /*** add_sec07 ***/
+  .add_sec07 { padding:60px 0; }
+  .add_sec07 .groupTit { font-size: 1.5rem; margin-bottom: 20px; }
+  .add_sec07 .cardItem {min-height: 288px;}
+  .add_sec07 .cardList {flex-direction: column; gap: 10px;}
+  .add_sec07 .missionGroup .cardItem, .add_sec07 .visionGroup .cardItem {width: 100%; margin: 0; padding: 37px 30px;}
+  .add_sec07 .missionGroup {margin-bottom: 60px;}
+  .add_sec07 .cardTit {font-size: 1.0625rem;}
+  .add_sec07 .missionGroup .cardBody, .add_sec07 .visionGroup .cardBody {font-size: .875rem; line-height: 150%;}
+  .add_sec07 .decoImg {max-width: 177px; right: 12px;}
+
+  /*** add_sec08 ***/
+  .add_sec08 { padding:80px 0; }
+  .add_sec08 .headLine { font-size: 1.25rem; text-align: center; }
+  .add_sec08 .bodyTxt  { font-size: 1.125rem;  text-align: center; margin-top: 20px;}
+  .add_sec08 .handImg {position: relative; min-height: 158px; object-position: center right; margin-bottom: 40px;}
+  .add_sec08 .btnWrap {justify-content: center; margin-top: 30px;}
+  .add_sec08 .btn {font-size: .875rem; padding: 15px 27px; min-width: 215px; height: 55px; line-height: 24px;}
+}
