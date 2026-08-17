@@ -34,19 +34,18 @@ html, body {
 
 .add_sec01 { background-color:#f9f9f9; padding: 83px 0; }
 
-.add_sec01 .add_colWrap { align-items:top;}
+.add_sec01 .add_colWrap { align-items:flex-start; justify-content: space-between; flex-wrap: nowrap; position: relative; z-index: 1;}
+.add_sec01 .add_colWrap::before {content: ""; display: block; background: url(assets/bg_deco.svg) no-repeat center / cover; aspect-ratio: 500 / 386; width: 100%; max-width: 500px; position: absolute; bottom: -83px; left: 50%; transform: translateX(-50%); z-index: -1; }
 
 .add_sec01 .txtBox { width:52%; }
 
 /* 이미지 열: 45% / gap 3% / aspect-ratio 로 높이 확정 → bar height:% 가능 */
 .add_sec01 .imgBox {
-  width:45%;
-  margin-left:3%;
   position:relative;
   overflow:visible;
   aspect-ratio:500 / 661;
   max-width: 500px;
-  margin-top: 65px;
+  margin-top: 10px;
 }
 
 .add_sec01 .imgBox img { display:block; width:100%; height:auto; object-fit:cover; position:relative; z-index:0; }
@@ -56,7 +55,7 @@ html, body {
 .add_sec01 .headLine .point { color:#c7241f; }
 
 /* 본문 — PC 16px / 400 / 169% / #777 */
-.add_sec01 .bodyTxt { color:#777; line-height:170%; margin-top: 32px;}
+.add_sec01 .bodyTxt { color:#777; line-height:170%; margin-top: 60px;}
 
 
 /* ─────────────────────────────────────────
@@ -72,10 +71,10 @@ html, body {
 .add_sec02_mo { display:none; }
 
 /* PC — 배너 3개 가로 */
-.add_sec02_pc .bannerWrap { display:flex; flex-wrap:wrap; margin-top:100px; position: relative; z-index: 1;}
+.add_sec02_pc .bannerWrap { display:grid; grid-template-columns: repeat(3, 1fr); margin-top:100px; position: relative; z-index: 1;}
+.add_sec02_pc .bannerBoxes {display: flex; flex-direction: column;}
 
 .add_sec02_pc .bannerItem {
-  width:calc(100% / 3);
   text-align:center;
   padding:0 0 24px;
   box-sizing:border-box;
@@ -135,7 +134,7 @@ html, body {
 .add_sec02_pc .divLine { border:none; border-top:1px solid #dddddd; margin:0; width: 100vw; position: relative; left: 50%; transform: translateX(-50vw); z-index: 0;}
 
 /* PC — 6카드 3열×2행 */
-.add_sec02_pc .cardList { display:grid; grid-template-columns: repeat(3, 1fr); gap: 51px 57px; width: 100%; max-width: 1250px; margin: 50px auto 0;}
+.add_sec02_pc .cardList { display:grid; grid-template-rows: repeat(2, 1fr); gap: 51px; width: 100%; box-sizing: border-box; padding: 0 29px; margin-top: 52px;}
 
 .add_sec02_pc .cardItem {
   width: 100%;
@@ -206,7 +205,8 @@ html, body {
 ───────────────────────────────────────── */
 .add_sec03 { background-color:#f9f9f9; padding: 94px 0 80px; }
 
-.add_sec03 .add_colWrap { align-items:flex-start; gap: 5%; flex-wrap: nowrap;}
+.add_sec03 .add_colWrap { align-items:flex-start; gap: 5%; flex-wrap: nowrap; z-index: 1; position: relative;}
+.add_sec03 .add_colWrap::before {content: ""; display: block; background: url(assets/bg_deco.svg) no-repeat center / cover; aspect-ratio: 500 / 386; width: 100%; max-width: 500px; position: absolute; bottom: -83px; left: 50%; transform: translateX(-50%); z-index: -1; }
 
 .add_sec03 .txtBox { width:52%; }
 
@@ -623,10 +623,11 @@ body,html {
 @media all and (max-width:980px) {
 
   /*** add_sec01 ***/
-  .add_sec01 { padding:50px 0; }
+  .add_sec01 { padding:50px 0; overflow: hidden;}
   /* redBar 는 % 비율로 자동 축소 — 별도 선언 불필요 */
 
-  .add_sec01 .add_colWrap {flex-direction: column; gap: 36px;}
+  .add_sec01 .add_colWrap {flex-direction: column; gap: 36px; flex-wrap: wrap;}
+  .add_sec01 .add_colWrap::before {bottom: -50px; max-width: 452px; aspect-ratio: 452/350; left: auto; right: -8rem; transform: initial;}
   .add_sec01 .imgBox {order: 1; max-width: initial; width: 100%; margin: 0; aspect-ratio: auto;}
   .add_sec01 .txtBox {order: 2; width: 100%;}
   .add_sec01 .headLine {font-size: 1.75rem; line-height: 130%;}
@@ -634,7 +635,7 @@ body,html {
 
   /*** add_sec02 ***/
   .add_sec02 { padding:60px 0 70px; }
-  .add_sec02_pc .bannerWrap {flex-direction: column; gap: 87px;}
+  .add_sec02_pc .bannerWrap {grid-template-columns: initial; gap: 87px;}
   .add_sec02_pc .cardList {grid-template-columns: none; margin: 35px auto 0; gap: 10px;}
   .add_sec02_pc .cardItem {padding: 25px 20px 38px;}
   .add_sec02_pc .cardNum {font-size: 1.0625rem;}
@@ -647,8 +648,9 @@ body,html {
   .add_sec02_pc .bannerTxt {font-size: 1rem;}
 
   /*** add_sec03 ***/
-  .add_sec03 { padding:50px 0; }
+  .add_sec03 { padding:50px 0; overflow: hidden;}
   .add_sec03 .add_colWrap {flex-direction: column; gap: 36px;}
+  .add_sec03 .add_colWrap::before {bottom: -50px; max-width: 452px; aspect-ratio: 452/350; left: auto; right: -8rem; transform: initial;}
   .add_sec03 .imgBox {order: 1; max-width: initial; width: 100%; margin: 0; aspect-ratio: auto;}
   .add_sec03 .txtBox {order: 2; width: 100%;}
   .add_sec03 .headLine {font-size: 1.75rem; line-height: 130%;}
