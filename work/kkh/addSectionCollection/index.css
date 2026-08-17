@@ -87,32 +87,9 @@ html, body {
   width: 100%;
   top: -40px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(1.057);
 }
 
-.add_sec02_pc .bannerItem::before {
-  content: "";
-  display: block;
-  width: 18px;
-  height: 18px;
-  border-radius: 100px;
-  background-color: #C7241F;
-  position: absolute;
-  bottom: -9px;
-  right: -8px;
-}
-
-.add_sec02_pc .bannerItem:first-child::after {
-  content: "";
-  display: block;
-  width: 18px;
-  height: 18px;
-  border-radius: 100px;
-  background-color: #C7241F;
-  position: absolute;
-  bottom: -9px;
-  left: -8px;
-}
 
 .add_sec02_pc .bannerItem .icon {
   height: 40px;
@@ -131,7 +108,7 @@ html, body {
 }
 
 /* 구분선 — y=457.667 / 1px #dddddd */
-.add_sec02_pc .divLine { border:none; border-top:1px solid #dddddd; margin:0; width: 100vw; position: relative; left: 50%; transform: translateX(-50vw); z-index: 0;}
+.add_sec02_pc .divLine { border:none; border-top:1px solid #dddddd; margin:0; width: 100vw; position: relative; left: 50%; transform: translateX(-50vw); z-index: 0; display: none;}
 
 /* PC — 6카드 3열×2행 */
 .add_sec02_pc .cardList { display:grid; grid-template-rows: repeat(2, 1fr); gap: 51px; width: 100%; box-sizing: border-box; padding: 0 29px; margin-top: 52px;}
@@ -299,19 +276,20 @@ html, body {
    PC: 좌우 split 이미지 + 중앙 gradient fade
    MO: 단일 배경 이미지 + 하단 fade
 ───────────────────────────────────────── */
-.add_sec05 { position:relative; overflow:hidden; padding: 0;}
+.add_sec05 { position:relative; overflow:hidden; padding: 0; background: url(assets/img_hello_remember.png) no-repeat center / cover; min-height: 90vh; display: flex; align-items: center;}
 .add_sec05 .bgWrap img {max-height: 900px; width: 100%; object-fit: cover;}
 
 /* PC: 배경 split 이미지 래퍼 */
 .add_sec05 .txtBox {
-  position: absolute;
+  position: relative;
   top: 0;
   padding: 110px 0 150px;
   box-sizing: border-box;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
 }
+
+.add_sec05 .txtBox .fs_sectionTitle {font-size: 2rem;}
+.add_sec05 .txtBox .fs_sectionTitle br {display: none;}
 
 .add_sec05 .bgLeft,
 .add_sec05 .bgRight {
@@ -340,11 +318,11 @@ html, body {
 .add_sec05 .titleMo { display:none; }
 
 /* 본문 영역 */
-.add_sec05 .bodyGroup { margin-top:110px; }
+.add_sec05 .bodyGroup { margin-top:75px; }
 
 /* 본문 문단 — 27px 1.688rem / PC148% */
 .add_sec05 .para {
-  font-size:1.688rem;
+  font-size: 1.5rem;
   line-height:148%;
   text-align:center;
   color:#222;
@@ -368,7 +346,7 @@ html, body {
 .add_sec06 {
   position:relative;
   background:url(assets/management_bg.png) no-repeat center / cover;
-  padding: 177px 0;
+  padding: 150px 0;
 }
 
 .add_sec06 .width1100 { position:relative; z-index:1; }
@@ -635,17 +613,19 @@ body,html {
 
   /*** add_sec02 ***/
   .add_sec02 { padding:60px 0 70px; }
-  .add_sec02_pc .bannerWrap {grid-template-columns: initial; gap: 87px;}
-  .add_sec02_pc .cardList {grid-template-columns: none; margin: 35px auto 0; gap: 10px;}
+  .add_sec02_pc .bannerWrap {grid-template-columns: initial; gap: 115px;}
+  .add_sec02_pc .cardList {grid-template-columns: none; margin: 50px auto 0; gap: 10px; padding: 0;}
   .add_sec02_pc .cardItem {padding: 25px 20px 38px;}
   .add_sec02_pc .cardNum {font-size: 1.0625rem;}
   .add_sec02_pc .cardTit {font-size: 1.0625rem;}
   .add_sec02_pc .cardBody {font-size: .875rem;}
   .add_sec02_pc .cardItem .icon {top:  auto; bottom: 21px;}
-  .add_sec02_pc .bannerItem {width: 100%;}
+  .add_sec02_pc .bannerItem {width: 100%; padding: 0;}
   .add_sec02 .title {font-size: 1.5rem;}
   .add_sec02 .title::after {margin-top: 15px; width: 48px;}
   .add_sec02_pc .bannerTxt {font-size: 1rem;}
+  .add_sec02_pc .bannerItem .semicircle {max-width: 354px; transform: translateX(-50%); top: -35px;}
+  .add_sec02_pc .bannerItem .icon {margin: 0 auto 27px;}
 
   /*** add_sec03 ***/
   .add_sec03 { padding:50px 0; overflow: hidden;}
@@ -655,6 +635,7 @@ body,html {
   .add_sec03 .txtBox {order: 2; width: 100%;}
   .add_sec03 .headLine {font-size: 1.75rem; line-height: 130%;}
   .add_sec03 .bodyGroup {margin-top: 20px;}
+
 
   /*** add_sec04 ***/
   .add_sec04 { padding:60px 0; }
@@ -666,11 +647,15 @@ body,html {
   .add_sec04 .cardBody {font-size: .875rem; margin-top: 10px;}
 
   /*** add_sec05 ***/
-  .add_sec05 { padding:80px 0; }
-  .add_sec05 .para { font-size:1.5rem; }
+  .add_sec05 { padding:80px 0; background-image: url(assets/img_hello_remember_mo.png);}
+  .add_sec05 .para { font-size: 1.0625rem; }
+  .add_sec05 .txtBox .fs_sectionTitle {font-size: 1.75rem;}
+  .add_sec05 .bodyGroup {margin-top: 35px;}
+  .add_sec05 .txtBox {padding: 0;}
+  .add_sec05 .txtBox .fs_sectionTitle br {display: block;}
 
   /*** add_sec06 ***/
-  .add_sec06 { padding:60px 0; }
+  .add_sec06 { padding:60px 0; background-image: url(assets/management_bg_mo.png);}
   .add_sec06 .decoNum { font-size: 5.625rem; right: -9px; top: -23px;}
   .add_sec06 .cardList {flex-direction: column; gap: 21px;}
   .add_sec06 .cardItem {width: 100%; margin: 0; padding: 25px 20px 35px;}
