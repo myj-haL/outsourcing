@@ -32,7 +32,7 @@ html, body {
 .add_colWrap { display:flex; flex-wrap:wrap; }
 
 
-.add_sec01 { background-color:#f9f9f9; padding: 83px 0; }
+.add_sec01 { background-color:#f9f9f9; padding: 80px 0 90px; }
 
 .add_sec01 .add_colWrap { align-items:flex-start; justify-content: space-between; flex-wrap: nowrap; position: relative; z-index: 1;}
 .add_sec01 .add_colWrap::before {content: ""; display: block; background: url(assets/bg_deco.svg) no-repeat center / cover; aspect-ratio: 500 / 386; width: 100%; max-width: 500px; position: absolute; bottom: -83px; left: 50%; transform: translateX(-50%); z-index: -1; }
@@ -43,7 +43,7 @@ html, body {
 .add_sec01 .imgBox {
   position:relative;
   overflow:visible;
-  aspect-ratio:500 / 661;
+  aspect-ratio:500 / 610;
   max-width: 500px;
   margin-top: 10px;
 }
@@ -193,7 +193,7 @@ html, body {
   margin-left:3%;
   position:relative;
   overflow:visible;
-  aspect-ratio:500 / 661;
+  aspect-ratio:500 / 610;
   margin-top: 60px;
 }
 
@@ -204,7 +204,7 @@ html, body {
 .add_sec03 .headLine .point { color:#c7241f; }
 
 /* 본문 그룹 */
-.add_sec03 .bodyGroup { margin-top:30px; }
+.add_sec03 .bodyGroup { margin-top:32px; }
 
 /* 본문 — PC 16px / 400 / 184% / #777 / 문단간격 ~51px → margin-bottom:1.375rem */
 .add_sec03 .bodyTxt { color:#777; line-height:184%; margin-bottom:1.375rem; }
@@ -215,7 +215,7 @@ html, body {
   display:block;
   font-weight:bold;
   color:#222;
-  margin-top:30px;
+  margin-top:40px;
 }
 
 
@@ -250,7 +250,7 @@ html, body {
 
 /* 텍스트 박스 (white + shadow) */
 .add_sec04 .cardTxtBox {
-  padding:35px 22px;
+  padding:23px 22px;
   box-sizing:border-box;
 }
 
@@ -345,8 +345,6 @@ html, body {
 ───────────────────────────────────────── */
 .add_sec06 {
   position:relative;
-  background:url(assets/management_bg.png) no-repeat center / cover;
-  padding: 150px 0;
 }
 
 .add_sec06 .width1100 { position:relative; z-index:1; }
@@ -355,14 +353,15 @@ html, body {
 .add_sec06 .cardList { display:flex; flex-wrap:wrap; }
 
 .add_sec06 .cardItem {
-  width:calc((100% - 48px) / 3);
-  margin-right:24px;
+  width:calc((100% - 50px) / 3);
+  margin-right:25px;
   position:relative;
   box-sizing:border-box;
   background-color: #fff;
   box-sizing: border-box;
-  padding: 32px 18px 48px;
-  overflow: hidden;
+  padding: 68px 20px 56px;
+  border: 2px solid #C9C9C9;
+  text-align: center;
 }
 
 .add_sec06 .cardItem:last-child { margin-right:0; }
@@ -382,11 +381,10 @@ html, body {
 /* 카드 제목 — 26px 1.625rem / 600 / PC152% / #222+#c7241f */
 .add_sec06 .cardTit {
   display:block;
-  font-size:1.625rem;
-  font-weight:600;
-  line-height:152%;
-  color:#222;
-  margin-top:15px;
+  font-size: 1.25rem;
+  font-weight:700;
+  color:#1a1a1a;
+  line-height: 140%;
 }
 
 .add_sec06 .cardTit .point { color:#c7241f; }
@@ -394,26 +392,31 @@ html, body {
 /* 카드 본문 — PC 13px 0.813rem / 400 / 161% / #6b6b6b / LS -0.29pt */
 /* ⚠️ PC(13px) < MO(14px) 역전 — 시안대로 */
 .add_sec06 .cardBody {
-  font-size:0.813rem;
-  color:#6b6b6b;
-  line-height:161%;
+  font-size: 1rem;
+  color:#8F8F8F;
   letter-spacing:-0.29pt;
-  margin-top:15px;
+  margin-top:30px;
+  line-height: 160%;
 }
 
 /* 장식 번호 — 104px 6.500rem / #ff8c89 / opacity / 카드 우상단 */
 .add_sec06 .decoNum {
   position:absolute;
-  right:-12px;
-  top:-26px;
-  font-size:6.500rem;
-  color:#ff8c89;
-  opacity:0.2;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -31px;
+  font-size: 3.25rem;
+  color:#C7241F;
   line-height:normal;
-  font-weight:900;
+  font-weight:700;
   pointer-events:none;
   user-select:none;
+  display: block;
+  background-color: #fff;
+  z-index: 1;
+  padding: 0 15px;
 }
+
 
 
 /* ─────────────────────────────────────────
@@ -655,13 +658,13 @@ body,html {
   .add_sec05 .txtBox .fs_sectionTitle br {display: block;}
 
   /*** add_sec06 ***/
-  .add_sec06 { padding:60px 0; background-image: url(assets/management_bg_mo.png);}
-  .add_sec06 .decoNum { font-size: 5.625rem; right: -9px; top: -23px;}
-  .add_sec06 .cardList {flex-direction: column; gap: 21px;}
-  .add_sec06 .cardItem {width: 100%; margin: 0; padding: 25px 20px 35px;}
-  .add_sec06 .tagLine, .add_sec06 .cardTit {font-size: 1.0625rem;}
-  .add_sec06 .cardTit, .add_sec06 .cardBody {margin-top: 10px;}
-  .add_sec06 .cardBody br {display: none;}
+  .add_sec06 { padding:60px 0;}
+  .add_sec06 .decoNum { font-size: 2.5rem; top: -24px;}
+  .add_sec06 .width1100 {padding: 0 20px;}
+  .add_sec06 .cardList {flex-direction: column; gap: 68px;}
+  .add_sec06 .cardItem {width: 100%; margin: 0; padding: 42px 20px 35px; min-height: 354px;}
+  .add_sec06 .tagLine, .add_sec06 .cardTit {font-size: 1rem;}
+  .add_sec06 .cardBody {margin-top: 23px; font-size: .875rem;}
 
 
   /*** add_sec07 ***/
